@@ -19,11 +19,7 @@ Welcome to the Wellthie Business API Documentation.
 
 Authentication is implemented using the `devise-token-auth` gem. Visit their docs [here](https://github.com/lynndylanhurley/devise_token_auth) for more information.
 
-<!-- Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
-
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation. -->
+In the curl examples you'll see on the right, when trying to execute those on the command line, remember to add a particular host with the appropriate organization_slug. For example: `http://wellthiedemo-smallbusiness-test.lvh.me:3030`.
 
 # Authentication
 
@@ -80,64 +76,277 @@ password     | N/A     | User's password       | true
 ## Sign out
 
 ```shell
-curl -X DELETE "/api/auth/sign_in" \
+curl -X DELETE "/api/auth/sign_out" \
      -H "Content-Type: application/json" \
-     -d '{"uid": "name.lastname@domain.com", "client": "pswrd", "access-token": 'UyuaNMouSdihadn'}'
+     -d '{"uid": "name.lastname@domain.com", "client": "WedFsHGWTiAfdhl4LbFVjg", "access-token": "UyuaNMouSdihadn"}'
 ```
 
 > Response looks like this:
 
 ```json
 {
-  "data": {
-    "id": "id",
-    "slug": "slug",
-    "first_name": "Name",
-    "last_name": "Lastname",
-    "email": "name.lastname@domain.com",
-    "provider": "email",
-    "uid": "name.lastname@domain.com",
-    "password_changed_at": "2017-05-04T12:57:21.000-04:00",
-    "organization_id": 1,
-    "team_id": null,
-    "role": "organization_admin",
-    "user_type": null,
-    "npn": "A1B2",
-    "broker_code": "A1B2",
-    "phone_number": "",
-    "account_expiration_date": null,
-    "created_by_user_id": 2,
-    "time_zone": "Eastern Time (US & Canada)",
-    "deleted_at": null,
-    "is_any_broker_type": true
-  }
+  "success": true
 }
 ```
 
-Describe Signout
+Use this endpoint to finish the session and discard the access-token acquired on the sign in API call
+
+### HTTP Request
+
+`POST /api/auth/sign_out`
+
+### Parameters
+
+Parameter    | Default | Description            | Required?
+------------ | ------- | ---------------------- | ----------
+uid          | N/A     | User's email address   | true
+client       | N/A     | Client token [HEADERS] | true
+access-token | N/A     | Token from sign in     | true
+
 
 # Organizations
 
-Describe here.
-
-
 ## Broker Branding
+
+```shell
+curl -X GET "/api/organization/broker_brandings?company_slug=j1Lp7yarNg4F3nGuHhwH7Gr3" \
+     -H "Content-Type: application/json"
+```
+
+> Response looks like this:
+
+```json
+{
+  "contact_name": "Wellthie",
+  "contact_email": "support@wellthie.com",
+  "contact_phone": "888-680-0856",
+  "website_url": "www.wellthie.com",
+  "logo": "https://d3uxyywlniz2wb.cloudfront.net/advisor/development/broker_brandings/logos/000/000/030/original/wellthie-logo-300square.png?2016",
+  "logo_small_url": "https://d3uxyywlniz2wb.cloudfront.net/advisor/development/broker_brandings/logos/000/000/030/small/wellthie-logo-300square.png?2016",
+  "logo_cover_page_url": "https://d3uxyywlniz2wb.cloudfront.net/advisor/development/broker_brandings/logos/000/000/030/cover_page/wellthie-logo-300square.png?2016"
+}
+```
+
+Use this endpoint to get the broker branding information.
+
+<aside class="notice">
+  This endpoint does not require any session or authorization token.
+</aside>
+
+### HTTP Request
 
 `GET /api/organization/broker_brandings`
 
+### Parameters
+
+Parameter    | Default | Description           | Required?
+------------ | ------- | --------------------- | ----------
+company_slug | N/A     | Company's slug        | true
+
+
 ## Settings
+
+```shell
+curl -X POST "/api/organization/settings" \
+     -H "Content-Type: application/json"
+```
+
+> Response looks like this:
+
+```json
+{
+  "logo": "https://d3uxyywlniz2wb.cloudfront.net/advisor/development/organizations/logos/000/000/023/main/logo-4-color.png?1474486469",
+  "splash_image": "https://d3uxyywlniz2wb.cloudfront.net/advisor/development/organizations/splash_photos/000/000/023/homepage/1600x800-Banner-01.png?1461855472",
+  "show_broker_code": true,
+  "effective_dates": [
+    {
+      "label": "June 1, 2017",
+      "data": "2017-06-01"
+    }
+  ],
+  "show_schedule_a_call": true,
+  "schedule_a_call_availabilities": [
+    {
+      "day": "Monday, May 15",
+      "data": "2017-05-15",
+      "hours": [
+        {
+          "label": "9:00AM - 10:00AM"
+        },
+        {
+          "label": "10:00AM - 11:00AM"
+        },
+        {
+          "label": "11:00AM - 12:00AM"
+        },
+        {
+          "label": "12:00AM - 1:00PM"
+        },
+        {
+          "label": "1:00PM - 2:00PM"
+        },
+        {
+          "label": "2:00PM - 3:00PM"
+        },
+        {
+          "label": "3:00PM - 4:00PM"
+        },
+        {
+          "label": "4:00PM - 5:00PM"
+        }
+      ]
+    },
+    {
+      "day": "Tuesday, May 16",
+      "data": "2017-05-16",
+      "hours": [
+        {
+          "label": "9:00AM - 10:00AM"
+        },
+        {
+          "label": "10:00AM - 11:00AM"
+        },
+        {
+          "label": "11:00AM - 12:00AM"
+        },
+        {
+          "label": "12:00AM - 1:00PM"
+        },
+        {
+          "label": "1:00PM - 2:00PM"
+        },
+        {
+          "label": "2:00PM - 3:00PM"
+        },
+        {
+          "label": "3:00PM - 4:00PM"
+        },
+        {
+          "label": "4:00PM - 5:00PM"
+        }
+      ]
+    },
+    {
+      "day": "Wednesday, May 17",
+      "data": "2017-05-17",
+      "hours": [
+        {
+          "label": "9:00AM - 10:00AM"
+        },
+        {
+          "label": "10:00AM - 11:00AM"
+        },
+        {
+          "label": "11:00AM - 12:00AM"
+        },
+        {
+          "label": "12:00AM - 1:00PM"
+        },
+        {
+          "label": "1:00PM - 2:00PM"
+        },
+        {
+          "label": "2:00PM - 3:00PM"
+        },
+        {
+          "label": "3:00PM - 4:00PM"
+        },
+        {
+          "label": "4:00PM - 5:00PM"
+        }
+      ]
+    }
+  ],
+  "show_issuer_logos": false,
+  "broker_code_regex": "^[a-zA-Z0-9]{4,10}$",
+  "broker_code_message": "4-10 Alphanumeric Codes",
+  "excel_template_file": true,
+  "excel_template_url": "https://d3uxyywlniz2wb.cloudfront.net/advisor/development/organizations/excel_templates/000/000/023/original/downloadable_census-rc37-oc36.xlsx?1478203799",
+  "show_group_to_individual": true,
+  "hide_enrollment_buttons_on_quote_page": false,
+  "business_large_group_url": "https://www.amerihealthnj.com/html/employers/large_businesses.html?",
+  "business_individual_url": "https://www.healthcare.gov/",
+  "census_child_max_age_for_inclusion_in_household": 26,
+  "show_renewals": true,
+  "use_sso": true,
+  "sso_idp_target_url": "https://wellthieinc-dev.onelogin.com",
+  "sso_idp_login_link_text": "Login through Wellthie's OneLogin",
+  "disable_direct_login": false,
+  "organization_name": "Wellthie Demo",
+  "show_dental": true,
+  "show_vision": true,
+  "show_value_add": true
+}
+```
+
+Use this endpoint to retrieve the particular 
+
+<aside class="notice">
+  This endpoint does not require any session or authorization token.
+</aside>
+
+### HTTP Request
 
 `GET /api/organization/settings`
 
+### Parameters
 
-## Content Areas
+Parameter    | Default | Description           | Required?
+------------ | ------- | --------------------- | ----------
+
+
+
 
 `GET            /api/organization/content_areas`
 
+## Content Areas
+
+```shell
+curl -X POST "/api/organization/content_areas" \
+     -H "Content-Type: application/json"
+```
+
+> Response looks like this:
+
+```json
+{
+  {
+    "name": "Plan Attribute Tooltip: physical_occupational_speech",
+    "content": "Therapy for mobility, language and/or speech related issues."
+  },
+  {
+    "name": "Plan Attribute Tooltip: durable_medical_equipment",
+    "content": "Supplies used for everyday or extended use. Covers oxygen supplies, wheelchairs, crutches or blood testing strips."
+  },
+  {
+    "name": "Plan Attribute Tooltip: hearing_aids",
+    "content": "A device placed around or in the ear that makes sounds louder."
+  },
+{
+```
+
+Use this endpoint to list the content areas configured to a particular organization.
+
+<aside class="notice">
+  This endpoint does not require any session or authorization token.
+</aside>
+
+<aside class="notice">
+  The JSON response on the right is way longer than this example shows.
+</aside>
+
+### HTTP Request
+
+`POST /api/organization/content_areas`
+
+### Parameters
+
+Parameter    | Default | Description           | Required?
+------------ | ------- | --------------------- | ----------
 
 # Companies
 
-## GET
+## Show Company
 `GET            /api/companies/:slug`
 
 ## CREATE
