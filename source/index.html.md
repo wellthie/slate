@@ -30,18 +30,17 @@ This example API documentation page was created with [Slate](https://github.com/
 ## Sign In
 
 ```shell
-curl -X POST "http://organization_slug.lvh.me:3030/api/auth/sign_in" \
+curl -X POST "/api/auth/sign_in" \
      -H "Content-Type: application/json" \
-     -d '{"email": "name.lastname@domain.com", "password": "pswrd"}' \
-     -i
+     -d '{"email": "name.lastname@domain.com", "password": "pswrd"}'
 ```
 
-> The above command returns a json like the following:
+> Response looks like this:
 
 ```json
 {
   "data": {
-    "id": id,
+    "id": "id",
     "slug": "slug",
     "first_name": "Name",
     "last_name": "Lastname",
@@ -65,23 +64,6 @@ curl -X POST "http://organization_slug.lvh.me:3030/api/auth/sign_in" \
 }
 ```
 
-> And headers like this:
-
-```code
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=utf-8
-Transfer-Encoding: chunked
-Connection: keep-alive
-Status: 200 OK
-Cache-Control: max-age=0, private, must-revalidate
-...
-access-token: pFROqRpujmUQjLtJDwgUQw
-X-Request-Id: 2787fd10-3057-4d0a-a2ea-35e0ea1e3faf
-token-type: Bearer
-expiry: 1495669515
-uid: name.lastname@domain.com
-```
-
 This endpoint allows you to get a session token.
 
 ### HTTP Request
@@ -96,6 +78,41 @@ email        | N/A     | User's email address  | true
 password     | N/A     | User's password       | true
 
 ## Sign out
+
+```shell
+curl -X DELETE "/api/auth/sign_in" \
+     -H "Content-Type: application/json" \
+     -d '{"uid": "name.lastname@domain.com", "client": "pswrd", "access-token": 'UyuaNMouSdihadn'}'
+```
+
+> Response looks like this:
+
+```json
+{
+  "data": {
+    "id": "id",
+    "slug": "slug",
+    "first_name": "Name",
+    "last_name": "Lastname",
+    "email": "name.lastname@domain.com",
+    "provider": "email",
+    "uid": "name.lastname@domain.com",
+    "password_changed_at": "2017-05-04T12:57:21.000-04:00",
+    "organization_id": 1,
+    "team_id": null,
+    "role": "organization_admin",
+    "user_type": null,
+    "npn": "A1B2",
+    "broker_code": "A1B2",
+    "phone_number": "",
+    "account_expiration_date": null,
+    "created_by_user_id": 2,
+    "time_zone": "Eastern Time (US & Canada)",
+    "deleted_at": null,
+    "is_any_broker_type": true
+  }
+}
+```
 
 Describe Signout
 
@@ -137,7 +154,6 @@ Describe here.
 
 ## POST CurrentPlan
 `POST           /api/companies/:company_slug/current_plan`
-
 
 
 # Proposals
@@ -192,6 +208,7 @@ Describe here.
 
 ## POST DownloadExcel
 `POST           /api/inquiries/:inquiry_slug/download_excel`
+
 
 # Plans
 
