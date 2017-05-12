@@ -86,7 +86,7 @@ This endpoint allows you to get a session token.
 
 ### HTTP Request
 
-`POST http://organization_slug.lvh.me:3030/api/auth/sign_in`
+`POST /api/auth/sign_in`
 
 ### Parameters
 
@@ -106,11 +106,11 @@ Describe here.
 
 ## Broker Branding
 
-`GET            /api/organization/broker_brandings`
+`GET /api/organization/broker_brandings`
 
 ## Settings
 
-`GET            /api/organization/settings`
+`GET /api/organization/settings`
 
 
 ## Content Areas
@@ -120,100 +120,103 @@ Describe here.
 
 # Companies
 
-`POST           /api/companies`
-
+## GET
 `GET            /api/companies/:slug`
 
-`PATCH          /api/companies/:slug`
+## CREATE
+`POST           /api/companies`
 
+## UPDATE
 `PUT            /api/companies/:slug`
 
-## Settings
-
+## GET Settings
 `GET            /api/companies/:company_slug/settings`
 
-## Current Plan
-
+## GET CurrentPlan
 `GET            /api/companies/:company_slug/current_plan`
 
+## POST CurrentPlan
 `POST           /api/companies/:company_slug/current_plan`
 
-## Inquiries
 
-`GET            /api/companies/:company_slug/inquiries`
+
+# Proposals
+
+## GET Inquiries
+
+`GET            /api/proposals/:company_slug/inquiries`
 
 ## Group Plans
 
-`GET            /api/companies/:company_slug/group_plans`
+`GET            /api/proposals/:company_slug/group_plans`
 
 ## Group Plans Pricing
 
-`GET            /api/companies/:company_slug/group_plans_pricing`
+`GET            /api/proposals/:company_slug/group_plans_pricing`
 
 ## Plan Selections
 
-`GET            /api/companies/:company_slug/plan_selections`
+`GET            /api/proposals/:company_slug/plan_selections`
 
 ## Individual Quotes
 
-`GET            /api/companies/:company_slug/individual_quotes`
-
+`GET            /api/proposals/:company_slug/individual_quotes`
 
 # Census
 
-`POST           /api/companies/:company_slug/census`
-
+## GET
 `GET            /api/companies/:company_slug/census`
 
-## Create Census from Excel
+## POST
+`POST           /api/companies/:company_slug/census`
 
+## Upload Census
 `POST           /api/companies/:company_slug/census/create_from_excel`
 
 # Inquiries
 
-`POST           /api/inquiries`
-
+## GET
 `GET            /api/inquiries/:slug`
 
-`PATCH          /api/inquiries/:slug`
+## POST
+`POST           /api/inquiries`
 
+## PUT
 `PUT            /api/inquiries/:slug`
 
-## Plan Selections
-
+## GET PlanSelections
 `GET            /api/inquiries/:inquiry_slug/plan_selections`
 
-## Individual Quotes
-
+## GET IndividualQuotes
 `GET            /api/inquiries/:inquiry_slug/individual_quotes`
 
-## Download Excel
-
+## POST DownloadExcel
 `POST           /api/inquiries/:inquiry_slug/download_excel`
 
 # Plans
 
-## Group Plans
-
+## GET GroupPlans
 `GET            /api/inquiries/:inquiry_slug/plans/group_plans`
 
-## Group Plans Pricing
-
+## GET GroupPlansPricing
 `GET            /api/inquiries/:inquiry_slug/plans/group_plans_pricing`
 
-## Individual Plans
-
+## GET IndividualPlans
 `GET            /api/inquiries/:inquiry_slug/plans/individual_plans`
 
-## Individual Plans Pricing
-
+## GET IndividualPlansPricing
 `GET            /api/inquiries/:inquiry_slug/plans/individual_plans_pricing`
 
-## Filters
-
+## GET Filters
 `GET            /api/inquiries/:inquiry_slug/plans/filters`
 
-## Compare
+## POST SelectPlan (TODO)
+`POST           /api/inquiries/:inquiry_slug/plans/select`
+
+## DELETE UnselectPlan (TODO)
+`DELETE         /api/inquiries/:inquiry_slug/plans/unselect`
+
+## Compare (TODO)
 
 `POST           /api/inquiries/:inquiry_slug/plans/compare/generate_excel`
 
@@ -223,25 +226,16 @@ Describe here.
 
 `GET            /api/inquiries/:inquiry_slug/plans/compare/download_filtered_plan_excel`
 
-## Select Plan
-
-`POST           /api/inquiries/:inquiry_slug/plans/select`
-
-## Unselect Plan
-
-`DELETE         /api/inquiries/:inquiry_slug/plans/unselect`
-
 # Enrollments
 
-## Contact
-
+## POST Contact
 `POST           /api/inquiries/:inquiry_slug/enrollments/contact`
 
-## Employees Contact
+## POST Employees Contact
+`POST /api/inquiries/:inquiry_slug/enrollments/employees_contact`
 
-`POST|PUT|PATCH /api/inquiries/:inquiry_slug/enrollments/employees_contact`
+## PUT Employees Contact
+`PUT /api/inquiries/:inquiry_slug/enrollments/employees_contact`
 
-## Household Download
-
+## GET HouseholdDownload
 `GET            /api/inquiries/:inquiry_slug/enrollments/household/:household_id/download`
-
