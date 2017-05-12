@@ -3,7 +3,6 @@ title: Wellthie Business API Documentation
 
 language_tabs:
   - shell
-  - javascript
 
 toc_footers:
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
@@ -18,6 +17,8 @@ search: true
 
 Welcome to the Wellthie Business API Documentation.
 
+Authentication is implemented using the `devise-token-auth` gem. Visit their docs [here](https://github.com/lynndylanhurley/devise_token_auth) for more information.
+
 <!-- Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
 
 We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
@@ -26,37 +27,77 @@ This example API documentation page was created with [Slate](https://github.com/
 
 # Authentication
 
-Describe authentication here.
+## Sign In
 
 ```shell
-curl -X POST "http://wellthiedemo-smallbusiness-test.lvh.me:3030/api/auth/sign_in" -H "Content-Type: application/json" -d '{"email": "name.lastname@domain.com", "password": "pswrd"}' -i
+curl -X POST "http://organization_slug.lvh.me:3030/api/auth/sign_in" \
+     -H "Content-Type: application/json" \
+     -d '{"email": "name.lastname@domain.com", "password": "pswrd"}' \
+     -i
+```
 
-# Response
+> The above command returns a json like the following:
+
+```json
+{
+  "data": {
+    "id": id,
+    "slug": "slug",
+    "first_name": "Name",
+    "last_name": "Lastname",
+    "email": "name.lastname@domain.com",
+    "provider": "email",
+    "uid": "name.lastname@domain.com",
+    "password_changed_at": "2017-05-04T12:57:21.000-04:00",
+    "organization_id": 1,
+    "team_id": null,
+    "role": "organization_admin",
+    "user_type": null,
+    "npn": "A1B2",
+    "broker_code": "A1B2",
+    "phone_number": "",
+    "account_expiration_date": null,
+    "created_by_user_id": 2,
+    "time_zone": "Eastern Time (US & Canada)",
+    "deleted_at": null,
+    "is_any_broker_type": true
+  }
+}
+```
+
+> And headers like this:
+
+```code
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 Transfer-Encoding: chunked
 Connection: keep-alive
 Status: 200 OK
 Cache-Control: max-age=0, private, must-revalidate
-Vary: Origin
-X-XSS-Protection: 1; mode=block
+...
 access-token: pFROqRpujmUQjLtJDwgUQw
 X-Request-Id: 2787fd10-3057-4d0a-a2ea-35e0ea1e3faf
 token-type: Bearer
 expiry: 1495669515
-uid: sebastian.jimenez@crossover.com
-X-Meta-Request-Version: 0.4.0
-client: WedFsHGWTiAfdhl4LbFVjg
-X-Frame-Options: SAMEORIGIN
-ETag: W/"d6ace5bcad030caa1ed70883be488c93"
-X-Content-Type-Options: nosniff
-X-Runtime: 0.470927
-Date: Wed, 10 May 2017 23:45:15 GMT
-X-Powered-By: Phusion Passenger 5.0.22
-Server: nginx/1.8.0 + Phusion Passenger 5.0.22
-
-{"data":{"id":31279,"slug":"SsBNJgzT8kGdnXeJwnKxrTRF","first_name":"Sebastian","last_name":"Jimenez","email":"sebastian.jimenez@crossover.com","provider":"email","uid":"sebastian.jimenez@crossover.com","password_changed_at":"2017-05-04T12:57:21.000-04:00","organization_id":23,"team_id":null,"role":"organization_admin","user_type":null,"npn":"SJC1","broker_code":"SJC1","phone_number":"","account_expiration_date":null,"created_by_user_id":7595,"time_zone":"Eastern Time (US \u0026 Canada)","deleted_at":null,"is_any_broker_type":true}}
+uid: name.lastname@domain.com
 ```
+
+This endpoint allows you to get a session token.
+
+### HTTP Request
+
+`POST http://organization_slug.lvh.me:3030/api/auth/sign_in`
+
+### Parameters
+
+Parameter    | Default | Description           | Required?
+------------ | ------- | --------------------- | ----------
+email        | N/A     | User's email address  | true
+password     | N/A     | User's password       | true
+
+## Sign out
+
+Describe Signout
 
 # Organizations
 
