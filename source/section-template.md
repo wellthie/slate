@@ -1,8 +1,11 @@
 ## <operation_name>
 
 ```shell
-curl -X POST "/api/< path_to_endpoint >" \
+curl -X <METHOD> "" \
      -H "Content-Type: application/json" \
+     -H "access-token: v5KcdlSSGlCVh_ZYHDo8SA" \
+     -H "uid: sebastian.jimenez@crossover.com" \
+     -H "client: -FPYre3uK1DYkjDYZOuk5A" \
      -d '{ JSON DATA HERE }'
 ```
 
@@ -18,7 +21,7 @@ Describe endpoint here.
 
 ### HTTP Request
 
-`POST /api/< path_to_endpoint >`
+`<METHOD> path`
 
 ### Parameters
 
