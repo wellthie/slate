@@ -58,7 +58,7 @@ curl -X GET "/api/companies/j1Lp7yarNg4F3nGuHhwH7Gr3" \
 Use this endpoint to retrieve information about specific companies.
 
 <aside class="notice">
-  This endpoint is secured and requires authentication headers. These include <code>uid</code> and <code>access-token</code>.
+  This endpoint is secured and requires authentication headers. These include <code>uid</code>, <code>access-token</code> and <code>client</code>.
 </aside>
 
 ### HTTP Request
@@ -210,6 +210,10 @@ curl -X PUT "/api/companies/zcZUuDSkDb7TRzTbPWmj6HSa" \
 
 Use this endpoint to update an existing company.
 
+<aside class="notice">
+  This endpoint is secured and requires authentication headers.
+</aside>
+
 ### HTTP Request
 
 `PUT /api/companies/:slug`
@@ -253,6 +257,10 @@ curl -X GET "/api/companies/zcZUuDSkDb7TRzTbPWmj6HSa/settings" \
 ```
 
 Use this endpoint to fetch company's settings.
+
+<aside class="notice">
+  This endpoint is secured and requires authentication headers.
+</aside>
 
 ### HTTP Request
 
@@ -317,6 +325,10 @@ curl -X GET "http://wellthiedemo-smallbusiness-test.lvh.me:3030/api/companies/sy
 
 Use this endpoint to fetch company's current_plan. It'll be available if the company previously ran a renewal quote.
 
+<aside class="notice">
+  This endpoint is secured and requires authentication headers.
+</aside>
+
 ### HTTP Request
 
 `GET /api/companies/zcZUuDSkDb7TRzTbPWmj6HSa/current_plan`
@@ -375,6 +387,10 @@ curl -X POST "/api/companies/syihaNDipEVKDVaMQQxZxATw/current_plan" \
 
 Use this endpoint to create a new current_plan to a company. This is used for renewal quotes.
 
+<aside class="notice">
+  This endpoint is secured and requires authentication headers.
+</aside>
+
 ### HTTP Request
 
 `POST /api/companies/zcZUuDSkDb7TRzTbPWmj6HSa/current_plan`
@@ -392,7 +408,7 @@ medical_deductible_single          | N/A       | Medical deductible single  | fa
 medical_deductible_family          | N/A       | Medical deductible family  | false
 maximum_out_of_pocket_limit_single | N/A       | Max out of pocket single   | false
 maximum_out_of_pocket_limit_family | N/A       | Max out of pocket family   | false
-pcp                                | N/A       | Pcp                        | false
+pcp                                | N/A       | PCP                        | false
 specialist                         | N/A       | Specialist                 | false
 network_type                       | N/A       | Network Type               | false
 preventive_care                    | N/A       | Preventive Care            | false

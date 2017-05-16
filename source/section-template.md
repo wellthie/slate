@@ -3,9 +3,9 @@
 ```shell
 curl -X <METHOD> "" \
      -H "Content-Type: application/json" \
-     -H "access-token: v5KcdlSSGlCVh_ZYHDo8SA" \
+     -H "access-token: kZgVhiDPIIwkBaFPmp9I3Q" \
      -H "uid: sebastian.jimenez@crossover.com" \
-     -H "client: -FPYre3uK1DYkjDYZOuk5A" \
+     -H "client: hiF9kRj-PjmoWQSU80AL6Q" \
      -d '{ JSON DATA HERE }'
 ```
 
@@ -18,6 +18,10 @@ curl -X <METHOD> "" \
 ```
 
 Describe endpoint here.
+
+<aside class="notice">
+  This endpoint is secured and requires authentication headers.
+</aside>
 
 ### HTTP Request
 
