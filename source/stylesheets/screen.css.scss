@@ -34,6 +34,7 @@ html, body {
   background-color: $main-bg;
   height: 100%;
   -webkit-text-size-adjust: none; /* Never autoresize text */
+  // font-family: url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -141,7 +142,8 @@ html, body {
     list-style: none;
     margin: 0;
     padding: 0;
-    line-height: 28px;
+    // line-height: 28px;
+    line-height: 40px;
   }
 
   li {
@@ -273,7 +275,8 @@ html, body {
   .lang-selector {
     position: fixed;
     z-index: 50;
-    border-bottom: 5px solid $lang-select-active-bg;
+    padding: 16px 2%;
+    // border-bottom: 5px solid $lang-select-active-bg;
   }
 }
 
@@ -282,11 +285,14 @@ html, body {
   width: 100%;
   font-weight: bold;
   a {
+    text-transform:uppercase;
+    font-size:11px;
+    padding:0 16px;
+    border-radius:8px;
     display: block;
     float:left;
     color: $lang-select-text;
     text-decoration: none;
-    padding: 0 10px;
     line-height: 30px;
     outline: 0;
 
@@ -399,36 +405,43 @@ html, body {
   table {
     margin-bottom: 1em;
     overflow: auto;
+    border-color: grey;
     th,td {
       text-align: left;
       vertical-align: top;
-      line-height: 1.6;
+      line-height: 24px;
       code {
         white-space: nowrap;
       }
     }
 
     th {
-      padding: 5px 10px;
-      border-bottom: 1px solid #ccc;
+      font-weight: 600;
+      padding: 8px 16px;
+      // border-bottom: 1px solid #ccc;
       vertical-align: bottom;
     }
 
     td {
-      padding: 10px;
+      border-top: 1px solid rgba(0,0,0,.05);
+      padding: 16px;
     }
 
     tr:last-child {
       border-bottom: 1px solid #ccc;
     }
 
-    tr:nth-child(odd)>td {
-      background-color: lighten($main-bg,4.2%);
+    tr td:first-child{
+      font-weight: 600;
     }
 
-    tr:nth-child(even)>td {
-      background-color: lighten($main-bg,2.4%);
-    }
+    // tr:nth-child(odd)>td {
+    //   background-color: lighten($main-bg,4.2%);
+    // }
+
+    // tr:nth-child(even)>td {
+    //   background-color: lighten($main-bg,2.4%);
+    // }
   }
 
   dt {
@@ -451,7 +464,7 @@ html, body {
   code {
     background-color: rgba(0,0,0,0.05);
     padding: 3px;
-    border-radius: 3px;
+    border-radius: 5px;
     @extend %break-words;
     @extend %code-font;
   }
@@ -512,11 +525,15 @@ html, body {
 
 .content {
   pre, blockquote {
+    
     background-color: $code-bg;
     color: #fff;
 
     margin: 0;
-    width: $examples-width;
+    width: $examples-content-width;
+    margin-bottom: 24px;
+    margin-right: 3%;
+    border-radius: 5px;
 
     float:right;
     clear:right;
@@ -539,12 +556,16 @@ html, body {
     padding-top: 2em;
     padding-bottom: 2em;
     padding: 2em $main-padding;
+    margin-bottom: 24px;
   }
 
   blockquote {
+    margin: 0;
+    margin-right: 3%;
+    border-radius: 3px;
     &>p {
       background-color: $code-annotation-bg;
-      padding: $code-annotation-padding 2em;
+      padding: $code-annotation-padding;
       color: #eee;
     }
   }

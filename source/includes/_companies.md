@@ -376,6 +376,20 @@ $response | ConvertTo-Json
 }
 ```
 
+> If there is an error processing a message the server will reply with an error. For example:
+
+```json
+
+{
+    "zip_code_input": [ "can't be blank", "is invalid" ],
+    "name": [
+        "is too short (minimum is 1 character)",
+        "is too long (maximum is 255 characters)"
+    ]
+}
+
+```
+
 Use this endpoint to create a new company. Inside the request should be a json object `{}` which describes the parameters below for the company that is to be created.
 
 <aside class="notice">
@@ -396,15 +410,15 @@ Use this endpoint to create a new company. Inside the request should be a json o
 Parameter          | Default | Description             | Required?
 ------------------ | ------- | ----------------------- | ----------
 company            | N/A     | Company object          | true
- - name            | N/A     | name                    | true
- - zip_code_input  | N/A     | zipcode                 | true
- - contact_name    | N/A     | contact name            | true
- - contact_email   | N/A     | contact email           | true
- - using_broker    | N/A     | Using broker flag       | false
- - broker_code     | N/A     | Broker code             | true if using_broker, false otherwise
- - effective_date  | N/A     | Effective date          | true
- - county_id       | N/A     | county id               | true
- - sic_code        | N/A     | sic code                | true
+name               | N/A     | name                    | true
+zip_code_input     | N/A     | zipcode                 | true
+contact_name       | N/A     | contact name            | true
+contact_email      | N/A     | contact email           | true
+using_broker       | N/A     | Using broker flag        | false
+broker_code        | N/A     | Broker code             | true if using_broker, false otherwise
+effective_date     | N/A     | Effective date          | true
+county_id          | N/A     | county id               | true
+sic_code           | N/A     | sic code                | true
 
 
 ## Update
@@ -431,7 +445,7 @@ curl -X PUT "/api/companies/zcZUuDSkDb7TRzTbPWmj6HSa" \
 ```powershell
 ```
 
-> Response looks like this:
+> Successful response looks like this:
 
 ```json
 {
@@ -496,15 +510,15 @@ Use this endpoint to update an existing company.
 Parameter          | Default | Description             | Required?
 ------------------ | ------- | ----------------------- | ----------
 company            | N/A     | Company object          | true
- - name            | N/A     | name                    | true
- - zip_code_input  | N/A     | zipcode                 | true
- - contact_name    | N/A     | contact name            | true
- - contact_email   | N/A     | contact email           | true
- - using_broker    | N/A     | Using broker flag       | false
- - broker_code     | N/A     | Broker code             | true if using_broker, false otherwise
- - effective_date  | N/A     | Effective date          | true
- - county_id       | N/A     | county id               | true
- - sic_code        | N/A     | sic code                | true
+name               | N/A     | name                    | true
+zip_code_input     | N/A     | zipcode                 | true
+contact_name       | N/A     | contact name            | true
+contact_email      | N/A     | contact email           | true
+using_broker       | N/A     | Using broker flag        | false
+broker_code        | N/A     | Broker code             | true if using_broker, false otherwise
+effective_date     | N/A     | Effective date          | true
+county_id          | N/A     | county id               | true
+sic_code           | N/A     | sic code                | true
 
 
 ## Settings
