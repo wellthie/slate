@@ -1,7 +1,7 @@
 ---
 title: Wellthie Business API Documentation
 
-language_tabs:
+language_tabs: # must be one of https://git.io/vQNgJ
   - shell
   - go
   - javascript
@@ -9,7 +9,8 @@ language_tabs:
   - objective_c
 
 toc_footers:
-  - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
+  - <a href='#'>Sign Up for a Developer Key</a>
+  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
   - authentication
