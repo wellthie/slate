@@ -2,11 +2,11 @@
 title: Wellthie Business API Documentation
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - go
-  - javascript
-  - powershell
-  - objective_c
+  - shell: cURL
+  - go: golang
+  - javascript: jQuery
+  - powershell: Powershell
+  - objective_c: Objective-C
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -63,5 +63,9 @@ The Header should set the following values…
 6. Content-Type = application/json
 
 <aside class="success">
-This app uses token based authentication . Each request would respond with a set of headers which has to be set to make further calls.
+This app uses token based authentication. Each request would respond with above values as part of headers which has to be set to make further calls.
+</aside>
+
+<aside class="notice">
+Note: The <code>access-token</code> is valid for an hour, although it is advisible to update the new access-token for each request.
 </aside>
