@@ -1,48 +1,131 @@
 # Organizations
 
-## Broker Branding
-
-```shell
-curl -X GET "/api/organization/broker_brandings?company_slug=j1Lp7yarNg4F3nGuHhwH7Gr3" \
-     -H "Content-Type: application/json"
-```
-
-> Response looks like this:
-
-```json
-{
-  "contact_name": "Wellthie",
-  "contact_email": "support@wellthie.com",
-  "contact_phone": "888-680-0856",
-  "website_url": "www.wellthie.com",
-  "logo": "https://d3uxyywlniz2wb.cloudfront.net/advisor/development/broker_brandings/logos/000/000/030/original/wellthie-logo-300square.png?2016",
-  "logo_small_url": "https://d3uxyywlniz2wb.cloudfront.net/advisor/development/broker_brandings/logos/000/000/030/small/wellthie-logo-300square.png?2016",
-  "logo_cover_page_url": "https://d3uxyywlniz2wb.cloudfront.net/advisor/development/broker_brandings/logos/000/000/030/cover_page/wellthie-logo-300square.png?2016"
-}
-```
-
-Use this endpoint to get the broker branding information.
-
-<aside class="notice">
-  This endpoint does not require any session or authorization token.
-</aside>
-
-### HTTP Request
-
-`GET /api/organization/broker_brandings?company_slug=:slug`
-
-### Parameters
-
-Parameter    | Default | Description           | Required?
------------- | ------- | --------------------- | ----------
-company_slug | N/A     | Company's slug        | true
-
-
 ## Settings
 
 ```shell
-curl -X POST "/api/organization/settings" \
-     -H "Content-Type: application/json"
+curl --location --request GET 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/organization/settings' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: auth_headers=%7B%22access-token%22%3A%22ctgocjRjlvrDCak4ls1Dqg%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22JfGfbdYP5qjFoFul5tD8UQ%22%2C%22expiry%22%3A%221583828589%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D' \
+--header 'access-token: ctgocjRjlvrDCak4ls1Dqg' \
+--header 'client: JfGfbdYP5qjFoFul5tD8UQ' \
+--header 'expiry: 1583828589' \
+--header 'uid: apidoc+broker@wellthie.com' \
+--data-raw ''
+```
+
+```go
+package main
+
+import (
+  "fmt"
+  "strings"
+  "net/http"
+  "io/ioutil"
+)
+
+func main() {
+
+  url := "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/organization/settings"
+  method := "GET"
+
+  payload := strings.NewReader("")
+
+  client := &http.Client {
+  }
+  req, err := http.NewRequest(method, url, payload)
+
+  if err != nil {
+    fmt.Println(err)
+  }
+  req.Header.Add("Content-Type", "application/json")
+  req.Header.Add("Cookie", "auth_headers=%7B%22access-token%22%3A%22ctgocjRjlvrDCak4ls1Dqg%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22JfGfbdYP5qjFoFul5tD8UQ%22%2C%22expiry%22%3A%221583828589%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D")
+  req.Header.Add("access-token", "ctgocjRjlvrDCak4ls1Dqg")
+  req.Header.Add("client", "JfGfbdYP5qjFoFul5tD8UQ")
+  req.Header.Add("expiry", "1583828589")
+  req.Header.Add("uid", "apidoc+broker@wellthie.com")
+
+  res, err := client.Do(req)
+  defer res.Body.Close()
+  body, err := ioutil.ReadAll(res.Body)
+
+  fmt.Println(string(body))
+}
+```
+
+```javascript
+var settings = {
+  "url": "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/organization/settings",
+  "method": "GET",
+  "timeout": 0,
+  "headers": {
+    "Content-Type": "application/json",
+    "Cookie": "auth_headers=%7B%22access-token%22%3A%22ctgocjRjlvrDCak4ls1Dqg%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22JfGfbdYP5qjFoFul5tD8UQ%22%2C%22expiry%22%3A%221583828589%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D",
+    "access-token": "ctgocjRjlvrDCak4ls1Dqg",
+    "client": "JfGfbdYP5qjFoFul5tD8UQ",
+    "expiry": "1583828589",
+    "uid": "apidoc+broker@wellthie.com"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+
+```objective_c
+#import <Foundation/Foundation.h>
+
+dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/organization/settings"]
+  cachePolicy:NSURLRequestUseProtocolCachePolicy
+  timeoutInterval:10.0];
+NSDictionary *headers = @{
+  @"Content-Type": @"application/json",
+  @"Cookie": @"auth_headers=%7B%22access-token%22%3A%22ctgocjRjlvrDCak4ls1Dqg%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22JfGfbdYP5qjFoFul5tD8UQ%22%2C%22expiry%22%3A%221583828589%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D",
+  @"access-token": @"ctgocjRjlvrDCak4ls1Dqg",
+  @"client": @"JfGfbdYP5qjFoFul5tD8UQ",
+  @"expiry": @"1583828589",
+  @"uid": @"apidoc+broker@wellthie.com"
+};
+
+[request setAllHTTPHeaderFields:headers];
+NSData *postData = [[NSData alloc] initWithData:[@"" dataUsingEncoding:NSUTF8StringEncoding]];
+[request setHTTPBody:postData];
+
+[request setHTTPMethod:@"GET"];
+
+NSURLSession *session = [NSURLSession sharedSession];
+NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+  if (error) {
+    NSLog(@"%@", error);
+  } else {
+    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+    NSError *parseError = nil;
+    NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+    NSLog(@"%@",responseDictionary);
+    dispatch_semaphore_signal(sema);
+  }
+}];
+[dataTask resume];
+dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+```
+
+```powershell
+$headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
+$headers.Add("Content-Type", "application/json")
+$headers.Add("Cookie", "auth_headers=%7B%22access-token%22%3A%22ctgocjRjlvrDCak4ls1Dqg%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22JfGfbdYP5qjFoFul5tD8UQ%22%2C%22expiry%22%3A%221583828589%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D")
+$headers.Add("access-token", "ctgocjRjlvrDCak4ls1Dqg")
+$headers.Add("client", "JfGfbdYP5qjFoFul5tD8UQ")
+$headers.Add("expiry", "1583828589")
+$headers.Add("uid", "apidoc+broker@wellthie.com")
+
+$body = ""
+
+$response = Invoke-RestMethod 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/organization/settings' -Method 'GET' -Headers $headers -Body $body
+$response | ConvertTo-Json
 ```
 
 > Response looks like this:
@@ -133,6 +216,20 @@ No parameters required.
 ```shell
 curl -X POST "/api/organization/content_areas" \
      -H "Content-Type: application/json"
+```
+
+```go
+GO CODE
+```
+
+```javascript
+javascriptCode
+```
+
+```powershell
+```
+
+```objective_c
 ```
 
 > Response looks like this:

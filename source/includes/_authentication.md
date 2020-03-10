@@ -3,9 +3,107 @@
 ## Sign In
 
 ```shell
-curl -X POST "/api/auth/sign_in" \
-     -H "Content-Type: application/json" \
-     -d '{"email": "name.lastname@domain.com", "password": "pswrd"}'
+curl --location --request POST 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/auth/sign_in' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+	"email":"apidoc+broker@wellthie.com",
+	"password":"Password123"
+}'
+```
+
+```go
+package main
+
+import (
+  "fmt"
+  "strings"
+  "net/http"
+  "io/ioutil"
+)
+
+func main() {
+
+  url := "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/auth/sign_in"
+  method := "POST"
+
+  payload := strings.NewReader("{\n	\"email\":\"apidoc+broker@wellthie.com\",\n	\"password\":\"Password123\"\n}")
+
+  client := &http.Client {
+  }
+  req, err := http.NewRequest(method, url, payload)
+
+  if err != nil {
+    fmt.Println(err)
+  }
+  req.Header.Add("Content-Type", "application/json")
+
+  res, err := client.Do(req)
+  defer res.Body.Close()
+  body, err := ioutil.ReadAll(res.Body)
+
+  fmt.Println(string(body))
+}
+```
+
+```javascript
+var settings = {
+  "url": "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/auth/sign_in",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "data": JSON.stringify({"email":"apidoc+broker@wellthie.com","password":"Password123"}),
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+```powershell
+$headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
+$headers.Add("Content-Type", "application/json")
+
+$body = "{`n	`"email`":`"apidoc+broker@wellthie.com`",`n	`"password`":`"Password123`"`n}"
+
+$response = Invoke-RestMethod 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/auth/sign_in' -Method 'POST' -Headers $headers -Body $body
+$response | ConvertTo-Json
+```
+
+```objective_c
+#import <Foundation/Foundation.h>
+
+dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/auth/sign_in"]
+  cachePolicy:NSURLRequestUseProtocolCachePolicy
+  timeoutInterval:10.0];
+NSDictionary *headers = @{
+  @"Content-Type": @"application/json"
+};
+
+[request setAllHTTPHeaderFields:headers];
+NSData *postData = [[NSData alloc] initWithData:[@"{\n	\"email\":\"apidoc+broker@wellthie.com\",\n	\"password\":\"Password123\"\n}" dataUsingEncoding:NSUTF8StringEncoding]];
+[request setHTTPBody:postData];
+
+[request setHTTPMethod:@"POST"];
+
+NSURLSession *session = [NSURLSession sharedSession];
+NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+  if (error) {
+    NSLog(@"%@", error);
+  } else {
+    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+    NSError *parseError = nil;
+    NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+    NSLog(@"%@",responseDictionary);
+    dispatch_semaphore_signal(sema);
+  }
+}];
+[dataTask resume];
+dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
 ```
 
 > Response looks like this:
@@ -56,6 +154,121 @@ password     | N/A     | User's password       | true
 curl -X DELETE "/api/auth/sign_out" \
      -H "Content-Type: application/json" \
      -d '{"uid": "name.lastname@domain.com", "client": "WedFsHGWTiAfdhl4LbFVjg", "access-token": "UyuaNMouSdihadn"}'
+
+curl --location --request DELETE 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/auth/sign_out' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: auth_headers=%7B%22access-token%22%3A%22-GXI3CJKUQlj9hRUHV_F5g%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22JfGfbdYP5qjFoFul5tD8UQ%22%2C%22expiry%22%3A%221583826591%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D' \
+--header 'access-token: -GXI3CJKUQlj9hRUHV_F5g' \
+--header 'client: JfGfbdYP5qjFoFul5tD8UQ' \
+--header 'expiry: 1583826591' \
+--header 'uid: apidoc+broker@wellthie.com'
+```
+
+```go
+package main
+
+import (
+  "fmt"
+  "net/http"
+  "io/ioutil"
+)
+
+func main() {
+
+  url := "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/auth/sign_out"
+  method := "DELETE"
+
+  client := &http.Client {
+  }
+  req, err := http.NewRequest(method, url, nil)
+
+  if err != nil {
+    fmt.Println(err)
+  }
+  req.Header.Add("Content-Type", "application/json")
+  req.Header.Add("Cookie", "auth_headers=%7B%22access-token%22%3A%22-GXI3CJKUQlj9hRUHV_F5g%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22JfGfbdYP5qjFoFul5tD8UQ%22%2C%22expiry%22%3A%221583826591%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D")
+  req.Header.Add("access-token", "-GXI3CJKUQlj9hRUHV_F5g")
+  req.Header.Add("client", "JfGfbdYP5qjFoFul5tD8UQ")
+  req.Header.Add("expiry", "1583826591")
+  req.Header.Add("uid", "apidoc+broker@wellthie.com")
+
+  res, err := client.Do(req)
+  defer res.Body.Close()
+  body, err := ioutil.ReadAll(res.Body)
+
+  fmt.Println(string(body))
+}
+```
+
+```javascript
+var settings = {
+  "url": "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/auth/sign_out",
+  "method": "DELETE",
+  "timeout": 0,
+  "headers": {
+    "Content-Type": "application/json",
+    "Cookie": "auth_headers=%7B%22access-token%22%3A%22-GXI3CJKUQlj9hRUHV_F5g%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22JfGfbdYP5qjFoFul5tD8UQ%22%2C%22expiry%22%3A%221583826591%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D",
+    "access-token": "-GXI3CJKUQlj9hRUHV_F5g",
+    "client": "JfGfbdYP5qjFoFul5tD8UQ",
+    "expiry": "1583826591",
+    "uid": "apidoc+broker@wellthie.com"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+```powershell
+$headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
+$headers.Add("Content-Type", "application/json")
+$headers.Add("Cookie", "auth_headers=%7B%22access-token%22%3A%22-GXI3CJKUQlj9hRUHV_F5g%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22JfGfbdYP5qjFoFul5tD8UQ%22%2C%22expiry%22%3A%221583826591%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D")
+$headers.Add("access-token", "-GXI3CJKUQlj9hRUHV_F5g")
+$headers.Add("client", "JfGfbdYP5qjFoFul5tD8UQ")
+$headers.Add("expiry", "1583826591")
+$headers.Add("uid", "apidoc+broker@wellthie.com")
+
+$response = Invoke-RestMethod 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/auth/sign_out' -Method 'DELETE' -Headers $headers -Body $body
+$response | ConvertTo-Json
+```
+
+```objective_c
+#import <Foundation/Foundation.h>
+
+dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/auth/sign_out"]
+  cachePolicy:NSURLRequestUseProtocolCachePolicy
+  timeoutInterval:10.0];
+NSDictionary *headers = @{
+  @"Content-Type": @"application/json",
+  @"Cookie": @"auth_headers=%7B%22access-token%22%3A%22-GXI3CJKUQlj9hRUHV_F5g%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22JfGfbdYP5qjFoFul5tD8UQ%22%2C%22expiry%22%3A%221583826591%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D",
+  @"access-token": @"-GXI3CJKUQlj9hRUHV_F5g",
+  @"client": @"JfGfbdYP5qjFoFul5tD8UQ",
+  @"expiry": @"1583826591",
+  @"uid": @"apidoc+broker@wellthie.com"
+};
+
+[request setAllHTTPHeaderFields:headers];
+
+[request setHTTPMethod:@"DELETE"];
+
+NSURLSession *session = [NSURLSession sharedSession];
+NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+  if (error) {
+    NSLog(@"%@", error);
+  } else {
+    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+    NSError *parseError = nil;
+    NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+    NSLog(@"%@",responseDictionary);
+    dispatch_semaphore_signal(sema);
+  }
+}];
+[dataTask resume];
+dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
 ```
 
 > Response looks like this:
