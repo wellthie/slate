@@ -16,10 +16,10 @@ includes:
   - authentication
   - organizations
   - companies
-  - proposals
   - inquiries
   - census
   - plans
+  - proposals
   - enrollments
   - errors
 

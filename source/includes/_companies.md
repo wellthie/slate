@@ -1416,7 +1416,7 @@ Use this endpoint to create a new current_plan to a company. This is used for re
 Parameter                          | Default   | Description                | Required?
 -----------------------------------| --------- | -------------------------- | ----------
 current_plan_issuer                | N/A       | Issuer for this plan       | false
-name                               | N/A       | Plan name                  | true
+<strong>name</strong><strong>required</strong>                               | N/A       | Plan name                  | true
 company_id                         | N/A       | Company's id               | false
 metal_level_name                   | N/A       | Metal level for plan       | false
 medical_deductible_single          | N/A       | Medical deductible single  | false
