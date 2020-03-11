@@ -442,6 +442,17 @@ html, body {
     // tr:nth-child(even)>td {
     //   background-color: lighten($main-bg,2.4%);
     // }
+    th strong+strong, td strong+strong {
+      font-family: gilroy-medium,-apple-system,BlinkMacSystemFont,segoe ui,Roboto,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol
+    }
+    td strong+strong {
+      line-height:16px;
+      display:block;
+      text-align:left;
+      font-style:normal;
+      color:#6f42c1;
+      font-size:11px
+    }
   }
 
   dt {
