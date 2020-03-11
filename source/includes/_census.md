@@ -927,4 +927,3 @@ Check on the right to see an example of the census object.
   }
 }
 ```
-

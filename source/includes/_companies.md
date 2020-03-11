@@ -1412,30 +1412,29 @@ Use this endpoint to create a new current_plan to a company. This is used for re
 
 ### Parameters
 
-
-Parameter                          | Default   | Description                | Required?
------------------------------------| --------- | -------------------------- | ----------
-current_plan_issuer                | N/A       | Issuer for this plan       | false
-<strong>name</strong><strong>required</strong>                               | N/A       | Plan name                  | true
-company_id                         | N/A       | Company's id               | false
-metal_level_name                   | N/A       | Metal level for plan       | false
-medical_deductible_single          | N/A       | Medical deductible single  | false
-medical_deductible_family          | N/A       | Medical deductible family  | false
-maximum_out_of_pocket_limit_single | N/A       | Max out of pocket single   | false
-maximum_out_of_pocket_limit_family | N/A       | Max out of pocket family   | false
-pcp                                | N/A       | PCP                        | false
-specialist                         | N/A       | Specialist                 | false
-network_type                       | N/A       | Network Type               | false
-preventive_care                    | N/A       | Preventive Care            | false
-inpatient_facility                 | N/A       | Inpatient Facility         | false
-emergency_room                     | N/A       | Emergency Room             | false
-ambulance                          | N/A       | Ambulance                  | false
-urgent_care                        | N/A       | Urgent Care                | false
-generic                            | N/A       | Generic                    | false
-highlight_1                        | N/A       | Highlight 1                | false
-highlight_2                        | N/A       | Highlight 2                | false
-highlight_3                        | N/A       | Highlight 3                | false
-formulary_brand                    | N/A       | Formulary Brand            | false
-non_formulary_brand                | N/A       | Non-Formulary Brand        | false
-mail_order                         | N/A       | Mail Order                 | false
-employer_monthly_cost              | N/A       | Employer Monthly Cost      | false
+Parameter                                         | Default   | Description                | Required?
+------------------------------------------------- | --------- | -------------------------- | ----------
+current_plan_issuer                               | N/A       | Issuer for this plan       | false
+<strong>name</strong><strong>required</strong>    | N/A       | Plan name                  | true
+company_id                                        | N/A       | Company's id               | false
+metal_level_name                                  | N/A       | Metal level for plan       | false
+medical_deductible_single                         | N/A       | Medical deductible single  | false
+medical_deductible_family                         | N/A       | Medical deductible family  | false
+maximum_out_of_pocket_limit_single                | N/A       | Max out of pocket single   | false
+maximum_out_of_pocket_limit_family                | N/A       | Max out of pocket family   | false
+pcp                                               | N/A       | PCP                        | false
+specialist                                        | N/A       | Specialist                 | false
+network_type                                      | N/A       | Network Type               | false
+preventive_care                                   | N/A       | Preventive Care            | false
+inpatient_facility                                | N/A       | Inpatient Facility         | false
+emergency_room                                    | N/A       | Emergency Room             | false
+ambulance                                         | N/A       | Ambulance                  | false
+urgent_care                                       | N/A       | Urgent Care                | false
+generic                                           | N/A       | Generic                    | false
+highlight_1                                       | N/A       | Highlight 1                | false
+highlight_2                                       | N/A       | Highlight 2                | false
+highlight_3                                       | N/A       | Highlight 3                | false
+formulary_brand                                   | N/A       | Formulary Brand            | false
+non_formulary_brand                               | N/A       | Non-Formulary Brand        | false
+mail_order                                        | N/A       | Mail Order                 | false
+employer_monthly_cost                             | N/A       | Employer Monthly Cost      | false
