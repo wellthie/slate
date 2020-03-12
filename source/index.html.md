@@ -9,7 +9,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - objective_c: Objective-C
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
+  - © Copyright 2020 Wellthie Inc.
   - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
