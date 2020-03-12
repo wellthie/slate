@@ -1,0 +1,2493 @@
+{
+	"info": {
+		"_postman_id": "a7de577e-62f5-4e03-be30-d832509c79c5",
+		"name": "WellthieBIZ {{URL}}",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create BROKER User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c855ed95-ec0e-4d3a-8f22-2255b46524ec",
+								"exec": [
+									"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
+									"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
+									"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
+									"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
+									"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
+									"",
+									"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
+									"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"apidoc+broker@wellthie.com\",\n  \"first_name\": \"firstName\",\n  \"last_name\": \"lastName\",\n  \"npn\": \"123456\",\n  \"password\": \"Password123\",\n  \"password_confirmation\": \"Password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/auth",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "23e55c10-e6bd-4f83-87f1-7c08699068c4",
+								"exec": [
+									"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
+									"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
+									"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
+									"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
+									"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
+									"",
+									"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
+									"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"apidoc+broker@wellthie.com\",\n  \"first_name\": \"firstName\",\n  \"last_name\": \"lastName\",\n  \"npn\": \"123456\",\n  \"password\": \"Password123\",\n  \"password_confirmation\": \"Password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/auth",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create EMPLOYER User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2cc61679-4a85-4fea-abb8-4831dcc038de",
+								"exec": [
+									"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
+									"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
+									"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
+									"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
+									"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
+									"",
+									"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
+									"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"apidoc+employer@wellthie.com\",\n  \"first_name\": \"Kannan\",\n  \"last_name\": \"Ramakrishnan\",\n  \"password\": \"Password123\",\n  \"password_confirmation\": \"Password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/auth",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignIn",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "c69a96db-2e3b-4041-ac23-7c2414ef32a1",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "b21e0824-1dc0-43a8-b2c7-27779b72ce94",
+								"exec": [
+									"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
+									"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
+									"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
+									"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
+									"",
+									"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
+									"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"apidoc+broker@wellthie.com\",\n\t\"password\":\"Password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/auth/sign_in",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth",
+								"sign_in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ValidateToken",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/auth/validate_token",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth",
+								"validate_token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignOut",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/auth/sign_out",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth",
+								"sign_out"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Shopping",
+			"item": [
+				{
+					"name": "Companies",
+					"item": [
+						{
+							"name": "Create Company",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "93119bff-b8c8-4b9f-b64c-ba7a2eb1b765",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
+										"exec": [
+											"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
+											"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
+											"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
+											"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
+											"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
+											"",
+											"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
+											"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Cookie",
+										"value": "auth_headers={{authHeader}}",
+										"type": "text"
+									},
+									{
+										"key": "access-token",
+										"value": "{{access-token}}",
+										"type": "text"
+									},
+									{
+										"key": "client",
+										"value": "{{client}}",
+										"type": "text"
+									},
+									{
+										"key": "expiry",
+										"value": "{{expiry}}",
+										"type": "text"
+									},
+									{
+										"key": "uid",
+										"value": "{{uid}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"company\": {\n    \"name\": \"APIDocTest4\",\n    \"zip_code_input\": \"10001\",\n    \"contact_name\": \"Test\",\n    \"contact_email\": \"test@test.com\",\n    \"using_broker\": false,\n    \"broker_code\": null,\n    \"county_id\": 36061,\n    \"sic_code\": \"9999\"\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/companies/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"companies",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Current Plan",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "93119bff-b8c8-4b9f-b64c-ba7a2eb1b765",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
+										"exec": [
+											"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
+											"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
+											"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
+											"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
+											"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
+											"",
+											"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
+											"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{accessToken}}",
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"disabled": true
+									},
+									{
+										"key": "Cookie",
+										"type": "text",
+										"value": "auth_headers={{authHeader}}"
+									},
+									{
+										"key": "access-token",
+										"type": "text",
+										"value": "{{access-token}}"
+									},
+									{
+										"key": "client",
+										"type": "text",
+										"value": "{{client}}"
+									},
+									{
+										"key": "expiry",
+										"type": "text",
+										"value": "{{expiry}}"
+									},
+									{
+										"key": "uid",
+										"type": "text",
+										"value": "{{uid}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"current_plan\": {\n    \"product_type\": \"medical\",\n    \"name\": \"Current Plan Name\",\n    \"current_plan_issuer\": \"Current Plan Issuer\",\n    \"metal_level_name\": \"Bronze\",\n    \"employer_monthly_cost\": 1000,\n    \"carrier_plan_identifier\": \"123\",\n    \"medical_deductible_single\": \"Deductible Single\",\n    \"medical_deductible_family\": \"Deductible Single\",\n    \"maximum_out_of_pocket_limit_single\": \"Deductible Single\",\n    \"specialist\": \"Specialist\",\n    \"pcp\": \"Primary Care Physician\",\n    \"maximum_out_of_pocket_limit_family\": \"Max-Out-of-Pocket Family\",\n    \"network_type\": \"Network\",\n    \"preventive_care\": \"Preventive Care\",\n    \"inpatient_facility\": \"Hospital (Inpatient)\",\n    \"emergency_room\": \"Emergency Room\",\n    \"ambulance\": \"Ambulance\",\n    \"urgent_care\": \"Urgent Care\",\n    \"generic\": \"Generic Prescription\",\n    \"formulary_brand\": \"Formulary Prescription\",\n    \"non_formulary_brand\": \"Non Formulary Brand Prescription\",\n    \"mail_order\": \"Mail Order (90 day supply)\"\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/inquiries/AGKB7928/current_plan",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"inquiries",
+										"AGKB7928",
+										"current_plan"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Company",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "93119bff-b8c8-4b9f-b64c-ba7a2eb1b765",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
+										"exec": [
+											"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
+											"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
+											"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
+											"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
+											"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
+											"",
+											"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
+											"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{accessToken}}",
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"disabled": true
+									},
+									{
+										"key": "Cookie",
+										"type": "text",
+										"value": "auth_headers={{authHeader}}"
+									},
+									{
+										"key": "access-token",
+										"type": "text",
+										"value": "{{access-token}}"
+									},
+									{
+										"key": "client",
+										"type": "text",
+										"value": "{{client}}"
+									},
+									{
+										"key": "expiry",
+										"type": "text",
+										"value": "{{expiry}}"
+									},
+									{
+										"key": "uid",
+										"type": "text",
+										"value": "{{uid}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"company\": {\n    \"name\": \"APIDoc Test4\",\n    \"zip_code_input\": \"10001\",\n    \"contact_name\": \"Test\",\n    \"contact_email\": \"test@test.com\",\n    \"using_broker\": false,\n    \"broker_code\": null,\n    \"county_id\": 36061,\n    \"sic_code\": \"9999\"\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/companies/shy8pmfek8ZpGKJYneD2g5TJ",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"companies",
+										"shy8pmfek8ZpGKJYneD2g5TJ"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Company",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "93119bff-b8c8-4b9f-b64c-ba7a2eb1b765",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
+										"exec": [
+											"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
+											"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
+											"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
+											"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
+											"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
+											"",
+											"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
+											"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{accessToken}}",
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"disabled": true
+									},
+									{
+										"key": "Cookie",
+										"type": "text",
+										"value": "auth_headers={{authHeader}}"
+									},
+									{
+										"key": "access-token",
+										"type": "text",
+										"value": "{{access-token}}"
+									},
+									{
+										"key": "client",
+										"type": "text",
+										"value": "{{client}}"
+									},
+									{
+										"key": "expiry",
+										"type": "text",
+										"value": "{{expiry}}"
+									},
+									{
+										"key": "uid",
+										"type": "text",
+										"value": "{{uid}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/companies/6uqej6JT9uumY4g41CdLX7Du",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"companies",
+										"6uqej6JT9uumY4g41CdLX7Du"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Company SETTINGs",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "93119bff-b8c8-4b9f-b64c-ba7a2eb1b765",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
+										"exec": [
+											"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
+											"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
+											"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
+											"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
+											"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
+											"",
+											"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
+											"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{accessToken}}",
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"disabled": true
+									},
+									{
+										"key": "Cookie",
+										"type": "text",
+										"value": "auth_headers={{authHeader}}"
+									},
+									{
+										"key": "access-token",
+										"type": "text",
+										"value": "{{access-token}}"
+									},
+									{
+										"key": "client",
+										"type": "text",
+										"value": "{{client}}"
+									},
+									{
+										"key": "expiry",
+										"type": "text",
+										"value": "{{expiry}}"
+									},
+									{
+										"key": "uid",
+										"type": "text",
+										"value": "{{uid}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"company\": {\n    \"name\": \"APIDoc-Test4\",\n    \"zip_code_input\": \"10001\",\n    \"contact_name\": \"Test\",\n    \"contact_email\": \"test@test.com\",\n    \"using_broker\": false,\n    \"broker_code\": null,\n    \"county_id\": 36061,\n    \"sic_code\": \"9999\"\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/companies/shy8pmfek8ZpGKJYneD2g5TJ/settings",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"companies",
+										"shy8pmfek8ZpGKJYneD2g5TJ",
+										"settings"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "<NA> GET Company Inquiries",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "93119bff-b8c8-4b9f-b64c-ba7a2eb1b765",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
+										"exec": [
+											"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
+											"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
+											"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
+											"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
+											"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
+											"",
+											"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
+											"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{accessToken}}",
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"disabled": true
+									},
+									{
+										"key": "Cookie",
+										"type": "text",
+										"value": "auth_headers={{authHeader}}"
+									},
+									{
+										"key": "access-token",
+										"type": "text",
+										"value": "{{access-token}}"
+									},
+									{
+										"key": "client",
+										"type": "text",
+										"value": "{{client}}"
+									},
+									{
+										"key": "expiry",
+										"type": "text",
+										"value": "{{expiry}}"
+									},
+									{
+										"key": "uid",
+										"type": "text",
+										"value": "{{uid}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"company\": {\n    \"name\": \"APIDoc-Test4\",\n    \"zip_code_input\": \"10001\",\n    \"contact_name\": \"Test\",\n    \"contact_email\": \"test@test.com\",\n    \"using_broker\": false,\n    \"broker_code\": null,\n    \"county_id\": 36061,\n    \"sic_code\": \"9999\"\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/companies/shy8pmfek8ZpGKJYneD2g5TJ/inquiries",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"companies",
+										"shy8pmfek8ZpGKJYneD2g5TJ",
+										"inquiries"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Inquiries",
+					"item": [
+						{
+							"name": "Census",
+							"item": [
+								{
+									"name": "Create Inquiry Census",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "93119bff-b8c8-4b9f-b64c-ba7a2eb1b765",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
+												"exec": [
+													"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
+													"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
+													"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
+													"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
+													"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
+													"",
+													"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
+													"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{accessToken}}",
+												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+												"disabled": true
+											},
+											{
+												"key": "Cookie",
+												"type": "text",
+												"value": "auth_headers={{authHeader}}"
+											},
+											{
+												"key": "access-token",
+												"type": "text",
+												"value": "{{access-token}}"
+											},
+											{
+												"key": "client",
+												"type": "text",
+												"value": "{{client}}"
+											},
+											{
+												"key": "expiry",
+												"type": "text",
+												"value": "{{expiry}}"
+											},
+											{
+												"key": "uid",
+												"type": "text",
+												"value": "{{uid}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"census\": {\n    \"inquiry_id\": 130133,\n    \"save_failed_due_to_errors\": null,\n    \"covered_employees_count\": 4,\n    \"covered_spouses_count\": 0,\n    \"covered_children_count\": 0,\n    \"census_uploaded\": null,\n    \"upload_errors\": [],\n    \"covered_singles_count\": 4,\n    \"covered_single_and_spouses_count\": 0,\n    \"covered_single_and_children_count\": 0,\n    \"covered_families_count\": 0,\n    \"households\": [\n      {\n        \"id\": 422979,\n        \"coverage_type\": \"employee_only\",\n        \"row_number\": 0,\n        \"tier\": \"single\",\n        \"opted_dental\": true,\n        \"opted_vision\": true,\n        \"opted_limited_medical\": false,\n        \"medical_plan_id\": null,\n        \"sorted_matching_plan_service_area_ids\": [\n          4334,\n          4982,\n          4984,\n          4985,\n          5066,\n          5067\n        ],\n        \"zip_code\": \"10001\",\n        \"county_id\": 36061,\n        \"attributes_with_error_messages_in_order\": [],\n        \"census_household_members_attributes\": [\n          {\n            \"id\": 523199,\n            \"age\": null,\n            \"gender\": \"M\",\n            \"annual_salary\": null,\n            \"date_of_birth\": \"10/10/1980\",\n            \"full_or_part_time\": \"FT\",\n            \"hourly_rate\": null,\n            \"hours_per_week\": null,\n            \"name_or_initial\": \"John Doe\",\n            \"relationship\": \"primary\",\n            \"smoker\": false,\n            \"phone\": null,\n            \"email\": null,\n            \"household_tier\": \"single\",\n            \"display_coverage_type\": \"Employee Only\",\n            \"display_member_name\": \"Employee 1\",\n            \"name_or_initial_focus\": false,\n            \"date_of_birth_focus\": false,\n            \"gender_focus\": false,\n            \"full_or_part_time_focus\": false\n          }\n        ]\n      },\n      {\n        \"id\": 422980,\n        \"coverage_type\": \"family\",\n        \"row_number\": 1,\n        \"tier\": \"single\",\n        \"opted_dental\": true,\n        \"opted_vision\": true,\n        \"opted_limited_medical\": false,\n        \"medical_plan_id\": null,\n        \"sorted_matching_plan_service_area_ids\": [\n          4334,\n          4982,\n          4984,\n          4985,\n          5066,\n          5067\n        ],\n        \"zip_code\": \"10001\",\n        \"county_id\": 36061,\n        \"attributes_with_error_messages_in_order\": [],\n        \"census_household_members_attributes\": [\n          {\n            \"id\": 523200,\n            \"age\": null,\n            \"gender\": \"F\",\n            \"annual_salary\": null,\n            \"date_of_birth\": \"10/21/1985\",\n            \"full_or_part_time\": \"FT\",\n            \"hourly_rate\": null,\n            \"hours_per_week\": null,\n            \"name_or_initial\": \"Joe Root\",\n            \"relationship\": \"primary\",\n            \"smoker\": false,\n            \"phone\": null,\n            \"email\": null,\n            \"household_tier\": \"single\",\n            \"display_coverage_type\": \"Employee Only\",\n            \"display_member_name\": \"Employee 2\",\n            \"name_or_initial_focus\": false,\n            \"date_of_birth_focus\": false,\n            \"gender_focus\": false\n          },\n          {\n            \"relationship\": \"spouse\",\n            \"name_or_initial\": \"Tina\",\n            \"date_of_birth\": \"12/15/1990\",\n            \"gender\": \"F\",\n            \"age\": null,\n            \"full_or_part_time\": null,\n            \"hours_per_week\": null,\n            \"hourly_rate\": null,\n            \"annual_salary\": null,\n            \"smoker\": null,\n            \"relationship_focus\": false,\n            \"name_or_initial_focus\": false,\n            \"date_of_birth_focus\": false\n          }\n        ],\n        \"coverage_type_focus\": false\n      },\n      {\n        \"id\": 422981,\n        \"coverage_type\": \"family\",\n        \"row_number\": 2,\n        \"tier\": \"single\",\n        \"opted_dental\": true,\n        \"opted_vision\": true,\n        \"opted_limited_medical\": false,\n        \"medical_plan_id\": null,\n        \"sorted_matching_plan_service_area_ids\": [\n          4334,\n          4982,\n          4984,\n          4985,\n          5066,\n          5067\n        ],\n        \"zip_code\": \"10001\",\n        \"county_id\": 36061,\n        \"attributes_with_error_messages_in_order\": [],\n        \"census_household_members_attributes\": [\n          {\n            \"id\": 523201,\n            \"age\": null,\n            \"gender\": \"M\",\n            \"annual_salary\": null,\n            \"date_of_birth\": \"01/01/1990\",\n            \"full_or_part_time\": \"FT\",\n            \"hourly_rate\": null,\n            \"hours_per_week\": null,\n            \"name_or_initial\": \"James Smith\",\n            \"relationship\": \"primary\",\n            \"smoker\": false,\n            \"phone\": null,\n            \"email\": null,\n            \"household_tier\": \"single\",\n            \"display_coverage_type\": \"Employee Only\",\n            \"display_member_name\": \"Employee 3\",\n            \"name_or_initial_focus\": false,\n            \"gender_focus\": false,\n            \"date_of_birth_focus\": false\n          },\n          {\n            \"relationship\": \"spouse\",\n            \"name_or_initial\": \"Maria Garcia\",\n            \"date_of_birth\": \"12/30/1991\",\n            \"gender\": \"F\",\n            \"age\": null,\n            \"full_or_part_time\": null,\n            \"hours_per_week\": null,\n            \"hourly_rate\": null,\n            \"annual_salary\": null,\n            \"smoker\": null,\n            \"relationship_focus\": false,\n            \"name_or_initial_focus\": false,\n            \"date_of_birth_focus\": false,\n            \"gender_focus\": false\n          },\n          {\n            \"relationship\": \"child\",\n            \"name_or_initial\": \"Robert Smith\",\n            \"date_of_birth\": \"10/17/2013\",\n            \"gender\": \"M\",\n            \"age\": null,\n            \"full_or_part_time\": null,\n            \"hours_per_week\": null,\n            \"hourly_rate\": null,\n            \"annual_salary\": null,\n            \"smoker\": null,\n            \"relationship_focus\": false,\n            \"name_or_initial_focus\": false,\n            \"gender_focus\": false,\n            \"date_of_birth_focus\": false\n          }\n        ],\n        \"coverage_type_focus\": false\n      },\n      {\n        \"id\": 422982,\n        \"coverage_type\": \"family\",\n        \"row_number\": 3,\n        \"tier\": \"single\",\n        \"opted_dental\": true,\n        \"opted_vision\": true,\n        \"opted_limited_medical\": false,\n        \"medical_plan_id\": null,\n        \"sorted_matching_plan_service_area_ids\": [\n          4334,\n          4982,\n          4984,\n          4985,\n          5066,\n          5067\n        ],\n        \"zip_code\": \"10001\",\n        \"county_id\": 36061,\n        \"attributes_with_error_messages_in_order\": [],\n        \"census_household_members_attributes\": [\n          {\n            \"id\": 523202,\n            \"age\": null,\n            \"gender\": \"F\",\n            \"annual_salary\": null,\n            \"date_of_birth\": \"12/11/1980\",\n            \"full_or_part_time\": \"FT\",\n            \"hourly_rate\": null,\n            \"hours_per_week\": null,\n            \"name_or_initial\": \"Maria Rodriguez\",\n            \"relationship\": \"primary\",\n            \"smoker\": false,\n            \"phone\": null,\n            \"email\": null,\n            \"household_tier\": \"single\",\n            \"display_coverage_type\": \"Employee Only\",\n            \"display_member_name\": \"Employee 4\",\n            \"name_or_initial_focus\": false,\n            \"date_of_birth_focus\": false\n          },\n          {\n            \"relationship\": \"child\",\n            \"name_or_initial\": \"David Rodriguez\",\n            \"date_of_birth\": \"07/27/2006\",\n            \"gender\": \"M\",\n            \"age\": null,\n            \"full_or_part_time\": null,\n            \"hours_per_week\": null,\n            \"hourly_rate\": null,\n            \"annual_salary\": null,\n            \"smoker\": null,\n            \"relationship_focus\": false,\n            \"name_or_initial_focus\": false,\n            \"gender_focus\": false,\n            \"date_of_birth_focus\": false\n          }\n        ],\n        \"coverage_type_focus\": false\n      }\n    ]\n  }\n}\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{URL}}/inquiries/JXID6718/census",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"inquiries",
+												"JXID6718",
+												"census"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Inquiry Census",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "93119bff-b8c8-4b9f-b64c-ba7a2eb1b765",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
+												"exec": [
+													"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
+													"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
+													"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
+													"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
+													"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
+													"",
+													"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
+													"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{accessToken}}",
+												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+												"disabled": true
+											},
+											{
+												"key": "Cookie",
+												"type": "text",
+												"value": "auth_headers={{authHeader}}"
+											},
+											{
+												"key": "access-token",
+												"type": "text",
+												"value": "{{access-token}}"
+											},
+											{
+												"key": "client",
+												"type": "text",
+												"value": "{{client}}"
+											},
+											{
+												"key": "expiry",
+												"type": "text",
+												"value": "{{expiry}}"
+											},
+											{
+												"key": "uid",
+												"type": "text",
+												"value": "{{uid}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{URL}}/inquiries/JXID6718/census",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"inquiries",
+												"JXID6718",
+												"census"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Plans",
+							"item": [
+								{
+									"name": "Group Plans for Inquiry",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "93119bff-b8c8-4b9f-b64c-ba7a2eb1b765",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
+												"exec": [
+													"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
+													"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
+													"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
+													"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
+													"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
+													"",
+													"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
+													"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{accessToken}}",
+												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+												"disabled": true
+											},
+											{
+												"key": "Cookie",
+												"type": "text",
+												"value": "auth_headers={{authHeader}}"
+											},
+											{
+												"key": "access-token",
+												"type": "text",
+												"value": "{{access-token}}"
+											},
+											{
+												"key": "client",
+												"type": "text",
+												"value": "{{client}}"
+											},
+											{
+												"key": "expiry",
+												"type": "text",
+												"value": "{{expiry}}"
+											},
+											{
+												"key": "uid",
+												"type": "text",
+												"value": "{{uid}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{URL}}/inquiries/JXID6718/plans/group_plans",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"inquiries",
+												"JXID6718",
+												"plans",
+												"group_plans"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Group Plans Pricing for Inquiry",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "93119bff-b8c8-4b9f-b64c-ba7a2eb1b765",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
+												"exec": [
+													"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
+													"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
+													"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
+													"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
+													"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
+													"",
+													"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
+													"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{accessToken}}",
+												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+												"disabled": true
+											},
+											{
+												"key": "Cookie",
+												"type": "text",
+												"value": "auth_headers={{authHeader}}"
+											},
+											{
+												"key": "access-token",
+												"type": "text",
+												"value": "{{access-token}}"
+											},
+											{
+												"key": "client",
+												"type": "text",
+												"value": "{{client}}"
+											},
+											{
+												"key": "expiry",
+												"type": "text",
+												"value": "{{expiry}}"
+											},
+											{
+												"key": "uid",
+												"type": "text",
+												"value": "{{uid}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{URL}}/inquiries/JXID6718/plans/group_plans_pricing",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"inquiries",
+												"JXID6718",
+												"plans",
+												"group_plans_pricing"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Plan Selections of an Inquiry",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "93119bff-b8c8-4b9f-b64c-ba7a2eb1b765",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
+												"exec": [
+													"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
+													"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
+													"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
+													"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
+													"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
+													"",
+													"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
+													"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{accessToken}}",
+												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+												"disabled": true
+											},
+											{
+												"key": "Cookie",
+												"type": "text",
+												"value": "auth_headers={{authHeader}}"
+											},
+											{
+												"key": "access-token",
+												"type": "text",
+												"value": "{{access-token}}"
+											},
+											{
+												"key": "client",
+												"type": "text",
+												"value": "{{client}}"
+											},
+											{
+												"key": "expiry",
+												"type": "text",
+												"value": "{{expiry}}"
+											},
+											{
+												"key": "uid",
+												"type": "text",
+												"value": "{{uid}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{URL}}/inquiries/JXID6718/plan_selections",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"inquiries",
+												"JXID6718",
+												"plan_selections"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Select a Plan for Inquiry",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "93119bff-b8c8-4b9f-b64c-ba7a2eb1b765",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
+												"exec": [
+													"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
+													"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
+													"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
+													"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
+													"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
+													"",
+													"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
+													"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{accessToken}}",
+												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+												"disabled": true
+											},
+											{
+												"key": "Cookie",
+												"type": "text",
+												"value": "auth_headers={{authHeader}}"
+											},
+											{
+												"key": "access-token",
+												"type": "text",
+												"value": "{{access-token}}"
+											},
+											{
+												"key": "client",
+												"type": "text",
+												"value": "{{client}}"
+											},
+											{
+												"key": "expiry",
+												"type": "text",
+												"value": "{{expiry}}"
+											},
+											{
+												"key": "uid",
+												"type": "text",
+												"value": "{{uid}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"order\": 1,\n    \"plan_id\": 78720,\n    \"plan_type\": \"medical\",\n    \"selected_for_quote\": true\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{URL}}/inquiries/JXID6718/plans/select",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"inquiries",
+												"JXID6718",
+												"plans",
+												"select"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Inquiry UN-Select a Plan",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "93119bff-b8c8-4b9f-b64c-ba7a2eb1b765",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
+												"exec": [
+													"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
+													"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
+													"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
+													"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
+													"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
+													"",
+													"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
+													"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{accessToken}}",
+												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+												"disabled": true
+											},
+											{
+												"key": "Cookie",
+												"type": "text",
+												"value": "auth_headers={{authHeader}}"
+											},
+											{
+												"key": "access-token",
+												"type": "text",
+												"value": "{{access-token}}"
+											},
+											{
+												"key": "client",
+												"type": "text",
+												"value": "{{client}}"
+											},
+											{
+												"key": "expiry",
+												"type": "text",
+												"value": "{{expiry}}"
+											},
+											{
+												"key": "uid",
+												"type": "text",
+												"value": "{{uid}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"order\": 1,\n    \"plan_id\": 78720,\n    \"plan_type\": \"medical\",\n    \"selected_for_quote\": true\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{URL}}/inquiries/JXID6718/plans/unselect?plan_id=78720&plan_type=medical",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"inquiries",
+												"JXID6718",
+												"plans",
+												"unselect"
+											],
+											"query": [
+												{
+													"key": "plan_id",
+													"value": "78720"
+												},
+												{
+													"key": "plan_type",
+													"value": "medical"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "GET Sic Codes",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "93119bff-b8c8-4b9f-b64c-ba7a2eb1b765",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
+										"exec": [
+											"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
+											"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
+											"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
+											"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
+											"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
+											"",
+											"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
+											"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{accessToken}}",
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"disabled": true
+									},
+									{
+										"key": "Cookie",
+										"type": "text",
+										"value": "auth_headers={{authHeader}}"
+									},
+									{
+										"key": "access-token",
+										"type": "text",
+										"value": "{{access-token}}"
+									},
+									{
+										"key": "client",
+										"type": "text",
+										"value": "{{client}}"
+									},
+									{
+										"key": "expiry",
+										"type": "text",
+										"value": "{{expiry}}"
+									},
+									{
+										"key": "uid",
+										"type": "text",
+										"value": "{{uid}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"company\": {\n    \"name\": \"APIDoc-Test4\",\n    \"zip_code_input\": \"10001\",\n    \"contact_name\": \"Test\",\n    \"contact_email\": \"test@test.com\",\n    \"using_broker\": false,\n    \"broker_code\": null,\n    \"county_id\": 36061,\n    \"sic_code\": \"9999\"\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/sic_codes",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"sic_codes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Inquiry",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "93119bff-b8c8-4b9f-b64c-ba7a2eb1b765",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
+										"exec": [
+											"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
+											"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
+											"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
+											"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
+											"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
+											"",
+											"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
+											"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{accessToken}}",
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"disabled": true
+									},
+									{
+										"key": "Cookie",
+										"type": "text",
+										"value": "auth_headers={{authHeader}}"
+									},
+									{
+										"key": "access-token",
+										"type": "text",
+										"value": "{{access-token}}"
+									},
+									{
+										"key": "client",
+										"type": "text",
+										"value": "{{client}}"
+									},
+									{
+										"key": "expiry",
+										"type": "text",
+										"value": "{{expiry}}"
+									},
+									{
+										"key": "uid",
+										"type": "text",
+										"value": "{{uid}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"inquiry\": {\n    \"effective_date\": \"2020-04-01\",\n    \"quoting_dental\": true,\n    \"quoting_vision\": true,\n    \"quoting_value_add\": true,\n    \"is_renewal\": false,\n    \"quoting_composite_rates\": false,\n    \"dental_contribution_strategy\": \"voluntary\",\n    \"vision_contribution_strategy\": \"voluntary\",\n    \"dental_vision_bundle_contribution_strategy\": \"voluntary\",\n    \"limited_medical_contribution_strategy\": \"voluntary\",\n    \"title\": \"NEW Quote - 2020-03-06\",\n    \"group_to_individual_selected\": false\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/companies/shy8pmfek8ZpGKJYneD2g5TJ/inquiries",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"companies",
+										"shy8pmfek8ZpGKJYneD2g5TJ",
+										"inquiries"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "<NA> GET Inquiry Download Plan Selections",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "93119bff-b8c8-4b9f-b64c-ba7a2eb1b765",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
+										"exec": [
+											"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
+											"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
+											"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
+											"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
+											"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
+											"",
+											"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
+											"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{accessToken}}",
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"disabled": true
+									},
+									{
+										"key": "Cookie",
+										"type": "text",
+										"value": "auth_headers={{authHeader}}"
+									},
+									{
+										"key": "access-token",
+										"type": "text",
+										"value": "{{access-token}}"
+									},
+									{
+										"key": "client",
+										"type": "text",
+										"value": "{{client}}"
+									},
+									{
+										"key": "expiry",
+										"type": "text",
+										"value": "{{expiry}}"
+									},
+									{
+										"key": "uid",
+										"type": "text",
+										"value": "{{uid}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/inquiries/JXID6718/plans/compare/generate_excel",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"inquiries",
+										"JXID6718",
+										"plans",
+										"compare",
+										"generate_excel"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Inquiry",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "93119bff-b8c8-4b9f-b64c-ba7a2eb1b765",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
+										"exec": [
+											"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
+											"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
+											"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
+											"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
+											"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
+											"",
+											"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
+											"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{accessToken}}",
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"disabled": true
+									},
+									{
+										"key": "Cookie",
+										"type": "text",
+										"value": "auth_headers={{authHeader}}"
+									},
+									{
+										"key": "access-token",
+										"type": "text",
+										"value": "{{access-token}}"
+									},
+									{
+										"key": "client",
+										"type": "text",
+										"value": "{{client}}"
+									},
+									{
+										"key": "expiry",
+										"type": "text",
+										"value": "{{expiry}}"
+									},
+									{
+										"key": "uid",
+										"type": "text",
+										"value": "{{uid}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"inquiry\": {\n    \"effective_date\": \"2020-04-01\",\n    \"quoting_dental\": true,\n    \"quoting_vision\": true,\n    \"quoting_value_add\": true,\n    \"is_renewal\": false,\n    \"quoting_composite_rates\": false,\n    \"dental_contribution_strategy\": \"voluntary\",\n    \"vision_contribution_strategy\": \"voluntary\",\n    \"dental_vision_bundle_contribution_strategy\": \"voluntary\",\n    \"limited_medical_contribution_strategy\": \"voluntary\",\n    \"title\": \"Quote NEW - 2020-03-06\",\n    \"group_to_individual_selected\": false\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/companies/shy8pmfek8ZpGKJYneD2g5TJ/inquiries/AGKB7928",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"companies",
+										"shy8pmfek8ZpGKJYneD2g5TJ",
+										"inquiries",
+										"AGKB7928"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Inquiry",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "93119bff-b8c8-4b9f-b64c-ba7a2eb1b765",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
+										"exec": [
+											"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
+											"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
+											"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
+											"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
+											"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
+											"",
+											"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
+											"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{accessToken}}",
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"disabled": true
+									},
+									{
+										"key": "Cookie",
+										"type": "text",
+										"value": "auth_headers={{authHeader}}"
+									},
+									{
+										"key": "access-token",
+										"type": "text",
+										"value": "{{access-token}}"
+									},
+									{
+										"key": "client",
+										"type": "text",
+										"value": "{{client}}"
+									},
+									{
+										"key": "expiry",
+										"type": "text",
+										"value": "{{expiry}}"
+									},
+									{
+										"key": "uid",
+										"type": "text",
+										"value": "{{uid}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/inquiries/AGKB79281",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"inquiries",
+										"AGKB79281"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "AvailableInZip?",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "ff921e9d-a672-4f07-a620-73ef120ba441",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "54dd2097-391e-4778-9081-f4188f21245c",
+								"exec": [
+									"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
+									"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
+									"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
+									"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
+									"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
+									"",
+									"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
+									"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Cookie",
+								"value": "auth_headers={{authHeader}}",
+								"type": "text"
+							},
+							{
+								"key": "access-token",
+								"value": "{{access-token}}",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							},
+							{
+								"key": "expiry",
+								"value": "{{expiry}}",
+								"type": "text"
+							},
+							{
+								"key": "uid",
+								"value": "{{uid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"zip_code\": \"10001\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/counties/available_in_zip",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"counties",
+								"available_in_zip"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Organization Settings",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "93119bff-b8c8-4b9f-b64c-ba7a2eb1b765",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
+								"exec": [
+									"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
+									"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
+									"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
+									"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
+									"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
+									"",
+									"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
+									"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}",
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"disabled": true
+							},
+							{
+								"key": "Cookie",
+								"type": "text",
+								"value": "auth_headers={{authHeader}}"
+							},
+							{
+								"key": "access-token",
+								"type": "text",
+								"value": "{{access-token}}"
+							},
+							{
+								"key": "client",
+								"type": "text",
+								"value": "{{client}}"
+							},
+							{
+								"key": "expiry",
+								"type": "text",
+								"value": "{{expiry}}"
+							},
+							{
+								"key": "uid",
+								"type": "text",
+								"value": "{{uid}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"company\": {\n    \"name\": \"APIDoc-Test4\",\n    \"zip_code_input\": \"10001\",\n    \"contact_name\": \"Test\",\n    \"contact_email\": \"test@test.com\",\n    \"using_broker\": false,\n    \"broker_code\": null,\n    \"county_id\": 36061,\n    \"sic_code\": \"9999\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/organization/settings",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"organization",
+								"settings"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Sic Codes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/sic_codes",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"sic_codes"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "767e5d35-d6cc-40d9-b287-a295bda03579",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "e016527c-35bc-447e-aae7-53765bf56529",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "9b687ab0-9e62-43f3-bd8a-ec629805c02a",
+			"key": "URL",
+			"value": "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
