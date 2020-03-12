@@ -9,7 +9,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - objective_c: Objective-C
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
+  - © Copyright 2020 Wellthie Inc.
   - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -32,8 +32,11 @@ Welcome to the Wellthie Business API Documentation.
 
 ## API Base URL
 
-Examples in this document will reference the Wellthie demo site at wellthiedemo-smallbusiness.affordablecareadvisor.com whose API base URL is therefore `https://wellthiedemo-smallbusiness.affordablecareadvisor.com/api/`.
+Examples in this document will reference the Wellthie demo site at wellthiedemo-smallbusiness-qa.affordablecareadvisor.net whose API base URL is therefore `https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/`.
 
+<aside class="notice">
+Reach out to <a href="mailto:hello@wellthie.com">Wellthie</a> for production URL and other credentials
+</aside>
 <!-- Authentication is implemented using the `devise-token-auth` gem. Visit their docs [here](https://github.com/lynndylanhurley/devise_token_auth) for more information. -->
 
 ## API Authentication

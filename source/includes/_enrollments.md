@@ -3,7 +3,7 @@
 ## POST Contact
 
 ```shell
-curl --location --request POST 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/inquiries/SMIQ4519/enrollments/contact' \
+curl --location --request POST 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/SMIQ4519/enrollments/contact' \
 --header 'Content-Type: application/json' \
 --header 'Cookie: auth_headers=%7B%22access-token%22%3A%22undefined%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22undefined%22%2C%22expiry%22%3A%22undefined%22%2C%22uid%22%3A%22undefined%22%7D' \
 --header 'access-token: ' \
@@ -34,7 +34,7 @@ import (
 
 func main() {
 
-  url := "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/inquiries/SMIQ4519/enrollments/contact"
+  url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/SMIQ4519/enrollments/contact"
   method := "POST"
 
   payload := strings.NewReader("{\n    \"enrollment_contact_form\": {\n        \"name\": \"Contact Person Name\",\n        \"email\": \"contact@email.com\",\n        \"phone\": \"2020202020\",\n        \"comments\": \"Example Comment\"\n    },\n    \"inquiry_slug\": \"SMIQ4519\",\n    \"enrollment\": {}\n}")
@@ -63,7 +63,7 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/inquiries/SMIQ4519/enrollments/contact",
+  "url": "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/SMIQ4519/enrollments/contact",
   "method": "POST",
   "timeout": 0,
   "headers": {
@@ -87,7 +87,7 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/inquiries/SMIQ4519/enrollments/contact"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/SMIQ4519/enrollments/contact"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
@@ -133,7 +133,7 @@ $headers.Add("uid", "")
 
 $body = "{`n    `"enrollment_contact_form`": {`n        `"name`": `"Contact Person Name`",`n        `"email`": `"contact@email.com`",`n        `"phone`": `"2020202020`",`n        `"comments`": `"Example Comment`"`n    },`n    `"inquiry_slug`": `"SMIQ4519`",`n    `"enrollment`": {}`n}"
 
-$response = Invoke-RestMethod 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/inquiries/SMIQ4519/enrollments/contact' -Method 'POST' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/SMIQ4519/enrollments/contact' -Method 'POST' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 

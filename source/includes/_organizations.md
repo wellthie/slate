@@ -3,7 +3,7 @@
 ## Settings
 
 ```shell
-curl --location --request GET 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/organization/settings' \
+curl --location --request GET 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/organization/settings' \
 --header 'Content-Type: application/json' \
 --header 'Cookie: auth_headers=%7B%22access-token%22%3A%22ctgocjRjlvrDCak4ls1Dqg%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22JfGfbdYP5qjFoFul5tD8UQ%22%2C%22expiry%22%3A%221583828589%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D' \
 --header 'access-token: ctgocjRjlvrDCak4ls1Dqg' \
@@ -25,7 +25,7 @@ import (
 
 func main() {
 
-  url := "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/organization/settings"
+  url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/organization/settings"
   method := "GET"
 
   payload := strings.NewReader("")
@@ -54,7 +54,7 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/organization/settings",
+  "url": "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/organization/settings",
   "method": "GET",
   "timeout": 0,
   "headers": {
@@ -78,7 +78,7 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/organization/settings"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/organization/settings"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
@@ -124,7 +124,7 @@ $headers.Add("uid", "apidoc+broker@wellthie.com")
 
 $body = ""
 
-$response = Invoke-RestMethod 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/organization/settings' -Method 'GET' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/organization/settings' -Method 'GET' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 

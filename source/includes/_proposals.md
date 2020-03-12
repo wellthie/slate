@@ -3,7 +3,7 @@
 ## Get Selected Inquiries of a company
 
 ```shell
-curl --location --request GET 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/inquiries?selected_inquiries=JXID6718,JQLI9871' \
+curl --location --request GET 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/inquiries?selected_inquiries=JXID6718,JQLI9871' \
 --header 'Content-Type: application/json' \
 --header 'Cookie: auth_headers=%7B%22access-token%22%3A%22ftj2xIRsDvprSBzBAEZc1w%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22pkevB8VD4yONukgbtPUFFw%22%2C%22expiry%22%3A%221583923117%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D' \
 --header 'access-token: ftj2xIRsDvprSBzBAEZc1w' \
@@ -26,7 +26,7 @@ import (
 
 func main() {
 
-  url := "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/inquiries?selected_inquiries=JXID6718,JQLI9871"
+  url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/inquiries?selected_inquiries=JXID6718,JQLI9871"
   method := "GET"
 
   payload := strings.NewReader("")
@@ -56,7 +56,7 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/inquiries?selected_inquiries=JXID6718,JQLI9871",
+  "url": "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/inquiries?selected_inquiries=JXID6718,JQLI9871",
   "method": "GET",
   "timeout": 0,
   "headers": {
@@ -80,7 +80,7 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/inquiries?selected_inquiries=JXID6718,JQLI9871"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/inquiries?selected_inquiries=JXID6718,JQLI9871"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
@@ -128,7 +128,7 @@ $headers.Add("Authorization", "Bearer PfjWVebzEivqQZd4Y19ljw")
 
 $body = ""
 
-$response = Invoke-RestMethod 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/inquiries?selected_inquiries=JXID6718,JQLI9871' -Method 'GET' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/inquiries?selected_inquiries=JXID6718,JQLI9871' -Method 'GET' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 
@@ -443,7 +443,7 @@ No parameters required.
 ## Get Group Plans for inquiries
 
 ```shell
-curl --location --request GET 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/group_plans?selected_inquiries=JXID6718,JQLI9871' \
+curl --location --request GET 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/group_plans?selected_inquiries=JXID6718,JQLI9871' \
 --header 'Content-Type: application/json' \
 --header 'Cookie: auth_headers=%7B%22access-token%22%3A%22XsT2kpRKu9D3EanAwyNCFw%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22pkevB8VD4yONukgbtPUFFw%22%2C%22expiry%22%3A%221583923305%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D' \
 --header 'access-token: XsT2kpRKu9D3EanAwyNCFw' \
@@ -466,7 +466,7 @@ import (
 
 func main() {
 
-  url := "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/group_plans?selected_inquiries=JXID6718,JQLI9871"
+  url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/group_plans?selected_inquiries=JXID6718,JQLI9871"
   method := "GET"
 
   payload := strings.NewReader("")
@@ -496,7 +496,7 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/group_plans?selected_inquiries=JXID6718,JQLI9871",
+  "url": "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/group_plans?selected_inquiries=JXID6718,JQLI9871",
   "method": "GET",
   "timeout": 0,
   "headers": {
@@ -520,7 +520,7 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/group_plans?selected_inquiries=JXID6718,JQLI9871"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/group_plans?selected_inquiries=JXID6718,JQLI9871"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
@@ -568,7 +568,7 @@ $headers.Add("Authorization", "Bearer ftj2xIRsDvprSBzBAEZc1w")
 
 $body = ""
 
-$response = Invoke-RestMethod 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/group_plans?selected_inquiries=JXID6718,JQLI9871' -Method 'GET' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/group_plans?selected_inquiries=JXID6718,JQLI9871' -Method 'GET' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 
@@ -1239,7 +1239,7 @@ No parameters required.
 ## Group Plans Pricing
 
 ```shell
-curl --location --request GET 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/group_plans_pricing?selected_inquiries=JXID6718,JQLI9871' \
+curl --location --request GET 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/group_plans_pricing?selected_inquiries=JXID6718,JQLI9871' \
 --header 'Content-Type: application/json' \
 --header 'Cookie: auth_headers=%7B%22access-token%22%3A%225dy4Dom_xiZZO2_bae6gWw%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22pkevB8VD4yONukgbtPUFFw%22%2C%22expiry%22%3A%221583923733%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D' \
 --header 'access-token: 5dy4Dom_xiZZO2_bae6gWw' \
@@ -1262,7 +1262,7 @@ import (
 
 func main() {
 
-  url := "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/group_plans_pricing?selected_inquiries=JXID6718,JQLI9871"
+  url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/group_plans_pricing?selected_inquiries=JXID6718,JQLI9871"
   method := "GET"
 
   payload := strings.NewReader("")
@@ -1292,7 +1292,7 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/group_plans_pricing?selected_inquiries=JXID6718,JQLI9871",
+  "url": "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/group_plans_pricing?selected_inquiries=JXID6718,JQLI9871",
   "method": "GET",
   "timeout": 0,
   "headers": {
@@ -1316,7 +1316,7 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/group_plans_pricing?selected_inquiries=JXID6718,JQLI9871"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/group_plans_pricing?selected_inquiries=JXID6718,JQLI9871"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
@@ -1364,7 +1364,7 @@ $headers.Add("Authorization", "Bearer XsT2kpRKu9D3EanAwyNCFw")
 
 $body = ""
 
-$response = Invoke-RestMethod 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/group_plans_pricing?selected_inquiries=JXID6718,JQLI9871' -Method 'GET' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/group_plans_pricing?selected_inquiries=JXID6718,JQLI9871' -Method 'GET' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 
@@ -1479,7 +1479,7 @@ No parameters required.
 ## Plan Selections
 
 ```shell
-curl --location --request GET 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/plan_selections?selected_inquiries=JXID6718,JQLI9871' \
+curl --location --request GET 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/plan_selections?selected_inquiries=JXID6718,JQLI9871' \
 --header 'Content-Type: application/json' \
 --header 'Cookie: auth_headers=%7B%22access-token%22%3A%22V7kA-QUpMdlGf2uYPiZLWw%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22DpkpkKwhcLgIuwbo4fiWnQ%22%2C%22expiry%22%3A%221583924575%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D' \
 --header 'access-token: V7kA-QUpMdlGf2uYPiZLWw' \
@@ -1501,7 +1501,7 @@ import (
 
 func main() {
 
-  url := "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/plan_selections?selected_inquiries=JXID6718,JQLI9871"
+  url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/plan_selections?selected_inquiries=JXID6718,JQLI9871"
   method := "GET"
 
   payload := strings.NewReader("")
@@ -1530,7 +1530,7 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/plan_selections?selected_inquiries=JXID6718,JQLI9871",
+  "url": "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/plan_selections?selected_inquiries=JXID6718,JQLI9871",
   "method": "GET",
   "timeout": 0,
   "headers": {
@@ -1553,7 +1553,7 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/plan_selections?selected_inquiries=JXID6718,JQLI9871"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/plan_selections?selected_inquiries=JXID6718,JQLI9871"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
@@ -1599,7 +1599,7 @@ $headers.Add("uid", "apidoc+broker@wellthie.com")
 
 $body = ""
 
-$response = Invoke-RestMethod 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/plan_selections?selected_inquiries=JXID6718,JQLI9871' -Method 'GET' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/plan_selections?selected_inquiries=JXID6718,JQLI9871' -Method 'GET' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 
@@ -1686,7 +1686,7 @@ No parameters required.
 ## Individual Quotes
 
 ```shell
-curl --location --request GET 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/proposals/epQ1xdE1NQcQ8TWj3Cq7Ca42/individual_quotes?selected_inquiries=ZVTD8453,ZIWA4138' \
+curl --location --request GET 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/epQ1xdE1NQcQ8TWj3Cq7Ca42/individual_quotes?selected_inquiries=ZVTD8453,ZIWA4138' \
 --header 'Content-Type: application/json' \
 --header 'Cookie: auth_headers=%7B%22access-token%22%3A%22MQ3ov8p1gbY-GCrhIblmRQ%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22c3nNGXEB2hLVOa2BbXymVA%22%2C%22expiry%22%3A%221583924795%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D' \
 --header 'access-token: MQ3ov8p1gbY-GCrhIblmRQ' \
@@ -1709,7 +1709,7 @@ import (
 
 func main() {
 
-  url := "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/proposals/epQ1xdE1NQcQ8TWj3Cq7Ca42/individual_quotes?selected_inquiries=ZVTD8453,ZIWA4138"
+  url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/epQ1xdE1NQcQ8TWj3Cq7Ca42/individual_quotes?selected_inquiries=ZVTD8453,ZIWA4138"
   method := "GET"
 
   payload := strings.NewReader("")
@@ -1739,7 +1739,7 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/proposals/epQ1xdE1NQcQ8TWj3Cq7Ca42/individual_quotes?selected_inquiries=ZVTD8453,ZIWA4138",
+  "url": "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/epQ1xdE1NQcQ8TWj3Cq7Ca42/individual_quotes?selected_inquiries=ZVTD8453,ZIWA4138",
   "method": "GET",
   "timeout": 0,
   "headers": {
@@ -1763,7 +1763,7 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/proposals/epQ1xdE1NQcQ8TWj3Cq7Ca42/individual_quotes?selected_inquiries=ZVTD8453,ZIWA4138"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/epQ1xdE1NQcQ8TWj3Cq7Ca42/individual_quotes?selected_inquiries=ZVTD8453,ZIWA4138"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
@@ -1811,7 +1811,7 @@ $headers.Add("Authorization", "Bearer NoGjq4aQfoLLiwoNv1uRVQ")
 
 $body = ""
 
-$response = Invoke-RestMethod 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/proposals/epQ1xdE1NQcQ8TWj3Cq7Ca42/individual_quotes?selected_inquiries=ZVTD8453,ZIWA4138' -Method 'GET' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/epQ1xdE1NQcQ8TWj3Cq7Ca42/individual_quotes?selected_inquiries=ZVTD8453,ZIWA4138' -Method 'GET' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 

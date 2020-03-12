@@ -3,7 +3,7 @@
 ## Get Company Details
 
 ```shell
-curl --location --request GET 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/companies/6uqej6JT9uumY4g41CdLX7Du' \
+curl --location --request GET 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/companies/6uqej6JT9uumY4g41CdLX7Du' \
 --header 'Content-Type: application/json' \
 --header 'Cookie: auth_headers=%7B%22access-token%22%3A%22ctgocjRjlvrDCak4ls1Dqg%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22JfGfbdYP5qjFoFul5tD8UQ%22%2C%22expiry%22%3A%221583828589%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D' \
 --header 'access-token: ctgocjRjlvrDCak4ls1Dqg' \
@@ -25,7 +25,7 @@ import (
 
 func main() {
 
-  url := "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/companies/6uqej6JT9uumY4g41CdLX7Du"
+  url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/companies/6uqej6JT9uumY4g41CdLX7Du"
   method := "GET"
 
   payload := strings.NewReader("")
@@ -54,7 +54,7 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/companies/6uqej6JT9uumY4g41CdLX7Du",
+  "url": "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/companies/6uqej6JT9uumY4g41CdLX7Du",
   "method": "GET",
   "timeout": 0,
   "headers": {
@@ -77,7 +77,7 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/companies/6uqej6JT9uumY4g41CdLX7Du"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/companies/6uqej6JT9uumY4g41CdLX7Du"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
@@ -123,7 +123,7 @@ $headers.Add("uid", "apidoc+broker@wellthie.com")
 
 $body = ""
 
-$response = Invoke-RestMethod 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/companies/6uqej6JT9uumY4g41CdLX7Du' -Method 'GET' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/companies/6uqej6JT9uumY4g41CdLX7Du' -Method 'GET' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 
@@ -191,11 +191,10 @@ Use this endpoint to retrieve information about specific company.
 
 No parameters required.
 
-
 ## Create Company
 
 ```shell
-curl --location --request POST 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/companies/' \
+curl --location --request POST 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/companies/' \
 --header 'Content-Type: application/json' \
 --header 'Cookie: auth_headers=%7B%22access-token%22%3A%22ctgocjRjlvrDCak4ls1Dqg%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22JfGfbdYP5qjFoFul5tD8UQ%22%2C%22expiry%22%3A%221583828589%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D' \
 --header 'access-token: ctgocjRjlvrDCak4ls1Dqg' \
@@ -228,7 +227,7 @@ import (
 
 func main() {
 
-  url := "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/companies/"
+  url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/companies/"
   method := "POST"
 
   payload := strings.NewReader("{\n  \"company\": {\n    \"name\": \"APIDocTest4\",\n    \"zip_code_input\": \"10001\",\n    \"contact_name\": \"Test\",\n    \"contact_email\": \"test@test.com\",\n    \"using_broker\": false,\n    \"broker_code\": null,\n    \"county_id\": 36061,\n    \"sic_code\": \"9999\"\n  }\n}")
@@ -257,7 +256,7 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/companies/",
+  "url": "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/companies/",
   "method": "POST",
   "timeout": 0,
   "headers": {
@@ -281,7 +280,7 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/companies/"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/companies/"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
@@ -327,7 +326,7 @@ $headers.Add("uid", "apidoc+broker@wellthie.com")
 
 $body = "{`n  `"company`": {`n    `"name`": `"APIDocTest4`",`n    `"zip_code_input`": `"10001`",`n    `"contact_name`": `"Test`",`n    `"contact_email`": `"test@test.com`",`n    `"using_broker`": false,`n    `"broker_code`": null,`n    `"county_id`": 36061,`n    `"sic_code`": `"9999`"`n  }`n}"
 
-$response = Invoke-RestMethod 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/companies/' -Method 'POST' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/companies/' -Method 'POST' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 
@@ -407,19 +406,18 @@ Use this endpoint to create a new company. Inside the request should be a json o
 
 ### Parameters
 
-Parameter          | Default | Description             | Required?
------------------- | ------- | ----------------------- | ----------
-company            | N/A     | Company object          | true
-name               | N/A     | name                    | true
-zip_code_input     | N/A     | zipcode                 | true
-contact_name       | N/A     | contact name            | true
-contact_email      | N/A     | contact email           | true
-using_broker       | N/A     | Using broker flag        | false
-broker_code        | N/A     | Broker code             | true if using_broker, false otherwise
-effective_date     | N/A     | Effective date          | true
-county_id          | N/A     | county id               | true
-sic_code           | N/A     | sic code                | true
-
+Parameter                                                                               | Default      | Description
+--------------------------------------------------------------------------------------- | ------------ | -----------------------
+<strong>company</strong><strong>required</strong>                                       | N/A          | Company object
+<strong>name</strong><strong>required</strong>                                          | N/A          | name
+<strong>zip_code_input</strong><strong>required</strong>                                | N/A          | zipcode
+<strong>contact_name</strong><strong>required</strong>                                  | N/A          | contact name
+<strong>contact_email</strong><strong>required</strong>                                 | N/A          | contact email
+<strong>effective_date</strong><strong>required</strong>                                | N/A          | Effective date
+<strong>county_id</strong><strong>required</strong>                                     | N/A          | county id
+<strong>sic_code</strong><strong>required</strong>                                      | N/A          | sic code
+<strong>broker_code</strong><strong>required if using_broker,  false otherwise</strong> | N/A          | Broker code
+using_broker                                                                            | N/A          | Using broker flag        | false
 
 ## Update Company
 
@@ -444,7 +442,7 @@ import (
 
 func main() {
 
-  url := "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/companies/shy8pmfek8ZpGKJYneD2g5TJ"
+  url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/companies/shy8pmfek8ZpGKJYneD2g5TJ"
   method := "PUT"
 
   payload := strings.NewReader("{\n  \"company\": {\n    \"name\": \"APIDoc Test4\",\n    \"zip_code_input\": \"10001\",\n    \"contact_name\": \"Test\",\n    \"contact_email\": \"test@test.com\",\n    \"using_broker\": false,\n    \"broker_code\": null,\n    \"county_id\": 36061,\n    \"sic_code\": \"9999\"\n  }\n}")
@@ -473,7 +471,7 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/companies/shy8pmfek8ZpGKJYneD2g5TJ",
+  "url": "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/companies/shy8pmfek8ZpGKJYneD2g5TJ",
   "method": "PUT",
   "timeout": 0,
   "headers": {
@@ -497,7 +495,7 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/companies/shy8pmfek8ZpGKJYneD2g5TJ"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/companies/shy8pmfek8ZpGKJYneD2g5TJ"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
@@ -543,7 +541,7 @@ $headers.Add("uid", "apidoc+broker@wellthie.com")
 
 $body = "{`n  `"company`": {`n    `"name`": `"APIDoc Test4`",`n    `"zip_code_input`": `"10001`",`n    `"contact_name`": `"Test`",`n    `"contact_email`": `"test@test.com`",`n    `"using_broker`": false,`n    `"broker_code`": null,`n    `"county_id`": 36061,`n    `"sic_code`": `"9999`"`n  }`n}"
 
-$response = Invoke-RestMethod 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/companies/shy8pmfek8ZpGKJYneD2g5TJ' -Method 'PUT' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/companies/shy8pmfek8ZpGKJYneD2g5TJ' -Method 'PUT' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 
@@ -615,24 +613,23 @@ Use this endpoint to update an existing company.
 
 ### Parameters
 
-Parameter          | Default | Description             | Required?
------------------- | ------- | ----------------------- | ----------
-company            | N/A     | Company object          | true
-name               | N/A     | name                    | true
-zip_code_input     | N/A     | zipcode                 | true
-contact_name       | N/A     | contact name            | true
-contact_email      | N/A     | contact email           | true
-using_broker       | N/A     | Using broker flag        | false
-broker_code        | N/A     | Broker code             | true if using_broker, false otherwise
-effective_date     | N/A     | Effective date          | true
-county_id          | N/A     | county id               | true
-sic_code           | N/A     | sic code                | true
-
+Parameter                                                                               | Default      | Description
+--------------------------------------------------------------------------------------- | ------------ | -----------------------
+<strong>company</strong><strong>required</strong>                                       | N/A          | Company object
+<strong>name</strong><strong>required</strong>                                          | N/A          | name
+<strong>zip_code_input</strong><strong>required</strong>                                | N/A          | zipcode
+<strong>contact_name</strong><strong>required</strong>                                  | N/A          | contact name
+<strong>contact_email</strong><strong>required</strong>                                 | N/A          | contact email
+<strong>effective_date</strong><strong>required</strong>                                | N/A          | Effective date
+<strong>county_id</strong><strong>required</strong>                                     | N/A          | county id
+<strong>sic_code</strong><strong>required</strong>                                      | N/A          | sic code
+<strong>broker_code</strong><strong>required if using_broker,  false otherwise</strong> | N/A          | Broker code
+using_broker                                                                            | N/A          | Using broker flag        | false
 
 ## Get Company Settings
 
 ```shell
-curl --location --request GET 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/settings' \
+curl --location --request GET 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/settings' \
 --header 'Content-Type: application/json' \
 --header 'Cookie: auth_headers=%7B%22access-token%22%3A%22ctgocjRjlvrDCak4ls1Dqg%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22JfGfbdYP5qjFoFul5tD8UQ%22%2C%22expiry%22%3A%221583828589%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D' \
 --header 'access-token: ctgocjRjlvrDCak4ls1Dqg' \
@@ -665,7 +662,7 @@ import (
 
 func main() {
 
-  url := "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/settings"
+  url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/settings"
   method := "GET"
 
   payload := strings.NewReader("{\n  \"company\": {\n    \"name\": \"APIDoc-Test4\",\n    \"zip_code_input\": \"10001\",\n    \"contact_name\": \"Test\",\n    \"contact_email\": \"test@test.com\",\n    \"using_broker\": false,\n    \"broker_code\": null,\n    \"county_id\": 36061,\n    \"sic_code\": \"9999\"\n  }\n}")
@@ -694,7 +691,7 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/settings",
+  "url": "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/settings",
   "method": "GET",
   "timeout": 0,
   "headers": {
@@ -718,7 +715,7 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/settings"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/settings"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
@@ -764,7 +761,7 @@ $headers.Add("uid", "apidoc+broker@wellthie.com")
 
 $body = "{`n  `"company`": {`n    `"name`": `"APIDoc-Test4`",`n    `"zip_code_input`": `"10001`",`n    `"contact_name`": `"Test`",`n    `"contact_email`": `"test@test.com`",`n    `"using_broker`": false,`n    `"broker_code`": null,`n    `"county_id`": 36061,`n    `"sic_code`": `"9999`"`n  }`n}"
 
-$response = Invoke-RestMethod 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/settings' -Method 'GET' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/settings' -Method 'GET' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 
@@ -1191,7 +1188,6 @@ Use this endpoint to fetch company's settings.
 
 No parameters required.
 
-
 ## Get Company's Current Plan
 
 <aside class="notice">
@@ -1201,7 +1197,7 @@ No parameters required.
 ## Create Company's Current Plan
 
 ```shell
-curl --location --request POST 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/inquiries/AGKB7928/current_plan' \
+curl --location --request POST 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/AGKB7928/current_plan' \
 --header 'Content-Type: application/json' \
 --header 'Cookie: auth_headers=%7B%22access-token%22%3A%22undefined%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22undefined%22%2C%22expiry%22%3A%22undefined%22%2C%22uid%22%3A%22undefined%22%7D' \
 --header 'access-token: ' \
@@ -1248,7 +1244,7 @@ import (
 
 func main() {
 
-  url := "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/inquiries/AGKB7928/current_plan"
+  url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/AGKB7928/current_plan"
   method := "POST"
 
   payload := strings.NewReader("{\n  \"current_plan\": {\n    \"product_type\": \"medical\",\n    \"name\": \"Current Plan Name\",\n    \"current_plan_issuer\": \"Current Plan Issuer\",\n    \"metal_level_name\": \"Bronze\",\n    \"employer_monthly_cost\": 1000,\n    \"carrier_plan_identifier\": \"123\",\n    \"medical_deductible_single\": \"Deductible Single\",\n    \"medical_deductible_family\": \"Deductible Single\",\n    \"maximum_out_of_pocket_limit_single\": \"Deductible Single\",\n    \"specialist\": \"Specialist\",\n    \"pcp\": \"Primary Care Physician\",\n    \"maximum_out_of_pocket_limit_family\": \"Max-Out-of-Pocket Family\",\n    \"network_type\": \"Network\",\n    \"preventive_care\": \"Preventive Care\",\n    \"inpatient_facility\": \"Hospital (Inpatient)\",\n    \"emergency_room\": \"Emergency Room\",\n    \"ambulance\": \"Ambulance\",\n    \"urgent_care\": \"Urgent Care\",\n    \"generic\": \"Generic Prescription\",\n    \"formulary_brand\": \"Formulary Prescription\",\n    \"non_formulary_brand\": \"Non Formulary Brand Prescription\",\n    \"mail_order\": \"Mail Order (90 day supply)\"\n  }\n}")
@@ -1277,7 +1273,7 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/inquiries/AGKB7928/current_plan",
+  "url": "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/AGKB7928/current_plan",
   "method": "POST",
   "timeout": 0,
   "headers": {
@@ -1301,7 +1297,7 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/inquiries/AGKB7928/current_plan"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/AGKB7928/current_plan"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
@@ -1347,7 +1343,7 @@ $headers.Add("uid", "")
 
 $body = "{`n  `"current_plan`": {`n    `"product_type`": `"medical`",`n    `"name`": `"Current Plan Name`",`n    `"current_plan_issuer`": `"Current Plan Issuer`",`n    `"metal_level_name`": `"Bronze`",`n    `"employer_monthly_cost`": 1000,`n    `"carrier_plan_identifier`": `"123`",`n    `"medical_deductible_single`": `"Deductible Single`",`n    `"medical_deductible_family`": `"Deductible Single`",`n    `"maximum_out_of_pocket_limit_single`": `"Deductible Single`",`n    `"specialist`": `"Specialist`",`n    `"pcp`": `"Primary Care Physician`",`n    `"maximum_out_of_pocket_limit_family`": `"Max-Out-of-Pocket Family`",`n    `"network_type`": `"Network`",`n    `"preventive_care`": `"Preventive Care`",`n    `"inpatient_facility`": `"Hospital (Inpatient)`",`n    `"emergency_room`": `"Emergency Room`",`n    `"ambulance`": `"Ambulance`",`n    `"urgent_care`": `"Urgent Care`",`n    `"generic`": `"Generic Prescription`",`n    `"formulary_brand`": `"Formulary Prescription`",`n    `"non_formulary_brand`": `"Non Formulary Brand Prescription`",`n    `"mail_order`": `"Mail Order (90 day supply)`"`n  }`n}"
 
-$response = Invoke-RestMethod 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/inquiries/AGKB7928/current_plan' -Method 'POST' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/AGKB7928/current_plan' -Method 'POST' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 
@@ -1412,29 +1408,29 @@ Use this endpoint to create a new current_plan to a company. This is used for re
 
 ### Parameters
 
-Parameter                                         | Default   | Description                | Required?
-------------------------------------------------- | --------- | -------------------------- | ----------
-current_plan_issuer                               | N/A       | Issuer for this plan       | false
-<strong>name</strong><strong>required</strong>    | N/A       | Plan name                  | true
-company_id                                        | N/A       | Company's id               | false
-metal_level_name                                  | N/A       | Metal level for plan       | false
-medical_deductible_single                         | N/A       | Medical deductible single  | false
-medical_deductible_family                         | N/A       | Medical deductible family  | false
-maximum_out_of_pocket_limit_single                | N/A       | Max out of pocket single   | false
-maximum_out_of_pocket_limit_family                | N/A       | Max out of pocket family   | false
-pcp                                               | N/A       | PCP                        | false
-specialist                                        | N/A       | Specialist                 | false
-network_type                                      | N/A       | Network Type               | false
-preventive_care                                   | N/A       | Preventive Care            | false
-inpatient_facility                                | N/A       | Inpatient Facility         | false
-emergency_room                                    | N/A       | Emergency Room             | false
-ambulance                                         | N/A       | Ambulance                  | false
-urgent_care                                       | N/A       | Urgent Care                | false
-generic                                           | N/A       | Generic                    | false
-highlight_1                                       | N/A       | Highlight 1                | false
-highlight_2                                       | N/A       | Highlight 2                | false
-highlight_3                                       | N/A       | Highlight 3                | false
-formulary_brand                                   | N/A       | Formulary Brand            | false
-non_formulary_brand                               | N/A       | Non-Formulary Brand        | false
-mail_order                                        | N/A       | Mail Order                 | false
-employer_monthly_cost                             | N/A       | Employer Monthly Cost      | false
+Parameter                                         | Default   | Description
+------------------------------------------------- | --------- | --------------------------
+current_plan_issuer                               | N/A       | Issuer for this plan
+<strong>name</strong><strong>required</strong>    | N/A       | Plan name
+company_id                                        | N/A       | Company's id
+metal_level_name                                  | N/A       | Metal level for plan
+medical_deductible_single                         | N/A       | Medical deductible single
+medical_deductible_family                         | N/A       | Medical deductible family
+maximum_out_of_pocket_limit_single                | N/A       | Max out of pocket single
+maximum_out_of_pocket_limit_family                | N/A       | Max out of pocket family
+pcp                                               | N/A       | PCP
+specialist                                        | N/A       | Specialist
+network_type                                      | N/A       | Network Type
+preventive_care                                   | N/A       | Preventive Care
+inpatient_facility                                | N/A       | Inpatient Facility
+emergency_room                                    | N/A       | Emergency Room
+ambulance                                         | N/A       | Ambulance
+urgent_care                                       | N/A       | Urgent Care
+generic                                           | N/A       | Generic
+highlight_1                                       | N/A       | Highlight 1
+highlight_2                                       | N/A       | Highlight 2
+highlight_3                                       | N/A       | Highlight 3
+formulary_brand                                   | N/A       | Formulary Brand
+non_formulary_brand                               | N/A       | Non-Formulary Brand
+mail_order                                        | N/A       | Mail Order
+employer_monthly_cost                             | N/A       | Employer Monthly Cost

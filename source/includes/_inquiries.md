@@ -3,7 +3,7 @@
 ## Get an Inquiry
 
 ```shell
-curl --location --request GET 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/inquiries/AGKB79281' \
+curl --location --request GET 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/AGKB79281' \
 --header 'Content-Type: application/json' \
 --header 'Cookie: auth_headers=%7B%22access-token%22%3A%221bnWtzR2KGvd5TzX3Mv70w%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%226p52sJXt9vgkF1j7l0yJMw%22%2C%22expiry%22%3A%221583909942%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D' \
 --header 'access-token: 1bnWtzR2KGvd5TzX3Mv70w' \
@@ -25,7 +25,7 @@ import (
 
 func main() {
 
-  url := "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/inquiries/AGKB79281"
+  url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/AGKB79281"
   method := "GET"
 
   payload := strings.NewReader("")
@@ -54,7 +54,7 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/inquiries/AGKB79281",
+  "url": "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/AGKB79281",
   "method": "GET",
   "timeout": 0,
   "headers": {
@@ -77,7 +77,7 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/inquiries/AGKB79281"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/AGKB79281"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
@@ -123,7 +123,7 @@ $headers.Add("uid", "apidoc+broker@wellthie.com")
 
 $body = ""
 
-$response = Invoke-RestMethod 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/inquiries/AGKB79281' -Method 'GET' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/AGKB79281' -Method 'GET' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 
@@ -308,7 +308,7 @@ No parameters required.
 ## Create an Inquiry
 
 ```shell
-curl --location --request POST 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/inquiries' \
+curl --location --request POST 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/inquiries' \
 --header 'Content-Type: application/json' \
 --header 'Cookie: auth_headers=%7B%22access-token%22%3A%22U5FgbM3skufrrJUTNaCRlQ%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22whsAaLkuUQbDUo9O5BJyug%22%2C%22expiry%22%3A%221583910013%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D' \
 --header 'access-token: U5FgbM3skufrrJUTNaCRlQ' \
@@ -345,7 +345,7 @@ import (
 
 func main() {
 
-  url := "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/inquiries"
+  url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/inquiries"
   method := "POST"
 
   payload := strings.NewReader("{\n  \"inquiry\": {\n    \"effective_date\": \"2020-04-01\",\n    \"quoting_dental\": true,\n    \"quoting_vision\": true,\n    \"quoting_value_add\": true,\n    \"is_renewal\": false,\n    \"quoting_composite_rates\": false,\n    \"dental_contribution_strategy\": \"voluntary\",\n    \"vision_contribution_strategy\": \"voluntary\",\n    \"dental_vision_bundle_contribution_strategy\": \"voluntary\",\n    \"limited_medical_contribution_strategy\": \"voluntary\",\n    \"title\": \"NEW Quote - 2020-03-06\",\n    \"group_to_individual_selected\": false\n  }\n}")
@@ -374,7 +374,7 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/inquiries",
+  "url": "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/inquiries",
   "method": "POST",
   "timeout": 0,
   "headers": {
@@ -398,7 +398,7 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/inquiries"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/inquiries"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
@@ -444,7 +444,7 @@ $headers.Add("uid", "apidoc+broker@wellthie.com")
 
 $body = "{`n  `"inquiry`": {`n    `"effective_date`": `"2020-04-01`",`n    `"quoting_dental`": true,`n    `"quoting_vision`": true,`n    `"quoting_value_add`": true,`n    `"is_renewal`": false,`n    `"quoting_composite_rates`": false,`n    `"dental_contribution_strategy`": `"voluntary`",`n    `"vision_contribution_strategy`": `"voluntary`",`n    `"dental_vision_bundle_contribution_strategy`": `"voluntary`",`n    `"limited_medical_contribution_strategy`": `"voluntary`",`n    `"title`": `"NEW Quote - 2020-03-06`",`n    `"group_to_individual_selected`": false`n  }`n}"
 
-$response = Invoke-RestMethod 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/inquiries' -Method 'POST' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/inquiries' -Method 'POST' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 
@@ -475,23 +475,23 @@ Use this endpoint to create a new inquiry for a company.
 
 Parameter                                                   | Default   | Description
 ------------------------------------------------------------| --------- | -----------
-<strong>effective_date</strong><strong>required</strong>    |           |
-quoting_dental                                              | false     |
-quoting_vision                                              | false     |
-quoting_value_add                                           | false     |
-is_renewal                                                  | false     |
-quoting_composite_rates                                     | false     |
-dental_contribution_strategy                                |           |
-vision_contribution_strategy                                |           |
-dental_vision_bundle_contribution_strategy                  |           |
-limited_medical_contribution_strategy                       |           |
-title                                                       |           |
-group_to_individual_selected                                | false     |
+<strong>effective_date</strong><strong>required</strong>    | N/A       | Effective Date in mm/dd/yyyy Format
+quoting_dental                                              | false     | true / false
+quoting_vision                                              | false     | true / false
+quoting_value_add                                           | false     | true / false
+is_renewal                                                  | false     | true / false
+quoting_composite_rates                                     | false     | true / false
+dental_contribution_strategy                                | N/A       | voluntary / contributory
+vision_contribution_strategy                                | N/A       | voluntary / contributory
+dental_vision_bundle_contribution_strategy                  | N/A       | voluntary / contributory
+limited_medical_contribution_strategy                       | N/A       | voluntary / contributory
+title                                                       | N/A       | Name of the Inquiry
+group_to_individual_selected                                | false     | true / false
 
 ## Update an Inquiry
 
 ```shell
-curl --location --request PUT 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/inquiries/AGKB7928' \
+curl --location --request PUT 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/inquiries/AGKB7928' \
 --header 'Content-Type: application/json' \
 --header 'Cookie: auth_headers=%7B%22access-token%22%3A%22Gs6TGSot4p-vjsBchOoiHg%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22whsAaLkuUQbDUo9O5BJyug%22%2C%22expiry%22%3A%221583910750%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D' \
 --header 'access-token: Gs6TGSot4p-vjsBchOoiHg' \
@@ -528,7 +528,7 @@ import (
 
 func main() {
 
-  url := "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/inquiries/AGKB7928"
+  url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/inquiries/AGKB7928"
   method := "PUT"
 
   payload := strings.NewReader("{\n  \"inquiry\": {\n    \"effective_date\": \"2020-04-01\",\n    \"quoting_dental\": true,\n    \"quoting_vision\": true,\n    \"quoting_value_add\": true,\n    \"is_renewal\": false,\n    \"quoting_composite_rates\": false,\n    \"dental_contribution_strategy\": \"voluntary\",\n    \"vision_contribution_strategy\": \"voluntary\",\n    \"dental_vision_bundle_contribution_strategy\": \"voluntary\",\n    \"limited_medical_contribution_strategy\": \"voluntary\",\n    \"title\": \"Quote NEW - 2020-03-06\",\n    \"group_to_individual_selected\": false\n  }\n}")
@@ -557,7 +557,7 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/inquiries/AGKB7928",
+  "url": "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/inquiries/AGKB7928",
   "method": "PUT",
   "timeout": 0,
   "headers": {
@@ -581,7 +581,7 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/inquiries/AGKB7928"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/inquiries/AGKB7928"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
@@ -627,7 +627,7 @@ $headers.Add("uid", "apidoc+broker@wellthie.com")
 
 $body = "{`n  `"inquiry`": {`n    `"effective_date`": `"2020-04-01`",`n    `"quoting_dental`": true,`n    `"quoting_vision`": true,`n    `"quoting_value_add`": true,`n    `"is_renewal`": false,`n    `"quoting_composite_rates`": false,`n    `"dental_contribution_strategy`": `"voluntary`",`n    `"vision_contribution_strategy`": `"voluntary`",`n    `"dental_vision_bundle_contribution_strategy`": `"voluntary`",`n    `"limited_medical_contribution_strategy`": `"voluntary`",`n    `"title`": `"Quote NEW - 2020-03-06`",`n    `"group_to_individual_selected`": false`n  }`n}"
 
-$response = Invoke-RestMethod 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/inquiries/AGKB7928' -Method 'PUT' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/inquiries/AGKB7928' -Method 'PUT' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 
@@ -808,25 +808,84 @@ Use this endpoint to update an inquiry.
 
 Parameter                                                   | Default   | Description
 ------------------------------------------------------------| --------- | -----------
-<strong>effective_date</strong><strong>required</strong>    |           |
-quoting_dental                                              | false     |
-quoting_vision                                              | false     |
-quoting_value_add                                           | false     |
-is_renewal                                                  | false     |
-quoting_composite_rates                                     | false     |
-dental_contribution_strategy                                |           |
-vision_contribution_strategy                                |           |
-dental_vision_bundle_contribution_strategy                  |           |
-limited_medical_contribution_strategy                       |           |
-title                                                       |           |
-group_to_individual_selected                                | false     |
+<strong>effective_date</strong><strong>required</strong>    | N/A       | Effective Date in mm/dd/yyyy Format
+quoting_dental                                              | false     | true / false
+quoting_vision                                              | false     | true / false
+quoting_value_add                                           | false     | true / false
+is_renewal                                                  | false     | true / false
+quoting_composite_rates                                     | false     | true / false
+dental_contribution_strategy                                | N/A       | voluntary / contributory
+vision_contribution_strategy                                | N/A       | voluntary / contributory
+dental_vision_bundle_contribution_strategy                  | N/A       | voluntary / contributory
+limited_medical_contribution_strategy                       | N/A       | voluntary / contributory
+title                                                       | N/A       | Name of the Inquiry
+group_to_individual_selected                                | false     | true / false
 
-TODO: Note: TO UPDATE CONTRIBUTION MODEL TO THE UPDATE INQUIRY API
+> <aside class="notice"> Note: To update contribution values, use the following example to update inquiry</aside>
+
+```json
+{
+  "inquiry": {
+    "contribution_attributes": {
+      "id": 125652,
+      "medical_input_type": "percent",
+      "dental_vision_input_type": "percent",
+      "limited_medical_input_type": "percent",
+      "composite_medical_input_type": "percent",
+      "medical_primary_percentage": 100,
+      "medical_spouse_percentage": 100,
+      "medical_dependent_percentage": 100,
+      "medical_single_percentage": "50",
+      "medical_single_and_spouse_percentage": "50",
+      "medical_single_and_children_percentage": "50",
+      "medical_family_percentage": "50",
+      "dental_household_percentage": 100,
+      "vision_household_percentage": 100,
+      "limited_medical_household_percentage": 100,
+      "dental_and_vision_bundle_household_percentage": 100,
+      "value_add_bundle_household_percentage": 100,
+      "accident_household_percentage": 100,
+      "ad_and_d_household_percentage": 100,
+      "eap_household_percentage": 100,
+      "dbl_household_percentage": 100,
+      "hospital_cash_household_percentage": 100,
+      "identity_theft_household_percentage": 100,
+      "legal_assistance_household_percentage": 100,
+      "life_household_percentage": 100,
+      "nurse_helpline_household_percentage": 100,
+      "pharmacy_household_percentage": 100,
+      "telemedicine_household_percentage": 100,
+      "travel_assistance_household_percentage": 100,
+      "medical_primary_currency": 0,
+      "medical_spouse_currency": 0,
+      "medical_dependent_currency": 0,
+      "medical_single_currency": 0,
+      "medical_single_and_spouse_currency": 0,
+      "medical_single_and_children_currency": 0,
+      "medical_family_currency": 0,
+      "dental_household_currency": 0,
+      "vision_household_currency": 0,
+      "limited_medical_household_currency": 0,
+      "dental_and_vision_bundle_household_currency": 0,
+      "composite_medical_single_percentage": 100,
+      "composite_medical_single_currency": 0,
+      "composite_medical_single_and_spouse_percentage": 100,
+      "composite_medical_single_and_spouse_currency": 0,
+      "composite_medical_single_and_children_percentage": 100,
+      "composite_medical_single_and_children_currency": 0,
+      "composite_medical_family_percentage": 100,
+      "composite_medical_family_currency": 0
+    }
+  },
+  "request_for": "contributions",
+  "return_inquiry": false
+}
+```
 
 ## Get Plan Selections
 
 ```shell
-curl --location --request GET 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/inquiries/JXID6718/plan_selections' \
+curl --location --request GET 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/JXID6718/plan_selections' \
 --header 'Content-Type: application/json' \
 --header 'Cookie: auth_headers=%7B%22access-token%22%3A%22AL96HOb0aqN1gZ9eRRszkg%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22whsAaLkuUQbDUo9O5BJyug%22%2C%22expiry%22%3A%221583911500%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D' \
 --header 'access-token: AL96HOb0aqN1gZ9eRRszkg' \
@@ -848,7 +907,7 @@ import (
 
 func main() {
 
-  url := "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/inquiries/JXID6718/plan_selections"
+  url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/JXID6718/plan_selections"
   method := "GET"
 
   payload := strings.NewReader("")
@@ -877,7 +936,7 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/inquiries/JXID6718/plan_selections",
+  "url": "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/JXID6718/plan_selections",
   "method": "GET",
   "timeout": 0,
   "headers": {
@@ -900,7 +959,7 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/inquiries/JXID6718/plan_selections"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/JXID6718/plan_selections"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
@@ -946,7 +1005,7 @@ $headers.Add("uid", "apidoc+broker@wellthie.com")
 
 $body = ""
 
-$response = Invoke-RestMethod 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/inquiries/JXID6718/plan_selections' -Method 'GET' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/JXID6718/plan_selections' -Method 'GET' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 
@@ -988,7 +1047,7 @@ No parameters required.
 ## Get Individual Plans
 
 ```shell
-curl --location --request GET 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/inquiries/XQEJ2145/individual_quotes' \
+curl --location --request GET 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/XQEJ2145/individual_quotes' \
 --header 'Content-Type: application/json' \
 --header 'Cookie: auth_headers=%7B%22access-token%22%3A%22undefined%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22undefined%22%2C%22expiry%22%3A%22undefined%22%2C%22uid%22%3A%22undefined%22%7D' \
 --header 'access-token: ' \
@@ -1011,7 +1070,7 @@ import (
 
 func main() {
 
-  url := "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/inquiries/XQEJ2145/individual_quotes"
+  url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/XQEJ2145/individual_quotes"
   method := "GET"
 
   payload := strings.NewReader("")
@@ -1041,7 +1100,7 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/inquiries/XQEJ2145/individual_quotes",
+  "url": "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/XQEJ2145/individual_quotes",
   "method": "GET",
   "timeout": 0,
   "headers": {
@@ -1065,7 +1124,7 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/inquiries/XQEJ2145/individual_quotes"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/XQEJ2145/individual_quotes"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
@@ -1113,7 +1172,7 @@ $headers.Add("Authorization", "Bearer ryMvWXKNIQeaJCDWfwlFNg")
 
 $body = ""
 
-$response = Invoke-RestMethod 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/inquiries/XQEJ2145/individual_quotes' -Method 'GET' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/XQEJ2145/individual_quotes' -Method 'GET' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 

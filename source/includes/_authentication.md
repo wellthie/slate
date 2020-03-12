@@ -3,7 +3,7 @@
 ## Sign In
 
 ```shell
-curl --location --request POST 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/auth/sign_in' \
+curl --location --request POST 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/auth/sign_in' \
 --header 'Content-Type: application/json' \
 --data-raw '{
 	"email":"apidoc+broker@wellthie.com",
@@ -23,7 +23,7 @@ import (
 
 func main() {
 
-  url := "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/auth/sign_in"
+  url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/auth/sign_in"
   method := "POST"
 
   payload := strings.NewReader("{\n	\"email\":\"apidoc+broker@wellthie.com\",\n	\"password\":\"Password123\"\n}")
@@ -47,7 +47,7 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/auth/sign_in",
+  "url": "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/auth/sign_in",
   "method": "POST",
   "timeout": 0,
   "headers": {
@@ -67,7 +67,7 @@ $headers.Add("Content-Type", "application/json")
 
 $body = "{`n	`"email`":`"apidoc+broker@wellthie.com`",`n	`"password`":`"Password123`"`n}"
 
-$response = Invoke-RestMethod 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/auth/sign_in' -Method 'POST' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/auth/sign_in' -Method 'POST' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 
@@ -76,7 +76,7 @@ $response | ConvertTo-Json
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/auth/sign_in"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/auth/sign_in"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
@@ -155,7 +155,7 @@ curl -X DELETE "/api/auth/sign_out" \
      -H "Content-Type: application/json" \
      -d '{"uid": "name.lastname@domain.com", "client": "WedFsHGWTiAfdhl4LbFVjg", "access-token": "UyuaNMouSdihadn"}'
 
-curl --location --request DELETE 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/auth/sign_out' \
+curl --location --request DELETE 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/auth/sign_out' \
 --header 'Content-Type: application/json' \
 --header 'Cookie: auth_headers=%7B%22access-token%22%3A%22-GXI3CJKUQlj9hRUHV_F5g%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22JfGfbdYP5qjFoFul5tD8UQ%22%2C%22expiry%22%3A%221583826591%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D' \
 --header 'access-token: -GXI3CJKUQlj9hRUHV_F5g' \
@@ -175,7 +175,7 @@ import (
 
 func main() {
 
-  url := "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/auth/sign_out"
+  url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/auth/sign_out"
   method := "DELETE"
 
   client := &http.Client {
@@ -202,7 +202,7 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/auth/sign_out",
+  "url": "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/auth/sign_out",
   "method": "DELETE",
   "timeout": 0,
   "headers": {
@@ -229,7 +229,7 @@ $headers.Add("client", "JfGfbdYP5qjFoFul5tD8UQ")
 $headers.Add("expiry", "1583826591")
 $headers.Add("uid", "apidoc+broker@wellthie.com")
 
-$response = Invoke-RestMethod 'http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/auth/sign_out' -Method 'DELETE' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/auth/sign_out' -Method 'DELETE' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 
@@ -238,7 +238,7 @@ $response | ConvertTo-Json
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api/auth/sign_out"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/auth/sign_out"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
