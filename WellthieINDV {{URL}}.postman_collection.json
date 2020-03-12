@@ -1,0 +1,728 @@
+{
+	"info": {
+		"_postman_id": "d083069b-6465-4caa-9c05-c968c9229084",
+		"name": "WellthieINDV {{URL}}",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create Individual User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2cc61679-4a85-4fea-abb8-4831dcc038de",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"access-token\", jsonData.data.access_token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"apiuser@domain.com\",\n  \"first_name\": \"FirstName\",\n  \"last_name\": \"LastName\",\n  \"password\": \"StrongPassword123\",\n  \"password_confirmation\": \"StrongPassword123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/auth",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignIn",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "c69a96db-2e3b-4041-ac23-7c2414ef32a1",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "b21e0824-1dc0-43a8-b2c7-27779b72ce94",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"access-token\", jsonData.data.access_token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"kramakrishnan+1@wellthie.com\",\n\t\"password\":\"Testpass123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/auth/sign_in",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth",
+								"sign_in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign Out",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "c69a96db-2e3b-4041-ac23-7c2414ef32a1",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "b21e0824-1dc0-43a8-b2c7-27779b72ce94",
+								"exec": [
+									"pm.environment.set(\"access-token\", null)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/auth/sign_out",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth",
+								"sign_out"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Quote",
+			"item": [
+				{
+					"name": "Create Quote",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"quote\": {\n        \"zip_code\": \"10011\",\n        \"county_id\": 36061,\n        \"income\": 40000,\n        \"entered_additional_hh_members\": 0,\n        \"effective_date\": \"2020-03-01\",\n        \"broker_code\": \"1234567890\",\n        \"family_members_attributes\": [\n            {\n                \"first_name\": \"John\",\n                \"last_name\": \"Doe\",\n                \"email\": \"jdoe@email.com\",\n                \"date_of_birth\": \"01/01/1970\",\n                \"relationship\": \"Primary\",\n                \"smoker\": false,\n                \"declared_medicare\": false,\n                \"declared_dependent\": false\n            },\n            {\n                \"first_name\": \"Jane Doe\",\n                \"last_name\": null,\n                \"email\": null,\n                \"date_of_birth\": \"01/01/1970\",\n                \"relationship\": \"Spouse\",\n                \"smoker\": false,\n                \"declared_medicare\": false,\n                \"declared_dependent\": false\n            },\n            {\n                \"first_name\": \"Jim Doe\",\n                \"last_name\": null,\n                \"email\": null,\n                \"date_of_birth\": \"01/01/2010\",\n                \"relationship\": \"Child\",\n                \"smoker\": false,\n                \"declared_medicare\": false,\n                \"declared_dependent\": false\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/quotes",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"quotes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Quote",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"quote\": {\n        \"zip_code\": \"10011\",\n        \"county_id\": 36061,\n        \"income\": 140000,\n        \"entered_additional_hh_members\": 0,\n        \"effective_date\": \"2020-03-01\",\n        \"broker_code\": \"1234567890\",\n        \"family_members_attributes\": [\n            {\n                \"first_name\": \"John\",\n                \"last_name\": \"Doe\",\n                \"email\": \"jdoe@email.com\",\n                \"date_of_birth\": \"01/01/1970\",\n                \"relationship\": \"Primary\",\n                \"smoker\": false,\n                \"declared_medicare\": false,\n                \"declared_dependent\": false\n            },\n            {\n                \"first_name\": \"Jane Doe\",\n                \"last_name\": null,\n                \"email\": null,\n                \"date_of_birth\": \"01/01/1970\",\n                \"relationship\": \"Spouse\",\n                \"smoker\": false,\n                \"declared_medicare\": false,\n                \"declared_dependent\": false\n            },\n            {\n                \"first_name\": \"Jim Doe\",\n                \"last_name\": null,\n                \"email\": null,\n                \"date_of_birth\": \"01/01/2010\",\n                \"relationship\": \"Child\",\n                \"smoker\": false,\n                \"declared_medicare\": false,\n                \"declared_dependent\": false\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/quotes/SW-759864",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"quotes",
+								"SW-759864"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Quote",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{access-token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/quotes/DT-267813",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"quotes",
+								"DT-267813"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Review Quote",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{access-token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/quotes/SW-284971/review",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"quotes",
+								"SW-284971",
+								"review"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Plans",
+			"item": [
+				{
+					"name": "Available Plans for Quote",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{access-token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/quotes/SW-759864/plans",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"quotes",
+								"SW-759864",
+								"plans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pricing for Available Plans for Quote",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{access-token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/quotes/SW-759864/plan_pricing",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"quotes",
+								"SW-759864",
+								"plan_pricing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Plan Groups for Quote",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{access-token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/quotes/SW-759864/plan_groups",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"quotes",
+								"SW-759864",
+								"plan_groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Select a Plan for Quote",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"family_members_plans\": [ { \"family_member_id\": 68649, \"medical_plan_ids\": [ 11676 ] }, { \"family_member_id\": 68647, \"medical_plan_ids\": [ 11676 ] }, { \"family_member_id\": 68648, \"medical_plan_ids\": [ 11693 ] } ] }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/quotes/SW-759864/plans/select",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"quotes",
+								"SW-759864",
+								"plans",
+								"select"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UnSelect a Plan for Quote",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"family_members_plans\": [ { \"family_member_id\": 68649, \"medical_plan_ids\": [ ] }, { \"family_member_id\": 68647, \"medical_plan_ids\": [ ] }, { \"family_member_id\": 68648, \"medical_plan_ids\": [ 11693 ] } ] }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/quotes/SW-759864/plans/select",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"quotes",
+								"SW-759864",
+								"plans",
+								"select"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Selected plans for Quote",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{access-token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/quotes/SW-284971/plans/retrieve_selections",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"quotes",
+								"SW-284971",
+								"plans",
+								"retrieve_selections"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "AvailableInZip?",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ff921e9d-a672-4f07-a620-73ef120ba441",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "54dd2097-391e-4778-9081-f4188f21245c",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "auth_headers={{authHeader}}",
+						"type": "text"
+					},
+					{
+						"key": "access-token",
+						"value": "{{access-token}}",
+						"type": "text"
+					},
+					{
+						"key": "client",
+						"value": "{{client}}",
+						"type": "text"
+					},
+					{
+						"key": "expiry",
+						"value": "{{expiry}}",
+						"type": "text"
+					},
+					{
+						"key": "uid",
+						"value": "{{uid}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/counties/available_in_zip?zip_code=10001",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"counties",
+						"available_in_zip"
+					],
+					"query": [
+						{
+							"key": "zip_code",
+							"value": "10001"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "d447e8fc-43bf-4b6a-b5a1-0c56591fe376",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "dc0e8eb8-d074-4ac2-877f-19dfe9fce5bc",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "05c867b5-8a84-4eb1-bb02-4fdd75ec73af",
+			"key": "URL",
+			"value": "http://emblemhealth-qa.lvh.me:3030/api",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
