@@ -1417,16 +1417,3 @@ Use this endpoint to select a plan for quote.
 ### Parameters
 
 No parameters required.
-
-
-## Compare (TODO)
-
-NOTE: Should be on its own endpoint and not under inquiry.
-
-`POST           /api/inquiries/:inquiry_slug/plans/compare/generate_excel`
-
-`GET            /api/inquiries/:inquiry_slug/plans/compare/download_excel`
-
-`POST           /api/inquiries/:inquiry_slug/plans/compare/generate_filtered_plan_excel`
-
-`GET            /api/inquiries/:inquiry_slug/plans/compare/download_filtered_plan_excel`

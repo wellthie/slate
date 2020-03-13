@@ -330,6 +330,23 @@ $response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablec
 $response | ConvertTo-Json
 ```
 
+> Company Object
+
+```json
+{
+  "company": {
+    "name": "Company Name",
+    "zip_code_input": "10001",
+    "contact_name": "Test",
+    "contact_email": "test@test.com",
+    "using_broker": false,
+    "broker_code": null,
+    "county_id": 36061,
+    "sic_code": "9999"
+  }
+}
+```
+
 > Response looks like this:
 
 ```json
@@ -406,18 +423,24 @@ Use this endpoint to create a new company. Inside the request should be a json o
 
 ### Parameters
 
-Parameter                                                                               | Default      | Description
---------------------------------------------------------------------------------------- | ------------ | -----------------------
-<strong>company</strong><strong>required</strong>                                       | N/A          | Company object
-<strong>name</strong><strong>required</strong>                                          | N/A          | name
-<strong>zip_code_input</strong><strong>required</strong>                                | N/A          | zipcode
-<strong>contact_name</strong><strong>required</strong>                                  | N/A          | contact name
-<strong>contact_email</strong><strong>required</strong>                                 | N/A          | contact email
-<strong>effective_date</strong><strong>required</strong>                                | N/A          | Effective date
-<strong>county_id</strong><strong>required</strong>                                     | N/A          | county id
-<strong>sic_code</strong><strong>required</strong>                                      | N/A          | sic code
-<strong>broker_code</strong><strong>required if using_broker,  false otherwise</strong> | N/A          | Broker code
-using_broker                                                                            | N/A          | Using broker flag        | false
+Parameter                                                                                        | Default      | Description
+------------------------------------------------------------------------------------------------ | ------------ | -----------------------
+<strong>company</strong><strong>required</strong>                                                | N/A          | Company object 
+
+
+### Detailed Company Object Parameters
+
+Parameter                                                                                        | Default      | Description
+------------------------------------------------------------------------------------------------ | ------------ | -----------------------
+<strong>company[name]</strong><strong>required</strong>                                          | N/A          | name
+<strong>company[zip_code_input]</strong><strong>required</strong>                                | N/A          | zipcode
+<strong>company[contact_name]</strong><strong>required</strong>                                  | N/A          | contact name
+<strong>company[contact_email]</strong><strong>required</strong>                                 | N/A          | contact email
+<strong>company[effective_date]</strong><strong>required</strong>                                | N/A          | Effective date
+<strong>company[county_id]</strong><strong>required</strong>                                     | N/A          | county id
+<strong>company[sic_code]</strong><strong>required</strong>                                      | N/A          | sic code
+<strong>company[broker_code]</strong><strong>required if using_broker,  false otherwise</strong> | N/A          | Broker code
+company[using_broker]                                                                            | N/A          | Using broker flag
 
 ## Update Company
 
@@ -545,6 +568,23 @@ $response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablec
 $response | ConvertTo-Json
 ```
 
+> Company Object
+
+```json
+{
+  "company": {
+    "name": "Company Name",
+    "zip_code_input": "10001",
+    "contact_name": "Test",
+    "contact_email": "test@test.com",
+    "using_broker": false,
+    "broker_code": null,
+    "county_id": 36061,
+    "sic_code": "9999"
+  }
+}
+```
+
 > Successful response looks like this:
 
 ```json
@@ -613,41 +653,36 @@ Use this endpoint to update an existing company.
 
 ### Parameters
 
-Parameter                                                                               | Default      | Description
---------------------------------------------------------------------------------------- | ------------ | -----------------------
-<strong>company</strong><strong>required</strong>                                       | N/A          | Company object
-<strong>name</strong><strong>required</strong>                                          | N/A          | name
-<strong>zip_code_input</strong><strong>required</strong>                                | N/A          | zipcode
-<strong>contact_name</strong><strong>required</strong>                                  | N/A          | contact name
-<strong>contact_email</strong><strong>required</strong>                                 | N/A          | contact email
-<strong>effective_date</strong><strong>required</strong>                                | N/A          | Effective date
-<strong>county_id</strong><strong>required</strong>                                     | N/A          | county id
-<strong>sic_code</strong><strong>required</strong>                                      | N/A          | sic code
-<strong>broker_code</strong><strong>required if using_broker,  false otherwise</strong> | N/A          | Broker code
-using_broker                                                                            | N/A          | Using broker flag        | false
+Parameter     | Default      | Description
+------------- | ------------ | -----------------------
+company       | N/A          | Company object 
+
+### Detailed Company Object Parameters
+
+Parameter                | Default      | Description
+------------------------ | ------------ | -----------------------
+company[name]            | N/A          | name
+company[zip_code_input]  | N/A          | zipcode
+company[contact_name]    | N/A          | contact name
+company[contact_email]   | N/A          | contact email
+company[effective_date]  | N/A          | Effective date
+company[county_id]       | N/A          | county id
+company[sic_code]        | N/A          | sic code
+company[broker_code]     | N/A          | Broker code
+company[using_broker]    | N/A          | Using broker flag
 
 ## Get Company Settings
 
 ```shell
 curl --location --request GET 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/settings' \
 --header 'Content-Type: application/json' \
---header 'Cookie: auth_headers=%7B%22access-token%22%3A%22ctgocjRjlvrDCak4ls1Dqg%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22JfGfbdYP5qjFoFul5tD8UQ%22%2C%22expiry%22%3A%221583828589%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D' \
---header 'access-token: ctgocjRjlvrDCak4ls1Dqg' \
---header 'client: JfGfbdYP5qjFoFul5tD8UQ' \
---header 'expiry: 1583828589' \
+--header 'Cookie: auth_headers=%7B%22access-token%22%3A%22aKF3cRUN8JCvJ-LB50Fx8w%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22oHiaog8REElQVaA0JUotng%22%2C%22expiry%22%3A%221584092320%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D' \
+--header 'access-token: aKF3cRUN8JCvJ-LB50Fx8w' \
+--header 'client: oHiaog8REElQVaA0JUotng' \
+--header 'expiry: 1584092320' \
 --header 'uid: apidoc+broker@wellthie.com' \
---data-raw '{
-  "company": {
-    "name": "APIDoc-Test4",
-    "zip_code_input": "10001",
-    "contact_name": "Test",
-    "contact_email": "test@test.com",
-    "using_broker": false,
-    "broker_code": null,
-    "county_id": 36061,
-    "sic_code": "9999"
-  }
-}'
+--header 'Authorization: Bearer DT2KcU6A7F9tIvOC1pc3lg' \
+--data-raw ''
 ```
 
 ```go
@@ -665,7 +700,7 @@ func main() {
   url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/settings"
   method := "GET"
 
-  payload := strings.NewReader("{\n  \"company\": {\n    \"name\": \"APIDoc-Test4\",\n    \"zip_code_input\": \"10001\",\n    \"contact_name\": \"Test\",\n    \"contact_email\": \"test@test.com\",\n    \"using_broker\": false,\n    \"broker_code\": null,\n    \"county_id\": 36061,\n    \"sic_code\": \"9999\"\n  }\n}")
+  payload := strings.NewReader("")
 
   client := &http.Client {
   }
@@ -675,11 +710,12 @@ func main() {
     fmt.Println(err)
   }
   req.Header.Add("Content-Type", "application/json")
-  req.Header.Add("Cookie", "auth_headers=%7B%22access-token%22%3A%22ctgocjRjlvrDCak4ls1Dqg%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22JfGfbdYP5qjFoFul5tD8UQ%22%2C%22expiry%22%3A%221583828589%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D")
-  req.Header.Add("access-token", "ctgocjRjlvrDCak4ls1Dqg")
-  req.Header.Add("client", "JfGfbdYP5qjFoFul5tD8UQ")
-  req.Header.Add("expiry", "1583828589")
+  req.Header.Add("Cookie", "auth_headers=%7B%22access-token%22%3A%22aKF3cRUN8JCvJ-LB50Fx8w%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22oHiaog8REElQVaA0JUotng%22%2C%22expiry%22%3A%221584092320%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D")
+  req.Header.Add("access-token", "aKF3cRUN8JCvJ-LB50Fx8w")
+  req.Header.Add("client", "oHiaog8REElQVaA0JUotng")
+  req.Header.Add("expiry", "1584092320")
   req.Header.Add("uid", "apidoc+broker@wellthie.com")
+  req.Header.Add("Authorization", "Bearer DT2KcU6A7F9tIvOC1pc3lg")
 
   res, err := client.Do(req)
   defer res.Body.Close()
@@ -696,13 +732,13 @@ var settings = {
   "timeout": 0,
   "headers": {
     "Content-Type": "application/json",
-    "Cookie": "auth_headers=%7B%22access-token%22%3A%22ctgocjRjlvrDCak4ls1Dqg%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22JfGfbdYP5qjFoFul5tD8UQ%22%2C%22expiry%22%3A%221583828589%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D",
-    "access-token": "ctgocjRjlvrDCak4ls1Dqg",
-    "client": "JfGfbdYP5qjFoFul5tD8UQ",
-    "expiry": "1583828589",
-    "uid": "apidoc+broker@wellthie.com"
+    "Cookie": "auth_headers=%7B%22access-token%22%3A%22aKF3cRUN8JCvJ-LB50Fx8w%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22oHiaog8REElQVaA0JUotng%22%2C%22expiry%22%3A%221584092320%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D",
+    "access-token": "aKF3cRUN8JCvJ-LB50Fx8w",
+    "client": "oHiaog8REElQVaA0JUotng",
+    "expiry": "1584092320",
+    "uid": "apidoc+broker@wellthie.com",
+    "Authorization": "Bearer DT2KcU6A7F9tIvOC1pc3lg"
   },
-  "data": JSON.stringify({"company":{"name":"APIDoc-Test4","zip_code_input":"10001","contact_name":"Test","contact_email":"test@test.com","using_broker":false,"broker_code":null,"county_id":36061,"sic_code":"9999"}}),
 };
 
 $.ajax(settings).done(function (response) {
@@ -720,15 +756,16 @@ NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWit
   timeoutInterval:10.0];
 NSDictionary *headers = @{
   @"Content-Type": @"application/json",
-  @"Cookie": @"auth_headers=%7B%22access-token%22%3A%22ctgocjRjlvrDCak4ls1Dqg%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22JfGfbdYP5qjFoFul5tD8UQ%22%2C%22expiry%22%3A%221583828589%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D",
-  @"access-token": @"ctgocjRjlvrDCak4ls1Dqg",
-  @"client": @"JfGfbdYP5qjFoFul5tD8UQ",
-  @"expiry": @"1583828589",
-  @"uid": @"apidoc+broker@wellthie.com"
+  @"Cookie": @"auth_headers=%7B%22access-token%22%3A%22aKF3cRUN8JCvJ-LB50Fx8w%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22oHiaog8REElQVaA0JUotng%22%2C%22expiry%22%3A%221584092320%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D",
+  @"access-token": @"aKF3cRUN8JCvJ-LB50Fx8w",
+  @"client": @"oHiaog8REElQVaA0JUotng",
+  @"expiry": @"1584092320",
+  @"uid": @"apidoc+broker@wellthie.com",
+  @"Authorization": @"Bearer DT2KcU6A7F9tIvOC1pc3lg"
 };
 
 [request setAllHTTPHeaderFields:headers];
-NSData *postData = [[NSData alloc] initWithData:[@"{\n  \"company\": {\n    \"name\": \"APIDoc-Test4\",\n    \"zip_code_input\": \"10001\",\n    \"contact_name\": \"Test\",\n    \"contact_email\": \"test@test.com\",\n    \"using_broker\": false,\n    \"broker_code\": null,\n    \"county_id\": 36061,\n    \"sic_code\": \"9999\"\n  }\n}" dataUsingEncoding:NSUTF8StringEncoding]];
+NSData *postData = [[NSData alloc] initWithData:[@"" dataUsingEncoding:NSUTF8StringEncoding]];
 [request setHTTPBody:postData];
 
 [request setHTTPMethod:@"GET"];
@@ -753,13 +790,14 @@ dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
 ```powershell
 $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
 $headers.Add("Content-Type", "application/json")
-$headers.Add("Cookie", "auth_headers=%7B%22access-token%22%3A%22ctgocjRjlvrDCak4ls1Dqg%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22JfGfbdYP5qjFoFul5tD8UQ%22%2C%22expiry%22%3A%221583828589%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D")
-$headers.Add("access-token", "ctgocjRjlvrDCak4ls1Dqg")
-$headers.Add("client", "JfGfbdYP5qjFoFul5tD8UQ")
-$headers.Add("expiry", "1583828589")
+$headers.Add("Cookie", "auth_headers=%7B%22access-token%22%3A%22aKF3cRUN8JCvJ-LB50Fx8w%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22oHiaog8REElQVaA0JUotng%22%2C%22expiry%22%3A%221584092320%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D")
+$headers.Add("access-token", "aKF3cRUN8JCvJ-LB50Fx8w")
+$headers.Add("client", "oHiaog8REElQVaA0JUotng")
+$headers.Add("expiry", "1584092320")
 $headers.Add("uid", "apidoc+broker@wellthie.com")
+$headers.Add("Authorization", "Bearer DT2KcU6A7F9tIvOC1pc3lg")
 
-$body = "{`n  `"company`": {`n    `"name`": `"APIDoc-Test4`",`n    `"zip_code_input`": `"10001`",`n    `"contact_name`": `"Test`",`n    `"contact_email`": `"test@test.com`",`n    `"using_broker`": false,`n    `"broker_code`": null,`n    `"county_id`": 36061,`n    `"sic_code`": `"9999`"`n  }`n}"
+$body = ""
 
 $response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/companies/shy8pmfek8ZpGKJYneD2g5TJ/settings' -Method 'GET' -Headers $headers -Body $body
 $response | ConvertTo-Json
@@ -769,402 +807,11 @@ $response | ConvertTo-Json
 
 ```json
 {
-  "logo": "URL",
-  "splash_image": "URL",
-  "show_broker_code": true,
-  "effective_dates": [
-    {
-      "label": "April 1, 2020",
-      "data": "2020-04-01",
-      "states": []
-    },
-    ...
-  ],
-  "show_schedule_a_call": true,
-  "schedule_a_call_availabilities": [
-    {
-      "day": "Monday, March  9",
-      "data": "2020-03-09",
-      "hours": [
-        {
-          "label": "9:00AM - 10:00AM"
-        },
-        ...
-      ]
-    },
-    ...
-  ],
-  "show_issuer_logos": false,
-  "excel_template_file": true,
-  "excel_template_url": "https://domain.com/abc.xlsx",
-  "allow_group_and_group_to_individual": true,
-  "allow_only_group": false,
-  "allow_only_group_to_individual": false,
-  "show_enrollment_buttons_on_quote_page": true,
-  "business_large_group_url": "URL",
-  "business_individual_url": "URL",
-  "census_child_max_age_for_inclusion_in_household": 26,
-  "show_renewals": false,
-  "use_sso": true,
-  "sso_idp_target_url": "https://wellthieinc-dev.onelogin.com",
-  "sso_idp_login_link_text": "Login through Wellthie's OneLogin",
-  "disable_direct_login": false,
-  "organization_name": "Wellthie Demo",
-  "show_dental": true,
-  "show_vision": true,
-  "show_value_add": false,
-  "show_dental_and_vision_bundle": false,
-  "show_value_add_bundle": false,
-  "show_limited_medical": false,
-  "filters_configuration": {
-    "medical_filters": [
-      {
-        "label": "Issuer",
-        "value": "issuer",
-        "type": "issuer",
-        "icon": "icon--issuers",
-        "show_for_single": true,
-        "show_for_family": true
-      },
-      {
-        "label": "Exchange Type",
-        "value": "exchange_type",
-        "icon": "icon--exchange-type",
-        "show_for_single": true,
-        "show_for_family": true,
-        "type": "tag",
-        "selected_tags": [
-          "off_exchange"
-        ],
-        "tags": [
-          {
-            "value": "on_exchange",
-            "label": "On Exchange"
-          },
-          ...
-        ]
-      },
-      {
-        "label": "Savings Account",
-        "value": "hsa_eligible",
-        "icon": "icon--hsa",
-        "show_for_single": true,
-        "show_for_family": true,
-        "type": "tag",
-        "tags": [
-          {
-            "value": "hsa_eligible",
-            "label": "HSA Eligible"
-          }
-        ]
-      },
-      {
-        "label": "Deductible",
-        "value": "deductible",
-        "icon": "icon--deductible-single",
-        "type": "range",
-        "plan_property": "deductible_single_number",
-        "show_for_single": true,
-        "show_for_family": true,
-        "ranges": [
-          {
-            "label": "$0 to $2,000",
-            "value": "under_2000",
-            "start_range": 0,
-            "end_range": 2000
-          },
-          ...
-        ]
-      },
-      {
-        "label": "Metal",
-        "value": "metal",
-        "icon": "icon--metal",
-        "type": "tag",
-        "show_for_single": true,
-        "show_for_family": true,
-        "tags": [
-          {
-            "value": "bronze",
-            "label": "Bronze"
-          },
-          ...
-        ]
-      },
-      {
-        "label": "Maximum Out Of Pocket",
-        "value": "maximum_out_of_pocket",
-        "icon": "icon--moop-single",
-        "type": "range",
-        "plan_property": "moop_single_number",
-        "show_for_single": true,
-        "show_for_family": true,
-        "ranges": [
-          {
-            "label": "$0 to $2,000",
-            "value": "under_2000",
-            "start_range": 0,
-            "end_range": 2000
-          },
-          ...
-        ]
-      },
-      {
-        "label": "Network",
-        "value": "network",
-        "icon": "icon--network",
-        "show_for_single": true,
-        "show_for_family": true,
-        "type": "tag",
-        "tags": [
-          {
-            "value": "epo",
-            "label": "EPO"
-          },
-          ...
-        ]
-      },
-      {
-        "label": "PCP Cost Sharing Amount",
-        "value": "pcp_amount",
-        "icon": "icon--copay",
-        "type": "range",
-        "show_for_single": true,
-        "show_for_family": true,
-        "ranges": [
-          {
-            "label": "< $30 before deductible",
-            "value": "amount_low_range_before",
-            "start_range": 0,
-            "end_range": 30,
-            "plan_property": "pcp_amount_number_before_deductible"
-          },
-          ...
-        ]
-      },
-      {
-        "label": "PCP Cost Sharing Percentage",
-        "value": "pcp_percentage",
-        "icon": "icon--discount",
-        "type": "range",
-        "show_for_single": true,
-        "show_for_family": true,
-        "ranges": [
-          {
-            "label": "< 30% before deductible",
-            "value": "percentage_low_range_before",
-            "start_range": 0,
-            "end_range": 30,
-            "plan_property": "pcp_percentage_number_before_deductible"
-          },
-          ...
-        ]
-      }
-    ],
-    "dental_filters": [
-      {
-        "label": "Issuer",
-        "value": "issuer",
-        "type": "issuer",
-        "icon": "icon--issuers",
-        "show_for_single": true,
-        "show_for_family": true
-      },
-      {
-        "label": "Network",
-        "value": "network",
-        "icon": "icon--network",
-        "show_for_single": true,
-        "show_for_family": true,
-        "type": "tag",
-        "tags": [
-          {
-            "value": "dental_hmo",
-            "label": "HMO"
-          },
-          ...
-        ]
-      },
-      {
-        "label": "Includes",
-        "value": "includes",
-        "icon": "icon--add-on",
-        "show_for_single": true,
-        "show_for_family": true,
-        "type": "tag",
-        "tags": [
-          {
-            "value": "dental_orthodontia_over_19",
-            "label": "Orthodontia Over Age 19"
-          },
-          ...
-        ]
-      }
-    ],
-    "vision_filters": [
-      {
-        "label": "Issuer",
-        "value": "issuer",
-        "type": "issuer",
-        "icon": "icon--issuers",
-        "show_for_single": true,
-        "show_for_family": true
-      },
-      {
-        "label": "Network",
-        "value": "network",
-        "icon": "icon--network",
-        "show_for_single": true,
-        "show_for_family": true,
-        "type": "tag",
-        "tags": [
-          {
-            "value": "vision_hmo",
-            "label": "HMO"
-          },
-          ...
-        ]
-      },
-      {
-        "label": "Includes",
-        "value": "includes",
-        "icon": "icon--add-on",
-        "show_for_single": true,
-        "show_for_family": true,
-        "type": "tag",
-        "tags": [
-          {
-            "value": "vision_lens_options",
-            "label": "Lens Options"
-          },
-          ...
-        ]
-      }
-    ],
-    "dental_vision_bundle_filters": [
-      {
-        "label": "Issuer",
-        "value": "issuer",
-        "type": "issuer",
-        "icon": "icon--issuers",
-        "show_for_single": true,
-        "show_for_family": true
-      },
-      {
-        "label": "Network",
-        "value": "network",
-        "icon": "icon--network",
-        "show_for_single": true,
-        "show_for_family": true,
-        "type": "tag",
-        "tags": [
-          {
-            "value": "dental_and_vision_bundle_hmo",
-            "label": "HMO"
-          },
-          ...
-        ]
-      },
-      {
-        "label": "Dental Benefits Includes",
-        "value": "dental_benefits_includes",
-        "icon": "icon--add-on",
-        "show_for_single": true,
-        "show_for_family": true,
-        "type": "tag",
-        "tags": [
-          {
-            "value": "orthodontia_over_19",
-            "label": "Orthodontia Over Age 19"
-          },
-          ...
-        ]
-      },
-      {
-        "label": "Vision Benefits Includes",
-        "value": "vision_benefits_includes",
-        "icon": "icon--add-on",
-        "show_for_single": true,
-        "show_for_family": true,
-        "type": "tag",
-        "tags": [
-          {
-            "value": "vision_lens_options",
-            "label": "Lens Options"
-          },
-          {
-            "value": "vision_contacts",
-            "label": "Contacts Options"
-          }
-        ]
-      }
-    ],
-    "value_add_filters": [
-      {
-        "label": "Issuer",
-        "value": "issuer",
-        "type": "issuer",
-        "icon": "icon--issuers",
-        "show_for_single": true,
-        "show_for_family": true
-      },
-      {
-        "value": "type",
-        "label": "Type",
-        "icon": "icon--includes",
-        "show_for_single": true,
-        "show_for_family": true,
-        "type": "tag",
-        "tags": [
-          {
-            "label": "Accident UPDATED",
-            "value": "accident"
-          },
-          ...
-        ]
-      }
-    ],
-    "value_add_bundle_filters": [
-      {
-        "label": "Issuer",
-        "value": "issuer",
-        "type": "issuer",
-        "icon": "icon--issuers",
-        "show_for_single": true,
-        "show_for_family": true
-      }
-    ],
-    "limited_medical_filters": [
-      {
-        "label": "Issuer",
-        "value": "issuer",
-        "type": "issuer",
-        "icon": "icon--issuers",
-        "show_for_single": true,
-        "show_for_family": true
-      },
-      {
-        "label": "Includes",
-        "value": "includes",
-        "icon": "icon--add-on",
-        "show_for_single": true,
-        "show_for_family": true,
-        "type": "tag",
-        "tags": [
-          {
-            "value": "limited_medical_accident",
-            "label": "Accident"
-          },
-          ...
-        ]
-      }
-    ]
-  },
-  "show_composite_rates": true,
-  "allow_broker_registration": true,
-  "events_api_url": null,
-  "mixpanel_project_id": "ea174d0291bcc41acc0bf30285568917",
-  "name": "Wellthie Demo"
+    "child_max_age_for_inclusion_in_household": 26,
+    "allow_group_and_group_to_individual": true,
+    "default_salary_adjustment": 30,
+    "business_large_group_url": "https://www.amerihealthnj.com/html/employers/large_businesses.html?",
+    "business_individual_url": "https://www.healthcare.gov/"
 }
 
 ```
@@ -1404,33 +1051,33 @@ Use this endpoint to create a new current_plan to a company. This is used for re
 
 ### HTTP Request
 
-`POST /api/companies/zcZUuDSkDb7TRzTbPWmj6HSa/current_plan`
+`POST /api/companies/:company_slug/current_plan`
 
 ### Parameters
 
-Parameter                                         | Default   | Description
-------------------------------------------------- | --------- | --------------------------
-current_plan_issuer                               | N/A       | Issuer for this plan
-<strong>name</strong><strong>required</strong>    | N/A       | Plan name
-company_id                                        | N/A       | Company's id
-metal_level_name                                  | N/A       | Metal level for plan
-medical_deductible_single                         | N/A       | Medical deductible single
-medical_deductible_family                         | N/A       | Medical deductible family
-maximum_out_of_pocket_limit_single                | N/A       | Max out of pocket single
-maximum_out_of_pocket_limit_family                | N/A       | Max out of pocket family
-pcp                                               | N/A       | PCP
-specialist                                        | N/A       | Specialist
-network_type                                      | N/A       | Network Type
-preventive_care                                   | N/A       | Preventive Care
-inpatient_facility                                | N/A       | Inpatient Facility
-emergency_room                                    | N/A       | Emergency Room
-ambulance                                         | N/A       | Ambulance
-urgent_care                                       | N/A       | Urgent Care
-generic                                           | N/A       | Generic
-highlight_1                                       | N/A       | Highlight 1
-highlight_2                                       | N/A       | Highlight 2
-highlight_3                                       | N/A       | Highlight 3
-formulary_brand                                   | N/A       | Formulary Brand
-non_formulary_brand                               | N/A       | Non-Formulary Brand
-mail_order                                        | N/A       | Mail Order
-employer_monthly_cost                             | N/A       | Employer Monthly Cost
+Parameter                                                       | Default   | Description
+--------------------------------------------------------------- | --------- | --------------------------
+current_plan[current_plan_issuer]                               | N/A       | Issuer for this plan
+<strong>current_plan[name]</strong><strong>required</strong>    | N/A       | Plan name
+current_plan[company_id]                                        | N/A       | Company's id
+current_plan[metal_level_name]                                  | N/A       | Metal level for plan
+current_plan[medical_deductible_single]                         | N/A       | Medical deductible single
+current_plan[medical_deductible_family]                         | N/A       | Medical deductible family
+current_plan[maximum_out_of_pocket_limit_single]                | N/A       | Max out of pocket single
+current_plan[maximum_out_of_pocket_limit_family]                | N/A       | Max out of pocket family
+current_plan[pcp]                                               | N/A       | PCP
+current_plan[specialist]                                        | N/A       | Specialist
+current_plan[network_type]                                      | N/A       | Network Type
+current_plan[preventive_care]                                   | N/A       | Preventive Care
+current_plan[inpatient_facility]                                | N/A       | Inpatient Facility
+current_plan[emergency_room]                                    | N/A       | Emergency Room
+current_plan[ambulance]                                         | N/A       | Ambulance
+current_plan[urgent_care]                                       | N/A       | Urgent Care
+current_plan[generic]                                           | N/A       | Generic
+current_plan[highlight_1]                                       | N/A       | Highlight 1
+current_plan[highlight_2]                                       | N/A       | Highlight 2
+current_plan[highlight_3]                                       | N/A       | Highlight 3
+current_plan[formulary_brand]                                   | N/A       | Formulary Brand
+current_plan[non_formulary_brand]                               | N/A       | Non-Formulary Brand
+current_plan[mail_order]                                        | N/A       | Mail Order
+current_plan[employer_monthly_cost]                             | N/A       | Employer Monthly Cost

@@ -5,10 +5,7 @@
 ```shell
 curl --location --request POST 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/auth/sign_in' \
 --header 'Content-Type: application/json' \
---data-raw '{
-	"email":"apidoc+broker@wellthie.com",
-	"password":"Password123"
-}'
+--data-raw '{ "email":"apidoc+broker@wellthie.com", "password":"Password123" }'
 ```
 
 ```go
@@ -61,16 +58,6 @@ $.ajax(settings).done(function (response) {
 });
 ```
 
-```powershell
-$headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
-$headers.Add("Content-Type", "application/json")
-
-$body = "{`n	`"email`":`"apidoc+broker@wellthie.com`",`n	`"password`":`"Password123`"`n}"
-
-$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/auth/sign_in' -Method 'POST' -Headers $headers -Body $body
-$response | ConvertTo-Json
-```
-
 ```objective_c
 #import <Foundation/Foundation.h>
 
@@ -106,32 +93,48 @@ completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
 dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
 ```
 
+```powershell
+$headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
+$headers.Add("Content-Type", "application/json")
+
+$body = "{`n	`"email`":`"apidoc+broker@wellthie.com`",`n	`"password`":`"Password123`"`n}"
+
+$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/auth/sign_in' -Method 'POST' -Headers $headers -Body $body
+$response | ConvertTo-Json
+```
+
 > Response looks like this:
 
 ```json
 {
-  "data": {
-    "id": "id",
-    "slug": "slug",
-    "first_name": "Name",
-    "last_name": "Lastname",
-    "email": "name.lastname@domain.com",
-    "provider": "email",
-    "uid": "name.lastname@domain.com",
-    "password_changed_at": "2017-05-04T12:57:21.000-04:00",
-    "organization_id": 1,
-    "team_id": null,
-    "role": "organization_admin",
-    "user_type": null,
-    "npn": "A1B2",
-    "broker_code": "A1B2",
-    "phone_number": "",
-    "account_expiration_date": null,
-    "created_by_user_id": 2,
-    "time_zone": "Eastern Time (US & Canada)",
-    "deleted_at": null,
-    "is_any_broker_type": true
-  }
+    "data": {
+        "id": 58463,
+        "slug": "poVcXdGc35qERs1ngPTXgsZ1",
+        "first_name": "firstName",
+        "last_name": "lastName",
+        "email": "apidoc+broker@wellthie.com",
+        "provider": "email",
+        "uid": "apidoc+broker@wellthie.com",
+        "password_changed_at": "2020-03-05T07:38:17.526-05:00",
+        "organization_id": 23,
+        "team_id": null,
+        "role": "broker",
+        "user_type": null,
+        "npn_trash": null,
+        "broker_code": "123456",
+        "phone_number": null,
+        "account_expiration_date": null,
+        "created_by_user_id": null,
+        "time_zone": "Eastern Time (US & Canada)",
+        "deleted_at": null,
+        "salesforce_email": null,
+        "salesforce_access_token": null,
+        "salesforce_refresh_token": null,
+        "salesforce_lock": false,
+        "company_id": null,
+        "allow_password_change": false,
+        "is_any_broker_type": true
+    }
 }
 ```
 
@@ -151,16 +154,12 @@ password     | N/A     | User's password       | true
 ## Sign out
 
 ```shell
-curl -X DELETE "/api/auth/sign_out" \
-     -H "Content-Type: application/json" \
-     -d '{"uid": "name.lastname@domain.com", "client": "WedFsHGWTiAfdhl4LbFVjg", "access-token": "UyuaNMouSdihadn"}'
-
 curl --location --request DELETE 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/auth/sign_out' \
 --header 'Content-Type: application/json' \
---header 'Cookie: auth_headers=%7B%22access-token%22%3A%22-GXI3CJKUQlj9hRUHV_F5g%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22JfGfbdYP5qjFoFul5tD8UQ%22%2C%22expiry%22%3A%221583826591%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D' \
---header 'access-token: -GXI3CJKUQlj9hRUHV_F5g' \
---header 'client: JfGfbdYP5qjFoFul5tD8UQ' \
---header 'expiry: 1583826591' \
+--header 'Cookie: auth_headers=%7B%22access-token%22%3A%22zEqWCx7JuXrpJKE5g1etDw%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22kDskePSCU9pGO1asU5dbGA%22%2C%22expiry%22%3A%221584033471%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D' \
+--header 'access-token: zEqWCx7JuXrpJKE5g1etDw' \
+--header 'client: kDskePSCU9pGO1asU5dbGA' \
+--header 'expiry: 1584033471' \
 --header 'uid: apidoc+broker@wellthie.com'
 ```
 
@@ -186,10 +185,10 @@ func main() {
     fmt.Println(err)
   }
   req.Header.Add("Content-Type", "application/json")
-  req.Header.Add("Cookie", "auth_headers=%7B%22access-token%22%3A%22-GXI3CJKUQlj9hRUHV_F5g%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22JfGfbdYP5qjFoFul5tD8UQ%22%2C%22expiry%22%3A%221583826591%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D")
-  req.Header.Add("access-token", "-GXI3CJKUQlj9hRUHV_F5g")
-  req.Header.Add("client", "JfGfbdYP5qjFoFul5tD8UQ")
-  req.Header.Add("expiry", "1583826591")
+  req.Header.Add("Cookie", "auth_headers=%7B%22access-token%22%3A%22zEqWCx7JuXrpJKE5g1etDw%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22kDskePSCU9pGO1asU5dbGA%22%2C%22expiry%22%3A%221584033471%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D")
+  req.Header.Add("access-token", "zEqWCx7JuXrpJKE5g1etDw")
+  req.Header.Add("client", "kDskePSCU9pGO1asU5dbGA")
+  req.Header.Add("expiry", "1584033471")
   req.Header.Add("uid", "apidoc+broker@wellthie.com")
 
   res, err := client.Do(req)
@@ -207,10 +206,10 @@ var settings = {
   "timeout": 0,
   "headers": {
     "Content-Type": "application/json",
-    "Cookie": "auth_headers=%7B%22access-token%22%3A%22-GXI3CJKUQlj9hRUHV_F5g%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22JfGfbdYP5qjFoFul5tD8UQ%22%2C%22expiry%22%3A%221583826591%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D",
-    "access-token": "-GXI3CJKUQlj9hRUHV_F5g",
-    "client": "JfGfbdYP5qjFoFul5tD8UQ",
-    "expiry": "1583826591",
+    "Cookie": "auth_headers=%7B%22access-token%22%3A%22zEqWCx7JuXrpJKE5g1etDw%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22kDskePSCU9pGO1asU5dbGA%22%2C%22expiry%22%3A%221584033471%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D",
+    "access-token": "zEqWCx7JuXrpJKE5g1etDw",
+    "client": "kDskePSCU9pGO1asU5dbGA",
+    "expiry": "1584033471",
     "uid": "apidoc+broker@wellthie.com"
   },
 };
@@ -218,19 +217,6 @@ var settings = {
 $.ajax(settings).done(function (response) {
   console.log(response);
 });
-```
-
-```powershell
-$headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
-$headers.Add("Content-Type", "application/json")
-$headers.Add("Cookie", "auth_headers=%7B%22access-token%22%3A%22-GXI3CJKUQlj9hRUHV_F5g%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22JfGfbdYP5qjFoFul5tD8UQ%22%2C%22expiry%22%3A%221583826591%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D")
-$headers.Add("access-token", "-GXI3CJKUQlj9hRUHV_F5g")
-$headers.Add("client", "JfGfbdYP5qjFoFul5tD8UQ")
-$headers.Add("expiry", "1583826591")
-$headers.Add("uid", "apidoc+broker@wellthie.com")
-
-$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/auth/sign_out' -Method 'DELETE' -Headers $headers -Body $body
-$response | ConvertTo-Json
 ```
 
 ```objective_c
@@ -243,10 +229,10 @@ NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWit
   timeoutInterval:10.0];
 NSDictionary *headers = @{
   @"Content-Type": @"application/json",
-  @"Cookie": @"auth_headers=%7B%22access-token%22%3A%22-GXI3CJKUQlj9hRUHV_F5g%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22JfGfbdYP5qjFoFul5tD8UQ%22%2C%22expiry%22%3A%221583826591%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D",
-  @"access-token": @"-GXI3CJKUQlj9hRUHV_F5g",
-  @"client": @"JfGfbdYP5qjFoFul5tD8UQ",
-  @"expiry": @"1583826591",
+  @"Cookie": @"auth_headers=%7B%22access-token%22%3A%22zEqWCx7JuXrpJKE5g1etDw%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22kDskePSCU9pGO1asU5dbGA%22%2C%22expiry%22%3A%221584033471%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D",
+  @"access-token": @"zEqWCx7JuXrpJKE5g1etDw",
+  @"client": @"kDskePSCU9pGO1asU5dbGA",
+  @"expiry": @"1584033471",
   @"uid": @"apidoc+broker@wellthie.com"
 };
 
@@ -269,6 +255,19 @@ completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
 }];
 [dataTask resume];
 dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+```
+
+```powershell
+$headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
+$headers.Add("Content-Type", "application/json")
+$headers.Add("Cookie", "auth_headers=%7B%22access-token%22%3A%22zEqWCx7JuXrpJKE5g1etDw%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22kDskePSCU9pGO1asU5dbGA%22%2C%22expiry%22%3A%221584033471%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D")
+$headers.Add("access-token", "zEqWCx7JuXrpJKE5g1etDw")
+$headers.Add("client", "kDskePSCU9pGO1asU5dbGA")
+$headers.Add("expiry", "1584033471")
+$headers.Add("uid", "apidoc+broker@wellthie.com")
+
+$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/auth/sign_out' -Method 'DELETE' -Headers $headers -Body $body
+$response | ConvertTo-Json
 ```
 
 > Response looks like this:
