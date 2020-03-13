@@ -304,7 +304,6 @@ Use this endpoint to fetch a particular inquiry.
 
 No parameters required.
 
-
 ## Create an Inquiry
 
 ```shell
@@ -1013,14 +1012,26 @@ $response | ConvertTo-Json
 
 ```json
 [
-  {
-    "id": 85868,
-    "selected_plan_name": "INS NONDIFF PPO Silver - AKRU",
-    "group_plan_id": 18418,
-    "individual_plan_id": null,
-    "added_to_cart": false,
-    "order": 1
-  }
+    {
+        "id": 136318,
+        "individual_plan_id": null,
+        "medical_plan_id": 78717,
+        "ancillary_plan_id": null,
+        "ancillary_plan_type": null,
+        "selected_for_quote": true,
+        "selected_for_enrollment": false,
+        "order": 0
+    },
+    {
+        "id": 136319,
+        "individual_plan_id": null,
+        "medical_plan_id": 78720,
+        "ancillary_plan_id": null,
+        "ancillary_plan_type": null,
+        "selected_for_quote": true,
+        "selected_for_enrollment": false,
+        "order": 1
+    }
 ]
 ```
 
@@ -1042,7 +1053,6 @@ Use this endpoint to retrieve inquiry's plan selections. It could be up to 4 ele
 ### Parameters
 
 No parameters required.
-
 
 ## Get Individual Plans
 
@@ -1262,3 +1272,254 @@ Use this endpoint to retrieve individual plan quotes for those group to individu
 ### Parameters
 
 No parameters required.
+
+## Get Current Plan
+
+<aside class="notice">
+  Current plan details are sent as part of <a href="#get-company-details">Get Company Details</a>
+</aside>
+
+## Create Current Plan
+
+```shell
+curl --location --request POST 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/AGKB7928/current_plan' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: auth_headers=%7B%22access-token%22%3A%22undefined%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22undefined%22%2C%22expiry%22%3A%22undefined%22%2C%22uid%22%3A%22undefined%22%7D' \
+--header 'access-token: ' \
+--header 'client: ' \
+--header 'expiry: ' \
+--header 'uid: ' \
+--data-raw '{
+  "current_plan": {
+    "product_type": "medical",
+    "name": "Current Plan Name",
+    "current_plan_issuer": "Current Plan Issuer",
+    "metal_level_name": "Bronze",
+    "employer_monthly_cost": 1000,
+    "carrier_plan_identifier": "123",
+    "medical_deductible_single": "Deductible Single",
+    "medical_deductible_family": "Deductible Single",
+    "maximum_out_of_pocket_limit_single": "Deductible Single",
+    "specialist": "Specialist",
+    "pcp": "Primary Care Physician",
+    "maximum_out_of_pocket_limit_family": "Max-Out-of-Pocket Family",
+    "network_type": "Network",
+    "preventive_care": "Preventive Care",
+    "inpatient_facility": "Hospital (Inpatient)",
+    "emergency_room": "Emergency Room",
+    "ambulance": "Ambulance",
+    "urgent_care": "Urgent Care",
+    "generic": "Generic Prescription",
+    "formulary_brand": "Formulary Prescription",
+    "non_formulary_brand": "Non Formulary Brand Prescription",
+    "mail_order": "Mail Order (90 day supply)"
+  }
+}'
+```
+
+```go
+package main
+
+import (
+  "fmt"
+  "strings"
+  "net/http"
+  "io/ioutil"
+)
+
+func main() {
+
+  url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/AGKB7928/current_plan"
+  method := "POST"
+
+  payload := strings.NewReader("{\n  \"current_plan\": {\n    \"product_type\": \"medical\",\n    \"name\": \"Current Plan Name\",\n    \"current_plan_issuer\": \"Current Plan Issuer\",\n    \"metal_level_name\": \"Bronze\",\n    \"employer_monthly_cost\": 1000,\n    \"carrier_plan_identifier\": \"123\",\n    \"medical_deductible_single\": \"Deductible Single\",\n    \"medical_deductible_family\": \"Deductible Single\",\n    \"maximum_out_of_pocket_limit_single\": \"Deductible Single\",\n    \"specialist\": \"Specialist\",\n    \"pcp\": \"Primary Care Physician\",\n    \"maximum_out_of_pocket_limit_family\": \"Max-Out-of-Pocket Family\",\n    \"network_type\": \"Network\",\n    \"preventive_care\": \"Preventive Care\",\n    \"inpatient_facility\": \"Hospital (Inpatient)\",\n    \"emergency_room\": \"Emergency Room\",\n    \"ambulance\": \"Ambulance\",\n    \"urgent_care\": \"Urgent Care\",\n    \"generic\": \"Generic Prescription\",\n    \"formulary_brand\": \"Formulary Prescription\",\n    \"non_formulary_brand\": \"Non Formulary Brand Prescription\",\n    \"mail_order\": \"Mail Order (90 day supply)\"\n  }\n}")
+
+  client := &http.Client {
+  }
+  req, err := http.NewRequest(method, url, payload)
+
+  if err != nil {
+    fmt.Println(err)
+  }
+  req.Header.Add("Content-Type", "application/json")
+  req.Header.Add("Cookie", "auth_headers=%7B%22access-token%22%3A%22undefined%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22undefined%22%2C%22expiry%22%3A%22undefined%22%2C%22uid%22%3A%22undefined%22%7D")
+  req.Header.Add("access-token", "")
+  req.Header.Add("client", "")
+  req.Header.Add("expiry", "")
+  req.Header.Add("uid", "")
+
+  res, err := client.Do(req)
+  defer res.Body.Close()
+  body, err := ioutil.ReadAll(res.Body)
+
+  fmt.Println(string(body))
+}
+```
+
+```javascript
+var settings = {
+  "url": "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/AGKB7928/current_plan",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "Content-Type": "application/json",
+    "Cookie": "auth_headers=%7B%22access-token%22%3A%22undefined%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22undefined%22%2C%22expiry%22%3A%22undefined%22%2C%22uid%22%3A%22undefined%22%7D",
+    "access-token": "",
+    "client": "",
+    "expiry": "",
+    "uid": ""
+  },
+  "data": JSON.stringify({"current_plan":{"product_type":"medical","name":"Current Plan Name","current_plan_issuer":"Current Plan Issuer","metal_level_name":"Bronze","employer_monthly_cost":1000,"carrier_plan_identifier":"123","medical_deductible_single":"Deductible Single","medical_deductible_family":"Deductible Single","maximum_out_of_pocket_limit_single":"Deductible Single","specialist":"Specialist","pcp":"Primary Care Physician","maximum_out_of_pocket_limit_family":"Max-Out-of-Pocket Family","network_type":"Network","preventive_care":"Preventive Care","inpatient_facility":"Hospital (Inpatient)","emergency_room":"Emergency Room","ambulance":"Ambulance","urgent_care":"Urgent Care","generic":"Generic Prescription","formulary_brand":"Formulary Prescription","non_formulary_brand":"Non Formulary Brand Prescription","mail_order":"Mail Order (90 day supply)"}}),
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+```objective_c
+#import <Foundation/Foundation.h>
+
+dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/AGKB7928/current_plan"]
+  cachePolicy:NSURLRequestUseProtocolCachePolicy
+  timeoutInterval:10.0];
+NSDictionary *headers = @{
+  @"Content-Type": @"application/json",
+  @"Cookie": @"auth_headers=%7B%22access-token%22%3A%22undefined%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22undefined%22%2C%22expiry%22%3A%22undefined%22%2C%22uid%22%3A%22undefined%22%7D",
+  @"access-token": @"",
+  @"client": @"",
+  @"expiry": @"",
+  @"uid": @""
+};
+
+[request setAllHTTPHeaderFields:headers];
+NSData *postData = [[NSData alloc] initWithData:[@"{\n  \"current_plan\": {\n    \"product_type\": \"medical\",\n    \"name\": \"Current Plan Name\",\n    \"current_plan_issuer\": \"Current Plan Issuer\",\n    \"metal_level_name\": \"Bronze\",\n    \"employer_monthly_cost\": 1000,\n    \"carrier_plan_identifier\": \"123\",\n    \"medical_deductible_single\": \"Deductible Single\",\n    \"medical_deductible_family\": \"Deductible Single\",\n    \"maximum_out_of_pocket_limit_single\": \"Deductible Single\",\n    \"specialist\": \"Specialist\",\n    \"pcp\": \"Primary Care Physician\",\n    \"maximum_out_of_pocket_limit_family\": \"Max-Out-of-Pocket Family\",\n    \"network_type\": \"Network\",\n    \"preventive_care\": \"Preventive Care\",\n    \"inpatient_facility\": \"Hospital (Inpatient)\",\n    \"emergency_room\": \"Emergency Room\",\n    \"ambulance\": \"Ambulance\",\n    \"urgent_care\": \"Urgent Care\",\n    \"generic\": \"Generic Prescription\",\n    \"formulary_brand\": \"Formulary Prescription\",\n    \"non_formulary_brand\": \"Non Formulary Brand Prescription\",\n    \"mail_order\": \"Mail Order (90 day supply)\"\n  }\n}" dataUsingEncoding:NSUTF8StringEncoding]];
+[request setHTTPBody:postData];
+
+[request setHTTPMethod:@"POST"];
+
+NSURLSession *session = [NSURLSession sharedSession];
+NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+  if (error) {
+    NSLog(@"%@", error);
+  } else {
+    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+    NSError *parseError = nil;
+    NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+    NSLog(@"%@",responseDictionary);
+    dispatch_semaphore_signal(sema);
+  }
+}];
+[dataTask resume];
+dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+```
+
+```powershell
+$headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
+$headers.Add("Content-Type", "application/json")
+$headers.Add("Cookie", "auth_headers=%7B%22access-token%22%3A%22undefined%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22undefined%22%2C%22expiry%22%3A%22undefined%22%2C%22uid%22%3A%22undefined%22%7D")
+$headers.Add("access-token", "")
+$headers.Add("client", "")
+$headers.Add("expiry", "")
+$headers.Add("uid", "")
+
+$body = "{`n  `"current_plan`": {`n    `"product_type`": `"medical`",`n    `"name`": `"Current Plan Name`",`n    `"current_plan_issuer`": `"Current Plan Issuer`",`n    `"metal_level_name`": `"Bronze`",`n    `"employer_monthly_cost`": 1000,`n    `"carrier_plan_identifier`": `"123`",`n    `"medical_deductible_single`": `"Deductible Single`",`n    `"medical_deductible_family`": `"Deductible Single`",`n    `"maximum_out_of_pocket_limit_single`": `"Deductible Single`",`n    `"specialist`": `"Specialist`",`n    `"pcp`": `"Primary Care Physician`",`n    `"maximum_out_of_pocket_limit_family`": `"Max-Out-of-Pocket Family`",`n    `"network_type`": `"Network`",`n    `"preventive_care`": `"Preventive Care`",`n    `"inpatient_facility`": `"Hospital (Inpatient)`",`n    `"emergency_room`": `"Emergency Room`",`n    `"ambulance`": `"Ambulance`",`n    `"urgent_care`": `"Urgent Care`",`n    `"generic`": `"Generic Prescription`",`n    `"formulary_brand`": `"Formulary Prescription`",`n    `"non_formulary_brand`": `"Non Formulary Brand Prescription`",`n    `"mail_order`": `"Mail Order (90 day supply)`"`n  }`n}"
+
+$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/AGKB7928/current_plan' -Method 'POST' -Headers $headers -Body $body
+$response | ConvertTo-Json
+```
+
+> Response looks like this:
+
+```json
+{
+  "id": 4001,
+  "current_plan_issuer": "Current Plan Issuer",
+  "name": "Current Plan Name",
+  "company_id": 107614,
+  "metal_level_name": "Bronze",
+  "medical_deductible_single": "Deductible Single",
+  "medical_deductible_family": "Deductible Single",
+  "maximum_out_of_pocket_limit_single": "Deductible Single",
+  "maximum_out_of_pocket_limit_family": "Max-Out-of-Pocket Family",
+  "pcp": "Primary Care Physician",
+  "specialist": "Specialist",
+  "network_type": "Network",
+  "preventive_care": "Preventive Care",
+  "inpatient_facility": "Hospital (Inpatient)",
+  "emergency_room": "Emergency Room",
+  "ambulance": "Ambulance",
+  "urgent_care": "Urgent Care",
+  "generic": "Generic Prescription",
+  "formulary_brand": "Formulary Prescription",
+  "non_formulary_brand": "Non Formulary Brand Prescription",
+  "mail_order": "Mail Order (90 day supply)",
+  "product_type": "medical",
+  "carrier_plan_identifier": "123",
+  "highlight_1": {
+    "icon": "icon--metal",
+    "value": "Bronze"
+  },
+  "highlight_2": {
+    "icon": "icon--add-on",
+    "value": "Network"
+  },
+  "highlight_3": {
+    "icon": "icon--add-on",
+    "value": "Deductible Single"
+  },
+  "employer_monthly_cost": 1000
+}
+
+```
+
+Use this endpoint to create a new current_plan to a company. This is used for renewal quotes.
+
+<aside class="notice">
+  This endpoint is <strong><i>secured</i></strong> and requires <strong><i>authentication headers</i></strong>. These include 
+  <br/><code style="margin-left: 30px">1. <i>Cookie: auth_headers</i></code>,
+  <br/><code style="margin-left: 30px">2. <i>uid</i></code>,
+  <br/><code style="margin-left: 30px">3. <i>client</i></code>,
+  <br/><code style="margin-left: 30px">4. <i>access-token</i></code> and 
+  <br/><code style="margin-left: 30px">5. <i>expiry</i></code>.
+</aside>
+
+<aside class="notice">
+To be used in case of Renewal Inquiry. (is_renewal is set to true)
+</aside>
+
+### HTTP Request
+
+`POST /api/companies/:company_slug/current_plan`
+
+### Parameters
+
+Parameter                                                       | Default   | Description
+--------------------------------------------------------------- | --------- | --------------------------
+current_plan[current_plan_issuer]                               | N/A       | Issuer for this plan
+<strong>current_plan[name]</strong><strong>required</strong>    | N/A       | Plan name
+current_plan[company_id]                                        | N/A       | Company's id
+current_plan[metal_level_name]                                  | N/A       | Metal level for plan
+current_plan[medical_deductible_single]                         | N/A       | Medical deductible single
+current_plan[medical_deductible_family]                         | N/A       | Medical deductible family
+current_plan[maximum_out_of_pocket_limit_single]                | N/A       | Max out of pocket single
+current_plan[maximum_out_of_pocket_limit_family]                | N/A       | Max out of pocket family
+current_plan[pcp]                                               | N/A       | PCP
+current_plan[specialist]                                        | N/A       | Specialist
+current_plan[network_type]                                      | N/A       | Network Type
+current_plan[preventive_care]                                   | N/A       | Preventive Care
+current_plan[inpatient_facility]                                | N/A       | Inpatient Facility
+current_plan[emergency_room]                                    | N/A       | Emergency Room
+current_plan[ambulance]                                         | N/A       | Ambulance
+current_plan[urgent_care]                                       | N/A       | Urgent Care
+current_plan[generic]                                           | N/A       | Generic
+current_plan[highlight_1]                                       | N/A       | Highlight 1
+current_plan[highlight_2]                                       | N/A       | Highlight 2
+current_plan[highlight_3]                                       | N/A       | Highlight 3
+current_plan[formulary_brand]                                   | N/A       | Formulary Brand
+current_plan[non_formulary_brand]                               | N/A       | Non-Formulary Brand
+current_plan[mail_order]                                        | N/A       | Mail Order
+current_plan[employer_monthly_cost]                             | N/A       | Employer Monthly Cost

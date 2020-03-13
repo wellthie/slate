@@ -1090,7 +1090,7 @@ Use this endpoint to list the pricing for the available individual plans.
 
 No parameters required.
 
-## POST SelectPlan
+## Select a Plan for Inquiry 
 
 ```shell
 curl --location --request POST 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/JXID6718/plans/select' \
@@ -1227,14 +1227,14 @@ $response | ConvertTo-Json
 
 ```json
 {
-  "id": 136305,
-  "individual_plan_id": null,
-  "medical_plan_id": 78720,
-  "ancillary_plan_id": null,
-  "ancillary_plan_type": null,
-  "selected_for_quote": true,
-  "selected_for_enrollment": false,
-  "order": 1
+    "id": 136321,
+    "individual_plan_id": null,
+    "medical_plan_id": 78720,
+    "ancillary_plan_id": null,
+    "ancillary_plan_type": null,
+    "selected_for_quote": true,
+    "selected_for_enrollment": false,
+    "order": 1
 }
 
 ```
@@ -1258,7 +1258,7 @@ Use this endpoint to select a plan for quote.
 
 No parameters required.
 
-## DELETE UnselectPlan
+## Unselect a Plan from Inquiry
 
 ```shell
 curl --location --request DELETE 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/JXID6718/plans/unselect?plan_id=78720&plan_type=medical' \
