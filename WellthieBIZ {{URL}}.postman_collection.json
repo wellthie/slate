@@ -16,14 +16,8 @@
 							"script": {
 								"id": "c855ed95-ec0e-4d3a-8f22-2255b46524ec",
 								"exec": [
-									"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-									"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-									"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-									"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-									"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-									"",
-									"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-									"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"access-token\", jsonData.data.access_token)"
 								],
 								"type": "text/javascript"
 							}
@@ -41,7 +35,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"email\": \"apidoc+broker@wellthie.com\",\n  \"first_name\": \"firstName\",\n  \"last_name\": \"lastName\",\n  \"npn\": \"123456\",\n  \"password\": \"Password123\",\n  \"password_confirmation\": \"Password123\"\n}",
+							"raw": "{\n  \"email\": \"apiuser@wellthie.com\",\n  \"first_name\": \"firstName\",\n  \"last_name\": \"lastName\",\n  \"npn\": \"123456\",\n  \"password\": \"SecurePassword123\",\n  \"password_confirmation\": \"SecurePassword123\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -68,32 +62,36 @@
 							"script": {
 								"id": "23e55c10-e6bd-4f83-87f1-7c08699068c4",
 								"exec": [
-									"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-									"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-									"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-									"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-									"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
+									"// pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
+									"// pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
+									"// pm.environment.set(\"client\", postman.getResponseHeader('client'))",
+									"// pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
+									"// pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
 									"",
-									"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-									"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+									"// var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
+									"// pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
 								],
 								"type": "text/javascript"
 							}
 						}
 					],
 					"request": {
-						"method": "POST",
+						"method": "PUT",
 						"header": [
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
 								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access-token}}",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"email\": \"apidoc+broker@wellthie.com\",\n  \"first_name\": \"firstName\",\n  \"last_name\": \"lastName\",\n  \"npn\": \"123456\",\n  \"password\": \"Password123\",\n  \"password_confirmation\": \"Password123\"\n}",
+							"raw": "{\n  \"email\": \"apidoc+broker@wellthie.com\",\n  \"first_name\": \"firstName\",\n  \"last_name\": \"lastName\",\n  \"npn\": \"123456\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -120,14 +118,8 @@
 							"script": {
 								"id": "2cc61679-4a85-4fea-abb8-4831dcc038de",
 								"exec": [
-									"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-									"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-									"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-									"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-									"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-									"",
-									"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-									"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"access-token\", jsonData.data.access_token)"
 								],
 								"type": "text/javascript"
 							}
@@ -182,13 +174,16 @@
 							"script": {
 								"id": "b21e0824-1dc0-43a8-b2c7-27779b72ce94",
 								"exec": [
-									"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-									"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-									"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-									"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
+									"// pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
+									"// pm.environment.set(\"client\", postman.getResponseHeader('client'))",
+									"// pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
+									"// pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
 									"",
-									"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-									"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+									"// var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
+									"// pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))",
+									"",
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"access-token\", jsonData.data.access_token)"
 								],
 								"type": "text/javascript"
 							}
@@ -206,7 +201,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"email\":\"apidoc+broker@wellthie.com\",\n\t\"password\":\"Password123\"\n}",
+							"raw": "{\n\t\"email\":\"apiuser@wellthie.com\",\n\t\"password\":\"SecurePassword123\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -255,28 +250,8 @@
 								"type": "text"
 							},
 							{
-								"key": "Cookie",
-								"value": "auth_headers={{authHeader}}",
-								"type": "text"
-							},
-							{
-								"key": "access-token",
-								"value": "{{access-token}}",
-								"type": "text"
-							},
-							{
-								"key": "client",
-								"value": "{{client}}",
-								"type": "text"
-							},
-							{
-								"key": "expiry",
-								"value": "{{expiry}}",
-								"type": "text"
-							},
-							{
-								"key": "uid",
-								"value": "{{uid}}",
+								"key": "Authorization",
+								"value": "Bearer {{access-token}}",
 								"type": "text"
 							}
 						],
@@ -320,14 +295,7 @@
 									"script": {
 										"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
 										"exec": [
-											"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-											"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-											"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-											"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-											"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-											"",
-											"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-											"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+											""
 										],
 										"type": "text/javascript"
 									}
@@ -338,54 +306,19 @@
 							},
 							"request": {
 								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{accessToken}}",
-											"type": "string"
-										}
-									]
+									"type": "noauth"
 								},
 								"method": "GET",
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
+										"value": "application/json",
+										"type": "text"
 									},
 									{
 										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{accessToken}}",
-										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
-										"disabled": true
-									},
-									{
-										"key": "Cookie",
-										"type": "text",
-										"value": "auth_headers={{authHeader}}"
-									},
-									{
-										"key": "access-token",
-										"type": "text",
-										"value": "{{access-token}}"
-									},
-									{
-										"key": "client",
-										"type": "text",
-										"value": "{{client}}"
-									},
-									{
-										"key": "expiry",
-										"type": "text",
-										"value": "{{expiry}}"
-									},
-									{
-										"key": "uid",
-										"type": "text",
-										"value": "{{uid}}"
+										"value": "Bearer {{access-token}}",
+										"type": "text"
 									}
 								],
 								"body": {
@@ -398,13 +331,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{URL}}/companies/6uqej6JT9uumY4g41CdLX7Du",
+									"raw": "{{URL}}/companies/P7Kvahp8UmP7TLYXJDnsyZ3y",
 									"host": [
 										"{{URL}}"
 									],
 									"path": [
 										"companies",
-										"6uqej6JT9uumY4g41CdLX7Du"
+										"P7Kvahp8UmP7TLYXJDnsyZ3y"
 									]
 								}
 							},
@@ -428,14 +361,7 @@
 									"script": {
 										"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
 										"exec": [
-											"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-											"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-											"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-											"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-											"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-											"",
-											"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-											"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+											""
 										],
 										"type": "text/javascript"
 									}
@@ -443,53 +369,18 @@
 							],
 							"request": {
 								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{accessToken}}",
-											"type": "string"
-										}
-									]
+									"type": "noauth"
 								},
 								"method": "POST",
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
 										"value": "application/json",
 										"type": "text"
 									},
 									{
-										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
 										"key": "Authorization",
-										"value": "Bearer {{accessToken}}",
-										"type": "text",
-										"disabled": true
-									},
-									{
-										"key": "Cookie",
-										"value": "auth_headers={{authHeader}}",
-										"type": "text"
-									},
-									{
-										"key": "access-token",
-										"value": "{{access-token}}",
-										"type": "text"
-									},
-									{
-										"key": "client",
-										"value": "{{client}}",
-										"type": "text"
-									},
-									{
-										"key": "expiry",
-										"value": "{{expiry}}",
-										"type": "text"
-									},
-									{
-										"key": "uid",
-										"value": "{{uid}}",
+										"value": "Bearer {{access-token}}",
 										"type": "text"
 									}
 								],
@@ -533,14 +424,7 @@
 									"script": {
 										"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
 										"exec": [
-											"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-											"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-											"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-											"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-											"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-											"",
-											"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-											"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+											""
 										],
 										"type": "text/javascript"
 									}
@@ -548,54 +432,19 @@
 							],
 							"request": {
 								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{accessToken}}",
-											"type": "string"
-										}
-									]
+									"type": "noauth"
 								},
 								"method": "POST",
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
+										"value": "application/json",
+										"type": "text"
 									},
 									{
 										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{accessToken}}",
-										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
-										"disabled": true
-									},
-									{
-										"key": "Cookie",
-										"type": "text",
-										"value": "auth_headers={{authHeader}}"
-									},
-									{
-										"key": "access-token",
-										"type": "text",
-										"value": "{{access-token}}"
-									},
-									{
-										"key": "client",
-										"type": "text",
-										"value": "{{client}}"
-									},
-									{
-										"key": "expiry",
-										"type": "text",
-										"value": "{{expiry}}"
-									},
-									{
-										"key": "uid",
-										"type": "text",
-										"value": "{{uid}}"
+										"value": "Bearer {{access-token}}",
+										"type": "text"
 									}
 								],
 								"body": {
@@ -608,13 +457,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{URL}}/inquiries/AGKB7928/current_plan",
+									"raw": "{{URL}}/inquiries/LDYA3582/current_plan",
 									"host": [
 										"{{URL}}"
 									],
 									"path": [
 										"inquiries",
-										"AGKB7928",
+										"LDYA3582",
 										"current_plan"
 									]
 								}
@@ -639,14 +488,7 @@
 									"script": {
 										"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
 										"exec": [
-											"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-											"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-											"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-											"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-											"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-											"",
-											"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-											"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+											""
 										],
 										"type": "text/javascript"
 									}
@@ -654,59 +496,24 @@
 							],
 							"request": {
 								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{accessToken}}",
-											"type": "string"
-										}
-									]
+									"type": "noauth"
 								},
 								"method": "PUT",
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
+										"value": "application/json",
+										"type": "text"
 									},
 									{
 										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{accessToken}}",
-										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
-										"disabled": true
-									},
-									{
-										"key": "Cookie",
-										"type": "text",
-										"value": "auth_headers={{authHeader}}"
-									},
-									{
-										"key": "access-token",
-										"type": "text",
-										"value": "{{access-token}}"
-									},
-									{
-										"key": "client",
-										"type": "text",
-										"value": "{{client}}"
-									},
-									{
-										"key": "expiry",
-										"type": "text",
-										"value": "{{expiry}}"
-									},
-									{
-										"key": "uid",
-										"type": "text",
-										"value": "{{uid}}"
+										"value": "Bearer {{access-token}}",
+										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"company\": {\n    \"name\": \"APIDoc Test4\",\n    \"zip_code_input\": \"10001\",\n    \"contact_name\": \"Test\",\n    \"contact_email\": \"test@test.com\",\n    \"using_broker\": false,\n    \"broker_code\": null,\n    \"county_id\": 36061,\n    \"sic_code\": \"9999\"\n  }\n}",
+									"raw": "{\n  \"company\": {\n    \"name\": \"APIDoc Company\",\n    \"zip_code_input\": \"10001\",\n    \"contact_name\": \"Test\",\n    \"contact_email\": \"test@test.com\",\n    \"using_broker\": false,\n    \"broker_code\": null,\n    \"county_id\": 36061,\n    \"sic_code\": \"9999\"\n  }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -714,13 +521,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{URL}}/companies/shy8pmfek8ZpGKJYneD2g5TJ",
+									"raw": "{{URL}}/companies/P7Kvahp8UmP7TLYXJDnsyZ3y",
 									"host": [
 										"{{URL}}"
 									],
 									"path": [
 										"companies",
-										"shy8pmfek8ZpGKJYneD2g5TJ"
+										"P7Kvahp8UmP7TLYXJDnsyZ3y"
 									]
 								}
 							},
@@ -744,14 +551,7 @@
 									"script": {
 										"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
 										"exec": [
-											"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-											"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-											"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-											"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-											"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-											"",
-											"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-											"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+											""
 										],
 										"type": "text/javascript"
 									}
@@ -762,54 +562,19 @@
 							},
 							"request": {
 								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{accessToken}}",
-											"type": "string"
-										}
-									]
+									"type": "noauth"
 								},
 								"method": "GET",
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
+										"value": "application/json",
+										"type": "text"
 									},
 									{
 										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{accessToken}}",
-										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
-										"disabled": true
-									},
-									{
-										"key": "Cookie",
-										"type": "text",
-										"value": "auth_headers={{authHeader}}"
-									},
-									{
-										"key": "access-token",
-										"type": "text",
-										"value": "{{access-token}}"
-									},
-									{
-										"key": "client",
-										"type": "text",
-										"value": "{{client}}"
-									},
-									{
-										"key": "expiry",
-										"type": "text",
-										"value": "{{expiry}}"
-									},
-									{
-										"key": "uid",
-										"type": "text",
-										"value": "{{uid}}"
+										"value": "Bearer {{access-token}}",
+										"type": "text"
 									}
 								],
 								"body": {
@@ -853,14 +618,7 @@
 									"script": {
 										"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
 										"exec": [
-											"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-											"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-											"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-											"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-											"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-											"",
-											"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-											"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+											""
 										],
 										"type": "text/javascript"
 									}
@@ -871,54 +629,19 @@
 							},
 							"request": {
 								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{accessToken}}",
-											"type": "string"
-										}
-									]
+									"type": "noauth"
 								},
 								"method": "GET",
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
+										"value": "application/json",
+										"type": "text"
 									},
 									{
 										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{accessToken}}",
-										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
-										"disabled": true
-									},
-									{
-										"key": "Cookie",
-										"type": "text",
-										"value": "auth_headers={{authHeader}}"
-									},
-									{
-										"key": "access-token",
-										"type": "text",
-										"value": "{{access-token}}"
-									},
-									{
-										"key": "client",
-										"type": "text",
-										"value": "{{client}}"
-									},
-									{
-										"key": "expiry",
-										"type": "text",
-										"value": "{{expiry}}"
-									},
-									{
-										"key": "uid",
-										"type": "text",
-										"value": "{{uid}}"
+										"value": "Bearer {{access-token}}",
+										"type": "text"
 									}
 								],
 								"body": {
@@ -973,14 +696,7 @@
 											"script": {
 												"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
 												"exec": [
-													"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-													"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-													"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-													"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-													"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-													"",
-													"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-													"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+													""
 												],
 												"type": "text/javascript"
 											}
@@ -988,59 +704,24 @@
 									],
 									"request": {
 										"auth": {
-											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "{{accessToken}}",
-													"type": "string"
-												}
-											]
+											"type": "noauth"
 										},
 										"method": "POST",
 										"header": [
 											{
 												"key": "Content-Type",
-												"name": "Content-Type",
-												"type": "text",
-												"value": "application/json"
+												"value": "application/json",
+												"type": "text"
 											},
 											{
 												"key": "Authorization",
-												"type": "text",
-												"value": "Bearer {{accessToken}}",
-												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
-												"disabled": true
-											},
-											{
-												"key": "Cookie",
-												"type": "text",
-												"value": "auth_headers={{authHeader}}"
-											},
-											{
-												"key": "access-token",
-												"type": "text",
-												"value": "{{access-token}}"
-											},
-											{
-												"key": "client",
-												"type": "text",
-												"value": "{{client}}"
-											},
-											{
-												"key": "expiry",
-												"type": "text",
-												"value": "{{expiry}}"
-											},
-											{
-												"key": "uid",
-												"type": "text",
-												"value": "{{uid}}"
+												"value": "Bearer {{access-token}}",
+												"type": "text"
 											}
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"census\": {\n    \"inquiry_id\": 130133,\n    \"save_failed_due_to_errors\": null,\n    \"covered_employees_count\": 4,\n    \"covered_spouses_count\": 0,\n    \"covered_children_count\": 0,\n    \"census_uploaded\": null,\n    \"upload_errors\": [],\n    \"covered_singles_count\": 4,\n    \"covered_single_and_spouses_count\": 0,\n    \"covered_single_and_children_count\": 0,\n    \"covered_families_count\": 0,\n    \"households\": [\n      {\n        \"id\": 422979,\n        \"coverage_type\": \"employee_only\",\n        \"row_number\": 0,\n        \"tier\": \"single\",\n        \"opted_dental\": true,\n        \"opted_vision\": true,\n        \"opted_limited_medical\": false,\n        \"medical_plan_id\": null,\n        \"sorted_matching_plan_service_area_ids\": [\n          4334,\n          4982,\n          4984,\n          4985,\n          5066,\n          5067\n        ],\n        \"zip_code\": \"10001\",\n        \"county_id\": 36061,\n        \"attributes_with_error_messages_in_order\": [],\n        \"census_household_members_attributes\": [\n          {\n            \"id\": 523199,\n            \"age\": null,\n            \"gender\": \"M\",\n            \"annual_salary\": null,\n            \"date_of_birth\": \"10/10/1980\",\n            \"full_or_part_time\": \"FT\",\n            \"hourly_rate\": null,\n            \"hours_per_week\": null,\n            \"name_or_initial\": \"John Doe\",\n            \"relationship\": \"primary\",\n            \"smoker\": false,\n            \"phone\": null,\n            \"email\": null,\n            \"household_tier\": \"single\",\n            \"display_coverage_type\": \"Employee Only\",\n            \"display_member_name\": \"Employee 1\",\n            \"name_or_initial_focus\": false,\n            \"date_of_birth_focus\": false,\n            \"gender_focus\": false,\n            \"full_or_part_time_focus\": false\n          }\n        ]\n      },\n      {\n        \"id\": 422980,\n        \"coverage_type\": \"family\",\n        \"row_number\": 1,\n        \"tier\": \"single\",\n        \"opted_dental\": true,\n        \"opted_vision\": true,\n        \"opted_limited_medical\": false,\n        \"medical_plan_id\": null,\n        \"sorted_matching_plan_service_area_ids\": [\n          4334,\n          4982,\n          4984,\n          4985,\n          5066,\n          5067\n        ],\n        \"zip_code\": \"10001\",\n        \"county_id\": 36061,\n        \"attributes_with_error_messages_in_order\": [],\n        \"census_household_members_attributes\": [\n          {\n            \"id\": 523200,\n            \"age\": null,\n            \"gender\": \"F\",\n            \"annual_salary\": null,\n            \"date_of_birth\": \"10/21/1985\",\n            \"full_or_part_time\": \"FT\",\n            \"hourly_rate\": null,\n            \"hours_per_week\": null,\n            \"name_or_initial\": \"Joe Root\",\n            \"relationship\": \"primary\",\n            \"smoker\": false,\n            \"phone\": null,\n            \"email\": null,\n            \"household_tier\": \"single\",\n            \"display_coverage_type\": \"Employee Only\",\n            \"display_member_name\": \"Employee 2\",\n            \"name_or_initial_focus\": false,\n            \"date_of_birth_focus\": false,\n            \"gender_focus\": false\n          },\n          {\n            \"relationship\": \"spouse\",\n            \"name_or_initial\": \"Tina\",\n            \"date_of_birth\": \"12/15/1990\",\n            \"gender\": \"F\",\n            \"age\": null,\n            \"full_or_part_time\": null,\n            \"hours_per_week\": null,\n            \"hourly_rate\": null,\n            \"annual_salary\": null,\n            \"smoker\": null,\n            \"relationship_focus\": false,\n            \"name_or_initial_focus\": false,\n            \"date_of_birth_focus\": false\n          }\n        ],\n        \"coverage_type_focus\": false\n      },\n      {\n        \"id\": 422981,\n        \"coverage_type\": \"family\",\n        \"row_number\": 2,\n        \"tier\": \"single\",\n        \"opted_dental\": true,\n        \"opted_vision\": true,\n        \"opted_limited_medical\": false,\n        \"medical_plan_id\": null,\n        \"sorted_matching_plan_service_area_ids\": [\n          4334,\n          4982,\n          4984,\n          4985,\n          5066,\n          5067\n        ],\n        \"zip_code\": \"10001\",\n        \"county_id\": 36061,\n        \"attributes_with_error_messages_in_order\": [],\n        \"census_household_members_attributes\": [\n          {\n            \"id\": 523201,\n            \"age\": null,\n            \"gender\": \"M\",\n            \"annual_salary\": null,\n            \"date_of_birth\": \"01/01/1990\",\n            \"full_or_part_time\": \"FT\",\n            \"hourly_rate\": null,\n            \"hours_per_week\": null,\n            \"name_or_initial\": \"James Smith\",\n            \"relationship\": \"primary\",\n            \"smoker\": false,\n            \"phone\": null,\n            \"email\": null,\n            \"household_tier\": \"single\",\n            \"display_coverage_type\": \"Employee Only\",\n            \"display_member_name\": \"Employee 3\",\n            \"name_or_initial_focus\": false,\n            \"gender_focus\": false,\n            \"date_of_birth_focus\": false\n          },\n          {\n            \"relationship\": \"spouse\",\n            \"name_or_initial\": \"Maria Garcia\",\n            \"date_of_birth\": \"12/30/1991\",\n            \"gender\": \"F\",\n            \"age\": null,\n            \"full_or_part_time\": null,\n            \"hours_per_week\": null,\n            \"hourly_rate\": null,\n            \"annual_salary\": null,\n            \"smoker\": null,\n            \"relationship_focus\": false,\n            \"name_or_initial_focus\": false,\n            \"date_of_birth_focus\": false,\n            \"gender_focus\": false\n          },\n          {\n            \"relationship\": \"child\",\n            \"name_or_initial\": \"Robert Smith\",\n            \"date_of_birth\": \"10/17/2013\",\n            \"gender\": \"M\",\n            \"age\": null,\n            \"full_or_part_time\": null,\n            \"hours_per_week\": null,\n            \"hourly_rate\": null,\n            \"annual_salary\": null,\n            \"smoker\": null,\n            \"relationship_focus\": false,\n            \"name_or_initial_focus\": false,\n            \"gender_focus\": false,\n            \"date_of_birth_focus\": false\n          }\n        ],\n        \"coverage_type_focus\": false\n      },\n      {\n        \"id\": 422982,\n        \"coverage_type\": \"family\",\n        \"row_number\": 3,\n        \"tier\": \"single\",\n        \"opted_dental\": true,\n        \"opted_vision\": true,\n        \"opted_limited_medical\": false,\n        \"medical_plan_id\": null,\n        \"sorted_matching_plan_service_area_ids\": [\n          4334,\n          4982,\n          4984,\n          4985,\n          5066,\n          5067\n        ],\n        \"zip_code\": \"10001\",\n        \"county_id\": 36061,\n        \"attributes_with_error_messages_in_order\": [],\n        \"census_household_members_attributes\": [\n          {\n            \"id\": 523202,\n            \"age\": null,\n            \"gender\": \"F\",\n            \"annual_salary\": null,\n            \"date_of_birth\": \"12/11/1980\",\n            \"full_or_part_time\": \"FT\",\n            \"hourly_rate\": null,\n            \"hours_per_week\": null,\n            \"name_or_initial\": \"Maria Rodriguez\",\n            \"relationship\": \"primary\",\n            \"smoker\": false,\n            \"phone\": null,\n            \"email\": null,\n            \"household_tier\": \"single\",\n            \"display_coverage_type\": \"Employee Only\",\n            \"display_member_name\": \"Employee 4\",\n            \"name_or_initial_focus\": false,\n            \"date_of_birth_focus\": false\n          },\n          {\n            \"relationship\": \"child\",\n            \"name_or_initial\": \"David Rodriguez\",\n            \"date_of_birth\": \"07/27/2006\",\n            \"gender\": \"M\",\n            \"age\": null,\n            \"full_or_part_time\": null,\n            \"hours_per_week\": null,\n            \"hourly_rate\": null,\n            \"annual_salary\": null,\n            \"smoker\": null,\n            \"relationship_focus\": false,\n            \"name_or_initial_focus\": false,\n            \"gender_focus\": false,\n            \"date_of_birth_focus\": false\n          }\n        ],\n        \"coverage_type_focus\": false\n      }\n    ]\n  }\n}\n",
+											"raw": "{\"census\":{\"inquiry_id\":130133,\"save_failed_due_to_errors\":null,\"covered_employees_count\":4,\"covered_spouses_count\":0,\"covered_children_count\":0,\"census_uploaded\":null,\"upload_errors\":[],\"covered_singles_count\":4,\"covered_single_and_spouses_count\":0,\"covered_single_and_children_count\":0,\"covered_families_count\":0,\"households\":[{\"id\":422979,\"coverage_type\":\"employee_only\",\"row_number\":0,\"tier\":\"single\",\"opted_dental\":true,\"opted_vision\":true,\"opted_limited_medical\":false,\"medical_plan_id\":null,\"sorted_matching_plan_service_area_ids\":[4334,4982,4984,4985,5066,5067],\"zip_code\":\"10001\",\"county_id\":36061,\"attributes_with_error_messages_in_order\":[],\"census_household_members_attributes\":[{\"id\":523199,\"age\":null,\"gender\":\"M\",\"annual_salary\":100000,\"date_of_birth\":\"10/10/1980\",\"full_or_part_time\":\"FT\",\"hourly_rate\":null,\"hours_per_week\":null,\"name_or_initial\":\"John Doe\",\"relationship\":\"primary\",\"smoker\":false,\"phone\":null,\"email\":null,\"household_tier\":\"single\",\"display_coverage_type\":\"Employee Only\",\"display_member_name\":\"Employee 1\",\"name_or_initial_focus\":false,\"date_of_birth_focus\":false,\"gender_focus\":false,\"full_or_part_time_focus\":false}]},{\"id\":422980,\"coverage_type\":\"family\",\"row_number\":1,\"tier\":\"single\",\"opted_dental\":true,\"opted_vision\":true,\"opted_limited_medical\":false,\"medical_plan_id\":null,\"sorted_matching_plan_service_area_ids\":[4334,4982,4984,4985,5066,5067],\"zip_code\":\"10001\",\"county_id\":36061,\"attributes_with_error_messages_in_order\":[],\"census_household_members_attributes\":[{\"id\":523200,\"age\":null,\"gender\":\"F\",\"annual_salary\":100000,\"date_of_birth\":\"10/21/1985\",\"full_or_part_time\":\"FT\",\"hourly_rate\":null,\"hours_per_week\":null,\"name_or_initial\":\"Joe Root\",\"relationship\":\"primary\",\"smoker\":false,\"phone\":null,\"email\":null,\"household_tier\":\"single\",\"display_coverage_type\":\"Employee Only\",\"display_member_name\":\"Employee 2\",\"name_or_initial_focus\":false,\"date_of_birth_focus\":false,\"gender_focus\":false},{\"relationship\":\"spouse\",\"name_or_initial\":\"Tina\",\"date_of_birth\":\"12/15/1990\",\"gender\":\"F\",\"age\":null,\"full_or_part_time\":null,\"hours_per_week\":null,\"hourly_rate\":null,\"annual_salary\":100000,\"smoker\":null,\"relationship_focus\":false,\"name_or_initial_focus\":false,\"date_of_birth_focus\":false}],\"coverage_type_focus\":false},{\"id\":422981,\"coverage_type\":\"family\",\"row_number\":2,\"tier\":\"single\",\"opted_dental\":true,\"opted_vision\":true,\"opted_limited_medical\":false,\"medical_plan_id\":null,\"sorted_matching_plan_service_area_ids\":[4334,4982,4984,4985,5066,5067],\"zip_code\":\"10001\",\"county_id\":36061,\"attributes_with_error_messages_in_order\":[],\"census_household_members_attributes\":[{\"id\":523201,\"age\":null,\"gender\":\"M\",\"annual_salary\":100000,\"date_of_birth\":\"01/01/1990\",\"full_or_part_time\":\"FT\",\"hourly_rate\":null,\"hours_per_week\":null,\"name_or_initial\":\"James Smith\",\"relationship\":\"primary\",\"smoker\":false,\"phone\":null,\"email\":null,\"household_tier\":\"single\",\"display_coverage_type\":\"Employee Only\",\"display_member_name\":\"Employee 3\",\"name_or_initial_focus\":false,\"gender_focus\":false,\"date_of_birth_focus\":false},{\"relationship\":\"spouse\",\"name_or_initial\":\"Maria Garcia\",\"date_of_birth\":\"12/30/1991\",\"gender\":\"F\",\"age\":null,\"full_or_part_time\":null,\"hours_per_week\":null,\"hourly_rate\":null,\"annual_salary\":100000,\"smoker\":null,\"relationship_focus\":false,\"name_or_initial_focus\":false,\"date_of_birth_focus\":false,\"gender_focus\":false},{\"relationship\":\"child\",\"name_or_initial\":\"Robert Smith\",\"date_of_birth\":\"10/17/2013\",\"gender\":\"M\",\"age\":null,\"full_or_part_time\":null,\"hours_per_week\":null,\"hourly_rate\":null,\"annual_salary\":100000,\"smoker\":null,\"relationship_focus\":false,\"name_or_initial_focus\":false,\"gender_focus\":false,\"date_of_birth_focus\":false}],\"coverage_type_focus\":false},{\"id\":422982,\"coverage_type\":\"family\",\"row_number\":3,\"tier\":\"single\",\"opted_dental\":true,\"opted_vision\":true,\"opted_limited_medical\":false,\"medical_plan_id\":null,\"sorted_matching_plan_service_area_ids\":[4334,4982,4984,4985,5066,5067],\"zip_code\":\"10001\",\"county_id\":36061,\"attributes_with_error_messages_in_order\":[],\"census_household_members_attributes\":[{\"id\":523202,\"age\":null,\"gender\":\"F\",\"annual_salary\":100000,\"date_of_birth\":\"12/11/1980\",\"full_or_part_time\":\"FT\",\"hourly_rate\":null,\"hours_per_week\":null,\"name_or_initial\":\"Maria Rodriguez\",\"relationship\":\"primary\",\"smoker\":false,\"phone\":null,\"email\":null,\"household_tier\":\"single\",\"display_coverage_type\":\"Employee Only\",\"display_member_name\":\"Employee 4\",\"name_or_initial_focus\":false,\"date_of_birth_focus\":false},{\"relationship\":\"child\",\"name_or_initial\":\"David Rodriguez\",\"date_of_birth\":\"07/27/2006\",\"gender\":\"M\",\"age\":null,\"full_or_part_time\":null,\"hours_per_week\":null,\"hourly_rate\":null,\"annual_salary\":100000,\"smoker\":null,\"relationship_focus\":false,\"name_or_initial_focus\":false,\"gender_focus\":false,\"date_of_birth_focus\":false}],\"coverage_type_focus\":false}]}}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -1048,13 +729,13 @@
 											}
 										},
 										"url": {
-											"raw": "{{URL}}/inquiries/JXID6718/census",
+											"raw": "{{URL}}/inquiries/LDYA3582/census",
 											"host": [
 												"{{URL}}"
 											],
 											"path": [
 												"inquiries",
-												"JXID6718",
+												"LDYA3582",
 												"census"
 											]
 										}
@@ -1079,14 +760,7 @@
 											"script": {
 												"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
 												"exec": [
-													"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-													"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-													"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-													"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-													"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-													"",
-													"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-													"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+													""
 												],
 												"type": "text/javascript"
 											}
@@ -1094,58 +768,18 @@
 									],
 									"request": {
 										"auth": {
-											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "{{accessToken}}",
-													"type": "string"
-												}
-											]
+											"type": "noauth"
 										},
 										"method": "POST",
 										"header": [
 											{
 												"key": "Content-Type",
-												"name": "Content-Type",
-												"value": "application/x-www-form-urlencoded",
+												"value": "application/json",
 												"type": "text"
 											},
 											{
-												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
 												"key": "Authorization",
-												"type": "text",
-												"value": "Bearer {{accessToken}}",
-												"disabled": true
-											},
-											{
-												"key": "Cookie",
-												"type": "text",
-												"value": "auth_headers={{authHeader}}"
-											},
-											{
-												"key": "access-token",
-												"type": "text",
-												"value": "{{access-token}}"
-											},
-											{
-												"key": "client",
-												"type": "text",
-												"value": "{{client}}"
-											},
-											{
-												"key": "expiry",
-												"type": "text",
-												"value": "{{expiry}}"
-											},
-											{
-												"key": "uid",
-												"type": "text",
-												"value": "{{uid}}"
-											},
-											{
-												"key": "",
-												"value": "",
+												"value": "Bearer {{access-token}}",
 												"type": "text"
 											}
 										],
@@ -1193,14 +827,7 @@
 											"script": {
 												"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
 												"exec": [
-													"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-													"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-													"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-													"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-													"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-													"",
-													"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-													"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+													""
 												],
 												"type": "text/javascript"
 											}
@@ -1211,54 +838,19 @@
 									},
 									"request": {
 										"auth": {
-											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "{{accessToken}}",
-													"type": "string"
-												}
-											]
+											"type": "noauth"
 										},
 										"method": "GET",
 										"header": [
 											{
 												"key": "Content-Type",
-												"name": "Content-Type",
-												"type": "text",
-												"value": "application/json"
+												"value": "application/json",
+												"type": "text"
 											},
 											{
 												"key": "Authorization",
-												"type": "text",
-												"value": "Bearer {{accessToken}}",
-												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
-												"disabled": true
-											},
-											{
-												"key": "Cookie",
-												"type": "text",
-												"value": "auth_headers={{authHeader}}"
-											},
-											{
-												"key": "access-token",
-												"type": "text",
-												"value": "{{access-token}}"
-											},
-											{
-												"key": "client",
-												"type": "text",
-												"value": "{{client}}"
-											},
-											{
-												"key": "expiry",
-												"type": "text",
-												"value": "{{expiry}}"
-											},
-											{
-												"key": "uid",
-												"type": "text",
-												"value": "{{uid}}"
+												"value": "Bearer {{access-token}}",
+												"type": "text"
 											}
 										],
 										"body": {
@@ -1271,13 +863,13 @@
 											}
 										},
 										"url": {
-											"raw": "{{URL}}/inquiries/JXID6718/census",
+											"raw": "{{URL}}/inquiries/LDYA3582/census",
 											"host": [
 												"{{URL}}"
 											],
 											"path": [
 												"inquiries",
-												"JXID6718",
+												"LDYA3582",
 												"census"
 											]
 										}
@@ -1309,14 +901,7 @@
 											"script": {
 												"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
 												"exec": [
-													"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-													"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-													"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-													"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-													"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-													"",
-													"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-													"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+													""
 												],
 												"type": "text/javascript"
 											}
@@ -1327,54 +912,19 @@
 									},
 									"request": {
 										"auth": {
-											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "{{accessToken}}",
-													"type": "string"
-												}
-											]
+											"type": "noauth"
 										},
 										"method": "GET",
 										"header": [
 											{
 												"key": "Content-Type",
-												"name": "Content-Type",
-												"type": "text",
-												"value": "application/json"
+												"value": "application/json",
+												"type": "text"
 											},
 											{
 												"key": "Authorization",
-												"type": "text",
-												"value": "Bearer {{accessToken}}",
-												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
-												"disabled": true
-											},
-											{
-												"key": "Cookie",
-												"type": "text",
-												"value": "auth_headers={{authHeader}}"
-											},
-											{
-												"key": "access-token",
-												"type": "text",
-												"value": "{{access-token}}"
-											},
-											{
-												"key": "client",
-												"type": "text",
-												"value": "{{client}}"
-											},
-											{
-												"key": "expiry",
-												"type": "text",
-												"value": "{{expiry}}"
-											},
-											{
-												"key": "uid",
-												"type": "text",
-												"value": "{{uid}}"
+												"value": "Bearer {{access-token}}",
+												"type": "text"
 											}
 										],
 										"body": {
@@ -1387,13 +937,13 @@
 											}
 										},
 										"url": {
-											"raw": "{{URL}}/inquiries/JXID6718/plans/group_plans",
+											"raw": "{{URL}}/inquiries/LDYA3582/plans/group_plans",
 											"host": [
 												"{{URL}}"
 											],
 											"path": [
 												"inquiries",
-												"JXID6718",
+												"LDYA3582",
 												"plans",
 												"group_plans"
 											]
@@ -1419,14 +969,7 @@
 											"script": {
 												"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
 												"exec": [
-													"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-													"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-													"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-													"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-													"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-													"",
-													"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-													"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+													""
 												],
 												"type": "text/javascript"
 											}
@@ -1437,54 +980,19 @@
 									},
 									"request": {
 										"auth": {
-											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "{{accessToken}}",
-													"type": "string"
-												}
-											]
+											"type": "noauth"
 										},
 										"method": "GET",
 										"header": [
 											{
 												"key": "Content-Type",
-												"name": "Content-Type",
-												"type": "text",
-												"value": "application/json"
+												"value": "application/json",
+												"type": "text"
 											},
 											{
 												"key": "Authorization",
-												"type": "text",
-												"value": "Bearer {{accessToken}}",
-												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
-												"disabled": true
-											},
-											{
-												"key": "Cookie",
-												"type": "text",
-												"value": "auth_headers={{authHeader}}"
-											},
-											{
-												"key": "access-token",
-												"type": "text",
-												"value": "{{access-token}}"
-											},
-											{
-												"key": "client",
-												"type": "text",
-												"value": "{{client}}"
-											},
-											{
-												"key": "expiry",
-												"type": "text",
-												"value": "{{expiry}}"
-											},
-											{
-												"key": "uid",
-												"type": "text",
-												"value": "{{uid}}"
+												"value": "Bearer {{access-token}}",
+												"type": "text"
 											}
 										],
 										"body": {
@@ -1497,13 +1005,13 @@
 											}
 										},
 										"url": {
-											"raw": "{{URL}}/inquiries/JXID6718/plans/group_plans_pricing",
+											"raw": "{{URL}}/inquiries/LDYA3582/plans/group_plans_pricing",
 											"host": [
 												"{{URL}}"
 											],
 											"path": [
 												"inquiries",
-												"JXID6718",
+												"LDYA3582",
 												"plans",
 												"group_plans_pricing"
 											]
@@ -1529,14 +1037,7 @@
 											"script": {
 												"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
 												"exec": [
-													"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-													"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-													"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-													"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-													"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-													"",
-													"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-													"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+													""
 												],
 												"type": "text/javascript"
 											}
@@ -1547,54 +1048,19 @@
 									},
 									"request": {
 										"auth": {
-											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "{{accessToken}}",
-													"type": "string"
-												}
-											]
+											"type": "noauth"
 										},
 										"method": "GET",
 										"header": [
 											{
 												"key": "Content-Type",
-												"name": "Content-Type",
-												"type": "text",
-												"value": "application/json"
+												"value": "application/json",
+												"type": "text"
 											},
 											{
 												"key": "Authorization",
-												"type": "text",
-												"value": "Bearer {{accessToken}}",
-												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
-												"disabled": true
-											},
-											{
-												"key": "Cookie",
-												"type": "text",
-												"value": "auth_headers={{authHeader}}"
-											},
-											{
-												"key": "access-token",
-												"type": "text",
-												"value": "{{access-token}}"
-											},
-											{
-												"key": "client",
-												"type": "text",
-												"value": "{{client}}"
-											},
-											{
-												"key": "expiry",
-												"type": "text",
-												"value": "{{expiry}}"
-											},
-											{
-												"key": "uid",
-												"type": "text",
-												"value": "{{uid}}"
+												"value": "Bearer {{access-token}}",
+												"type": "text"
 											}
 										],
 										"body": {
@@ -1638,14 +1104,7 @@
 											"script": {
 												"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
 												"exec": [
-													"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-													"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-													"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-													"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-													"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-													"",
-													"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-													"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+													""
 												],
 												"type": "text/javascript"
 											}
@@ -1656,54 +1115,19 @@
 									},
 									"request": {
 										"auth": {
-											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "{{accessToken}}",
-													"type": "string"
-												}
-											]
+											"type": "noauth"
 										},
 										"method": "GET",
 										"header": [
 											{
 												"key": "Content-Type",
-												"name": "Content-Type",
-												"type": "text",
-												"value": "application/json"
+												"value": "application/json",
+												"type": "text"
 											},
 											{
 												"key": "Authorization",
-												"type": "text",
-												"value": "Bearer {{accessToken}}",
-												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
-												"disabled": true
-											},
-											{
-												"key": "Cookie",
-												"type": "text",
-												"value": "auth_headers={{authHeader}}"
-											},
-											{
-												"key": "access-token",
-												"type": "text",
-												"value": "{{access-token}}"
-											},
-											{
-												"key": "client",
-												"type": "text",
-												"value": "{{client}}"
-											},
-											{
-												"key": "expiry",
-												"type": "text",
-												"value": "{{expiry}}"
-											},
-											{
-												"key": "uid",
-												"type": "text",
-												"value": "{{uid}}"
+												"value": "Bearer {{access-token}}",
+												"type": "text"
 											}
 										],
 										"body": {
@@ -1716,13 +1140,13 @@
 											}
 										},
 										"url": {
-											"raw": "{{URL}}/inquiries/ZVTD8453/individual_quotes",
+											"raw": "{{URL}}/inquiries/LDYA3582/individual_quotes",
 											"host": [
 												"{{URL}}"
 											],
 											"path": [
 												"inquiries",
-												"ZVTD8453",
+												"LDYA3582",
 												"individual_quotes"
 											]
 										}
@@ -1730,7 +1154,7 @@
 									"response": []
 								},
 								{
-									"name": "G2I Individual Plans for Inquiry Copy",
+									"name": "G2I Individual Plans for Inquiry",
 									"event": [
 										{
 											"listen": "prerequest",
@@ -1747,14 +1171,7 @@
 											"script": {
 												"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
 												"exec": [
-													"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-													"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-													"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-													"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-													"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-													"",
-													"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-													"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+													""
 												],
 												"type": "text/javascript"
 											}
@@ -1765,54 +1182,19 @@
 									},
 									"request": {
 										"auth": {
-											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "{{accessToken}}",
-													"type": "string"
-												}
-											]
+											"type": "noauth"
 										},
 										"method": "GET",
 										"header": [
 											{
 												"key": "Content-Type",
-												"name": "Content-Type",
-												"type": "text",
-												"value": "application/json"
+												"value": "application/json",
+												"type": "text"
 											},
 											{
 												"key": "Authorization",
-												"type": "text",
-												"value": "Bearer {{accessToken}}",
-												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
-												"disabled": true
-											},
-											{
-												"key": "Cookie",
-												"type": "text",
-												"value": "auth_headers={{authHeader}}"
-											},
-											{
-												"key": "access-token",
-												"type": "text",
-												"value": "{{access-token}}"
-											},
-											{
-												"key": "client",
-												"type": "text",
-												"value": "{{client}}"
-											},
-											{
-												"key": "expiry",
-												"type": "text",
-												"value": "{{expiry}}"
-											},
-											{
-												"key": "uid",
-												"type": "text",
-												"value": "{{uid}}"
+												"value": "Bearer {{access-token}}",
+												"type": "text"
 											}
 										],
 										"body": {
@@ -1825,13 +1207,13 @@
 											}
 										},
 										"url": {
-											"raw": "{{URL}}/inquiries/ZVTD8453/plans/individual_plans",
+											"raw": "{{URL}}/inquiries/LDYA3582/plans/individual_plans",
 											"host": [
 												"{{URL}}"
 											],
 											"path": [
 												"inquiries",
-												"ZVTD8453",
+												"LDYA3582",
 												"plans",
 												"individual_plans"
 											]
@@ -1840,7 +1222,7 @@
 									"response": []
 								},
 								{
-									"name": "G2I Individual Pricing for Inquiry Copy Copy",
+									"name": "G2I Individual Pricing for Inquiry",
 									"event": [
 										{
 											"listen": "prerequest",
@@ -1857,14 +1239,7 @@
 											"script": {
 												"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
 												"exec": [
-													"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-													"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-													"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-													"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-													"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-													"",
-													"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-													"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+													""
 												],
 												"type": "text/javascript"
 											}
@@ -1875,54 +1250,19 @@
 									},
 									"request": {
 										"auth": {
-											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "{{accessToken}}",
-													"type": "string"
-												}
-											]
+											"type": "noauth"
 										},
 										"method": "GET",
 										"header": [
 											{
 												"key": "Content-Type",
-												"name": "Content-Type",
-												"type": "text",
-												"value": "application/json"
+												"value": "application/json",
+												"type": "text"
 											},
 											{
 												"key": "Authorization",
-												"type": "text",
-												"value": "Bearer {{accessToken}}",
-												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
-												"disabled": true
-											},
-											{
-												"key": "Cookie",
-												"type": "text",
-												"value": "auth_headers={{authHeader}}"
-											},
-											{
-												"key": "access-token",
-												"type": "text",
-												"value": "{{access-token}}"
-											},
-											{
-												"key": "client",
-												"type": "text",
-												"value": "{{client}}"
-											},
-											{
-												"key": "expiry",
-												"type": "text",
-												"value": "{{expiry}}"
-											},
-											{
-												"key": "uid",
-												"type": "text",
-												"value": "{{uid}}"
+												"value": "Bearer {{access-token}}",
+												"type": "text"
 											}
 										],
 										"body": {
@@ -1935,13 +1275,13 @@
 											}
 										},
 										"url": {
-											"raw": "{{URL}}/inquiries/ZVTD8453/plans/individual_plans_pricing",
+											"raw": "{{URL}}/inquiries/LDYA3582/plans/individual_plans_pricing",
 											"host": [
 												"{{URL}}"
 											],
 											"path": [
 												"inquiries",
-												"ZVTD8453",
+												"LDYA3582",
 												"plans",
 												"individual_plans_pricing"
 											]
@@ -1967,14 +1307,7 @@
 											"script": {
 												"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
 												"exec": [
-													"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-													"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-													"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-													"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-													"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-													"",
-													"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-													"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+													""
 												],
 												"type": "text/javascript"
 											}
@@ -1982,54 +1315,19 @@
 									],
 									"request": {
 										"auth": {
-											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "{{accessToken}}",
-													"type": "string"
-												}
-											]
+											"type": "noauth"
 										},
 										"method": "POST",
 										"header": [
 											{
 												"key": "Content-Type",
-												"name": "Content-Type",
-												"type": "text",
-												"value": "application/json"
+												"value": "application/json",
+												"type": "text"
 											},
 											{
 												"key": "Authorization",
-												"type": "text",
-												"value": "Bearer {{accessToken}}",
-												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
-												"disabled": true
-											},
-											{
-												"key": "Cookie",
-												"type": "text",
-												"value": "auth_headers={{authHeader}}"
-											},
-											{
-												"key": "access-token",
-												"type": "text",
-												"value": "{{access-token}}"
-											},
-											{
-												"key": "client",
-												"type": "text",
-												"value": "{{client}}"
-											},
-											{
-												"key": "expiry",
-												"type": "text",
-												"value": "{{expiry}}"
-											},
-											{
-												"key": "uid",
-												"type": "text",
-												"value": "{{uid}}"
+												"value": "Bearer {{access-token}}",
+												"type": "text"
 											}
 										],
 										"body": {
@@ -2042,13 +1340,13 @@
 											}
 										},
 										"url": {
-											"raw": "{{URL}}/inquiries/JXID6718/plans/select",
+											"raw": "{{URL}}/inquiries/LDYA3582/plans/select",
 											"host": [
 												"{{URL}}"
 											],
 											"path": [
 												"inquiries",
-												"JXID6718",
+												"LDYA3582",
 												"plans",
 												"select"
 											]
@@ -2074,14 +1372,7 @@
 											"script": {
 												"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
 												"exec": [
-													"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-													"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-													"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-													"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-													"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-													"",
-													"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-													"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+													""
 												],
 												"type": "text/javascript"
 											}
@@ -2089,54 +1380,19 @@
 									],
 									"request": {
 										"auth": {
-											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "{{accessToken}}",
-													"type": "string"
-												}
-											]
+											"type": "noauth"
 										},
 										"method": "DELETE",
 										"header": [
 											{
 												"key": "Content-Type",
-												"name": "Content-Type",
-												"type": "text",
-												"value": "application/json"
+												"value": "application/json",
+												"type": "text"
 											},
 											{
 												"key": "Authorization",
-												"type": "text",
-												"value": "Bearer {{accessToken}}",
-												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
-												"disabled": true
-											},
-											{
-												"key": "Cookie",
-												"type": "text",
-												"value": "auth_headers={{authHeader}}"
-											},
-											{
-												"key": "access-token",
-												"type": "text",
-												"value": "{{access-token}}"
-											},
-											{
-												"key": "client",
-												"type": "text",
-												"value": "{{client}}"
-											},
-											{
-												"key": "expiry",
-												"type": "text",
-												"value": "{{expiry}}"
-											},
-											{
-												"key": "uid",
-												"type": "text",
-												"value": "{{uid}}"
+												"value": "Bearer {{access-token}}",
+												"type": "text"
 											}
 										],
 										"body": {
@@ -2149,13 +1405,13 @@
 											}
 										},
 										"url": {
-											"raw": "{{URL}}/inquiries/JXID6718/plans/unselect?plan_id=78720&plan_type=medical",
+											"raw": "{{URL}}/inquiries/LDYA3582/plans/unselect?plan_id=78720&plan_type=medical",
 											"host": [
 												"{{URL}}"
 											],
 											"path": [
 												"inquiries",
-												"JXID6718",
+												"LDYA3582",
 												"plans",
 												"unselect"
 											],
@@ -2195,14 +1451,7 @@
 									"script": {
 										"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
 										"exec": [
-											"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-											"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-											"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-											"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-											"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-											"",
-											"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-											"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+											""
 										],
 										"type": "text/javascript"
 									}
@@ -2213,54 +1462,19 @@
 							},
 							"request": {
 								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{accessToken}}",
-											"type": "string"
-										}
-									]
+									"type": "noauth"
 								},
 								"method": "GET",
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
+										"value": "application/json",
+										"type": "text"
 									},
 									{
 										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{accessToken}}",
-										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
-										"disabled": true
-									},
-									{
-										"key": "Cookie",
-										"type": "text",
-										"value": "auth_headers={{authHeader}}"
-									},
-									{
-										"key": "access-token",
-										"type": "text",
-										"value": "{{access-token}}"
-									},
-									{
-										"key": "client",
-										"type": "text",
-										"value": "{{client}}"
-									},
-									{
-										"key": "expiry",
-										"type": "text",
-										"value": "{{expiry}}"
-									},
-									{
-										"key": "uid",
-										"type": "text",
-										"value": "{{uid}}"
+										"value": "Bearer {{access-token}}",
+										"type": "text"
 									}
 								],
 								"body": {
@@ -2302,14 +1516,7 @@
 									"script": {
 										"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
 										"exec": [
-											"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-											"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-											"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-											"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-											"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-											"",
-											"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-											"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+											""
 										],
 										"type": "text/javascript"
 									}
@@ -2317,59 +1524,19 @@
 							],
 							"request": {
 								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{accessToken}}",
-											"type": "string"
-										}
-									]
+									"type": "noauth"
 								},
 								"method": "POST",
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
+										"value": "application/json",
+										"type": "text"
 									},
 									{
-										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
 										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{accessToken}}",
-										"disabled": true
-									},
-									{
-										"key": "Cookie",
-										"type": "text",
-										"value": "auth_headers={{authHeader}}",
-										"disabled": true
-									},
-									{
-										"key": "access-token",
-										"type": "text",
-										"value": "{{access-token}}",
-										"disabled": true
-									},
-									{
-										"key": "client",
-										"type": "text",
-										"value": "{{client}}",
-										"disabled": true
-									},
-									{
-										"key": "expiry",
-										"type": "text",
-										"value": "{{expiry}}",
-										"disabled": true
-									},
-									{
-										"key": "uid",
-										"type": "text",
-										"value": "{{uid}}",
-										"disabled": true
+										"value": "Bearer {{access-token}}",
+										"type": "text"
 									}
 								],
 								"body": {
@@ -2382,13 +1549,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{URL}}/companies/shy8pmfek8ZpGKJYneD2g5TJ/inquiries",
+									"raw": "{{URL}}/companies/P7Kvahp8UmP7TLYXJDnsyZ3y/inquiries",
 									"host": [
 										"{{URL}}"
 									],
 									"path": [
 										"companies",
-										"shy8pmfek8ZpGKJYneD2g5TJ",
+										"P7Kvahp8UmP7TLYXJDnsyZ3y",
 										"inquiries"
 									]
 								}
@@ -2413,14 +1580,7 @@
 									"script": {
 										"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
 										"exec": [
-											"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-											"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-											"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-											"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-											"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-											"",
-											"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-											"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+											""
 										],
 										"type": "text/javascript"
 									}
@@ -2428,54 +1588,19 @@
 							],
 							"request": {
 								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{accessToken}}",
-											"type": "string"
-										}
-									]
+									"type": "noauth"
 								},
 								"method": "POST",
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
+										"value": "application/json",
+										"type": "text"
 									},
 									{
 										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{accessToken}}",
-										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
-										"disabled": true
-									},
-									{
-										"key": "Cookie",
-										"type": "text",
-										"value": "auth_headers={{authHeader}}"
-									},
-									{
-										"key": "access-token",
-										"type": "text",
-										"value": "{{access-token}}"
-									},
-									{
-										"key": "client",
-										"type": "text",
-										"value": "{{client}}"
-									},
-									{
-										"key": "expiry",
-										"type": "text",
-										"value": "{{expiry}}"
-									},
-									{
-										"key": "uid",
-										"type": "text",
-										"value": "{{uid}}"
+										"value": "Bearer {{access-token}}",
+										"type": "text"
 									}
 								],
 								"body": {
@@ -2521,14 +1646,7 @@
 									"script": {
 										"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
 										"exec": [
-											"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-											"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-											"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-											"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-											"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-											"",
-											"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-											"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+											""
 										],
 										"type": "text/javascript"
 									}
@@ -2536,54 +1654,19 @@
 							],
 							"request": {
 								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{accessToken}}",
-											"type": "string"
-										}
-									]
+									"type": "noauth"
 								},
 								"method": "PUT",
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
+										"value": "application/json",
+										"type": "text"
 									},
 									{
 										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{accessToken}}",
-										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
-										"disabled": true
-									},
-									{
-										"key": "Cookie",
-										"type": "text",
-										"value": "auth_headers={{authHeader}}"
-									},
-									{
-										"key": "access-token",
-										"type": "text",
-										"value": "{{access-token}}"
-									},
-									{
-										"key": "client",
-										"type": "text",
-										"value": "{{client}}"
-									},
-									{
-										"key": "expiry",
-										"type": "text",
-										"value": "{{expiry}}"
-									},
-									{
-										"key": "uid",
-										"type": "text",
-										"value": "{{uid}}"
+										"value": "Bearer {{access-token}}",
+										"type": "text"
 									}
 								],
 								"body": {
@@ -2628,14 +1711,7 @@
 									"script": {
 										"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
 										"exec": [
-											"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-											"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-											"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-											"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-											"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-											"",
-											"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-											"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+											""
 										],
 										"type": "text/javascript"
 									}
@@ -2646,54 +1722,19 @@
 							},
 							"request": {
 								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{accessToken}}",
-											"type": "string"
-										}
-									]
+									"type": "noauth"
 								},
 								"method": "GET",
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
+										"value": "application/json",
+										"type": "text"
 									},
 									{
 										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{accessToken}}",
-										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
-										"disabled": true
-									},
-									{
-										"key": "Cookie",
-										"type": "text",
-										"value": "auth_headers={{authHeader}}"
-									},
-									{
-										"key": "access-token",
-										"type": "text",
-										"value": "{{access-token}}"
-									},
-									{
-										"key": "client",
-										"type": "text",
-										"value": "{{client}}"
-									},
-									{
-										"key": "expiry",
-										"type": "text",
-										"value": "{{expiry}}"
-									},
-									{
-										"key": "uid",
-										"type": "text",
-										"value": "{{uid}}"
+										"value": "Bearer {{access-token}}",
+										"type": "text"
 									}
 								],
 								"body": {
@@ -2743,14 +1784,7 @@
 									"script": {
 										"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
 										"exec": [
-											"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-											"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-											"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-											"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-											"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-											"",
-											"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-											"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+											""
 										],
 										"type": "text/javascript"
 									}
@@ -2761,54 +1795,19 @@
 							},
 							"request": {
 								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{accessToken}}",
-											"type": "string"
-										}
-									]
+									"type": "noauth"
 								},
 								"method": "GET",
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
+										"value": "application/json",
+										"type": "text"
 									},
 									{
 										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{accessToken}}",
-										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
-										"disabled": true
-									},
-									{
-										"key": "Cookie",
-										"type": "text",
-										"value": "auth_headers={{authHeader}}"
-									},
-									{
-										"key": "access-token",
-										"type": "text",
-										"value": "{{access-token}}"
-									},
-									{
-										"key": "client",
-										"type": "text",
-										"value": "{{client}}"
-									},
-									{
-										"key": "expiry",
-										"type": "text",
-										"value": "{{expiry}}"
-									},
-									{
-										"key": "uid",
-										"type": "text",
-										"value": "{{uid}}"
+										"value": "Bearer {{access-token}}",
+										"type": "text"
 									}
 								],
 								"body": {
@@ -2858,14 +1857,7 @@
 									"script": {
 										"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
 										"exec": [
-											"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-											"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-											"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-											"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-											"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-											"",
-											"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-											"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+											""
 										],
 										"type": "text/javascript"
 									}
@@ -2876,54 +1868,19 @@
 							},
 							"request": {
 								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{accessToken}}",
-											"type": "string"
-										}
-									]
+									"type": "noauth"
 								},
 								"method": "GET",
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
+										"value": "application/json",
+										"type": "text"
 									},
 									{
 										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{accessToken}}",
-										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
-										"disabled": true
-									},
-									{
-										"key": "Cookie",
-										"type": "text",
-										"value": "auth_headers={{authHeader}}"
-									},
-									{
-										"key": "access-token",
-										"type": "text",
-										"value": "{{access-token}}"
-									},
-									{
-										"key": "client",
-										"type": "text",
-										"value": "{{client}}"
-									},
-									{
-										"key": "expiry",
-										"type": "text",
-										"value": "{{expiry}}"
-									},
-									{
-										"key": "uid",
-										"type": "text",
-										"value": "{{uid}}"
+										"value": "Bearer {{access-token}}",
+										"type": "text"
 									}
 								],
 								"body": {
@@ -2973,14 +1930,7 @@
 									"script": {
 										"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
 										"exec": [
-											"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-											"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-											"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-											"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-											"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-											"",
-											"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-											"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+											""
 										],
 										"type": "text/javascript"
 									}
@@ -2991,54 +1941,19 @@
 							},
 							"request": {
 								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{accessToken}}",
-											"type": "string"
-										}
-									]
+									"type": "noauth"
 								},
 								"method": "GET",
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
+										"value": "application/json",
+										"type": "text"
 									},
 									{
 										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{accessToken}}",
-										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
-										"disabled": true
-									},
-									{
-										"key": "Cookie",
-										"type": "text",
-										"value": "auth_headers={{authHeader}}"
-									},
-									{
-										"key": "access-token",
-										"type": "text",
-										"value": "{{access-token}}"
-									},
-									{
-										"key": "client",
-										"type": "text",
-										"value": "{{client}}"
-									},
-									{
-										"key": "expiry",
-										"type": "text",
-										"value": "{{expiry}}"
-									},
-									{
-										"key": "uid",
-										"type": "text",
-										"value": "{{uid}}"
+										"value": "Bearer {{access-token}}",
+										"type": "text"
 									}
 								],
 								"body": {
@@ -3088,14 +2003,7 @@
 									"script": {
 										"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
 										"exec": [
-											"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-											"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-											"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-											"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-											"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-											"",
-											"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-											"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+											""
 										],
 										"type": "text/javascript"
 									}
@@ -3106,54 +2014,19 @@
 							},
 							"request": {
 								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{accessToken}}",
-											"type": "string"
-										}
-									]
+									"type": "noauth"
 								},
 								"method": "GET",
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
+										"value": "application/json",
+										"type": "text"
 									},
 									{
 										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{accessToken}}",
-										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
-										"disabled": true
-									},
-									{
-										"key": "Cookie",
-										"type": "text",
-										"value": "auth_headers={{authHeader}}"
-									},
-									{
-										"key": "access-token",
-										"type": "text",
-										"value": "{{access-token}}"
-									},
-									{
-										"key": "client",
-										"type": "text",
-										"value": "{{client}}"
-									},
-									{
-										"key": "expiry",
-										"type": "text",
-										"value": "{{expiry}}"
-									},
-									{
-										"key": "uid",
-										"type": "text",
-										"value": "{{uid}}"
+										"value": "Bearer {{access-token}}",
+										"type": "text"
 									}
 								],
 								"body": {
@@ -3203,14 +2076,7 @@
 									"script": {
 										"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
 										"exec": [
-											"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-											"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-											"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-											"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-											"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-											"",
-											"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-											"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+											""
 										],
 										"type": "text/javascript"
 									}
@@ -3221,54 +2087,19 @@
 							},
 							"request": {
 								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{accessToken}}",
-											"type": "string"
-										}
-									]
+									"type": "noauth"
 								},
 								"method": "GET",
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
+										"value": "application/json",
+										"type": "text"
 									},
 									{
 										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{accessToken}}",
-										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
-										"disabled": true
-									},
-									{
-										"key": "Cookie",
-										"type": "text",
-										"value": "auth_headers={{authHeader}}"
-									},
-									{
-										"key": "access-token",
-										"type": "text",
-										"value": "{{access-token}}"
-									},
-									{
-										"key": "client",
-										"type": "text",
-										"value": "{{client}}"
-									},
-									{
-										"key": "expiry",
-										"type": "text",
-										"value": "{{expiry}}"
-									},
-									{
-										"key": "uid",
-										"type": "text",
-										"value": "{{uid}}"
+										"value": "Bearer {{access-token}}",
+										"type": "text"
 									}
 								],
 								"body": {
@@ -3325,14 +2156,7 @@
 									"script": {
 										"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
 										"exec": [
-											"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-											"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-											"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-											"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-											"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-											"",
-											"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-											"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+											""
 										],
 										"type": "text/javascript"
 									}
@@ -3340,54 +2164,19 @@
 							],
 							"request": {
 								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{accessToken}}",
-											"type": "string"
-										}
-									]
+									"type": "noauth"
 								},
 								"method": "POST",
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
+										"value": "application/json",
+										"type": "text"
 									},
 									{
 										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{accessToken}}",
-										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
-										"disabled": true
-									},
-									{
-										"key": "Cookie",
-										"type": "text",
-										"value": "auth_headers={{authHeader}}"
-									},
-									{
-										"key": "access-token",
-										"type": "text",
-										"value": "{{access-token}}"
-									},
-									{
-										"key": "client",
-										"type": "text",
-										"value": "{{client}}"
-									},
-									{
-										"key": "expiry",
-										"type": "text",
-										"value": "{{expiry}}"
-									},
-									{
-										"key": "uid",
-										"type": "text",
-										"value": "{{uid}}"
+										"value": "Bearer {{access-token}}",
+										"type": "text"
 									}
 								],
 								"body": {
@@ -3432,14 +2221,7 @@
 									"script": {
 										"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
 										"exec": [
-											"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-											"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-											"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-											"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-											"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-											"",
-											"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-											"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+											""
 										],
 										"type": "text/javascript"
 									}
@@ -3447,54 +2229,19 @@
 							],
 							"request": {
 								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{accessToken}}",
-											"type": "string"
-										}
-									]
+									"type": "noauth"
 								},
 								"method": "POST",
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
+										"value": "application/json",
+										"type": "text"
 									},
 									{
 										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{accessToken}}",
-										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
-										"disabled": true
-									},
-									{
-										"key": "Cookie",
-										"type": "text",
-										"value": "auth_headers={{authHeader}}"
-									},
-									{
-										"key": "access-token",
-										"type": "text",
-										"value": "{{access-token}}"
-									},
-									{
-										"key": "client",
-										"type": "text",
-										"value": "{{client}}"
-									},
-									{
-										"key": "expiry",
-										"type": "text",
-										"value": "{{expiry}}"
-									},
-									{
-										"key": "uid",
-										"type": "text",
-										"value": "{{uid}}"
+										"value": "Bearer {{access-token}}",
+										"type": "text"
 									}
 								],
 								"body": {
@@ -3543,14 +2290,7 @@
 							"script": {
 								"id": "54dd2097-391e-4778-9081-f4188f21245c",
 								"exec": [
-									"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-									"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-									"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-									"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-									"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-									"",
-									"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-									"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -3565,28 +2305,8 @@
 								"type": "text"
 							},
 							{
-								"key": "Cookie",
-								"value": "auth_headers={{authHeader}}",
-								"type": "text"
-							},
-							{
-								"key": "access-token",
-								"value": "{{access-token}}",
-								"type": "text"
-							},
-							{
-								"key": "client",
-								"value": "{{client}}",
-								"type": "text"
-							},
-							{
-								"key": "expiry",
-								"value": "{{expiry}}",
-								"type": "text"
-							},
-							{
-								"key": "uid",
-								"value": "{{uid}}",
+								"key": "Authorization",
+								"value": "Bearer {{access-token}}",
 								"type": "text"
 							}
 						],
@@ -3630,14 +2350,7 @@
 							"script": {
 								"id": "ffa7298d-76da-4b09-bdfa-b43fef69a925",
 								"exec": [
-									"pm.environment.set(\"accessToken\", postman.getResponseHeader('access-token'));",
-									"pm.environment.set(\"access-token\", postman.getResponseHeader('access-token'))",
-									"pm.environment.set(\"client\", postman.getResponseHeader('client'))",
-									"pm.environment.set(\"expiry\", postman.getResponseHeader('expiry'))",
-									"pm.environment.set(\"uid\", postman.getResponseHeader('uid'))",
-									"",
-									"var authHeader='{\"access-token\":\"' + postman.getResponseHeader('access-token') +'\",\"token-type\":\"Bearer\",\"client\":\"'+postman.getResponseHeader('client')+'\",\"expiry\":\"'+postman.getResponseHeader('expiry')+'\",\"uid\":\"' + postman.getResponseHeader('uid') + '\"}'",
-									"pm.environment.set(\"authHeader\", encodeURIComponent(authHeader))"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -3648,54 +2361,19 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{accessToken}}",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
-								"type": "text",
-								"value": "application/json"
+								"value": "application/json",
+								"type": "text"
 							},
 							{
 								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer {{accessToken}}",
-								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
-								"disabled": true
-							},
-							{
-								"key": "Cookie",
-								"type": "text",
-								"value": "auth_headers={{authHeader}}"
-							},
-							{
-								"key": "access-token",
-								"type": "text",
-								"value": "{{access-token}}"
-							},
-							{
-								"key": "client",
-								"type": "text",
-								"value": "{{client}}"
-							},
-							{
-								"key": "expiry",
-								"type": "text",
-								"value": "{{expiry}}"
-							},
-							{
-								"key": "uid",
-								"type": "text",
-								"value": "{{uid}}"
+								"value": "Bearer {{access-token}}",
+								"type": "text"
 							}
 						],
 						"body": {
@@ -3765,9 +2443,9 @@
 	],
 	"variable": [
 		{
-			"id": "00f21bc7-6a24-44c6-810d-612ee5631516",
+			"id": "ef305a27-4c07-4e63-9c15-f83aefa70d24",
 			"key": "URL",
-			"value": "http://wellthiedemo-smallbusiness-qa.lvh.me:3030/api",
+			"value": "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api",
 			"type": "string"
 		}
 	],

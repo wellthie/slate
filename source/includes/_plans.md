@@ -913,7 +913,7 @@ Use this endpoint to list the individual plans available.
 
 ### HTTP Request
 
-`GET http://wellthiedemo-smallbusiness-test.lvh.me:3030/api/inquiries/:inquiry_slug/plans/individual_plans`
+`GET https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/:inquiry_slug/plans/individual_plans`
 
 ### Parameters
 
