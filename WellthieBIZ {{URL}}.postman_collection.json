@@ -137,7 +137,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"email\": \"apidoc+employer@wellthie.com\",\n  \"first_name\": \"Kannan\",\n  \"last_name\": \"Ramakrishnan\",\n  \"password\": \"Password123\",\n  \"password_confirmation\": \"Password123\"\n}",
+							"raw": "{\n  \"email\": \"apiuseremployer@wellthie.com\",\n  \"first_name\": \"firstName\",\n  \"last_name\": \"lastName\",\n  \"password\": \"SecurePassword123\",\n  \"password_confirmation\": \"SecurePassword123\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -729,13 +729,13 @@
 											}
 										},
 										"url": {
-											"raw": "{{URL}}/inquiries/LDYA3582/census",
+											"raw": "{{URL}}/inquiries/INBF8325/census",
 											"host": [
 												"{{URL}}"
 											],
 											"path": [
 												"inquiries",
-												"LDYA3582",
+												"INBF8325",
 												"census"
 											]
 										}
@@ -1549,13 +1549,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{URL}}/companies/P7Kvahp8UmP7TLYXJDnsyZ3y/inquiries",
+									"raw": "{{URL}}/companies/yNponia3pn8tpqygHSo8FhSp/inquiries",
 									"host": [
 										"{{URL}}"
 									],
 									"path": [
 										"companies",
-										"P7Kvahp8UmP7TLYXJDnsyZ3y",
+										"yNponia3pn8tpqygHSo8FhSp",
 										"inquiries"
 									]
 								}
@@ -1679,15 +1679,15 @@
 									}
 								},
 								"url": {
-									"raw": "{{URL}}/companies/shy8pmfek8ZpGKJYneD2g5TJ/inquiries/AGKB7928",
+									"raw": "{{URL}}/companies/yNponia3pn8tpqygHSo8FhSp/inquiries/BCWN5429",
 									"host": [
 										"{{URL}}"
 									],
 									"path": [
 										"companies",
-										"shy8pmfek8ZpGKJYneD2g5TJ",
+										"yNponia3pn8tpqygHSo8FhSp",
 										"inquiries",
-										"AGKB7928"
+										"BCWN5429"
 									]
 								}
 							},
@@ -1747,13 +1747,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{URL}}/inquiries/AGKB7928",
+									"raw": "{{URL}}/inquiries/LDYA3582",
 									"host": [
 										"{{URL}}"
 									],
 									"path": [
 										"inquiries",
-										"AGKB7928"
+										"LDYA3582"
 									]
 								}
 							},
@@ -2443,7 +2443,7 @@
 	],
 	"variable": [
 		{
-			"id": "ef305a27-4c07-4e63-9c15-f83aefa70d24",
+			"id": "6508c69c-76b9-4d99-81e5-99cac0789ce8",
 			"key": "URL",
 			"value": "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api",
 			"type": "string"
