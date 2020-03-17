@@ -178,19 +178,6 @@ Parameter                                         | Default   | Description
 <strong>phone</strong><strong>required</strong>   | N/A       | Phone number
 comments                                          | N/A       | Any comments
 
-> Here's an example response:
-
-```json
-{
-    "id": 113569,
-    "estimate_tax_credit_eligibility_trash": null,
-    "show_group_to_individual_selected_trash": null,
-    "created_at": "2020-03-11T08:12:56.354-04:00",
-    "updated_at": "2020-03-11T08:12:56.354-04:00",
-    "inquiry_id": 130139
-}
-```
-
 ## POST Employees Contact
 
 Use this endpoint to update contact details of the Employees.

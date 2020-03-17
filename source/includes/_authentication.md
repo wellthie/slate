@@ -10,8 +10,8 @@ curl --location --request POST 'https://wellthiedemo-smallbusiness-qa.affordable
   "first_name": "firstName",
   "last_name": "lastName",
   "npn": "123456",
-  "password": "Password123",
-  "password_confirmation": "Password123"
+  "password": "SecurePassword123",
+  "password_confirmation": "SecurePassword123"
 }'
 ```
 
@@ -30,7 +30,7 @@ func main() {
   url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/auth"
   method := "POST"
 
-  payload := strings.NewReader("{\n  \"email\": \"apidoc+broker@wellthie.com\",\n  \"first_name\": \"firstName\",\n  \"last_name\": \"lastName\",\n  \"npn\": \"123456\",\n  \"password\": \"Password123\",\n  \"password_confirmation\": \"Password123\"\n}")
+  payload := strings.NewReader("{\n  \"email\": \"apidoc+broker@wellthie.com\",\n  \"first_name\": \"firstName\",\n  \"last_name\": \"lastName\",\n  \"npn\": \"123456\",\n  \"password\": \"SecurePassword123\",\n  \"password_confirmation\": \"SecurePassword123\"\n}")
 
   client := &http.Client {
   }
@@ -57,7 +57,7 @@ var settings = {
   "headers": {
     "Content-Type": "application/json"
   },
-  "data": JSON.stringify({"email":"apidoc+broker@wellthie.com","first_name":"firstName","last_name":"lastName","npn":"123456","password":"Password123","password_confirmation":"Password123"}),
+  "data": JSON.stringify({"email":"apidoc+broker@wellthie.com","first_name":"firstName","last_name":"lastName","npn":"123456","password":"SecurePassword123","password_confirmation":"SecurePassword123"}),
 };
 
 $.ajax(settings).done(function (response) {
@@ -78,7 +78,7 @@ NSDictionary *headers = @{
 };
 
 [request setAllHTTPHeaderFields:headers];
-NSData *postData = [[NSData alloc] initWithData:[@"{\n  \"email\": \"apidoc+broker@wellthie.com\",\n  \"first_name\": \"firstName\",\n  \"last_name\": \"lastName\",\n  \"npn\": \"123456\",\n  \"password\": \"Password123\",\n  \"password_confirmation\": \"Password123\"\n}" dataUsingEncoding:NSUTF8StringEncoding]];
+NSData *postData = [[NSData alloc] initWithData:[@"{\n  \"email\": \"apidoc+broker@wellthie.com\",\n  \"first_name\": \"firstName\",\n  \"last_name\": \"lastName\",\n  \"npn\": \"123456\",\n  \"password\": \"SecurePassword123\",\n  \"password_confirmation\": \"SecurePassword123\"\n}" dataUsingEncoding:NSUTF8StringEncoding]];
 [request setHTTPBody:postData];
 
 [request setHTTPMethod:@"POST"];
@@ -104,7 +104,7 @@ dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
 $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
 $headers.Add("Content-Type", "application/json")
 
-$body = "{`n  `"email`": `"apidoc+broker@wellthie.com`",`n  `"first_name`": `"firstName`",`n  `"last_name`": `"lastName`",`n  `"npn`": `"123456`",`n  `"password`": `"Password123`",`n  `"password_confirmation`": `"Password123`"`n}"
+$body = "{`n  `"email`": `"apidoc+broker@wellthie.com`",`n  `"first_name`": `"firstName`",`n  `"last_name`": `"lastName`",`n  `"npn`": `"123456`",`n  `"password`": `"SecurePassword123`",`n  `"password_confirmation`": `"SecurePassword123`"`n}"
 
 $response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/auth' -Method 'POST' -Headers $headers -Body $body
 $response | ConvertTo-Json
@@ -115,33 +115,25 @@ $response | ConvertTo-Json
 ```json
 {
     "data": {
-        "id": 58464,
-        "slug": "abdxoCCvz6oLyHcmpR3Z9wG5",
+        "id": 58471,
+        "slug": "Cd6fkzX4RW8c3ggX19i9Uj2t",
         "first_name": "firstName",
         "last_name": "lastName",
-        "email": "apidoc+broker1@wellthie.com",
+        "email": "apiuser@wellthie.com",
         "provider": "email",
-        "uid": "apidoc+broker1@wellthie.com",
-        "password_changed_at": "2020-03-16T03:03:19.589-04:00",
+        "uid": "apiuser@wellthie.com",
+        "password_changed_at": "2020-03-16T09:39:36.902-04:00",
         "organization_id": 23,
         "team_id": null,
         "role": "broker",
         "user_type": null,
-        "npn_trash": null,
         "broker_code": "123456",
         "phone_number": null,
         "account_expiration_date": null,
         "created_by_user_id": null,
         "time_zone": "Eastern Time (US & Canada)",
-        "deleted_at": null,
-        "salesforce_email": null,
-        "salesforce_access_token": null,
-        "salesforce_refresh_token": null,
-        "salesforce_lock": false,
         "company_id": null,
-        "allow_password_change": false,
-        "is_any_broker_type": true,
-        "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ2NCwiY2xpZW50IjoiSEszeWNlOEY3VF95UXdBalhQMlR6dyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZTgzYzY2NjhmM2YwMmJlODg5OWIxODQwYjQwNzViOGEiLCJleHAiOjE1ODQ0Mjg2MDB9.dWrw41qnHA224Dn8cN3dYM0RzXKx2yPkzMwZS_xtWIs"
+        "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiS3FoVUhxWkI0NTlEUEU3Zzc2X1BpQSIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZDk0NDc0NzVkZGNhNmY4NTgyYzBjNDZhNzkyMDBlNjkiLCJleHAiOjE1ODQ0NTIzNzd9.eKzowlHleLptbZjCddatUcp8DXNvwvVla58mQg2bSZ0"
     }
 }
 ```
@@ -169,10 +161,10 @@ curl --location --request POST 'https://wellthiedemo-smallbusiness-qa.affordable
 --header 'Content-Type: application/json' \
 --data-raw '{
   "email": "apidoc+employer@wellthie.com",
-  "first_name": "Kannan",
-  "last_name": "Ramakrishnan",
-  "password": "Password123",
-  "password_confirmation": "Password123"
+  "first_name": "FirstName",
+  "last_name": "LastName",
+  "password": "SecurePassword123",
+  "password_confirmation": "SecurePassword123"
 }'
 ```
 
@@ -191,7 +183,7 @@ func main() {
   url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/auth"
   method := "POST"
 
-  payload := strings.NewReader("{\n  \"email\": \"apidoc+employer@wellthie.com\",\n  \"first_name\": \"Kannan\",\n  \"last_name\": \"Ramakrishnan\",\n  \"password\": \"Password123\",\n  \"password_confirmation\": \"Password123\"\n}")
+  payload := strings.NewReader("{\n  \"email\": \"apidoc+employer@wellthie.com\",\n  \"first_name\": \"FirstName\",\n  \"last_name\": \"LastName\",\n  \"password\": \"SecurePassword123\",\n  \"password_confirmation\": \"SecurePassword123\"\n}")
 
   client := &http.Client {
   }
@@ -218,7 +210,7 @@ var settings = {
   "headers": {
     "Content-Type": "application/json"
   },
-  "data": JSON.stringify({"email":"apidoc+employer@wellthie.com","first_name":"Kannan","last_name":"Ramakrishnan","password":"Password123","password_confirmation":"Password123"}),
+  "data": JSON.stringify({"email":"apidoc+employer@wellthie.com","first_name":"FirstName","last_name":"LastName","password":"SecurePassword123","password_confirmation":"SecurePassword123"}),
 };
 
 $.ajax(settings).done(function (response) {
@@ -239,7 +231,7 @@ NSDictionary *headers = @{
 };
 
 [request setAllHTTPHeaderFields:headers];
-NSData *postData = [[NSData alloc] initWithData:[@"{\n  \"email\": \"apidoc+employer@wellthie.com\",\n  \"first_name\": \"Kannan\",\n  \"last_name\": \"Ramakrishnan\",\n  \"password\": \"Password123\",\n  \"password_confirmation\": \"Password123\"\n}" dataUsingEncoding:NSUTF8StringEncoding]];
+NSData *postData = [[NSData alloc] initWithData:[@"{\n  \"email\": \"apidoc+employer@wellthie.com\",\n  \"first_name\": \"FirstName\",\n  \"last_name\": \"LastName\",\n  \"password\": \"SecurePassword123\",\n  \"password_confirmation\": \"SecurePassword123\"\n}" dataUsingEncoding:NSUTF8StringEncoding]];
 [request setHTTPBody:postData];
 
 [request setHTTPMethod:@"POST"];
@@ -265,7 +257,7 @@ dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
 $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
 $headers.Add("Content-Type", "application/json")
 
-$body = "{`n  `"email`": `"apidoc+employer@wellthie.com`",`n  `"first_name`": `"Kannan`",`n  `"last_name`": `"Ramakrishnan`",`n  `"password`": `"Password123`",`n  `"password_confirmation`": `"Password123`"`n}"
+$body = "{`n  `"email`": `"apidoc+employer@wellthie.com`",`n  `"first_name`": `"FirstName`",`n  `"last_name`": `"LastName`",`n  `"password`": `"SecurePassword123`",`n  `"password_confirmation`": `"SecurePassword123`"`n}"
 
 $response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/auth' -Method 'POST' -Headers $headers -Body $body
 $response | ConvertTo-Json
@@ -276,33 +268,25 @@ $response | ConvertTo-Json
 ```json
 {
     "data": {
-        "id": 58465,
-        "slug": "miB7r7pw2jYXRez6sYyhWptW",
-        "first_name": "Kannan",
-        "last_name": "Ramakrishnan",
-        "email": "apidoc+employer1@wellthie.com",
+        "id": 58472,
+        "slug": "sKWbq4wFjrQTmq51c9jXt1uF",
+        "first_name": "firstName",
+        "last_name": "lastName",
+        "email": "apiuseremployer@wellthie.com",
         "provider": "email",
-        "uid": "apidoc+employer1@wellthie.com",
-        "password_changed_at": "2020-03-16T03:03:31.002-04:00",
+        "uid": "apiuseremployer@wellthie.com",
+        "password_changed_at": "2020-03-16T09:40:31.335-04:00",
         "organization_id": 23,
         "team_id": null,
         "role": "business_owner",
         "user_type": null,
-        "npn_trash": null,
         "broker_code": null,
         "phone_number": null,
         "account_expiration_date": null,
         "created_by_user_id": null,
         "time_zone": "Eastern Time (US & Canada)",
-        "deleted_at": null,
-        "salesforce_email": null,
-        "salesforce_access_token": null,
-        "salesforce_refresh_token": null,
-        "salesforce_lock": false,
         "company_id": null,
-        "allow_password_change": false,
-        "is_any_broker_type": false,
-        "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ2NSwiY2xpZW50IjoiU1FxSVJ6d09pRmJlR2U1Umk0LUlvdyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiMDYyMGQwNGExYzdlZTg4NDM4NmMzODEwNjYwODU3ZjAiLCJleHAiOjE1ODQ0Mjg2MTF9.QmKsEp-TWFgXR8_Z_wNDykBbiCeLSQXVAZv3r4nx7pE"
+        "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MiwiY2xpZW50IjoiV1dZR1VpeGU0VmhUb3A2LUtaT0V6dyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiOGEwNThlMDU2NjU0MjgzNDhkYzg1NDliYjZjZWM1NjYiLCJleHAiOjE1ODQ0NTI0MzF9.eIPBFbGipm0N9Xi0D3-VPP19iJppSCZvbrQrT8mr3_w"
     }
 }
 ```
@@ -328,7 +312,7 @@ Parameter                                                         | Default   | 
 ```shell
 curl --location --request POST 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/auth/sign_in' \
 --header 'Content-Type: application/json' \
---data-raw '{ "email":"apidoc+broker@wellthie.com", "password":"Password123" }'
+--data-raw '{ "email":"apidoc+broker@wellthie.com", "password":"SecurePassword123" }'
 ```
 
 ```go
@@ -346,7 +330,7 @@ func main() {
   url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/auth/sign_in"
   method := "POST"
 
-  payload := strings.NewReader("{\n	\"email\":\"apidoc+broker@wellthie.com\",\n	\"password\":\"Password123\"\n}")
+  payload := strings.NewReader("{\n	\"email\":\"apidoc+broker@wellthie.com\",\n	\"password\":\"SecurePassword123\"\n}")
 
   client := &http.Client {
   }
@@ -373,7 +357,7 @@ var settings = {
   "headers": {
     "Content-Type": "application/json"
   },
-  "data": JSON.stringify({"email":"apidoc+broker@wellthie.com","password":"Password123"}),
+  "data": JSON.stringify({"email":"apidoc+broker@wellthie.com","password":"SecurePassword123"}),
 };
 
 $.ajax(settings).done(function (response) {
@@ -394,7 +378,7 @@ NSDictionary *headers = @{
 };
 
 [request setAllHTTPHeaderFields:headers];
-NSData *postData = [[NSData alloc] initWithData:[@"{\n	\"email\":\"apidoc+broker@wellthie.com\",\n	\"password\":\"Password123\"\n}" dataUsingEncoding:NSUTF8StringEncoding]];
+NSData *postData = [[NSData alloc] initWithData:[@"{\n	\"email\":\"apidoc+broker@wellthie.com\",\n	\"password\":\"SecurePassword123\"\n}" dataUsingEncoding:NSUTF8StringEncoding]];
 [request setHTTPBody:postData];
 
 [request setHTTPMethod:@"POST"];
@@ -420,7 +404,7 @@ dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
 $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
 $headers.Add("Content-Type", "application/json")
 
-$body = "{`n	`"email`":`"apidoc+broker@wellthie.com`",`n	`"password`":`"Password123`"`n}"
+$body = "{`n	`"email`":`"apidoc+broker@wellthie.com`",`n	`"password`":`"SecurePassword123`"`n}"
 
 $response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/auth/sign_in' -Method 'POST' -Headers $headers -Body $body
 $response | ConvertTo-Json
