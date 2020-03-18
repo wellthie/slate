@@ -1,15 +1,13 @@
 # Organizations
 
-## Settings
+An Organization is nothing but a Group like yours, who will be consuming the Wellthie BIZ API to build a consumer facing app for your end customers.
+
+## Get Settings
 
 ```shell
 curl --location --request GET 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/organization/settings' \
 --header 'Content-Type: application/json' \
---header 'Cookie: auth_headers=%7B%22access-token%22%3A%22ctgocjRjlvrDCak4ls1Dqg%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22JfGfbdYP5qjFoFul5tD8UQ%22%2C%22expiry%22%3A%221583828589%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D' \
---header 'access-token: ctgocjRjlvrDCak4ls1Dqg' \
---header 'client: JfGfbdYP5qjFoFul5tD8UQ' \
---header 'expiry: 1583828589' \
---header 'uid: apidoc+broker@wellthie.com' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiVU5sRjVaQUxqdW1pZ3lTSVl6SXFyZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ1MTQ5MDV9.tR22SJYO5nHrOnxhXJj7HRAOK-guJT7zOg4kOK-eEPE' \
 --data-raw ''
 ```
 
@@ -38,11 +36,7 @@ func main() {
     fmt.Println(err)
   }
   req.Header.Add("Content-Type", "application/json")
-  req.Header.Add("Cookie", "auth_headers=%7B%22access-token%22%3A%22ctgocjRjlvrDCak4ls1Dqg%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22JfGfbdYP5qjFoFul5tD8UQ%22%2C%22expiry%22%3A%221583828589%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D")
-  req.Header.Add("access-token", "ctgocjRjlvrDCak4ls1Dqg")
-  req.Header.Add("client", "JfGfbdYP5qjFoFul5tD8UQ")
-  req.Header.Add("expiry", "1583828589")
-  req.Header.Add("uid", "apidoc+broker@wellthie.com")
+  req.Header.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiVU5sRjVaQUxqdW1pZ3lTSVl6SXFyZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ1MTQ5MDV9.tR22SJYO5nHrOnxhXJj7HRAOK-guJT7zOg4kOK-eEPE")
 
   res, err := client.Do(req)
   defer res.Body.Close()
@@ -59,11 +53,7 @@ var settings = {
   "timeout": 0,
   "headers": {
     "Content-Type": "application/json",
-    "Cookie": "auth_headers=%7B%22access-token%22%3A%22ctgocjRjlvrDCak4ls1Dqg%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22JfGfbdYP5qjFoFul5tD8UQ%22%2C%22expiry%22%3A%221583828589%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D",
-    "access-token": "ctgocjRjlvrDCak4ls1Dqg",
-    "client": "JfGfbdYP5qjFoFul5tD8UQ",
-    "expiry": "1583828589",
-    "uid": "apidoc+broker@wellthie.com"
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiVU5sRjVaQUxqdW1pZ3lTSVl6SXFyZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ1MTQ5MDV9.tR22SJYO5nHrOnxhXJj7HRAOK-guJT7zOg4kOK-eEPE"
   },
 };
 
@@ -82,11 +72,7 @@ NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWit
   timeoutInterval:10.0];
 NSDictionary *headers = @{
   @"Content-Type": @"application/json",
-  @"Cookie": @"auth_headers=%7B%22access-token%22%3A%22ctgocjRjlvrDCak4ls1Dqg%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22JfGfbdYP5qjFoFul5tD8UQ%22%2C%22expiry%22%3A%221583828589%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D",
-  @"access-token": @"ctgocjRjlvrDCak4ls1Dqg",
-  @"client": @"JfGfbdYP5qjFoFul5tD8UQ",
-  @"expiry": @"1583828589",
-  @"uid": @"apidoc+broker@wellthie.com"
+  @"Authorization": @"Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiVU5sRjVaQUxqdW1pZ3lTSVl6SXFyZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ1MTQ5MDV9.tR22SJYO5nHrOnxhXJj7HRAOK-guJT7zOg4kOK-eEPE"
 };
 
 [request setAllHTTPHeaderFields:headers];
@@ -115,11 +101,7 @@ dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
 ```powershell
 $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
 $headers.Add("Content-Type", "application/json")
-$headers.Add("Cookie", "auth_headers=%7B%22access-token%22%3A%22ctgocjRjlvrDCak4ls1Dqg%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22JfGfbdYP5qjFoFul5tD8UQ%22%2C%22expiry%22%3A%221583828589%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D")
-$headers.Add("access-token", "ctgocjRjlvrDCak4ls1Dqg")
-$headers.Add("client", "JfGfbdYP5qjFoFul5tD8UQ")
-$headers.Add("expiry", "1583828589")
-$headers.Add("uid", "apidoc+broker@wellthie.com")
+$headers.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiVU5sRjVaQUxqdW1pZ3lTSVl6SXFyZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ1MTQ5MDV9.tR22SJYO5nHrOnxhXJj7HRAOK-guJT7zOg4kOK-eEPE")
 
 $body = ""
 
@@ -246,12 +228,12 @@ $response | ConvertTo-Json
     ],
     "show_issuer_logos": false,
     "excel_template_file": true,
-    "excel_template_url": "https://d3uxyywlniz2wb.cloudfront.net/advisor/development/organizations/excel_templates/000/000/023/original/downloadable%20census-pr58.xlsx?1509470757",
+    "excel_template_url": "URL",
     "allow_group_and_group_to_individual": true,
     "allow_only_group": false,
     "allow_only_group_to_individual": false,
     "show_enrollment_buttons_on_quote_page": true,
-    "business_large_group_url": "https://www.amerihealthnj.com/html/employers/large_businesses.html?",
+    "business_large_group_url": "URL",
     "business_individual_url": "https://www.healthcare.gov/",
     "census_child_max_age_for_inclusion_in_household": 26,
     "show_renewals": false,
@@ -685,7 +667,7 @@ $response | ConvertTo-Json
 }
 ```
 
-Use this endpoint to retrieve the particular 
+Use this endpoint to retrieve the settings like available / enabled effective_dates, call scheduling timings, whether or not to show Ancillary plans like Dental / Vision / etc.,
 
 <aside class="notice">
   This endpoint does not require any session or authorization token.

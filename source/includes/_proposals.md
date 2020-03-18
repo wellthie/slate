@@ -1,16 +1,13 @@
 # Proposals
 
+This section of the API is used to create a Proposal which could be submitted to the Small Group Business.
+
 ## Get Selected Inquiries of a company
 
 ```shell
-curl --location --request GET 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/inquiries?selected_inquiries=JXID6718,JQLI9871' \
+curl --location --request GET 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/yNponia3pn8tpqygHSo8FhSp/inquiries?selected_inquiries=INBF8325,BCWN5429' \
 --header 'Content-Type: application/json' \
---header 'Cookie: auth_headers=%7B%22access-token%22%3A%22ftj2xIRsDvprSBzBAEZc1w%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22pkevB8VD4yONukgbtPUFFw%22%2C%22expiry%22%3A%221583923117%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D' \
---header 'access-token: ftj2xIRsDvprSBzBAEZc1w' \
---header 'client: pkevB8VD4yONukgbtPUFFw' \
---header 'expiry: 1583923117' \
---header 'uid: apidoc+broker@wellthie.com' \
---header 'Authorization: Bearer PfjWVebzEivqQZd4Y19ljw' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiRnZ2d2wxR0RQYzBranVBUEpWVjhpZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ2MjA0MjF9.fviApfd2KXRYfMJHHpjW5EKJ9dBNEHROrEnwtOnG6TM' \
 --data-raw ''
 ```
 
@@ -26,7 +23,7 @@ import (
 
 func main() {
 
-  url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/inquiries?selected_inquiries=JXID6718,JQLI9871"
+  url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/yNponia3pn8tpqygHSo8FhSp/inquiries?selected_inquiries=INBF8325,BCWN5429"
   method := "GET"
 
   payload := strings.NewReader("")
@@ -39,12 +36,7 @@ func main() {
     fmt.Println(err)
   }
   req.Header.Add("Content-Type", "application/json")
-  req.Header.Add("Cookie", "auth_headers=%7B%22access-token%22%3A%22ftj2xIRsDvprSBzBAEZc1w%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22pkevB8VD4yONukgbtPUFFw%22%2C%22expiry%22%3A%221583923117%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D")
-  req.Header.Add("access-token", "ftj2xIRsDvprSBzBAEZc1w")
-  req.Header.Add("client", "pkevB8VD4yONukgbtPUFFw")
-  req.Header.Add("expiry", "1583923117")
-  req.Header.Add("uid", "apidoc+broker@wellthie.com")
-  req.Header.Add("Authorization", "Bearer PfjWVebzEivqQZd4Y19ljw")
+  req.Header.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiRnZ2d2wxR0RQYzBranVBUEpWVjhpZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ2MjA0MjF9.fviApfd2KXRYfMJHHpjW5EKJ9dBNEHROrEnwtOnG6TM")
 
   res, err := client.Do(req)
   defer res.Body.Close()
@@ -56,17 +48,12 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/inquiries?selected_inquiries=JXID6718,JQLI9871",
+  "url": "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/yNponia3pn8tpqygHSo8FhSp/inquiries?selected_inquiries=INBF8325,BCWN5429",
   "method": "GET",
   "timeout": 0,
   "headers": {
     "Content-Type": "application/json",
-    "Cookie": "auth_headers=%7B%22access-token%22%3A%22ftj2xIRsDvprSBzBAEZc1w%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22pkevB8VD4yONukgbtPUFFw%22%2C%22expiry%22%3A%221583923117%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D",
-    "access-token": "ftj2xIRsDvprSBzBAEZc1w",
-    "client": "pkevB8VD4yONukgbtPUFFw",
-    "expiry": "1583923117",
-    "uid": "apidoc+broker@wellthie.com",
-    "Authorization": "Bearer PfjWVebzEivqQZd4Y19ljw"
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiRnZ2d2wxR0RQYzBranVBUEpWVjhpZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ2MjA0MjF9.fviApfd2KXRYfMJHHpjW5EKJ9dBNEHROrEnwtOnG6TM"
   },
 };
 
@@ -80,17 +67,12 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/inquiries?selected_inquiries=JXID6718,JQLI9871"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/yNponia3pn8tpqygHSo8FhSp/inquiries?selected_inquiries=INBF8325,BCWN5429"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
   @"Content-Type": @"application/json",
-  @"Cookie": @"auth_headers=%7B%22access-token%22%3A%22ftj2xIRsDvprSBzBAEZc1w%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22pkevB8VD4yONukgbtPUFFw%22%2C%22expiry%22%3A%221583923117%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D",
-  @"access-token": @"ftj2xIRsDvprSBzBAEZc1w",
-  @"client": @"pkevB8VD4yONukgbtPUFFw",
-  @"expiry": @"1583923117",
-  @"uid": @"apidoc+broker@wellthie.com",
-  @"Authorization": @"Bearer PfjWVebzEivqQZd4Y19ljw"
+  @"Authorization": @"Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiRnZ2d2wxR0RQYzBranVBUEpWVjhpZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ2MjA0MjF9.fviApfd2KXRYfMJHHpjW5EKJ9dBNEHROrEnwtOnG6TM"
 };
 
 [request setAllHTTPHeaderFields:headers];
@@ -119,16 +101,11 @@ dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
 ```powershell
 $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
 $headers.Add("Content-Type", "application/json")
-$headers.Add("Cookie", "auth_headers=%7B%22access-token%22%3A%22ftj2xIRsDvprSBzBAEZc1w%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22pkevB8VD4yONukgbtPUFFw%22%2C%22expiry%22%3A%221583923117%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D")
-$headers.Add("access-token", "ftj2xIRsDvprSBzBAEZc1w")
-$headers.Add("client", "pkevB8VD4yONukgbtPUFFw")
-$headers.Add("expiry", "1583923117")
-$headers.Add("uid", "apidoc+broker@wellthie.com")
-$headers.Add("Authorization", "Bearer PfjWVebzEivqQZd4Y19ljw")
+$headers.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiRnZ2d2wxR0RQYzBranVBUEpWVjhpZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ2MjA0MjF9.fviApfd2KXRYfMJHHpjW5EKJ9dBNEHROrEnwtOnG6TM")
 
 $body = ""
 
-$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/inquiries?selected_inquiries=JXID6718,JQLI9871' -Method 'GET' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/yNponia3pn8tpqygHSo8FhSp/inquiries?selected_inquiries=INBF8325,BCWN5429' -Method 'GET' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 
@@ -372,12 +349,7 @@ $response | ConvertTo-Json
 Use this endpoint to retrieve details of selected inquiries of a company.
 
 <aside class="notice">
-  This endpoint is <strong><i>secured</i></strong> and requires <strong><i>authentication headers</i></strong>. These include 
-  <br/><code style="margin-left: 30px">1. <i>Cookie: auth_headers</i></code>,
-  <br/><code style="margin-left: 30px">2. <i>uid</i></code>,
-  <br/><code style="margin-left: 30px">3. <i>client</i></code>,
-  <br/><code style="margin-left: 30px">4. <i>access-token</i></code> and 
-  <br/><code style="margin-left: 30px">5. <i>expiry</i></code>.
+  This endpoint is <strong><i>secured</i></strong> and requires <strong><i>Authorization header</i></strong>. 
 </aside>
 
 ### HTTP Request
@@ -391,14 +363,9 @@ No parameters required.
 ## Get Group Plans for inquiries
 
 ```shell
-curl --location --request GET 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/group_plans?selected_inquiries=JXID6718,JQLI9871' \
+curl --location --request GET 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/yNponia3pn8tpqygHSo8FhSp/group_plans?selected_inquiries=INBF8325,BCWN5429' \
 --header 'Content-Type: application/json' \
---header 'Cookie: auth_headers=%7B%22access-token%22%3A%22XsT2kpRKu9D3EanAwyNCFw%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22pkevB8VD4yONukgbtPUFFw%22%2C%22expiry%22%3A%221583923305%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D' \
---header 'access-token: XsT2kpRKu9D3EanAwyNCFw' \
---header 'client: pkevB8VD4yONukgbtPUFFw' \
---header 'expiry: 1583923305' \
---header 'uid: apidoc+broker@wellthie.com' \
---header 'Authorization: Bearer ftj2xIRsDvprSBzBAEZc1w' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiRnZ2d2wxR0RQYzBranVBUEpWVjhpZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ2MjA0MjF9.fviApfd2KXRYfMJHHpjW5EKJ9dBNEHROrEnwtOnG6TM' \
 --data-raw ''
 ```
 
@@ -414,7 +381,7 @@ import (
 
 func main() {
 
-  url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/group_plans?selected_inquiries=JXID6718,JQLI9871"
+  url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/yNponia3pn8tpqygHSo8FhSp/group_plans?selected_inquiries=INBF8325,BCWN5429"
   method := "GET"
 
   payload := strings.NewReader("")
@@ -427,12 +394,7 @@ func main() {
     fmt.Println(err)
   }
   req.Header.Add("Content-Type", "application/json")
-  req.Header.Add("Cookie", "auth_headers=%7B%22access-token%22%3A%22XsT2kpRKu9D3EanAwyNCFw%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22pkevB8VD4yONukgbtPUFFw%22%2C%22expiry%22%3A%221583923305%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D")
-  req.Header.Add("access-token", "XsT2kpRKu9D3EanAwyNCFw")
-  req.Header.Add("client", "pkevB8VD4yONukgbtPUFFw")
-  req.Header.Add("expiry", "1583923305")
-  req.Header.Add("uid", "apidoc+broker@wellthie.com")
-  req.Header.Add("Authorization", "Bearer ftj2xIRsDvprSBzBAEZc1w")
+  req.Header.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiRnZ2d2wxR0RQYzBranVBUEpWVjhpZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ2MjA0MjF9.fviApfd2KXRYfMJHHpjW5EKJ9dBNEHROrEnwtOnG6TM")
 
   res, err := client.Do(req)
   defer res.Body.Close()
@@ -444,17 +406,12 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/group_plans?selected_inquiries=JXID6718,JQLI9871",
+  "url": "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/yNponia3pn8tpqygHSo8FhSp/group_plans?selected_inquiries=INBF8325,BCWN5429",
   "method": "GET",
   "timeout": 0,
   "headers": {
     "Content-Type": "application/json",
-    "Cookie": "auth_headers=%7B%22access-token%22%3A%22XsT2kpRKu9D3EanAwyNCFw%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22pkevB8VD4yONukgbtPUFFw%22%2C%22expiry%22%3A%221583923305%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D",
-    "access-token": "XsT2kpRKu9D3EanAwyNCFw",
-    "client": "pkevB8VD4yONukgbtPUFFw",
-    "expiry": "1583923305",
-    "uid": "apidoc+broker@wellthie.com",
-    "Authorization": "Bearer ftj2xIRsDvprSBzBAEZc1w"
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiRnZ2d2wxR0RQYzBranVBUEpWVjhpZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ2MjA0MjF9.fviApfd2KXRYfMJHHpjW5EKJ9dBNEHROrEnwtOnG6TM"
   },
 };
 
@@ -468,17 +425,12 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/group_plans?selected_inquiries=JXID6718,JQLI9871"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/yNponia3pn8tpqygHSo8FhSp/group_plans?selected_inquiries=INBF8325,BCWN5429"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
   @"Content-Type": @"application/json",
-  @"Cookie": @"auth_headers=%7B%22access-token%22%3A%22XsT2kpRKu9D3EanAwyNCFw%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22pkevB8VD4yONukgbtPUFFw%22%2C%22expiry%22%3A%221583923305%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D",
-  @"access-token": @"XsT2kpRKu9D3EanAwyNCFw",
-  @"client": @"pkevB8VD4yONukgbtPUFFw",
-  @"expiry": @"1583923305",
-  @"uid": @"apidoc+broker@wellthie.com",
-  @"Authorization": @"Bearer ftj2xIRsDvprSBzBAEZc1w"
+  @"Authorization": @"Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiRnZ2d2wxR0RQYzBranVBUEpWVjhpZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ2MjA0MjF9.fviApfd2KXRYfMJHHpjW5EKJ9dBNEHROrEnwtOnG6TM"
 };
 
 [request setAllHTTPHeaderFields:headers];
@@ -507,16 +459,11 @@ dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
 ```powershell
 $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
 $headers.Add("Content-Type", "application/json")
-$headers.Add("Cookie", "auth_headers=%7B%22access-token%22%3A%22XsT2kpRKu9D3EanAwyNCFw%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22pkevB8VD4yONukgbtPUFFw%22%2C%22expiry%22%3A%221583923305%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D")
-$headers.Add("access-token", "XsT2kpRKu9D3EanAwyNCFw")
-$headers.Add("client", "pkevB8VD4yONukgbtPUFFw")
-$headers.Add("expiry", "1583923305")
-$headers.Add("uid", "apidoc+broker@wellthie.com")
-$headers.Add("Authorization", "Bearer ftj2xIRsDvprSBzBAEZc1w")
+$headers.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiRnZ2d2wxR0RQYzBranVBUEpWVjhpZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ2MjA0MjF9.fviApfd2KXRYfMJHHpjW5EKJ9dBNEHROrEnwtOnG6TM")
 
 $body = ""
 
-$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/group_plans?selected_inquiries=JXID6718,JQLI9871' -Method 'GET' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/yNponia3pn8tpqygHSo8FhSp/group_plans?selected_inquiries=INBF8325,BCWN5429' -Method 'GET' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 
@@ -524,12 +471,12 @@ $response | ConvertTo-Json
 
 ```json
 {
-    "JXID6718": [
+    "BCWN5429": [
         {
             "promotional_label": null,
             "issuer_logo_url": "https://d3uxyywlniz2wb.cloudfront.net/advisor/development/issuers/logos/000/000/173/main/oscar_logo_blue_2020-wg39.png?1573759981",
-            "id": 78717,
-            "name": "Oscar Circle Bronze $8150 (No FP)",
+            "id": 78720,
+            "name": "Oscar Circle Bronze $8150 (No DP, No FP)",
             "service_area_id": 4334,
             "highlight_1": {
                 "icon": "icon--metal",
@@ -553,7 +500,7 @@ $response | ConvertTo-Json
             "sbc_download_url": null,
             "network_url": "https://www.hioscar.com/search/",
             "formulary_url": "https://www.hioscar.com/search/",
-            "hios_plan_identifier": "74289NY2780024",
+            "hios_plan_identifier": "74289NY2780022",
             "plan_year": 2020,
             "tags": [
                 "bronze",
@@ -626,7 +573,7 @@ $response | ConvertTo-Json
                 ]
             },
             "medical_plan_benefit": {
-                "medical_plan_id": 78717,
+                "medical_plan_id": 78720,
                 "medical_deductible_single": "$8,150",
                 "medical_deductible_family": "$16,300",
                 "maximum_out_of_pocket_limit_single": "$8,150",
@@ -839,12 +786,12 @@ $response | ConvertTo-Json
             "model_name": "medical_plans"
         }
     ],
-    "JQLI9871": [
+    "INBF8325": [
         {
             "promotional_label": null,
             "issuer_logo_url": "https://d3uxyywlniz2wb.cloudfront.net/advisor/development/issuers/logos/000/000/173/main/oscar_logo_blue_2020-wg39.png?1573759981",
-            "id": 78717,
-            "name": "Oscar Circle Bronze $8150 (No FP)",
+            "id": 78720,
+            "name": "Oscar Circle Bronze $8150 (No DP, No FP)",
             "service_area_id": 4334,
             "highlight_1": {
                 "icon": "icon--metal",
@@ -868,7 +815,7 @@ $response | ConvertTo-Json
             "sbc_download_url": null,
             "network_url": "https://www.hioscar.com/search/",
             "formulary_url": "https://www.hioscar.com/search/",
-            "hios_plan_identifier": "74289NY2780024",
+            "hios_plan_identifier": "74289NY2780022",
             "plan_year": 2020,
             "tags": [
                 "bronze",
@@ -941,7 +888,7 @@ $response | ConvertTo-Json
                 ]
             },
             "medical_plan_benefit": {
-                "medical_plan_id": 78717,
+                "medical_plan_id": 78720,
                 "medical_deductible_single": "$8,150",
                 "medical_deductible_family": "$16,300",
                 "maximum_out_of_pocket_limit_single": "$8,150",
@@ -1150,14 +1097,6 @@ $response | ConvertTo-Json
                 "pcp_percentage_number_before_deductible": null,
                 "pcp_amount_number_before_deductible": 0
             },
-            "carrier_plan_identifier": null,
-            "model_name": "medical_plans"
-        },
-        {
-            "promotional_label": null,
-            "issuer_logo_url": "https://d3uxyywlniz2wb.cloudfront.net/advisor/development/issuers/logos/000/000/173/main/oscar_logo_blue_2020-wg39.png?1573759981",
-            "id": 78720,
-            .....,
             "carrier_plan_identifier": null,
             "model_name": "medical_plans"
         }
@@ -1168,12 +1107,7 @@ $response | ConvertTo-Json
 Use this endpoint to retrieve details of selected inquiries group plans.
 
 <aside class="notice">
-  This endpoint is <strong><i>secured</i></strong> and requires <strong><i>authentication headers</i></strong>. These include 
-  <br/><code style="margin-left: 30px">1. <i>Cookie: auth_headers</i></code>,
-  <br/><code style="margin-left: 30px">2. <i>uid</i></code>,
-  <br/><code style="margin-left: 30px">3. <i>client</i></code>,
-  <br/><code style="margin-left: 30px">4. <i>access-token</i></code> and 
-  <br/><code style="margin-left: 30px">5. <i>expiry</i></code>.
+  This endpoint is <strong><i>secured</i></strong> and requires <strong><i>Authorization header</i></strong>. 
 </aside>
 
 ### HTTP Request
@@ -1184,17 +1118,12 @@ Use this endpoint to retrieve details of selected inquiries group plans.
 
 No parameters required.
 
-## Group Plans Pricing
+## Get Group Plans Pricing
 
 ```shell
-curl --location --request GET 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/group_plans_pricing?selected_inquiries=JXID6718,JQLI9871' \
+curl --location --request GET 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/yNponia3pn8tpqygHSo8FhSp/group_plans_pricing?selected_inquiries=INBF8325,BCWN5429' \
 --header 'Content-Type: application/json' \
---header 'Cookie: auth_headers=%7B%22access-token%22%3A%225dy4Dom_xiZZO2_bae6gWw%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22pkevB8VD4yONukgbtPUFFw%22%2C%22expiry%22%3A%221583923733%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D' \
---header 'access-token: 5dy4Dom_xiZZO2_bae6gWw' \
---header 'client: pkevB8VD4yONukgbtPUFFw' \
---header 'expiry: 1583923733' \
---header 'uid: apidoc+broker@wellthie.com' \
---header 'Authorization: Bearer XsT2kpRKu9D3EanAwyNCFw' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiRnZ2d2wxR0RQYzBranVBUEpWVjhpZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ2MjA0MjF9.fviApfd2KXRYfMJHHpjW5EKJ9dBNEHROrEnwtOnG6TM' \
 --data-raw ''
 ```
 
@@ -1210,7 +1139,7 @@ import (
 
 func main() {
 
-  url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/group_plans_pricing?selected_inquiries=JXID6718,JQLI9871"
+  url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/yNponia3pn8tpqygHSo8FhSp/group_plans_pricing?selected_inquiries=INBF8325,BCWN5429"
   method := "GET"
 
   payload := strings.NewReader("")
@@ -1223,12 +1152,7 @@ func main() {
     fmt.Println(err)
   }
   req.Header.Add("Content-Type", "application/json")
-  req.Header.Add("Cookie", "auth_headers=%7B%22access-token%22%3A%225dy4Dom_xiZZO2_bae6gWw%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22pkevB8VD4yONukgbtPUFFw%22%2C%22expiry%22%3A%221583923733%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D")
-  req.Header.Add("access-token", "5dy4Dom_xiZZO2_bae6gWw")
-  req.Header.Add("client", "pkevB8VD4yONukgbtPUFFw")
-  req.Header.Add("expiry", "1583923733")
-  req.Header.Add("uid", "apidoc+broker@wellthie.com")
-  req.Header.Add("Authorization", "Bearer XsT2kpRKu9D3EanAwyNCFw")
+  req.Header.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiRnZ2d2wxR0RQYzBranVBUEpWVjhpZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ2MjA0MjF9.fviApfd2KXRYfMJHHpjW5EKJ9dBNEHROrEnwtOnG6TM")
 
   res, err := client.Do(req)
   defer res.Body.Close()
@@ -1240,17 +1164,12 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/group_plans_pricing?selected_inquiries=JXID6718,JQLI9871",
+  "url": "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/yNponia3pn8tpqygHSo8FhSp/group_plans_pricing?selected_inquiries=INBF8325,BCWN5429",
   "method": "GET",
   "timeout": 0,
   "headers": {
     "Content-Type": "application/json",
-    "Cookie": "auth_headers=%7B%22access-token%22%3A%225dy4Dom_xiZZO2_bae6gWw%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22pkevB8VD4yONukgbtPUFFw%22%2C%22expiry%22%3A%221583923733%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D",
-    "access-token": "5dy4Dom_xiZZO2_bae6gWw",
-    "client": "pkevB8VD4yONukgbtPUFFw",
-    "expiry": "1583923733",
-    "uid": "apidoc+broker@wellthie.com",
-    "Authorization": "Bearer XsT2kpRKu9D3EanAwyNCFw"
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiRnZ2d2wxR0RQYzBranVBUEpWVjhpZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ2MjA0MjF9.fviApfd2KXRYfMJHHpjW5EKJ9dBNEHROrEnwtOnG6TM"
   },
 };
 
@@ -1264,17 +1183,12 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/group_plans_pricing?selected_inquiries=JXID6718,JQLI9871"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/yNponia3pn8tpqygHSo8FhSp/group_plans_pricing?selected_inquiries=INBF8325,BCWN5429"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
   @"Content-Type": @"application/json",
-  @"Cookie": @"auth_headers=%7B%22access-token%22%3A%225dy4Dom_xiZZO2_bae6gWw%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22pkevB8VD4yONukgbtPUFFw%22%2C%22expiry%22%3A%221583923733%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D",
-  @"access-token": @"5dy4Dom_xiZZO2_bae6gWw",
-  @"client": @"pkevB8VD4yONukgbtPUFFw",
-  @"expiry": @"1583923733",
-  @"uid": @"apidoc+broker@wellthie.com",
-  @"Authorization": @"Bearer XsT2kpRKu9D3EanAwyNCFw"
+  @"Authorization": @"Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiRnZ2d2wxR0RQYzBranVBUEpWVjhpZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ2MjA0MjF9.fviApfd2KXRYfMJHHpjW5EKJ9dBNEHROrEnwtOnG6TM"
 };
 
 [request setAllHTTPHeaderFields:headers];
@@ -1303,16 +1217,11 @@ dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
 ```powershell
 $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
 $headers.Add("Content-Type", "application/json")
-$headers.Add("Cookie", "auth_headers=%7B%22access-token%22%3A%225dy4Dom_xiZZO2_bae6gWw%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22pkevB8VD4yONukgbtPUFFw%22%2C%22expiry%22%3A%221583923733%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D")
-$headers.Add("access-token", "5dy4Dom_xiZZO2_bae6gWw")
-$headers.Add("client", "pkevB8VD4yONukgbtPUFFw")
-$headers.Add("expiry", "1583923733")
-$headers.Add("uid", "apidoc+broker@wellthie.com")
-$headers.Add("Authorization", "Bearer XsT2kpRKu9D3EanAwyNCFw")
+$headers.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiRnZ2d2wxR0RQYzBranVBUEpWVjhpZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ2MjA0MjF9.fviApfd2KXRYfMJHHpjW5EKJ9dBNEHROrEnwtOnG6TM")
 
 $body = ""
 
-$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/group_plans_pricing?selected_inquiries=JXID6718,JQLI9871' -Method 'GET' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/yNponia3pn8tpqygHSo8FhSp/group_plans_pricing?selected_inquiries=INBF8325,BCWN5429' -Method 'GET' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 
@@ -1320,27 +1229,27 @@ $response | ConvertTo-Json
 
 ```json
 {
-    "JXID6718": [
+    "BCWN5429": [
         {
-            "id": 78717,
+            "id": 78720,
             "carrier_plan_identifier": null,
             "premiums": {
                 "member_prices": {
                     "households": {
-                        "423007": 535.88,
-                        "423008": 1071.77,
-                        "423009": 1527.27,
-                        "423010": 911.0
+                        "423030": 535.88,
+                        "423031": 1071.77,
+                        "423032": 1527.27,
+                        "423033": 911.0
                     },
                     "members": {
-                        "523247": 535.88,
-                        "523248": 1071.77,
-                        "523249": 0.0,
-                        "523250": 1527.27,
-                        "523251": 0.0,
-                        "523252": 0.0,
-                        "523253": 911.0,
-                        "523254": 0.0
+                        "523286": 535.88,
+                        "523287": 1071.77,
+                        "523288": 0.0,
+                        "523289": 1527.27,
+                        "523290": 0.0,
+                        "523291": 0.0,
+                        "523292": 911.0,
+                        "523293": 0.0
                     }
                 },
                 "total_monthly_premium": 4045.92,
@@ -1348,53 +1257,27 @@ $response | ConvertTo-Json
             }
         }
     ],
-    "JQLI9871": [
-        {
-            "id": 78717,
-            "carrier_plan_identifier": null,
-            "premiums": {
-                "member_prices": {
-                    "households": {
-                        "422991": 535.88,
-                        "422992": 1071.77,
-                        "422993": 1527.27,
-                        "422994": 911.0
-                    },
-                    "members": {
-                        "523219": 535.88,
-                        "523220": 1071.77,
-                        "523221": 0.0,
-                        "523222": 1527.27,
-                        "523223": 0.0,
-                        "523224": 0.0,
-                        "523225": 911.0,
-                        "523226": 0.0
-                    }
-                },
-                "total_monthly_premium": 4045.92,
-                "total_annual_premium": 48551.04
-            }
-        },
+    "INBF8325": [
         {
             "id": 78720,
             "carrier_plan_identifier": null,
             "premiums": {
                 "member_prices": {
                     "households": {
-                        "422991": 535.88,
-                        "422992": 1071.77,
-                        "422993": 1527.27,
-                        "422994": 911.0
+                        "423034": 535.88,
+                        "423035": 1071.77,
+                        "423036": 1527.27,
+                        "423037": 911.0
                     },
                     "members": {
-                        "523219": 535.88,
-                        "523220": 1071.77,
-                        "523221": 0.0,
-                        "523222": 1527.27,
-                        "523223": 0.0,
-                        "523224": 0.0,
-                        "523225": 911.0,
-                        "523226": 0.0
+                        "523294": 535.88,
+                        "523295": 1071.77,
+                        "523296": 0.0,
+                        "523297": 1527.27,
+                        "523298": 0.0,
+                        "523299": 0.0,
+                        "523300": 911.0,
+                        "523301": 0.0
                     }
                 },
                 "total_monthly_premium": 4045.92,
@@ -1408,12 +1291,7 @@ $response | ConvertTo-Json
 Use this endpoint to retrieve details of selected inquiries group plans pricings.
 
 <aside class="notice">
-  This endpoint is <strong><i>secured</i></strong> and requires <strong><i>authentication headers</i></strong>. These include 
-  <br/><code style="margin-left: 30px">1. <i>Cookie: auth_headers</i></code>,
-  <br/><code style="margin-left: 30px">2. <i>uid</i></code>,
-  <br/><code style="margin-left: 30px">3. <i>client</i></code>,
-  <br/><code style="margin-left: 30px">4. <i>access-token</i></code> and 
-  <br/><code style="margin-left: 30px">5. <i>expiry</i></code>.
+  This endpoint is <strong><i>secured</i></strong> and requires <strong><i>Authorization header</i></strong>. 
 </aside>
 
 ### HTTP Request
@@ -1424,16 +1302,12 @@ Use this endpoint to retrieve details of selected inquiries group plans pricings
 
 No parameters required.
 
-## Plan Selections
+## Get Plan Selections
 
 ```shell
-curl --location --request GET 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/plan_selections?selected_inquiries=JXID6718,JQLI9871' \
+curl --location --request GET 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/yNponia3pn8tpqygHSo8FhSp/plan_selections?selected_inquiries=INBF8325,BCWN5429' \
 --header 'Content-Type: application/json' \
---header 'Cookie: auth_headers=%7B%22access-token%22%3A%22V7kA-QUpMdlGf2uYPiZLWw%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22DpkpkKwhcLgIuwbo4fiWnQ%22%2C%22expiry%22%3A%221583924575%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D' \
---header 'access-token: V7kA-QUpMdlGf2uYPiZLWw' \
---header 'client: DpkpkKwhcLgIuwbo4fiWnQ' \
---header 'expiry: 1583924575' \
---header 'uid: apidoc+broker@wellthie.com' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiRnZ2d2wxR0RQYzBranVBUEpWVjhpZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ2MjA0MjF9.fviApfd2KXRYfMJHHpjW5EKJ9dBNEHROrEnwtOnG6TM' \
 --data-raw ''
 ```
 
@@ -1449,7 +1323,7 @@ import (
 
 func main() {
 
-  url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/plan_selections?selected_inquiries=JXID6718,JQLI9871"
+  url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/yNponia3pn8tpqygHSo8FhSp/plan_selections?selected_inquiries=INBF8325,BCWN5429"
   method := "GET"
 
   payload := strings.NewReader("")
@@ -1462,11 +1336,7 @@ func main() {
     fmt.Println(err)
   }
   req.Header.Add("Content-Type", "application/json")
-  req.Header.Add("Cookie", "auth_headers=%7B%22access-token%22%3A%22V7kA-QUpMdlGf2uYPiZLWw%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22DpkpkKwhcLgIuwbo4fiWnQ%22%2C%22expiry%22%3A%221583924575%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D")
-  req.Header.Add("access-token", "V7kA-QUpMdlGf2uYPiZLWw")
-  req.Header.Add("client", "DpkpkKwhcLgIuwbo4fiWnQ")
-  req.Header.Add("expiry", "1583924575")
-  req.Header.Add("uid", "apidoc+broker@wellthie.com")
+  req.Header.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiRnZ2d2wxR0RQYzBranVBUEpWVjhpZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ2MjA0MjF9.fviApfd2KXRYfMJHHpjW5EKJ9dBNEHROrEnwtOnG6TM")
 
   res, err := client.Do(req)
   defer res.Body.Close()
@@ -1478,16 +1348,12 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/plan_selections?selected_inquiries=JXID6718,JQLI9871",
+  "url": "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/yNponia3pn8tpqygHSo8FhSp/plan_selections?selected_inquiries=INBF8325,BCWN5429",
   "method": "GET",
   "timeout": 0,
   "headers": {
     "Content-Type": "application/json",
-    "Cookie": "auth_headers=%7B%22access-token%22%3A%22V7kA-QUpMdlGf2uYPiZLWw%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22DpkpkKwhcLgIuwbo4fiWnQ%22%2C%22expiry%22%3A%221583924575%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D",
-    "access-token": "V7kA-QUpMdlGf2uYPiZLWw",
-    "client": "DpkpkKwhcLgIuwbo4fiWnQ",
-    "expiry": "1583924575",
-    "uid": "apidoc+broker@wellthie.com"
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiRnZ2d2wxR0RQYzBranVBUEpWVjhpZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ2MjA0MjF9.fviApfd2KXRYfMJHHpjW5EKJ9dBNEHROrEnwtOnG6TM"
   },
 };
 
@@ -1501,16 +1367,12 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/plan_selections?selected_inquiries=JXID6718,JQLI9871"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/yNponia3pn8tpqygHSo8FhSp/plan_selections?selected_inquiries=INBF8325,BCWN5429"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
   @"Content-Type": @"application/json",
-  @"Cookie": @"auth_headers=%7B%22access-token%22%3A%22V7kA-QUpMdlGf2uYPiZLWw%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22DpkpkKwhcLgIuwbo4fiWnQ%22%2C%22expiry%22%3A%221583924575%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D",
-  @"access-token": @"V7kA-QUpMdlGf2uYPiZLWw",
-  @"client": @"DpkpkKwhcLgIuwbo4fiWnQ",
-  @"expiry": @"1583924575",
-  @"uid": @"apidoc+broker@wellthie.com"
+  @"Authorization": @"Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiRnZ2d2wxR0RQYzBranVBUEpWVjhpZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ2MjA0MjF9.fviApfd2KXRYfMJHHpjW5EKJ9dBNEHROrEnwtOnG6TM"
 };
 
 [request setAllHTTPHeaderFields:headers];
@@ -1539,15 +1401,11 @@ dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
 ```powershell
 $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
 $headers.Add("Content-Type", "application/json")
-$headers.Add("Cookie", "auth_headers=%7B%22access-token%22%3A%22V7kA-QUpMdlGf2uYPiZLWw%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22DpkpkKwhcLgIuwbo4fiWnQ%22%2C%22expiry%22%3A%221583924575%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D")
-$headers.Add("access-token", "V7kA-QUpMdlGf2uYPiZLWw")
-$headers.Add("client", "DpkpkKwhcLgIuwbo4fiWnQ")
-$headers.Add("expiry", "1583924575")
-$headers.Add("uid", "apidoc+broker@wellthie.com")
+$headers.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiRnZ2d2wxR0RQYzBranVBUEpWVjhpZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ2MjA0MjF9.fviApfd2KXRYfMJHHpjW5EKJ9dBNEHROrEnwtOnG6TM")
 
 $body = ""
 
-$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/shy8pmfek8ZpGKJYneD2g5TJ/plan_selections?selected_inquiries=JXID6718,JQLI9871' -Method 'GET' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/yNponia3pn8tpqygHSo8FhSp/plan_selections?selected_inquiries=INBF8325,BCWN5429' -Method 'GET' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 
@@ -1555,31 +1413,11 @@ $response | ConvertTo-Json
 
 ```json
 {
-    "JXID6718": [
+    "BCWN5429": [
         {
-            "id": 136304,
+            "id": 136327,
             "individual_plan_id": null,
-            "medical_plan_id": 78717,
-            "ancillary_plan_id": null,
-            "ancillary_plan_type": null,
-            "selected_for_quote": true,
-            "selected_for_enrollment": false,
-            "order": 0
-        },
-        {
-            "id": 136306,
-            "individual_plan_id": null,
-            "medical_plan_id": 78717,
-            "ancillary_plan_id": null,
-            "ancillary_plan_type": null,
-            "selected_for_quote": true,
-            "selected_for_enrollment": false,
-            "order": 0
-        },
-        {
-            "id": 136307,
-            "individual_plan_id": null,
-            "medical_plan_id": 78717,
+            "medical_plan_id": 78720,
             "ancillary_plan_id": null,
             "ancillary_plan_type": null,
             "selected_for_quote": true,
@@ -1587,19 +1425,9 @@ $response | ConvertTo-Json
             "order": 1
         }
     ],
-    "JQLI9871": [
+    "INBF8325": [
         {
-            "id": 136309,
-            "individual_plan_id": null,
-            "medical_plan_id": 78717,
-            "ancillary_plan_id": null,
-            "ancillary_plan_type": null,
-            "selected_for_quote": true,
-            "selected_for_enrollment": false,
-            "order": 0
-        },
-        {
-            "id": 136310,
+            "id": 136326,
             "individual_plan_id": null,
             "medical_plan_id": 78720,
             "ancillary_plan_id": null,
@@ -1615,12 +1443,7 @@ $response | ConvertTo-Json
 Use this endpoint to retrieve details of selected inquiries group plans.
 
 <aside class="notice">
-  This endpoint is <strong><i>secured</i></strong> and requires <strong><i>authentication headers</i></strong>. These include 
-  <br/><code style="margin-left: 30px">1. <i>Cookie: auth_headers</i></code>,
-  <br/><code style="margin-left: 30px">2. <i>uid</i></code>,
-  <br/><code style="margin-left: 30px">3. <i>client</i></code>,
-  <br/><code style="margin-left: 30px">4. <i>access-token</i></code> and 
-  <br/><code style="margin-left: 30px">5. <i>expiry</i></code>.
+  This endpoint is <strong><i>secured</i></strong> and requires <strong><i>Authorization header</i></strong>. 
 </aside>
 
 ### HTTP Request
@@ -1631,17 +1454,12 @@ Use this endpoint to retrieve details of selected inquiries group plans.
 
 No parameters required.
 
-## Individual Quotes
+## Get Individual Quotes
 
 ```shell
 curl --location --request GET 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/proposals/epQ1xdE1NQcQ8TWj3Cq7Ca42/individual_quotes?selected_inquiries=ZVTD8453,ZIWA4138' \
 --header 'Content-Type: application/json' \
---header 'Cookie: auth_headers=%7B%22access-token%22%3A%22MQ3ov8p1gbY-GCrhIblmRQ%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22c3nNGXEB2hLVOa2BbXymVA%22%2C%22expiry%22%3A%221583924795%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D' \
---header 'access-token: MQ3ov8p1gbY-GCrhIblmRQ' \
---header 'client: c3nNGXEB2hLVOa2BbXymVA' \
---header 'expiry: 1583924795' \
---header 'uid: apidoc+broker@wellthie.com' \
---header 'Authorization: Bearer NoGjq4aQfoLLiwoNv1uRVQ' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiRnZ2d2wxR0RQYzBranVBUEpWVjhpZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ2MjA0MjF9.fviApfd2KXRYfMJHHpjW5EKJ9dBNEHROrEnwtOnG6TM' \
 --data-raw ''
 ```
 
@@ -1670,12 +1488,7 @@ func main() {
     fmt.Println(err)
   }
   req.Header.Add("Content-Type", "application/json")
-  req.Header.Add("Cookie", "auth_headers=%7B%22access-token%22%3A%22MQ3ov8p1gbY-GCrhIblmRQ%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22c3nNGXEB2hLVOa2BbXymVA%22%2C%22expiry%22%3A%221583924795%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D")
-  req.Header.Add("access-token", "MQ3ov8p1gbY-GCrhIblmRQ")
-  req.Header.Add("client", "c3nNGXEB2hLVOa2BbXymVA")
-  req.Header.Add("expiry", "1583924795")
-  req.Header.Add("uid", "apidoc+broker@wellthie.com")
-  req.Header.Add("Authorization", "Bearer NoGjq4aQfoLLiwoNv1uRVQ")
+  req.Header.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiRnZ2d2wxR0RQYzBranVBUEpWVjhpZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ2MjA0MjF9.fviApfd2KXRYfMJHHpjW5EKJ9dBNEHROrEnwtOnG6TM")
 
   res, err := client.Do(req)
   defer res.Body.Close()
@@ -1692,12 +1505,7 @@ var settings = {
   "timeout": 0,
   "headers": {
     "Content-Type": "application/json",
-    "Cookie": "auth_headers=%7B%22access-token%22%3A%22MQ3ov8p1gbY-GCrhIblmRQ%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22c3nNGXEB2hLVOa2BbXymVA%22%2C%22expiry%22%3A%221583924795%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D",
-    "access-token": "MQ3ov8p1gbY-GCrhIblmRQ",
-    "client": "c3nNGXEB2hLVOa2BbXymVA",
-    "expiry": "1583924795",
-    "uid": "apidoc+broker@wellthie.com",
-    "Authorization": "Bearer NoGjq4aQfoLLiwoNv1uRVQ"
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiRnZ2d2wxR0RQYzBranVBUEpWVjhpZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ2MjA0MjF9.fviApfd2KXRYfMJHHpjW5EKJ9dBNEHROrEnwtOnG6TM"
   },
 };
 
@@ -1716,12 +1524,7 @@ NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWit
   timeoutInterval:10.0];
 NSDictionary *headers = @{
   @"Content-Type": @"application/json",
-  @"Cookie": @"auth_headers=%7B%22access-token%22%3A%22MQ3ov8p1gbY-GCrhIblmRQ%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22c3nNGXEB2hLVOa2BbXymVA%22%2C%22expiry%22%3A%221583924795%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D",
-  @"access-token": @"MQ3ov8p1gbY-GCrhIblmRQ",
-  @"client": @"c3nNGXEB2hLVOa2BbXymVA",
-  @"expiry": @"1583924795",
-  @"uid": @"apidoc+broker@wellthie.com",
-  @"Authorization": @"Bearer NoGjq4aQfoLLiwoNv1uRVQ"
+  @"Authorization": @"Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiRnZ2d2wxR0RQYzBranVBUEpWVjhpZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ2MjA0MjF9.fviApfd2KXRYfMJHHpjW5EKJ9dBNEHROrEnwtOnG6TM"
 };
 
 [request setAllHTTPHeaderFields:headers];
@@ -1750,12 +1553,7 @@ dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
 ```powershell
 $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
 $headers.Add("Content-Type", "application/json")
-$headers.Add("Cookie", "auth_headers=%7B%22access-token%22%3A%22MQ3ov8p1gbY-GCrhIblmRQ%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22c3nNGXEB2hLVOa2BbXymVA%22%2C%22expiry%22%3A%221583924795%22%2C%22uid%22%3A%22apidoc%2Bbroker%40wellthie.com%22%7D")
-$headers.Add("access-token", "MQ3ov8p1gbY-GCrhIblmRQ")
-$headers.Add("client", "c3nNGXEB2hLVOa2BbXymVA")
-$headers.Add("expiry", "1583924795")
-$headers.Add("uid", "apidoc+broker@wellthie.com")
-$headers.Add("Authorization", "Bearer NoGjq4aQfoLLiwoNv1uRVQ")
+$headers.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiRnZ2d2wxR0RQYzBranVBUEpWVjhpZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ2MjA0MjF9.fviApfd2KXRYfMJHHpjW5EKJ9dBNEHROrEnwtOnG6TM")
 
 $body = ""
 
@@ -1871,12 +1669,7 @@ $response | ConvertTo-Json
 Use this endpoint to retrieve details of selected inquiries group plans.
 
 <aside class="notice">
-  This endpoint is <strong><i>secured</i></strong> and requires <strong><i>authentication headers</i></strong>. These include 
-  <br/><code style="margin-left: 30px">1. <i>Cookie: auth_headers</i></code>,
-  <br/><code style="margin-left: 30px">2. <i>uid</i></code>,
-  <br/><code style="margin-left: 30px">3. <i>client</i></code>,
-  <br/><code style="margin-left: 30px">4. <i>access-token</i></code> and 
-  <br/><code style="margin-left: 30px">5. <i>expiry</i></code>.
+  This endpoint is <strong><i>secured</i></strong> and requires <strong><i>Authorization header</i></strong>. 
 </aside>
 
 ### HTTP Request

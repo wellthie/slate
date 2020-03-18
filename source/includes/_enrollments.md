@@ -1,15 +1,13 @@
 # Enrollments
 
-## POST Contact
+Enrollment APIs are used to store information about contact details for the Inquiry
+
+## Create Enrollment Contact
 
 ```shell
-curl --location --request POST 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/SMIQ4519/enrollments/contact' \
+curl --location --request POST 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/LAPF8357/enrollments/contact' \
 --header 'Content-Type: application/json' \
---header 'Cookie: auth_headers=%7B%22access-token%22%3A%22undefined%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22undefined%22%2C%22expiry%22%3A%22undefined%22%2C%22uid%22%3A%22undefined%22%7D' \
---header 'access-token: ' \
---header 'client: ' \
---header 'expiry: ' \
---header 'uid: ' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiRnZ2d2wxR0RQYzBranVBUEpWVjhpZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ2MjA0MjF9.fviApfd2KXRYfMJHHpjW5EKJ9dBNEHROrEnwtOnG6TM' \
 --data-raw '{
     "enrollment_contact_form": {
         "name": "Contact Person Name",
@@ -34,7 +32,7 @@ import (
 
 func main() {
 
-  url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/SMIQ4519/enrollments/contact"
+  url := "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/LAPF8357/enrollments/contact"
   method := "POST"
 
   payload := strings.NewReader("{\n    \"enrollment_contact_form\": {\n        \"name\": \"Contact Person Name\",\n        \"email\": \"contact@email.com\",\n        \"phone\": \"2020202020\",\n        \"comments\": \"Example Comment\"\n    },\n    \"inquiry_slug\": \"SMIQ4519\",\n    \"enrollment\": {}\n}")
@@ -47,11 +45,7 @@ func main() {
     fmt.Println(err)
   }
   req.Header.Add("Content-Type", "application/json")
-  req.Header.Add("Cookie", "auth_headers=%7B%22access-token%22%3A%22undefined%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22undefined%22%2C%22expiry%22%3A%22undefined%22%2C%22uid%22%3A%22undefined%22%7D")
-  req.Header.Add("access-token", "")
-  req.Header.Add("client", "")
-  req.Header.Add("expiry", "")
-  req.Header.Add("uid", "")
+  req.Header.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiRnZ2d2wxR0RQYzBranVBUEpWVjhpZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ2MjA0MjF9.fviApfd2KXRYfMJHHpjW5EKJ9dBNEHROrEnwtOnG6TM")
 
   res, err := client.Do(req)
   defer res.Body.Close()
@@ -63,16 +57,12 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/SMIQ4519/enrollments/contact",
+  "url": "https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/LAPF8357/enrollments/contact",
   "method": "POST",
   "timeout": 0,
   "headers": {
     "Content-Type": "application/json",
-    "Cookie": "auth_headers=%7B%22access-token%22%3A%22undefined%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22undefined%22%2C%22expiry%22%3A%22undefined%22%2C%22uid%22%3A%22undefined%22%7D",
-    "access-token": "",
-    "client": "",
-    "expiry": "",
-    "uid": ""
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiRnZ2d2wxR0RQYzBranVBUEpWVjhpZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ2MjA0MjF9.fviApfd2KXRYfMJHHpjW5EKJ9dBNEHROrEnwtOnG6TM"
   },
   "data": JSON.stringify({"enrollment_contact_form":{"name":"Contact Person Name","email":"contact@email.com","phone":"2020202020","comments":"Example Comment"},"inquiry_slug":"SMIQ4519","enrollment":{}}),
 };
@@ -87,16 +77,12 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/SMIQ4519/enrollments/contact"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/LAPF8357/enrollments/contact"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
   @"Content-Type": @"application/json",
-  @"Cookie": @"auth_headers=%7B%22access-token%22%3A%22undefined%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22undefined%22%2C%22expiry%22%3A%22undefined%22%2C%22uid%22%3A%22undefined%22%7D",
-  @"access-token": @"",
-  @"client": @"",
-  @"expiry": @"",
-  @"uid": @""
+  @"Authorization": @"Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiRnZ2d2wxR0RQYzBranVBUEpWVjhpZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ2MjA0MjF9.fviApfd2KXRYfMJHHpjW5EKJ9dBNEHROrEnwtOnG6TM"
 };
 
 [request setAllHTTPHeaderFields:headers];
@@ -125,15 +111,11 @@ dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
 ```powershell
 $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
 $headers.Add("Content-Type", "application/json")
-$headers.Add("Cookie", "auth_headers=%7B%22access-token%22%3A%22undefined%22%2C%22token-type%22%3A%22Bearer%22%2C%22client%22%3A%22undefined%22%2C%22expiry%22%3A%22undefined%22%2C%22uid%22%3A%22undefined%22%7D")
-$headers.Add("access-token", "")
-$headers.Add("client", "")
-$headers.Add("expiry", "")
-$headers.Add("uid", "")
+$headers.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiRnZ2d2wxR0RQYzBranVBUEpWVjhpZyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ2MjA0MjF9.fviApfd2KXRYfMJHHpjW5EKJ9dBNEHROrEnwtOnG6TM")
 
 $body = "{`n    `"enrollment_contact_form`": {`n        `"name`": `"Contact Person Name`",`n        `"email`": `"contact@email.com`",`n        `"phone`": `"2020202020`",`n        `"comments`": `"Example Comment`"`n    },`n    `"inquiry_slug`": `"SMIQ4519`",`n    `"enrollment`": {}`n}"
 
-$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/SMIQ4519/enrollments/contact' -Method 'POST' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/LAPF8357/enrollments/contact' -Method 'POST' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 
@@ -157,12 +139,7 @@ $response | ConvertTo-Json
 Use this endpoint to create a new Enrollment Contact.
 
 <aside class="notice">
-  This endpoint is <strong><i>secured</i></strong> and requires <strong><i>authentication headers</i></strong>. These include 
-  <br/><code style="margin-left: 30px">1. <i>Cookie: auth_headers</i></code>,
-  <br/><code style="margin-left: 30px">2. <i>uid</i></code>,
-  <br/><code style="margin-left: 30px">3. <i>client</i></code>,
-  <br/><code style="margin-left: 30px">4. <i>access-token</i></code> and 
-  <br/><code style="margin-left: 30px">5. <i>expiry</i></code>.
+  This endpoint is <strong><i>secured</i></strong> and requires <strong><i>Authorization header</i></strong>. 
 </aside>
 
 ### HTTP Request
@@ -178,40 +155,14 @@ Parameter                                         | Default   | Description
 <strong>phone</strong><strong>required</strong>   | N/A       | Phone number
 comments                                          | N/A       | Any comments
 
-## POST Employees Contact
+## Create Employee Contact
 
-Use this endpoint to update contact details of the Employees.
-[Use Census Create logic](#create-census)
-<aside class="notice">
-  This endpoint is <strong><i>secured</i></strong> and requires <strong><i>authentication headers</i></strong>.
-</aside>
-
-## PUT Employees Contact
-Use this endpoint to update contact details of the Employees.
-
-
-<aside class="notice">
-  This endpoint is <strong><i>secured</i></strong> and requires <strong><i>authentication headers</i></strong>.
+<aside class="success">
   <a href="#create-census">Use Census Create logic</a>
 </aside>
 
-Use this endpoint to create a new census.
+## Update Employee Contact
 
-<aside class="notice">
-  This endpoint is <strong><i>secured</i></strong> and requires <strong><i>authentication headers</i></strong>. These include 
-  <br/><code style="margin-left: 30px">1. <i>Cookie: auth_headers</i></code>,
-  <br/><code style="margin-left: 30px">2. <i>uid</i></code>,
-  <br/><code style="margin-left: 30px">3. <i>client</i></code>,
-  <br/><code style="margin-left: 30px">4. <i>access-token</i></code> and 
-  <br/><code style="margin-left: 30px">5. <i>expiry</i></code>.
+<aside class="success">
+  <a href="#create-census">Use Census Create logic</a>
 </aside>
-
-### HTTP Request
-
-`PUT /api/inquiries/:inquiry_slug/enrollments/employees_contact`
-
-### Parameters
-
-Parameter    | Default | Description           | Required?
------------- | ------- | --------------------- | ----------
-census       | N/A     | Census object         | true

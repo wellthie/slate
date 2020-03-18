@@ -431,8 +431,9 @@ html, body {
       border-bottom: 1px solid #ccc;
     }
 
-    tr td:first-child{
+    tr td:first-child, tr th:first-child{
       font-weight: 600;
+      text-align: right;
     }
 
     // tr:nth-child(odd)>td {
@@ -443,12 +444,13 @@ html, body {
     //   background-color: lighten($main-bg,2.4%);
     // }
     th strong+strong, td strong+strong {
-      font-family: gilroy-medium,-apple-system,BlinkMacSystemFont,segoe ui,Roboto,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol
+      font-family: gilroy-medium,-apple-system,BlinkMacSystemFont,segoe ui,Roboto,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+      text-align: right;
     }
     td strong+strong {
       line-height:16px;
       display:block;
-      text-align:left;
+      text-align:right;
       font-style:normal;
       color:#6f42c1;
       font-size:11px
@@ -464,7 +466,7 @@ html, body {
   }
 
   p, li, dt, dd {
-    line-height: 1.6;
+    line-height: 2;
     margin-top: 0;
   }
 
@@ -499,6 +501,10 @@ html, body {
 
     &.success {
       background-color: $aside-success-bg;
+    }
+
+    code {
+      line-height: 30px;
     }
   }
 
@@ -640,6 +646,10 @@ html, body {
 
 .highlight .c, .highlight .cm, .highlight .c1, .highlight .cs {
   color: #909090;
+}
+
+.highlight .s1, .highlight .s2 {
+  color: $highlight-s1-bg;
 }
 
 .highlight, .highlight .w {
