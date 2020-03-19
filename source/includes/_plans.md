@@ -634,7 +634,7 @@ Use this endpoint to retrieve quote's plan selections. It could be up to 4 eleme
 
 No parameters required.
 
-## Select a Plan for Quote
+## Update Plan Selection of a Quote
 
 ```shell
 curl --location --request POST 'https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864/plans/select' \
@@ -769,6 +769,27 @@ $response | ConvertTo-Json
 {}
 ```
 
+> To Unselect a Plan the payload would look like 
+
+```json
+{
+  "family_members_plans": [
+    {
+      "family_member_id": 68649,
+      "medical_plan_ids": []
+    },
+    {
+      "family_member_id": 68647,
+      "medical_plan_ids": []
+    },
+    {
+      "family_member_id": 68648,
+      "medical_plan_ids": [ 11693 ]
+    }
+  ]
+}
+```
+
 Use this endpoint to select a plan for quote.
 
 <aside class="notice">
@@ -779,134 +800,15 @@ Use this endpoint to select a plan for quote.
 
 `POST           /api/quotes/:quote_id/plans/select`
 
-### Parameters
+### Family Member Plans Parameters
 
-No parameters required.
+Parameter                                                         | Default   | Description
+----------------------------------------------------------------- | --------- | -------------------
+<strong>family_members_plans</strong><strong>required</strong>    | N/A       | Array of members and selected plans
 
-## UnSelect Plan from Quote
+### Family member plan selection object
 
-```shell
-curl --location --request POST 'https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864/plans/select' \
---header 'Content-Type: application/json' \
---header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzYxNCwiZXhwIjoxNTg0MDk5NTgwfQ.wANmfcqNQLgnhJv0tQLjw6CKhTSBVApOalWsOWXFNCs' \
---data-raw '{ "family_members_plans": [ { "family_member_id": 68649, "medical_plan_ids": [ ] }, { "family_member_id": 68647, "medical_plan_ids": [ ] }, { "family_member_id": 68648, "medical_plan_ids": [ 11693 ] } ] }'
-```
-
-```go
-package main
-
-import (
-  "fmt"
-  "strings"
-  "net/http"
-  "io/ioutil"
-)
-
-func main() {
-
-  url := "https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864/plans/select"
-  method := "POST"
-
-  payload := strings.NewReader("{ \"family_members_plans\": [ { \"family_member_id\": 68649, \"medical_plan_ids\": [ ] }, { \"family_member_id\": 68647, \"medical_plan_ids\": [ ] }, { \"family_member_id\": 68648, \"medical_plan_ids\": [ 11693 ] } ] }")
-
-  client := &http.Client {
-  }
-  req, err := http.NewRequest(method, url, payload)
-
-  if err != nil {
-    fmt.Println(err)
-  }
-  req.Header.Add("Content-Type", "application/json")
-  req.Header.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzYxNCwiZXhwIjoxNTg0MDk5NTgwfQ.wANmfcqNQLgnhJv0tQLjw6CKhTSBVApOalWsOWXFNCs")
-
-  res, err := client.Do(req)
-  defer res.Body.Close()
-  body, err := ioutil.ReadAll(res.Body)
-
-  fmt.Println(string(body))
-}
-```
-
-```javascript
-var settings = {
-  "url": "https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864/plans/select",
-  "method": "POST",
-  "timeout": 0,
-  "headers": {
-    "Content-Type": "application/json",
-    "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzYxNCwiZXhwIjoxNTg0MDk5NTgwfQ.wANmfcqNQLgnhJv0tQLjw6CKhTSBVApOalWsOWXFNCs"
-  },
-  "data": JSON.stringify({"family_members_plans":[{"family_member_id":68649,"medical_plan_ids":[]},{"family_member_id":68647,"medical_plan_ids":[]},{"family_member_id":68648,"medical_plan_ids":[11693]}]}),
-};
-
-$.ajax(settings).done(function (response) {
-  console.log(response);
-});
-```
-
-```objective_c
-#import <Foundation/Foundation.h>
-
-dispatch_semaphore_t sema = dispatch_semaphore_create(0);
-
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864/plans/select"]
-  cachePolicy:NSURLRequestUseProtocolCachePolicy
-  timeoutInterval:10.0];
-NSDictionary *headers = @{
-  @"Content-Type": @"application/json",
-  @"Authorization": @"Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzYxNCwiZXhwIjoxNTg0MDk5NTgwfQ.wANmfcqNQLgnhJv0tQLjw6CKhTSBVApOalWsOWXFNCs"
-};
-
-[request setAllHTTPHeaderFields:headers];
-NSData *postData = [[NSData alloc] initWithData:[@"{ \"family_members_plans\": [ { \"family_member_id\": 68649, \"medical_plan_ids\": [ ] }, { \"family_member_id\": 68647, \"medical_plan_ids\": [ ] }, { \"family_member_id\": 68648, \"medical_plan_ids\": [ 11693 ] } ] }" dataUsingEncoding:NSUTF8StringEncoding]];
-[request setHTTPBody:postData];
-
-[request setHTTPMethod:@"POST"];
-
-NSURLSession *session = [NSURLSession sharedSession];
-NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
-completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-  if (error) {
-    NSLog(@"%@", error);
-  } else {
-    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-    NSError *parseError = nil;
-    NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
-    NSLog(@"%@",responseDictionary);
-    dispatch_semaphore_signal(sema);
-  }
-}];
-[dataTask resume];
-dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
-```
-
-```powershell
-$headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
-$headers.Add("Content-Type", "application/json")
-$headers.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzYxNCwiZXhwIjoxNTg0MDk5NTgwfQ.wANmfcqNQLgnhJv0tQLjw6CKhTSBVApOalWsOWXFNCs")
-
-$body = "{ `"family_members_plans`": [ { `"family_member_id`": 68649, `"medical_plan_ids`": [ ] }, { `"family_member_id`": 68647, `"medical_plan_ids`": [ ] }, { `"family_member_id`": 68648, `"medical_plan_ids`": [ 11693 ] } ] }"
-
-$response = Invoke-RestMethod 'https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864/plans/select' -Method 'POST' -Headers $headers -Body $body
-$response | ConvertTo-Json
-```
-
-> This request doesn't contain any response. Http response code would be 200.
-
-```json
-{}
-```
-
-Use this endpoint to select / unselect a plan for quote.
-
-<aside class="notice">
-  This endpoint is <strong><i>secured</i></strong> and requires <strong><i> Authorization headers</i></strong>. 
-</aside>
-
-### HTTP Request
-
-`POST           /api/quotes/:quote_id/plans/select`
-
-### Parameters
-
-No parameters required.
+Parameter                                                         | Default   | Description
+----------------------------------------------------------------- | --------- | -------------------
+<strong>family_member_id</strong><strong>required</strong>        | N/A       | ID of the family member
+<strong>medical_plan_ids</strong><strong>required</strong>        | N/A       | Array of medical plan ids (In case of removal, remove the item from the list)

@@ -297,10 +297,10 @@ This endpoint allows you to get a session token.
 
 ### Parameters
 
-Parameter    | Default | Description           | Required?
------------- | ------- | --------------------- | ----------
-email        | N/A     | User's email address  | true
-password     | N/A     | User's password       | true
+Parameter                                                         | Default   | Description
+----------------------------------------------------------------- | --------- | -------------------
+<strong>email</strong><strong>required</strong>                   | N/A       | Email Address
+<strong>password</strong><strong>required</strong>                | N/A       | Password
 
 ## Sign out
 
