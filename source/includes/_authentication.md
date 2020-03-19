@@ -3,7 +3,7 @@
 ## Register
 
 ```shell
-curl --location --request POST 'http://emblemhealth-qa.lvh.me:3030/api/auth' \
+curl --location --request POST 'https://wellthie-qa.affordablecareadvisor.net/api/auth' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "email": "apiuser@domain.com",
@@ -26,7 +26,7 @@ import (
 
 func main() {
 
-  url := "http://emblemhealth-qa.lvh.me:3030/api/auth"
+  url := "https://wellthie-qa.affordablecareadvisor.net/api/auth"
   method := "POST"
 
   payload := strings.NewReader("{\n  \"email\": \"apiuser@domain.com\",\n  \"first_name\": \"FirstName\",\n  \"last_name\": \"LastName\",\n  \"password\": \"StrongSecurePassword123\",\n  \"password_confirmation\": \"StrongSecurePassword123\"\n}")
@@ -50,7 +50,7 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "http://emblemhealth-qa.lvh.me:3030/api/auth",
+  "url": "https://wellthie-qa.affordablecareadvisor.net/api/auth",
   "method": "POST",
   "timeout": 0,
   "headers": {
@@ -69,7 +69,7 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://emblemhealth-qa.lvh.me:3030/api/auth"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthie-qa.affordablecareadvisor.net/api/auth"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
@@ -105,7 +105,7 @@ $headers.Add("Content-Type", "application/json")
 
 $body = "{`n  `"email`": `"apiuser@domain.com`",`n  `"first_name`": `"FirstName`",`n  `"last_name`": `"LastName`",`n  `"password`": `"StrongSecurePassword123`",`n  `"password_confirmation`": `"StrongSecurePassword123`"`n}"
 
-$response = Invoke-RestMethod 'http://emblemhealth-qa.lvh.me:3030/api/auth' -Method 'POST' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthie-qa.affordablecareadvisor.net/api/auth' -Method 'POST' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 
@@ -114,14 +114,14 @@ $response | ConvertTo-Json
 ```json
 {
     "data": {
-        "id": 23618,
-        "slug": "pjFyqbd9d4nzpU3Gr6bkyPVB",
-        "first_name": "FirstName",
-        "last_name": "LastName",
+        "id": 23614,
+        "slug": "rAC4Y2iLUkSdGdTfowryiq5t",
+        "first_name": "test",
+        "last_name": "test",
         "email": "apiuser@domain.com",
         "provider": "email",
-        "uid": "apiuser@domain.com",
-        "password_changed_at": "2020-03-12T05:25:52.197-04:00",
+        "uid": "piuser@domain.com",
+        "password_changed_at": "2020-02-27T10:56:29.972-05:00",
         "organization_id": 35,
         "team_id": null,
         "role": "individual",
@@ -129,17 +129,11 @@ $response | ConvertTo-Json
         "broker_code": null,
         "phone_number": null,
         "account_expiration_date": null,
-        "created_by_user_id": null,
         "time_zone": "Eastern Time (US & Canada)",
-        "deleted_at": null,
-        "salesforce_email": null,
-        "salesforce_access_token": null,
-        "salesforce_refresh_token": null,
-        "salesforce_lock": false,
-        "allow_password_change": false,
+        "company_id": null,
         "is_any_broker_type": false,
-        "latest_quote_id": null,
-        "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzYxOCwiZXhwIjoxNTg0MDkxNTUyfQ.rwE4pMUTTNtWYda664xEewtHDygLV3Wnljj9p0z9W5w"
+        "latest_quote_id": "GC-176549",
+        "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzYxNCwiY2xpZW50Ijoib2JFdUt1NU1EREE3ZzhjMmRxNkxQdyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiMDA0NThjMWUwNTFkOGY4NWQxMzM0MDYwYTU3N2RlZDIiLCJleHAiOjE1ODQ2ODk2Nzd9.5v7E_ufUmCI1xesMJE5XrL916KPsKl6djDGH3LAKO0U"
     }
 }
 ```
@@ -166,7 +160,7 @@ Parameter                                                         | Default   | 
 curl --location --request POST 'https://wellthie-qa.affordablecareadvisor.net/api/auth/sign_in' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-	"email":"api_user@domain.com",
+	"email":"apiuser@domain.com",
 	"password":"SecureSecurePassword123"
 }'
 ```
@@ -186,7 +180,7 @@ func main() {
   url := "https://wellthie-qa.affordablecareadvisor.net/api/auth/sign_in"
   method := "POST"
 
-  payload := strings.NewReader("{\n	\"email\":\"api_user@domain.com\",\n	\"password\":\"SecurePassword123\"\n}")
+  payload := strings.NewReader("{\n	\"email\":\"apiuser@domain.com\",\n	\"password\":\"SecurePassword123\"\n}")
 
   client := &http.Client {
   }
@@ -213,7 +207,7 @@ var settings = {
   "headers": {
     "Content-Type": "application/json"
   },
-  "data": JSON.stringify({"email":"api_user@domain.com","password":"SecurePassword123"}),
+  "data": JSON.stringify({"email":"apiuser@domain.com","password":"SecurePassword123"}),
 };
 
 $.ajax(settings).done(function (response) {
@@ -225,7 +219,7 @@ $.ajax(settings).done(function (response) {
 $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
 $headers.Add("Content-Type", "application/json")
 
-$body = "{`n	`"email`":`"api_user@domain.com`",`n	`"password`":`"SecurePassword123`"`n}"
+$body = "{`n	`"email`":`"apiuser@domain.com`",`n	`"password`":`"SecurePassword123`"`n}"
 
 $response = Invoke-RestMethod 'https://wellthie-qa.affordablecareadvisor.net/api/auth/sign_in' -Method 'POST' -Headers $headers -Body $body
 $response | ConvertTo-Json
@@ -244,7 +238,7 @@ NSDictionary *headers = @{
 };
 
 [request setAllHTTPHeaderFields:headers];
-NSData *postData = [[NSData alloc] initWithData:[@"{\n	\"email\":\"api_user@domain.com\",\n	\"password\":\"SecurePassword123\"\n}" dataUsingEncoding:NSUTF8StringEncoding]];
+NSData *postData = [[NSData alloc] initWithData:[@"{\n	\"email\":\"apiuser@domain.com\",\n	\"password\":\"SecurePassword123\"\n}" dataUsingEncoding:NSUTF8StringEncoding]];
 [request setHTTPBody:postData];
 
 [request setHTTPMethod:@"POST"];
@@ -270,28 +264,28 @@ dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
 
 ```json
 {
-  "data": {
-    "id": "id",
-    "slug": "slug",
-    "first_name": "Name",
-    "last_name": "Lastname",
-    "email": "name.lastname@domain.com",
-    "provider": "email",
-    "uid": "name.lastname@domain.com",
-    "password_changed_at": "2017-05-04T12:57:21.000-04:00",
-    "organization_id": 1,
-    "team_id": null,
-    "role": "organization_admin",
-    "user_type": null,
-    "npn": "A1B2",
-    "broker_code": "A1B2",
-    "phone_number": "",
-    "account_expiration_date": null,
-    "created_by_user_id": 2,
-    "time_zone": "Eastern Time (US & Canada)",
-    "deleted_at": null,
-    "is_any_broker_type": true
-  }
+    "data": {
+        "id": 23614,
+        "slug": "rAC4Y2iLUkSdGdTfowryiq5t",
+        "first_name": "test",
+        "last_name": "test",
+        "email": "apiuser@domain.com",
+        "provider": "email",
+        "uid": "apiuser@domain.com",
+        "password_changed_at": "2020-02-27T10:56:29.972-05:00",
+        "organization_id": 35,
+        "team_id": null,
+        "role": "individual",
+        "user_type": null,
+        "broker_code": null,
+        "phone_number": null,
+        "account_expiration_date": null,
+        "time_zone": "Eastern Time (US & Canada)",
+        "company_id": null,
+        "is_any_broker_type": false,
+        "latest_quote_id": "GC-176549",
+        "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzYxNCwiY2xpZW50Ijoib2JFdUt1NU1EREE3ZzhjMmRxNkxQdyIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiMDA0NThjMWUwNTFkOGY4NWQxMzM0MDYwYTU3N2RlZDIiLCJleHAiOjE1ODQ2ODk2Nzd9.5v7E_ufUmCI1xesMJE5XrL916KPsKl6djDGH3LAKO0U"
+    }
 }
 ```
 
@@ -311,7 +305,7 @@ password     | N/A     | User's password       | true
 ## Sign out
 
 ```shell
-curl --location --request DELETE 'http://emblemhealth-qa.lvh.me:3030/api/auth/sign_out' \
+curl --location --request DELETE 'https://wellthie-qa.affordablecareadvisor.net/api/auth/sign_out' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzYxNCwiZXhwIjoxNTg0MDk5NTgwfQ.wANmfcqNQLgnhJv0tQLjw6CKhTSBVApOalWsOWXFNCs' \
 --data-raw ''
@@ -329,7 +323,7 @@ import (
 
 func main() {
 
-  url := "http://emblemhealth-qa.lvh.me:3030/api/auth/sign_out"
+  url := "https://wellthie-qa.affordablecareadvisor.net/api/auth/sign_out"
   method := "DELETE"
 
   payload := strings.NewReader("")
@@ -354,7 +348,7 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "http://emblemhealth-qa.lvh.me:3030/api/auth/sign_out",
+  "url": "https://wellthie-qa.affordablecareadvisor.net/api/auth/sign_out",
   "method": "DELETE",
   "timeout": 0,
   "headers": {
@@ -373,7 +367,7 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://emblemhealth-qa.lvh.me:3030/api/auth/sign_out"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthie-qa.affordablecareadvisor.net/api/auth/sign_out"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
@@ -411,7 +405,7 @@ $headers.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzYxN
 
 $body = ""
 
-$response = Invoke-RestMethod 'http://emblemhealth-qa.lvh.me:3030/api/auth/sign_out' -Method 'DELETE' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthie-qa.affordablecareadvisor.net/api/auth/sign_out' -Method 'DELETE' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 

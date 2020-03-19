@@ -1,9 +1,21 @@
 # Quotes
 
+Quote is an inquiry made for an individual where one or more Health insurance plans selected for a the given Individual.
+
+* An inquiry could have more than one plan (upto 4)
+
+Steps include to create an inquiry as follows.
+
+1. Create Quote
+2. Update Quote (if needed)
+3. Get plans and pricing
+4. Select plans
+5. Unselect Plans (if needed)
+
 ## Create a Quote
 
 ```shell
-curl --location --request POST 'http://emblemhealth-qa.lvh.me:3030/api/quotes' \
+curl --location --request POST 'https://wellthie-qa.affordablecareadvisor.net/api/quotes' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzYxNCwiZXhwIjoxNTg0MDk5NTgwfQ.wANmfcqNQLgnhJv0tQLjw6CKhTSBVApOalWsOWXFNCs' \
 --data-raw '{
@@ -62,7 +74,7 @@ import (
 
 func main() {
 
-  url := "http://emblemhealth-qa.lvh.me:3030/api/quotes"
+  url := "https://wellthie-qa.affordablecareadvisor.net/api/quotes"
   method := "POST"
 
   payload := strings.NewReader("{\n    \"quote\": {\n        \"zip_code\": \"10011\",\n        \"county_id\": 36061,\n        \"income\": 40000,\n        \"entered_additional_hh_members\": 0,\n        \"effective_date\": \"2020-03-01\",\n        \"broker_code\": \"1234567890\",\n        \"family_members_attributes\": [\n            {\n                \"first_name\": \"John\",\n                \"last_name\": \"Doe\",\n                \"email\": \"jdoe@email.com\",\n                \"date_of_birth\": \"01/01/1970\",\n                \"relationship\": \"Primary\",\n                \"smoker\": false,\n                \"declared_medicare\": false,\n                \"declared_dependent\": false\n            },\n            {\n                \"first_name\": \"Jane Doe\",\n                \"last_name\": null,\n                \"email\": null,\n                \"date_of_birth\": \"01/01/1970\",\n                \"relationship\": \"Spouse\",\n                \"smoker\": false,\n                \"declared_medicare\": false,\n                \"declared_dependent\": false\n            },\n            {\n                \"first_name\": \"Jim Doe\",\n                \"last_name\": null,\n                \"email\": null,\n                \"date_of_birth\": \"01/01/2010\",\n                \"relationship\": \"Child\",\n                \"smoker\": false,\n                \"declared_medicare\": false,\n                \"declared_dependent\": false\n            }\n        ]\n    }\n}")
@@ -87,7 +99,7 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "http://emblemhealth-qa.lvh.me:3030/api/quotes",
+  "url": "https://wellthie-qa.affordablecareadvisor.net/api/quotes",
   "method": "POST",
   "timeout": 0,
   "headers": {
@@ -107,7 +119,7 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://emblemhealth-qa.lvh.me:3030/api/quotes"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthie-qa.affordablecareadvisor.net/api/quotes"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
@@ -145,7 +157,7 @@ $headers.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzYxN
 
 $body = "{`n    `"quote`": {`n        `"zip_code`": `"10011`",`n        `"county_id`": 36061,`n        `"income`": 40000,`n        `"entered_additional_hh_members`": 0,`n        `"effective_date`": `"2020-03-01`",`n        `"broker_code`": `"1234567890`",`n        `"family_members_attributes`": [`n            {`n                `"first_name`": `"John`",`n                `"last_name`": `"Doe`",`n                `"email`": `"jdoe@email.com`",`n                `"date_of_birth`": `"01/01/1970`",`n                `"relationship`": `"Primary`",`n                `"smoker`": false,`n                `"declared_medicare`": false,`n                `"declared_dependent`": false`n            },`n            {`n                `"first_name`": `"Jane Doe`",`n                `"last_name`": null,`n                `"email`": null,`n                `"date_of_birth`": `"01/01/1970`",`n                `"relationship`": `"Spouse`",`n                `"smoker`": false,`n                `"declared_medicare`": false,`n                `"declared_dependent`": false`n            },`n            {`n                `"first_name`": `"Jim Doe`",`n                `"last_name`": null,`n                `"email`": null,`n                `"date_of_birth`": `"01/01/2010`",`n                `"relationship`": `"Child`",`n                `"smoker`": false,`n                `"declared_medicare`": false,`n                `"declared_dependent`": false`n            }`n        ]`n    }`n}"
 
-$response = Invoke-RestMethod 'http://emblemhealth-qa.lvh.me:3030/api/quotes' -Method 'POST' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthie-qa.affordablecareadvisor.net/api/quotes' -Method 'POST' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 
@@ -230,7 +242,7 @@ Parameter                                                                    | D
 ## Update a Quote
 
 ```shell
-curl --location --request PUT 'http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-759864' \
+curl --location --request PUT 'https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzYxNCwiZXhwIjoxNTg0MDk5NTgwfQ.wANmfcqNQLgnhJv0tQLjw6CKhTSBVApOalWsOWXFNCs' \
 --data-raw '{
@@ -289,7 +301,7 @@ import (
 
 func main() {
 
-  url := "http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-759864"
+  url := "https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864"
   method := "PUT"
 
   payload := strings.NewReader("{\n    \"quote\": {\n        \"zip_code\": \"10011\",\n        \"county_id\": 36061,\n        \"income\": 140000,\n        \"entered_additional_hh_members\": 0,\n        \"effective_date\": \"2020-03-01\",\n        \"broker_code\": \"1234567890\",\n        \"family_members_attributes\": [\n            {\n                \"first_name\": \"John\",\n                \"last_name\": \"Doe\",\n                \"email\": \"jdoe@email.com\",\n                \"date_of_birth\": \"01/01/1970\",\n                \"relationship\": \"Primary\",\n                \"smoker\": false,\n                \"declared_medicare\": false,\n                \"declared_dependent\": false\n            },\n            {\n                \"first_name\": \"Jane Doe\",\n                \"last_name\": null,\n                \"email\": null,\n                \"date_of_birth\": \"01/01/1970\",\n                \"relationship\": \"Spouse\",\n                \"smoker\": false,\n                \"declared_medicare\": false,\n                \"declared_dependent\": false\n            },\n            {\n                \"first_name\": \"Jim Doe\",\n                \"last_name\": null,\n                \"email\": null,\n                \"date_of_birth\": \"01/01/2010\",\n                \"relationship\": \"Child\",\n                \"smoker\": false,\n                \"declared_medicare\": false,\n                \"declared_dependent\": false\n            }\n        ]\n    }\n}")
@@ -314,7 +326,7 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-759864",
+  "url": "https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864",
   "method": "PUT",
   "timeout": 0,
   "headers": {
@@ -334,7 +346,7 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-759864"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
@@ -372,7 +384,7 @@ $headers.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzYxN
 
 $body = "{`n    `"quote`": {`n        `"zip_code`": `"10011`",`n        `"county_id`": 36061,`n        `"income`": 140000,`n        `"entered_additional_hh_members`": 0,`n        `"effective_date`": `"2020-03-01`",`n        `"broker_code`": `"1234567890`",`n        `"family_members_attributes`": [`n            {`n                `"first_name`": `"John`",`n                `"last_name`": `"Doe`",`n                `"email`": `"jdoe@email.com`",`n                `"date_of_birth`": `"01/01/1970`",`n                `"relationship`": `"Primary`",`n                `"smoker`": false,`n                `"declared_medicare`": false,`n                `"declared_dependent`": false`n            },`n            {`n                `"first_name`": `"Jane Doe`",`n                `"last_name`": null,`n                `"email`": null,`n                `"date_of_birth`": `"01/01/1970`",`n                `"relationship`": `"Spouse`",`n                `"smoker`": false,`n                `"declared_medicare`": false,`n                `"declared_dependent`": false`n            },`n            {`n                `"first_name`": `"Jim Doe`",`n                `"last_name`": null,`n                `"email`": null,`n                `"date_of_birth`": `"01/01/2010`",`n                `"relationship`": `"Child`",`n                `"smoker`": false,`n                `"declared_medicare`": false,`n                `"declared_dependent`": false`n            }`n        ]`n    }`n}"
 
-$response = Invoke-RestMethod 'http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-759864' -Method 'PUT' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864' -Method 'PUT' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 
@@ -458,7 +470,7 @@ Parameter                                                                    | D
 ## Get a Quote
 
 ```shell
-curl --location --request GET 'http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-759864' \
+curl --location --request GET 'https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzYxNCwiZXhwIjoxNTg0MDk5NTgwfQ.wANmfcqNQLgnhJv0tQLjw6CKhTSBVApOalWsOWXFNCs' \
 --data-raw ''
@@ -476,7 +488,7 @@ import (
 
 func main() {
 
-  url := "http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-759864"
+  url := "https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864"
   method := "GET"
 
   payload := strings.NewReader("")
@@ -501,7 +513,7 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-759864",
+  "url": "https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864",
   "method": "GET",
   "timeout": 0,
   "headers": {
@@ -520,7 +532,7 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-759864"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
@@ -558,7 +570,7 @@ $headers.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzYxN
 
 $body = ""
 
-$response = Invoke-RestMethod 'http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-759864' -Method 'GET' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864' -Method 'GET' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 
@@ -637,7 +649,7 @@ No parameters required.
 ## Review a Quote
 
 ```shell
-curl --location --request GET 'http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-284971/review' \
+curl --location --request GET 'https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-284971/review' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzYxNCwiZXhwIjoxNTg0MDk5NTgwfQ.wANmfcqNQLgnhJv0tQLjw6CKhTSBVApOalWsOWXFNCs' \
 --data-raw ''
@@ -655,7 +667,7 @@ import (
 
 func main() {
 
-  url := "http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-284971/review"
+  url := "https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-284971/review"
   method := "GET"
 
   payload := strings.NewReader("")
@@ -680,7 +692,7 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-284971/review",
+  "url": "https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-284971/review",
   "method": "GET",
   "timeout": 0,
   "headers": {
@@ -699,7 +711,7 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-284971/review"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-284971/review"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
@@ -737,7 +749,7 @@ $headers.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzYxN
 
 $body = ""
 
-$response = Invoke-RestMethod 'http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-284971/review' -Method 'GET' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-284971/review' -Method 'GET' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 

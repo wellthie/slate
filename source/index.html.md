@@ -23,11 +23,37 @@ search: true
 
 # Introduction
 
-Welcome to the Wellthie Individual API Documentation.
+Welcome to the Wellthie Affordable Care Advisor (Individual) API Documentation.
+
+The Wellthie Affordable Care Advisor is a tool that helps you plan for and estimate costs of your insurance options, based on the Affordable Care Act (ACA). One can also understand if they may be eligible for any financial assistance and estimate the potential penalty for not having insurance for ongoing period / year. By entering your zip code, date of birth, family members and household income, the Wellthie Individual presents insurance options and makes calculations based on the ACA, state regulations and approved insurance rates. The calculations are estimates only, based on the information you provide. You will also get a list of important things to remember such as key dates, where to apply for insurance and who to call to get assistance.
+
+Wellthie helps Individuals to discover health insurance online! [Wellthie](https://wellthie.affordablecareadvisor.com) is transforming the insurance shopping experience by helping Individuals discover health insurance online. It’s easy to find the best plans for your budget in minutes.
+
+* The Wellthie Individual API is built based on [REST](https://en.wikipedia.org/wiki/Representational_state_transfer).
+* Wellthie Individual API is resource-oriented, and uses HTTP response codes to indicate API status & errors. We use built-in HTTP features, like HTTP verbs, which are understood by off-the-shelf HTTP clients.
+* Wellthie Individual API uses JWT token Based authentication which we'll learn in next section
+* JSON is returned by all API responses, including errors.
+
+## Audience
+
+This Documentation for Wellthie Individual API is specifically intended for developers looking to integrate Wellthie's Individual Insurance Quoting tool in a client facing app. For example:
+
+* Building a custom consumer facing app.
+* Integrating Wellthie Individual App inside a mobile app
+
+<aside class="success">We have provided examples for 
+<br/><code style="margin-left: 30px;line-height: 30px;">1. cURL</code>
+<br/><code style="margin-left: 30px;line-height: 30px;">2. Golang</code>
+<br/><code style="margin-left: 30px;line-height: 30px;">3. jQuery</code>
+<br/><code style="margin-left: 30px;line-height: 30px;">4. Objective-C</code>
+<br/><code style="margin-left: 30px;line-height: 30px;">5. Powershell</code>
+</aside>
 
 ## API Base URL
 
-Examples in this document will reference the Wellthie demo site at wellthie-qa.affordablecareadvisor.net whose API base URL is therefore `https://wellthie-qa.affordablecareadvisor.net/api/`.
+Examples in this document will reference the Wellthie demo site at wellthie-qa.affordablecareadvisor.net whose API base URL is therefore 
+
+`https://wellthie-qa.affordablecareadvisor.net/api/`.
 
 <!-- Authentication is implemented using the `devise-token-auth` gem. Visit their docs [here](https://github.com/lynndylanhurley/devise_token_auth) for more information. -->
 
@@ -82,4 +108,3 @@ A Bearer Token is set in the Authorization header of every Inline Action HTTP Re
 
 <br/>`Bearer tokens` are used to access OAuth 2.0 protected resources.
 </aside>
-

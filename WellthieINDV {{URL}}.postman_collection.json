@@ -720,7 +720,7 @@
 		{
 			"id": "05c867b5-8a84-4eb1-bb02-4fdd75ec73af",
 			"key": "URL",
-			"value": "http://emblemhealth-qa.lvh.me:3030/api",
+			"value": "https://wellthie-qa.affordablecareadvisor.net/api",
 			"type": "string"
 		}
 	],

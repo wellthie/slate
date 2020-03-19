@@ -1,9 +1,13 @@
 # Plans
 
+A Health Insurance Plan (aka Plan) is the specifics of a Health Insurance (aka medical insurance, healthcare insurance) which specify the rules and regulations, the different benefits it covers, what it doesn't cover, cost of the policy holder's medical expenses, how much the policy holder pays vs how much the insurance covers and the scenarios of the same, etc.,
+
+This section of the API Doc helps with various aspects of fetching, selecting, unselecting different types of plans for the given [Quote](#quotes)
+
 ## Get Available Plans
 
 ```shell
-curl --location --request GET 'http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-759864/plans' \
+curl --location --request GET 'https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864/plans' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzYxNCwiZXhwIjoxNTg0MDk5NTgwfQ.wANmfcqNQLgnhJv0tQLjw6CKhTSBVApOalWsOWXFNCs' \
 --data-raw ''
@@ -21,7 +25,7 @@ import (
 
 func main() {
 
-  url := "http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-759864/plans"
+  url := "https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864/plans"
   method := "GET"
 
   payload := strings.NewReader("")
@@ -46,7 +50,7 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-759864/plans",
+  "url": "https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864/plans",
   "method": "GET",
   "timeout": 0,
   "headers": {
@@ -65,7 +69,7 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-759864/plans"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864/plans"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
@@ -103,7 +107,7 @@ $headers.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzYxN
 
 $body = ""
 
-$response = Invoke-RestMethod 'http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-759864/plans' -Method 'GET' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864/plans' -Method 'GET' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 
@@ -353,7 +357,7 @@ No parameters required.
 ## Get Pricing for Available Plans
 
 ```shell
-curl --location --request GET 'http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-759864/plan_pricing' \
+curl --location --request GET 'https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864/plan_pricing' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzYxNCwiZXhwIjoxNTg0MDk5NTgwfQ.wANmfcqNQLgnhJv0tQLjw6CKhTSBVApOalWsOWXFNCs' \
 --data-raw ''
@@ -371,7 +375,7 @@ import (
 
 func main() {
 
-  url := "http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-759864/plan_pricing"
+  url := "https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864/plan_pricing"
   method := "GET"
 
   payload := strings.NewReader("")
@@ -396,7 +400,7 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-759864/plan_pricing",
+  "url": "https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864/plan_pricing",
   "method": "GET",
   "timeout": 0,
   "headers": {
@@ -415,7 +419,7 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-759864/plan_pricing"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864/plan_pricing"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
@@ -453,7 +457,7 @@ $headers.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzYxN
 
 $body = ""
 
-$response = Invoke-RestMethod 'http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-759864/plan_pricing' -Method 'GET' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864/plan_pricing' -Method 'GET' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 
@@ -487,7 +491,7 @@ No parameters required.
 ## Get Selected Plans of a Quote
 
 ```shell
-curl --location --request GET 'http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-284971/plans/retrieve_selections' \
+curl --location --request GET 'https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-284971/plans/retrieve_selections' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzYxNCwiZXhwIjoxNTg0MDk5NTgwfQ.wANmfcqNQLgnhJv0tQLjw6CKhTSBVApOalWsOWXFNCs' \
 --data-raw ''
@@ -505,7 +509,7 @@ import (
 
 func main() {
 
-  url := "http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-284971/plans/retrieve_selections"
+  url := "https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-284971/plans/retrieve_selections"
   method := "GET"
 
   payload := strings.NewReader("")
@@ -530,7 +534,7 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-284971/plans/retrieve_selections",
+  "url": "https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-284971/plans/retrieve_selections",
   "method": "GET",
   "timeout": 0,
   "headers": {
@@ -549,7 +553,7 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-284971/plans/retrieve_selections"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-284971/plans/retrieve_selections"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
@@ -587,7 +591,7 @@ $headers.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzYxN
 
 $body = ""
 
-$response = Invoke-RestMethod 'http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-284971/plans/retrieve_selections' -Method 'GET' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-284971/plans/retrieve_selections' -Method 'GET' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 
@@ -633,7 +637,7 @@ No parameters required.
 ## Select a Plan for Quote
 
 ```shell
-curl --location --request POST 'http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-759864/plans/select' \
+curl --location --request POST 'https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864/plans/select' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzYxNCwiZXhwIjoxNTg0MDk5NTgwfQ.wANmfcqNQLgnhJv0tQLjw6CKhTSBVApOalWsOWXFNCs' \
 --data-raw '{
@@ -672,7 +676,7 @@ import (
 
 func main() {
 
-  url := "http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-759864/plans/select"
+  url := "https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864/plans/select"
   method := "POST"
 
   payload := strings.NewReader("{\n    \"family_members_plans\": [\n        {\n            \"family_member_id\": 68649,\n            \"medical_plan_ids\": [\n                11676\n            ]\n        },\n        {\n            \"family_member_id\": 68647,\n            \"medical_plan_ids\": [\n                11676\n            ]\n        },\n        {\n            \"family_member_id\": 68648,\n            \"medical_plan_ids\": [\n                11693\n            ]\n        }\n    ]\n}")
@@ -697,7 +701,7 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-759864/plans/select",
+  "url": "https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864/plans/select",
   "method": "POST",
   "timeout": 0,
   "headers": {
@@ -717,7 +721,7 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-759864/plans/select"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864/plans/select"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
@@ -755,7 +759,7 @@ $headers.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzYxN
 
 $body = "{`n    `"family_members_plans`": [`n        {`n            `"family_member_id`": 68649,`n            `"medical_plan_ids`": [`n                11676`n            ]`n        },`n        {`n            `"family_member_id`": 68647,`n            `"medical_plan_ids`": [`n                11676`n            ]`n        },`n        {`n            `"family_member_id`": 68648,`n            `"medical_plan_ids`": [`n                11693`n            ]`n        }`n    ]`n}"
 
-$response = Invoke-RestMethod 'http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-759864/plans/select' -Method 'POST' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864/plans/select' -Method 'POST' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 
@@ -782,7 +786,7 @@ No parameters required.
 ## UnSelect Plan from Quote
 
 ```shell
-curl --location --request POST 'http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-759864/plans/select' \
+curl --location --request POST 'https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864/plans/select' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzYxNCwiZXhwIjoxNTg0MDk5NTgwfQ.wANmfcqNQLgnhJv0tQLjw6CKhTSBVApOalWsOWXFNCs' \
 --data-raw '{ "family_members_plans": [ { "family_member_id": 68649, "medical_plan_ids": [ ] }, { "family_member_id": 68647, "medical_plan_ids": [ ] }, { "family_member_id": 68648, "medical_plan_ids": [ 11693 ] } ] }'
@@ -800,7 +804,7 @@ import (
 
 func main() {
 
-  url := "http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-759864/plans/select"
+  url := "https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864/plans/select"
   method := "POST"
 
   payload := strings.NewReader("{ \"family_members_plans\": [ { \"family_member_id\": 68649, \"medical_plan_ids\": [ ] }, { \"family_member_id\": 68647, \"medical_plan_ids\": [ ] }, { \"family_member_id\": 68648, \"medical_plan_ids\": [ 11693 ] } ] }")
@@ -825,7 +829,7 @@ func main() {
 
 ```javascript
 var settings = {
-  "url": "http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-759864/plans/select",
+  "url": "https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864/plans/select",
   "method": "POST",
   "timeout": 0,
   "headers": {
@@ -845,7 +849,7 @@ $.ajax(settings).done(function (response) {
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-759864/plans/select"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864/plans/select"]
   cachePolicy:NSURLRequestUseProtocolCachePolicy
   timeoutInterval:10.0];
 NSDictionary *headers = @{
@@ -883,7 +887,7 @@ $headers.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzYxN
 
 $body = "{ `"family_members_plans`": [ { `"family_member_id`": 68649, `"medical_plan_ids`": [ ] }, { `"family_member_id`": 68647, `"medical_plan_ids`": [ ] }, { `"family_member_id`": 68648, `"medical_plan_ids`": [ 11693 ] } ] }"
 
-$response = Invoke-RestMethod 'http://emblemhealth-qa.lvh.me:3030/api/quotes/SW-759864/plans/select' -Method 'POST' -Headers $headers -Body $body
+$response = Invoke-RestMethod 'https://wellthie-qa.affordablecareadvisor.net/api/quotes/SW-759864/plans/select' -Method 'POST' -Headers $headers -Body $body
 $response | ConvertTo-Json
 ```
 
