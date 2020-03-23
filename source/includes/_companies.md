@@ -2,9 +2,9 @@
 
 Company is the small group for which the Inquiry / Quote is being created for.
 
-<aside class="notice">A Small Group Business / Company can have upto 50 employees. In California, Colorado, New York and Vermont the total Full Time Employees count can go upto 100.</aside>
+<aside class="notice">A Small Group Business / Company can have up to 50 employees. In California, Colorado, New York and Vermont the total Full Time Employees count can go upto 100.</aside>
 
-<aside class="notice">For employee count 1, wellthie has another Individual Platform</aside>
+<aside class="notice">For employee count 1, Wellthie has another Individual Platform</aside>
 
 ## Get Company Details
 
@@ -368,7 +368,7 @@ $response | ConvertTo-Json
 
 ```
 
-Use this endpoint to create a new company. Inside the request should be a json object `{}` which describes the parameters below for the company that is to be created.
+Use this endpoint to create a new company.
 
 <aside class="notice">
   This endpoint is <strong><i>secured</i></strong> and requires <strong><i>Authorization header</i></strong>. 
@@ -383,7 +383,6 @@ Use this endpoint to create a new company. Inside the request should be a json o
 Parameter                                                                                        | Default      | Description
 ------------------------------------------------------------------------------------------------ | ------------ | -----------------------
 <strong>company</strong><strong>required</strong>                                                | N/A          | Company object 
-
 
 ### Detailed Company Object Parameters
 

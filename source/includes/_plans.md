@@ -1,6 +1,6 @@
 # Plans
 
-A Health Insurance Plan (aka Plan) is the specifics of a Health Insurance (aka medical insurance, healthcare insurance) which specify the rules and regulations, the different benefits it covers, what it doesn't cover, cost of the policy holder's medical expenses, how much the policy holder pays vs how much the insurance covers and the scenarios of the same, etc.,
+A Health Insurance Plan (AKA Plan) is the specifics of a Health Insurance (AKA medical insurance, healthcare insurance) which specify the rules and regulations, the different benefits it covers, what it doesn't cover, cost of the policy holder's medical expenses, how much the policy holder pays vs how much the insurance covers, and the details of the same, etc.,
 
 This section of the API Doc helps with various aspects of fetching, selecting, unselecting different types of plans for the given [census](#census)
 
@@ -431,7 +431,7 @@ $response | ConvertTo-Json
 ]
 ```
 
-Use this endpoint to get all the group plans available. A list of plans should be returned. In the example there's only one plan, since the json is pretty long, but usually there are several plans.
+Use this endpoint to get all the group plans available. A list of plans should be returned. In the example there's only one plan, since the JSON is pretty long, but usually there are several plans.
 
 <aside class="notice">
   This endpoint is <strong><i>secured</i></strong> and requires <strong><i>Authorization header</i></strong>. 
@@ -585,7 +585,7 @@ $response | ConvertTo-Json
 ]
 ```
 
-Use this endpoint to list the prices for the group plans. A list of prices should be returned. In the example there's only one price, since the json is pretty long, but usually there are several prices.
+Use this endpoint to list the prices for the group plans. A list of prices should be returned. In the example there's only one price, since the JSON is pretty long, but usually there are several prices.
 
 <aside class="notice">
   This endpoint is <strong><i>secured</i></strong> and requires <strong><i>Authorization header</i></strong>. 
@@ -985,7 +985,7 @@ $response | ConvertTo-Json
 ]
 ```
 
-Use this endpoint to list the individual plans available. In the example there's only one plan, since the json is pretty long, but usually there are several plans.
+Use this endpoint to list the individual plans available. In the example there's only one plan, since the JSON is pretty long, but usually there are several plans.
 
 <aside class="notice">
   This endpoint is <strong><i>secured</i></strong> and requires <strong><i>Authorization header</i></strong>. 
@@ -993,7 +993,7 @@ Use this endpoint to list the individual plans available. In the example there's
 
 ### HTTP Request
 
-`GET https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/:inquiry_slug/plans/individual_plans`
+`GET /api/inquiries/:inquiry_slug/plans/individual_plans`
 
 ### Parameters
 
@@ -1131,7 +1131,7 @@ $response | ConvertTo-Json
 ]
 ```
 
-Use this endpoint to list the pricing for the available individual plans. In the example there's only one pricing data, since the json is pretty long, but usually there are several plan's pricing data returned.
+Use this endpoint to list the pricing for the available individual plans. In the example there's only one pricing data, since the JSON is pretty long, but usually there are several plan's pricing data returned.
 
 <aside class="notice">
   This endpoint is <strong><i>secured</i></strong> and requires <strong><i>Authorization header</i></strong>. 
@@ -1765,7 +1765,7 @@ $response | ConvertTo-Json
 
 ### HTTP Request
 
-`POST /api/companies/:company_slug/current_plan`
+`POST /api/inquiries/:inquiry_slug/current_plan`
 
 ### Parameters
 

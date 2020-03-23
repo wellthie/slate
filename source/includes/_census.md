@@ -100,17 +100,17 @@
 
 Insurers use an “employee census” to obtain specific information to estimate the health care costs a small group business is likely to incur. The type of information collected is soley used to determining the premium of the employee.
 
-A census does not include health status, race, religion, sexual orientation (even if applying for domestic partner benefits), Social Security number, or U.S. citizenship/immigration status.
+A census does not include the health status, race, religion, sexual orientation (even if applying for domestic partner benefits), Social Security number, or U.S. citizenship/immigration status of the employee.
 
-In order to provide you with a rate quote, insurers needs a complete census form that requires the following information for each of your employees:
+In order to provide you with a rate quote, insurers need a census form with the following information:
 
 * Name (Optional)
-* Age or date of birth (Manatory)
+* Age or date of birth (Mandatory)
 * Number of dependents (Mandatory)
 * Zip code (Mandatory)
 * Gender
-* Smoker or not
-* Annual Salary (Mandatory) in some cases
+* Smoker/nonsmoker
+* Annual Salary (Mandatory in some cases)
 
 ## Get Census
 
@@ -484,7 +484,7 @@ Use this endpoint to retrieve company's census.
 
 ### HTTP Request
 
-`GET /api/companies/:company_slug/census`
+`GET /api/inquiries/:inquiry_slug/census`
 
 ### Parameters
 

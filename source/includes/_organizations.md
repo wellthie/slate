@@ -667,7 +667,7 @@ $response | ConvertTo-Json
 }
 ```
 
-Use this endpoint to retrieve the settings like available / enabled effective_dates, call scheduling timings, whether or not to show Ancillary plans like Dental / Vision / etc.,
+Use this endpoint to retrieve the settings like available / enabled effective dates, call scheduling timings, whether or not to show Ancillary plans like Dental / Vision / etc.
 
 <aside class="notice">
   This endpoint does not require any session or authorization token.

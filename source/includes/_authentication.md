@@ -594,4 +594,4 @@ Use this endpoint to finish the session and discard the access-token acquired on
 
 ### Parameters
 
-This API doesnot require any parameter.
+No parameters required.
