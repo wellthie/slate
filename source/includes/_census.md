@@ -98,19 +98,19 @@
 }
 ```
 
-Insurers use an “employee census” to obtain specific information to estimate the health care costs a small group business is likely to incur. The type of information collected is soley used to determining the premium of the employee.
+Insurers use an employee census to obtain specific information to estimate the health care costs a small group business is likely to incur. The type of information collected is soley used to determining the premium of the employee.
 
 A census does not include the health status, race, religion, sexual orientation (even if applying for domestic partner benefits), Social Security number, or U.S. citizenship/immigration status of the employee.
 
 In order to provide you with a rate quote, insurers need a census form with the following information:
 
 * Name (Optional)
-* Age or date of birth (Mandatory)
-* Number of dependents (Mandatory)
-* Zip code (Mandatory)
+* Age or date of birth
+* Number of dependents
+* Zip code
 * Gender
 * Smoker/nonsmoker
-* Annual Salary (Mandatory in some cases)
+* Annual Salary (Optional in some cases)
 
 ## Get Census
 
@@ -496,7 +496,265 @@ No parameters required.
 curl --location --request POST 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/inquiries/LAPF8357/census' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODQ3MSwiY2xpZW50IjoiWWFyZ1RzdDR6Y1M2ZXB0Q2UzeEQ0USIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEiLCJzZXNzaW9uX2lkIjoiZGNmOTk4MmQxMjQxNDdiMmVhYzA3YmNlNjg0NzY2YzAiLCJleHAiOjE1ODQ2MDU3ODh9.Xig16GNdsxp4mM1ueuhaBlw6803s3PR_tztOjbiGAoU' \
---data-raw '{"census":{"inquiry_id":130133,"save_failed_due_to_errors":null,"covered_employees_count":4,"covered_spouses_count":0,"covered_children_count":0,"census_uploaded":null,"upload_errors":[],"covered_singles_count":4,"covered_single_and_spouses_count":0,"covered_single_and_children_count":0,"covered_families_count":0,"households":[{"id":422979,"coverage_type":"employee_only","row_number":0,"tier":"single","opted_dental":true,"opted_vision":true,"opted_limited_medical":false,"medical_plan_id":null,"sorted_matching_plan_service_area_ids":[4334,4982,4984,4985,5066,5067],"zip_code":"10001","county_id":36061,"attributes_with_error_messages_in_order":[],"census_household_members_attributes":[{"id":523199,"age":null,"gender":"M","annual_salary":100000,"date_of_birth":"10/10/1980","full_or_part_time":"FT","hourly_rate":null,"hours_per_week":null,"name_or_initial":"John Doe","relationship":"primary","smoker":false,"phone":null,"email":null,"household_tier":"single","display_coverage_type":"Employee Only","display_member_name":"Employee 1","name_or_initial_focus":false,"date_of_birth_focus":false,"gender_focus":false,"full_or_part_time_focus":false}]},{"id":422980,"coverage_type":"family","row_number":1,"tier":"single","opted_dental":true,"opted_vision":true,"opted_limited_medical":false,"medical_plan_id":null,"sorted_matching_plan_service_area_ids":[4334,4982,4984,4985,5066,5067],"zip_code":"10001","county_id":36061,"attributes_with_error_messages_in_order":[],"census_household_members_attributes":[{"id":523200,"age":null,"gender":"F","annual_salary":100000,"date_of_birth":"10/21/1985","full_or_part_time":"FT","hourly_rate":null,"hours_per_week":null,"name_or_initial":"Joe Root","relationship":"primary","smoker":false,"phone":null,"email":null,"household_tier":"single","display_coverage_type":"Employee Only","display_member_name":"Employee 2","name_or_initial_focus":false,"date_of_birth_focus":false,"gender_focus":false},{"relationship":"spouse","name_or_initial":"Tina","date_of_birth":"12/15/1990","gender":"F","age":null,"full_or_part_time":null,"hours_per_week":null,"hourly_rate":null,"annual_salary":100000,"smoker":null,"relationship_focus":false,"name_or_initial_focus":false,"date_of_birth_focus":false}],"coverage_type_focus":false},{"id":422981,"coverage_type":"family","row_number":2,"tier":"single","opted_dental":true,"opted_vision":true,"opted_limited_medical":false,"medical_plan_id":null,"sorted_matching_plan_service_area_ids":[4334,4982,4984,4985,5066,5067],"zip_code":"10001","county_id":36061,"attributes_with_error_messages_in_order":[],"census_household_members_attributes":[{"id":523201,"age":null,"gender":"M","annual_salary":100000,"date_of_birth":"01/01/1990","full_or_part_time":"FT","hourly_rate":null,"hours_per_week":null,"name_or_initial":"James Smith","relationship":"primary","smoker":false,"phone":null,"email":null,"household_tier":"single","display_coverage_type":"Employee Only","display_member_name":"Employee 3","name_or_initial_focus":false,"gender_focus":false,"date_of_birth_focus":false},{"relationship":"spouse","name_or_initial":"Maria Garcia","date_of_birth":"12/30/1991","gender":"F","age":null,"full_or_part_time":null,"hours_per_week":null,"hourly_rate":null,"annual_salary":100000,"smoker":null,"relationship_focus":false,"name_or_initial_focus":false,"date_of_birth_focus":false,"gender_focus":false},{"relationship":"child","name_or_initial":"Robert Smith","date_of_birth":"10/17/2013","gender":"M","age":null,"full_or_part_time":null,"hours_per_week":null,"hourly_rate":null,"annual_salary":100000,"smoker":null,"relationship_focus":false,"name_or_initial_focus":false,"gender_focus":false,"date_of_birth_focus":false}],"coverage_type_focus":false},{"id":422982,"coverage_type":"family","row_number":3,"tier":"single","opted_dental":true,"opted_vision":true,"opted_limited_medical":false,"medical_plan_id":null,"sorted_matching_plan_service_area_ids":[4334,4982,4984,4985,5066,5067],"zip_code":"10001","county_id":36061,"attributes_with_error_messages_in_order":[],"census_household_members_attributes":[{"id":523202,"age":null,"gender":"F","annual_salary":100000,"date_of_birth":"12/11/1980","full_or_part_time":"FT","hourly_rate":null,"hours_per_week":null,"name_or_initial":"Maria Rodriguez","relationship":"primary","smoker":false,"phone":null,"email":null,"household_tier":"single","display_coverage_type":"Employee Only","display_member_name":"Employee 4","name_or_initial_focus":false,"date_of_birth_focus":false},{"relationship":"child","name_or_initial":"David Rodriguez","date_of_birth":"07/27/2006","gender":"M","age":null,"full_or_part_time":null,"hours_per_week":null,"hourly_rate":null,"annual_salary":100000,"smoker":null,"relationship_focus":false,"name_or_initial_focus":false,"gender_focus":false,"date_of_birth_focus":false}],"coverage_type_focus":false}]}}'
+--data-raw '{
+  "census": {
+    "inquiry_id": 130133,
+    "save_failed_due_to_errors": null,
+    "covered_employees_count": 4,
+    "covered_spouses_count": 0,
+    "covered_children_count": 0,
+    "census_uploaded": null,
+    "upload_errors": [],
+    "covered_singles_count": 4,
+    "covered_single_and_spouses_count": 0,
+    "covered_single_and_children_count": 0,
+    "covered_families_count": 0,
+    "households": [
+      {
+        "id": 422979,
+        "coverage_type": "employee_only",
+        "row_number": 0,
+        "tier": "single",
+        "opted_dental": true,
+        "opted_vision": true,
+        "opted_limited_medical": false,
+        "medical_plan_id": null,
+        "sorted_matching_plan_service_area_ids": [
+          4334,
+          4982,
+          4984,
+          4985,
+          5066,
+          5067
+        ],
+        "zip_code": "10001",
+        "county_id": 36061,
+        "attributes_with_error_messages_in_order": [],
+        "census_household_members_attributes": [
+          {
+            "id": 523199,
+            "age": null,
+            "gender": "M",
+            "annual_salary": 100000,
+            "date_of_birth": "10/10/1980",
+            "full_or_part_time": "FT",
+            "hourly_rate": null,
+            "hours_per_week": null,
+            "name_or_initial": "John Doe",
+            "relationship": "primary",
+            "smoker": false,
+            "phone": null,
+            "email": null,
+            "household_tier": "single",
+            "display_coverage_type": "Employee Only",
+            "display_member_name": "Employee 1",
+            "name_or_initial_focus": false,
+            "date_of_birth_focus": false,
+            "gender_focus": false,
+            "full_or_part_time_focus": false
+          }
+        ]
+      },
+      {
+        "id": 422980,
+        "coverage_type": "family",
+        "row_number": 1,
+        "tier": "single",
+        "opted_dental": true,
+        "opted_vision": true,
+        "opted_limited_medical": false,
+        "medical_plan_id": null,
+        "sorted_matching_plan_service_area_ids": [
+          4334,
+          4982,
+          4984,
+          4985,
+          5066,
+          5067
+        ],
+        "zip_code": "10001",
+        "county_id": 36061,
+        "attributes_with_error_messages_in_order": [],
+        "census_household_members_attributes": [
+          {
+            "id": 523200,
+            "age": null,
+            "gender": "F",
+            "annual_salary": 100000,
+            "date_of_birth": "10/21/1985",
+            "full_or_part_time": "FT",
+            "hourly_rate": null,
+            "hours_per_week": null,
+            "name_or_initial": "Joe Root",
+            "relationship": "primary",
+            "smoker": false,
+            "phone": null,
+            "email": null,
+            "household_tier": "single",
+            "display_coverage_type": "Employee Only",
+            "display_member_name": "Employee 2",
+            "name_or_initial_focus": false,
+            "date_of_birth_focus": false,
+            "gender_focus": false
+          },
+          {
+            "relationship": "spouse",
+            "name_or_initial": "Tina",
+            "date_of_birth": "12/15/1990",
+            "gender": "F",
+            "age": null,
+            "full_or_part_time": null,
+            "hours_per_week": null,
+            "hourly_rate": null,
+            "annual_salary": 100000,
+            "smoker": null,
+            "relationship_focus": false,
+            "name_or_initial_focus": false,
+            "date_of_birth_focus": false
+          }
+        ],
+        "coverage_type_focus": false
+      },
+      {
+        "id": 422981,
+        "coverage_type": "family",
+        "row_number": 2,
+        "tier": "single",
+        "opted_dental": true,
+        "opted_vision": true,
+        "opted_limited_medical": false,
+        "medical_plan_id": null,
+        "sorted_matching_plan_service_area_ids": [
+          4334,
+          4982,
+          4984,
+          4985,
+          5066,
+          5067
+        ],
+        "zip_code": "10001",
+        "county_id": 36061,
+        "attributes_with_error_messages_in_order": [],
+        "census_household_members_attributes": [
+          {
+            "id": 523201,
+            "age": null,
+            "gender": "M",
+            "annual_salary": 100000,
+            "date_of_birth": "01/01/1990",
+            "full_or_part_time": "FT",
+            "hourly_rate": null,
+            "hours_per_week": null,
+            "name_or_initial": "James Smith",
+            "relationship": "primary",
+            "smoker": false,
+            "phone": null,
+            "email": null,
+            "household_tier": "single",
+            "display_coverage_type": "Employee Only",
+            "display_member_name": "Employee 3",
+            "name_or_initial_focus": false,
+            "gender_focus": false,
+            "date_of_birth_focus": false
+          },
+          {
+            "relationship": "spouse",
+            "name_or_initial": "Maria Garcia",
+            "date_of_birth": "12/30/1991",
+            "gender": "F",
+            "age": null,
+            "full_or_part_time": null,
+            "hours_per_week": null,
+            "hourly_rate": null,
+            "annual_salary": 100000,
+            "smoker": null,
+            "relationship_focus": false,
+            "name_or_initial_focus": false,
+            "date_of_birth_focus": false,
+            "gender_focus": false
+          },
+          {
+            "relationship": "child",
+            "name_or_initial": "Robert Smith",
+            "date_of_birth": "10/17/2013",
+            "gender": "M",
+            "age": null,
+            "full_or_part_time": null,
+            "hours_per_week": null,
+            "hourly_rate": null,
+            "annual_salary": 100000,
+            "smoker": null,
+            "relationship_focus": false,
+            "name_or_initial_focus": false,
+            "gender_focus": false,
+            "date_of_birth_focus": false
+          }
+        ],
+        "coverage_type_focus": false
+      },
+      {
+        "id": 422982,
+        "coverage_type": "family",
+        "row_number": 3,
+        "tier": "single",
+        "opted_dental": true,
+        "opted_vision": true,
+        "opted_limited_medical": false,
+        "medical_plan_id": null,
+        "sorted_matching_plan_service_area_ids": [
+          4334,
+          4982,
+          4984,
+          4985,
+          5066,
+          5067
+        ],
+        "zip_code": "10001",
+        "county_id": 36061,
+        "attributes_with_error_messages_in_order": [],
+        "census_household_members_attributes": [
+          {
+            "id": 523202,
+            "age": null,
+            "gender": "F",
+            "annual_salary": 100000,
+            "date_of_birth": "12/11/1980",
+            "full_or_part_time": "FT",
+            "hourly_rate": null,
+            "hours_per_week": null,
+            "name_or_initial": "Maria Rodriguez",
+            "relationship": "primary",
+            "smoker": false,
+            "phone": null,
+            "email": null,
+            "household_tier": "single",
+            "display_coverage_type": "Employee Only",
+            "display_member_name": "Employee 4",
+            "name_or_initial_focus": false,
+            "date_of_birth_focus": false
+          },
+          {
+            "relationship": "child",
+            "name_or_initial": "David Rodriguez",
+            "date_of_birth": "07/27/2006",
+            "gender": "M",
+            "age": null,
+            "full_or_part_time": null,
+            "hours_per_week": null,
+            "hourly_rate": null,
+            "annual_salary": 100000,
+            "smoker": null,
+            "relationship_focus": false,
+            "name_or_initial_focus": false,
+            "gender_focus": false,
+            "date_of_birth_focus": false
+          }
+        ],
+        "coverage_type_focus": false
+      }
+    ]
+  }
+}'
 ```
 
 ```go

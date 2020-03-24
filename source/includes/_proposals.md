@@ -1,6 +1,6 @@
 # Proposals
 
-This section of the API is used to create a Proposal which could be submitted to the Small Group Business.
+This section of the API is used to create a Proposal to submit to the Small Group Business.
 
 ## Get Selected Inquiries of a company
 

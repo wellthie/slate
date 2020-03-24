@@ -1,9 +1,9 @@
 # Authentication
 
-Wellthie supports multiple user types.
+Wellthie supports two user types:
 
-* <strong>Broker</strong> - An insurance broker is a professional who helps small businesses (a company) purchase the health insurance in their search for the best insurance policy for their needs. They work closely with the small business to research coverage, terms, conditions, and price and then recommend the insurance policy that best fits the bill.
-* <strong>Employer</strong> - The Business Owner or the person who is responsible to find and finalize the health insurance for the Company
+* <strong>Broker</strong> - An insurance broker is a professional who helps small businesses (a Company in the backend) purchase the health insurance in their search for the best insurance policy for their needs. They work closely with the Company to research coverage, terms, conditions, and price, recommending the insurance policy that best fits the bill.
+* <strong>Employer</strong> - The Business Owner or the person who is responsible to find and finalize the health insurance for the Company.
 
 ## Register a Broker User
 
@@ -156,6 +156,7 @@ Parameter                                                         | Default   | 
 <strong>email</strong><strong>required</strong>                   | N/A       | Email Address
 <strong>first_name</strong><strong>required</strong>               | N/A       | First Name
 <strong>last_name</strong><strong>required</strong>               | N/A       | Last Name
+<strong>npn</strong>                                              | null      | Broker's NPN code
 <strong>password</strong><strong>required</strong>                | N/A       | Password
 <strong>password_confirmation</strong><strong>required</strong>    | N/A       | Password Confirmation
 
@@ -586,7 +587,7 @@ $response | ConvertTo-Json
 }
 ```
 
-Use this endpoint to finish the session and discard the access-token acquired on the sign in API call
+Use this endpoint to finish the session and discard the `access-token`.
 
 ### HTTP Request
 

@@ -2,9 +2,9 @@
 
 Company is the small group for which the Inquiry / Quote is being created for.
 
-<aside class="notice">A Small Group Business / Company can have up to 50 employees. In California, Colorado, New York and Vermont the total Full Time Employees count can go upto 100.</aside>
+<aside class="notice">A Small Group Business / Company can have up to 50 employees. In California, Colorado, New York and Vermont the total Full Time Employees count can go up to 100.</aside>
 
-<aside class="notice">For employee count 1, Wellthie has another Individual Platform</aside>
+<aside class="notice">For companies with only one employee, Wellthie has another Individual Platform</aside>
 
 ## Get Company Details
 
@@ -159,7 +159,7 @@ $response | ConvertTo-Json
 }
 ```
 
-Use this endpoint to retrieve information about specific company.
+Use this endpoint to retrieve information about a specific company.
 
 <aside class="notice">
   This endpoint is <strong><i>secured</i></strong> and requires <strong><i>Authorization header</i></strong>. 
@@ -410,6 +410,7 @@ curl --location --request PUT 'https://wellthiedemo-smallbusiness-qa.affordablec
     "zip_code_input": "10001",
     "contact_name": "Test",
     "contact_email": "test@test.com",
+    "effective_date": "1/1/1970",
     "using_broker": false,
     "broker_code": null,
     "county_id": 36061,
@@ -526,6 +527,7 @@ $response | ConvertTo-Json
     "zip_code_input": "10001",
     "contact_name": "Test",
     "contact_email": "test@test.com",
+    "effective_date": "1/1/1970",
     "using_broker": false,
     "broker_code": null,
     "county_id": 36061,

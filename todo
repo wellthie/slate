@@ -1,0 +1,25 @@
+General
+	Many instances of things trying to be passed as proper nouns (Small Group Business, Medical Plan, etc.). I think it would be wise to limit proper nouns to things that are objects in the database and nothing else, besides things that are proper nouns already 
+	There are many instances using bullet points where we are inconsistent with periods. We should either decide to end all bullet points with periods or end none with periods
+	We say the base URL is `.../api` but all our endpoints are e.g. `POST /api/sign_in`. We aren't consistent
+	We say that application/json is required for everything but we have curl calls without it
+Intro
+	I think the bullet points at the end of the intro are mostly unnecessary. We don't need to tell the user that the API is compliant with HTTP response codes, they probably assume that we are. The only two that are needed are likely the last two but we should just say "The BIZ API uses JWT token authentication", "The API returns JSON for all responses". By the way, it doesn't return JSON for all responses, when there's an internal error it returns HTML
+	"Wellthie helps to discover Small Business health insurance online! Wellthie is transforming the insurance shopping experience by helping small businesses discover small business health insurance online." these two sentences sound redundant; also the exclamation point seems out of place
+	"employees. (In four states, they apply to businesses with up to 100 employees)." -> "employees (In four states, they apply to businesses with up to 100 employees)." Notice the period removal
+	"(employee list)" -> "(employee list)."
+API Base URL
+	Should we really even tell the users where the examples are coming from? Should they even be allowed to know about the QA environment?
+	If the above is ok then maybe just change it to "The base URL for all API calls is blah blah..."
+API authentication
+	Drop the banner that says "Wellthie SmallBusiness API uses JWT..." as we state that immediately in the next sentence
+	"This app uses JWT token based authentication Oauth 2.0 RFC" -> "This app uses JWT token-based authentication based on the Oauth 2.0 RFC"
+	"access_token" doesn't have the code markdown surrounding it
+Create company
+	Still has "is too short (minimum is 1 character)", "is too long (maximum is 255 characters)" that doesn't make sense. THis may require a code change but at the very least we should remove one of these
+Create census
+	Our parameter table that lists all the required params doesnt include census fields
+Create Enrollment Contact
+	Still needs the parameter table to be filled in; there's stuff in the curl command that isn't in the parameter table. I have submitted a PR with it filled in but my information may be incorrect
+Errors
+	We can probably get rid of this entire section. Most developers know what HTTP status codes mean. If we had put these per endpoint it might be useful, but seems pointless to tell a developer what a 404 is, they should already know that

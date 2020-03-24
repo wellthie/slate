@@ -148,12 +148,14 @@ Use this endpoint to create a new Enrollment Contact.
 
 ### Parameters
 
-Parameter                                         | Default   | Description
-------------------------------------------------- | --------- | -------------------
-<strong>name</strong><strong>required</strong>    | N/A       | Name of the contact
-<strong>email</strong><strong>required</strong>   | N/A       | Email of the contact
-<strong>phone</strong><strong>required</strong>   | N/A       | Phone number
-comments                                          | N/A       | Any comments
+Parameter                                                                  | Default   | Description
+-------------------------------------------------------------------------- | --------- | -------------------
+<strong>enrollment_contact_form[name]</strong><strong>required</strong>    | N/A       | Name of the contact
+<strong>enrollment_contact_form[email]</strong><strong>required</strong>   | N/A       | Email of the contact
+<strong>enrollment_contact_form[phone]</strong><strong>required</strong>   | N/A       | Phone number
+<strong>enrollment_contact_form[comments]</strong>                         | N/A       | Any comments
+inquiry_slug                                                               | N/A       | The slug for the inquiry 
+enrollment                                                                 | N/A       | 
 
 ## Create Employee Contact
 

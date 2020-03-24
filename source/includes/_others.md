@@ -1,6 +1,6 @@
 # Others
 
-## Sic Codes
+## SIC Codes
 
 ```shell
 curl --location --request GET 'https://wellthiedemo-smallbusiness-qa.affordablecareadvisor.net/api/sic_codes'
@@ -96,7 +96,7 @@ $response | ConvertTo-Json
 ]
 ```
 
-Use this endpoint to retrieve the particular 
+Use this endpoint to retrieve SIC codes.
 
 <aside class="notice">
   This endpoint does not require any session or authorization token.

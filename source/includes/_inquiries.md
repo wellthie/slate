@@ -1,9 +1,9 @@
 # Inquiries
 
-Inquiry is a quote with one or more plans selected for the given Employee Census of a Small Business Company.
+Inquiry is a quote with one or more plans selected for the given census of a Company.
 
-* An inquiry can have up to 4
-* An inquiry could be a fresh inquiry or a renewal
+* An inquiry can have up to 4 plans selected
+* An inquiry could be new or a renewal
 
 Steps include to create an inquiry as follows.
 

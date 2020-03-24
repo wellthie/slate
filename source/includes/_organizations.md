@@ -1,6 +1,6 @@
 # Organizations
 
-An Organization is nothing but a Group like yours, who will be consuming the Wellthie BIZ API to build a consumer facing app for your end customers.
+An Organization is a group like yours that will be consuming the Wellthie BIZ API to build something.
 
 ## Get Settings
 
@@ -667,10 +667,10 @@ $response | ConvertTo-Json
 }
 ```
 
-Use this endpoint to retrieve the settings like available / enabled effective dates, call scheduling timings, whether or not to show Ancillary plans like Dental / Vision / etc.
+Use this endpoint to retrieve the settings like available / enabled effective dates, times to schedule calls, whether or not to show ancillary plans like dental, vision, etc.
 
 <aside class="notice">
-  This endpoint does not require any session or authorization token.
+  This endpoint does not require a session or authorization token.
 </aside>
 
 ### HTTP Request

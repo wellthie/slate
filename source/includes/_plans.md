@@ -1,8 +1,8 @@
 # Plans
 
-A Health Insurance Plan (AKA Plan) is the specifics of a Health Insurance (AKA medical insurance, healthcare insurance) which specify the rules and regulations, the different benefits it covers, what it doesn't cover, cost of the policy holder's medical expenses, how much the policy holder pays vs how much the insurance covers, and the details of the same, etc.,
+A Plan is the specifics of various plans (e.g. medical insurance). These include rules, regulations, benefits covered, benefits not covered, cost for the policy holder, how much the policy holder pays vs how much the insurance covers, etc.
 
-This section of the API Doc helps with various aspects of fetching, selecting, unselecting different types of plans for the given [census](#census)
+This section of the API Doc helps with various aspects of fetching and selecting/unselecting different types of plans for the given [census](#census).
 
 ## Get Available Group Plans
 
@@ -431,7 +431,7 @@ $response | ConvertTo-Json
 ]
 ```
 
-Use this endpoint to get all the group plans available. A list of plans should be returned. In the example there's only one plan, since the JSON is pretty long, but usually there are several plans.
+Use this endpoint to get all the group plans available. In the example there's only one plan, but usually there are several plans.
 
 <aside class="notice">
   This endpoint is <strong><i>secured</i></strong> and requires <strong><i>Authorization header</i></strong>. 
@@ -585,7 +585,7 @@ $response | ConvertTo-Json
 ]
 ```
 
-Use this endpoint to list the prices for the group plans. A list of prices should be returned. In the example there's only one price, since the JSON is pretty long, but usually there are several prices.
+Use this endpoint to list the prices for the group plans. In the example there's only one price, but usually there are several prices.
 
 <aside class="notice">
   This endpoint is <strong><i>secured</i></strong> and requires <strong><i>Authorization header</i></strong>. 
@@ -985,7 +985,7 @@ $response | ConvertTo-Json
 ]
 ```
 
-Use this endpoint to list the individual plans available. In the example there's only one plan, since the JSON is pretty long, but usually there are several plans.
+Use this endpoint to list the individual plans available. In the example there's only one plan, but usually there are several plans.
 
 <aside class="notice">
   This endpoint is <strong><i>secured</i></strong> and requires <strong><i>Authorization header</i></strong>. 
@@ -1131,7 +1131,7 @@ $response | ConvertTo-Json
 ]
 ```
 
-Use this endpoint to list the pricing for the available individual plans. In the example there's only one pricing data, since the JSON is pretty long, but usually there are several plan's pricing data returned.
+Use this endpoint to list the pricing for the available individual plans. In the example there's only one pricing data, but usually there are several plan's pricing data returned.
 
 <aside class="notice">
   This endpoint is <strong><i>secured</i></strong> and requires <strong><i>Authorization header</i></strong>. 
@@ -1425,7 +1425,7 @@ No parameters required.
 
 ## Get Selected plans of an Inquiry
 
-Use this endpoint to retrieve inquiry's plan selections. It could be up to 4 elements / 4 plan selections.
+Use this endpoint to retrieve inquiry's plan selections. Up to four plans can be selected.
 
 <aside class="notice">
   This endpoint is <strong><i>secured</i></strong> and requires <strong><i>Authorization header</i></strong>. 
@@ -1579,13 +1579,9 @@ No parameters required.
 
 ## Create Company's Current Plan
 
-Use this endpoint to create a new current_plan to a company. This is used for renewal quotes.
+Use this endpoint to create a new `current_plan` to a company. This is used for renewal quotes (`is_renewal` is set to true).
 <aside class="notice">
   This endpoint is <strong><i>secured</i></strong> and requires <strong><i>Authorization header</i></strong>. 
-</aside>
-
-<aside class="notice">
-To be used in case of Renewal Inquiry. (is_renewal is set to true)
 </aside>
 
 ```shell
