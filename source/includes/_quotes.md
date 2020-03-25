@@ -1,8 +1,8 @@
 # Quotes
 
-Quote is an inquiry made for an individual where one or more Health insurance plans selected for a the given Individual.
+A quote is an inquiry made for an individual where one or more health insurance plans are selected for a the given individual.
 
-* An inquiry could have more than one plan (upto 4)
+* An inquiry can have up to 4 plans.
 
 Steps include to create an inquiry as follows.
 
@@ -233,11 +233,13 @@ Use this endpoint to create a new quote.
 
 Parameter                                                                    | Default   | Description
 -----------------------------------------------------------------------------| --------- | -----------
-<strong>effective_date</strong><strong>required</strong>                     | N/A       |
-<strong>zip_code</strong><strong>required</strong>                           | N/A       |
-<strong>county_code</strong><strong>required</strong>                        | N/A       |
-<strong>income</strong><strong>required</strong>                             | N/A       |
-<strong>family_members_attributes</strong><strong>required</strong>          | N/A       | Array of { "first_name": "", "last_name": "", "email": "", "date_of_birth": "mm/dd/yyyy", "relationship": "Primary", "smoker": boolean, "declared_medicare": boolean, "declared_dependent": boolean }
+<strong>quote[effective_date]</strong><strong>required</strong>                     | N/A       |
+<strong>quote[zip_code]</strong><strong>required</strong>                           | N/A       |
+<strong>quote[county_id]</strong><strong>required</strong>                        | N/A       |
+<strong>quote[broker_code]</strong><strong>required</strong>                        | N/A       |
+<strong>quote[entered_additional_hh_members]</strong><strong>required</strong>                        | N/A       |
+<strong>quote[income]</strong><strong>required</strong>                             | N/A       |
+<strong>quote[family_members_attributes]</strong><strong>required</strong>          | N/A       | Array of { "first_name": "", "last_name": "", "email": "", "date_of_birth": "mm/dd/yyyy", "relationship": "Primary", "smoker": boolean, "declared_medicare": boolean, "declared_dependent": boolean }
 
 ## Update a Quote
 
@@ -461,11 +463,13 @@ Use this endpoint to update an quote.
 
 Parameter                                                                    | Default   | Description
 -----------------------------------------------------------------------------| --------- | -----------
-<strong>effective_date</strong><strong>required</strong>                     | N/A       |
-<strong>zip_code</strong><strong>required</strong>                           | N/A       |
-<strong>county_code</strong><strong>required</strong>                        | N/A       |
-<strong>income</strong><strong>required</strong>                             | N/A       |
-<strong>family_members_attributes</strong><strong>required</strong>          | N/A       | Array of { "first_name": "", "last_name": "", "email": "", "date_of_birth": "mm/dd/yyyy", "relationship": "Primary", "smoker": boolean, "declared_medicare": boolean, "declared_dependent": boolean }
+<strong>quote[effective_date]</strong><strong>required</strong>                     | N/A       |
+<strong>quote[zip_code]</strong><strong>required</strong>                           | N/A       |
+<strong>quote[county_id]</strong><strong>required</strong>                        | N/A       |
+<strong>quote[broker_code]</strong><strong>required</strong>                        | N/A       |
+<strong>quote[entered_additional_hh_members]</strong><strong>required</strong>                        | N/A       |
+<strong>quote[income]</strong><strong>required</strong>                             | N/A       |
+<strong>quote[family_members_attributes]</strong><strong>required</strong>          | N/A       | Array of { "first_name": "", "last_name": "", "email": "", "date_of_birth": "mm/dd/yyyy", "relationship": "Primary", "smoker": boolean, "declared_medicare": boolean, "declared_dependent": boolean }
 
 ## Get a Quote
 

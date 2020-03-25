@@ -138,7 +138,7 @@ $response | ConvertTo-Json
 }
 ```
 
-Use this endpoint to Register a new Individual User.
+Use this endpoint to register a new individual user.
 
 ### HTTP Request
 
@@ -146,13 +146,13 @@ Use this endpoint to Register a new Individual User.
 
 ### Parameters
 
-Parameter                                                         | Default   | Description
------------------------------------------------------------------ | --------- | -------------------
-<strong>email</strong><strong>required</strong>                   | N/A       | Email Address
-<strong>first_name</strong><strong>required</strong>               | N/A       | First Name
-<strong>last_name</strong><strong>required</strong>               | N/A       | Last Name
-<strong>password</strong><strong>required</strong>                | N/A       | Password
-<strong>password_confirmation</strong><strong>required</strong>    | N/A       | Password Confirmation
+Parameter                                                       | Default   | Description
+----------------------------------------------------------------| --------- | -------------------
+<strong>email</strong><strong>required</strong>                 | N/A       | Email Address
+<strong>first_name</strong><strong>required</strong>            | N/A       | First Name
+<strong>last_name</strong><strong>required</strong>             | N/A       | Last Name
+<strong>password</strong><strong>required</strong>              | N/A       | Password
+<strong>password_confirmation</strong><strong>required</strong> | N/A       | Password Confirmation
 
 ## Sign In
 
@@ -417,7 +417,7 @@ $response | ConvertTo-Json
 }
 ```
 
-Use this endpoint to finish the session and discard the access_token acquired on the sign in API call
+Use this endpoint to finish the session and discard the `access_token` acquired on the sign in API call.
 
 ### HTTP Request
 
@@ -425,4 +425,4 @@ Use this endpoint to finish the session and discard the access_token acquired on
 
 ### Parameters
 
-This API doesnot require any parameter.
+No parameters required.

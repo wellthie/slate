@@ -25,13 +25,12 @@ search: true
 
 Welcome to the Wellthie Affordable Care Advisor (Individual) API Documentation.
 
-The Wellthie Affordable Care Advisor is a tool that helps you plan for and estimate costs of your insurance options, based on the Affordable Care Act (ACA). One can also understand if they may be eligible for any financial assistance and estimate the potential penalty for not having insurance for ongoing period / year. By entering your zip code, date of birth, family members and household income, the Wellthie Individual presents insurance options and makes calculations based on the ACA, state regulations and approved insurance rates. The calculations are estimates only, based on the information you provide. You will also get a list of important things to remember such as key dates, where to apply for insurance and who to call to get assistance.
+The Wellthie Affordable Care Advisor is a tool that helps you plan for and estimate costs of your insurance options based on the Affordable Care Act (ACA). One can also understand if they may be eligible for any financial assistance and estimate the potential penalty for not having insurance for an ongoing period/year. By entering your zip code, date of birth, family members and household income, the Wellthie Individual platform presents insurance options and makes calculations based on the ACA, state regulations and approved insurance rates. The calculations are estimates only, based on the information you provide. You will also get a list of important things to remember such as key dates, where to apply for insurance and who to call to get assistance.
 
-Wellthie helps Individuals to discover health insurance online! [Wellthie](https://wellthie.affordablecareadvisor.com) is transforming the insurance shopping experience by helping Individuals discover health insurance online. It’s easy to find the best plans for your budget in minutes.
+[Wellthie](https://wellthie.affordablecareadvisor.com) helps individuals to discover health insurance online! It’s easy to find the best plans for your budget in minutes.
 
-* The Wellthie Individual API is built based on [REST](https://en.wikipedia.org/wiki/Representational_state_transfer).
-* Wellthie Individual API is resource-oriented, and uses HTTP response codes to indicate API status & errors. We use built-in HTTP features, like HTTP verbs, which are understood by off-the-shelf HTTP clients.
-* Wellthie Individual API uses JWT token Based authentication which we'll learn in next section
+* Wellthie Individual is a [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) API.
+* Wellthie Individual API uses JWT token-based authentication.
 * JSON is returned by all API responses, including errors.
 
 ## Audience
@@ -51,7 +50,7 @@ This Documentation for Wellthie Individual API is specifically intended for deve
 
 ## API Base URL
 
-Examples in this document will reference the Wellthie demo site at wellthie-qa.affordablecareadvisor.net whose API base URL is therefore 
+Examples in this document will reference the Wellthie whose API base URL is
 
 `https://wellthie-qa.affordablecareadvisor.net/api/`.
 
@@ -92,16 +91,14 @@ Examples in this document will reference the Wellthie demo site at wellthie-qa.a
 }
 ```
 
-<aside class="notice">Wellthie Individual App uses a <a href="https://jwt.io/introduction/">JWT Based Token Authentication Mechanism</a></aside>
-
-This app uses JWT token based authentication [Oauth 2.0 RFC](https://tools.ietf.org/html/rfc6750). Each protected request is expected to include the `Authorization` header with the access_token value.
+This app uses JWT token-based authentication (see [Oauth 2.0 RFC](https://tools.ietf.org/html/rfc6750)). Each protected request is expected to include the `Authorization` header with the `access_token` value.
 
 When you [sign in](#sign-in) the response would include `access_token` as part of the `data` in case of a successful login. 
 
 The Header should set the following values…
 
-1. Authorization Bearer [access_token value]
-2. Content-Type = application/json
+1. `Authorization Bearer [access_token value]`
+2. `Content-Type` set to `application/json`
 
 <aside class="notice">
 A Bearer Token is set in the Authorization header of every Inline Action HTTP Request.

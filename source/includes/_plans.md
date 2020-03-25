@@ -1,8 +1,8 @@
 # Plans
 
-A Health Insurance Plan (aka Plan) is the specifics of a Health Insurance (aka medical insurance, healthcare insurance) which specify the rules and regulations, the different benefits it covers, what it doesn't cover, cost of the policy holder's medical expenses, how much the policy holder pays vs how much the insurance covers and the scenarios of the same, etc.,
+A health insurance plan (AKA Plan) is the specifics of an insurance plan (e.g. medical insurance, healthcare insurance). It specifies the rules and regulations, the different benefits it covers, what it doesn't cover, cost of the policy holder's medical expenses, how much the policy holder pays vs how much the insurance covers, etc.
 
-This section of the API Doc helps with various aspects of fetching, selecting, unselecting different types of plans for the given [Quote](#quotes)
+This section of the API Doc helps with various aspects of fetching, selecting, and unselecting different types of plans for the given [Quote](#quotes).
 
 ## Get Available Plans
 
@@ -339,7 +339,7 @@ $response | ConvertTo-Json
 ]
 ```
 
-Use this endpoint to get all the available plans for the quote. A list of plans should be returned. In the example there's only one plan, since the json is pretty long, but usually there are several plans.
+Use this endpoint to get all the available plans for the quote. In the example there's only one plan, but usually there are several plans.
 
 <aside class="notice">
   This endpoint is <strong><i>secured</i></strong> and requires <strong><i> Authorization headers</i></strong>. 
@@ -474,7 +474,7 @@ $response | ConvertTo-Json
 ]
 ```
 
-Use this endpoint to list the prices for the plans. A list of prices should be returned. In the example there's only one price, since the json is pretty long, but usually there are several prices.
+Use this endpoint to list the prices for the plans. In the example there's only one price, but usually there are several prices.
 
 <aside class="notice">
   This endpoint is <strong><i>secured</i></strong> and requires <strong><i> Authorization headers</i></strong>. 
@@ -620,7 +620,7 @@ $response | ConvertTo-Json
 ]
 ```
 
-Use this endpoint to retrieve quote's plan selections. It could be up to 4 elements / 4 plan selections.
+Use this endpoint to retrieve a quote's plan selections. A quote can include up to four selected plans.
 
 <aside class="notice">
   This endpoint is <strong><i>secured</i></strong> and requires <strong><i> Authorization headers</i></strong>. 
