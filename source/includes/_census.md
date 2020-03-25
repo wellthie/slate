@@ -881,4 +881,4 @@ Parameter    | Default | Description           | Required?
 ------------ | ------- | --------------------- | ----------
 census       | N/A     | Census object         | true
 
-Check on the right to see an example of the census object.
+[An example of the census object](#census).
